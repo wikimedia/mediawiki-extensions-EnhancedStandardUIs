@@ -1,6 +1,20 @@
 {
-	"name": "mediawiki/enhancedstandarduis",
+	"name": "mediawiki/enhanced-standard-uis",
 	"type": "mediawiki-extension",
+	"license": "GPL-3.0-only",
+	"authors": [
+		{
+			"name": "Hallo Welt! GmbH",
+			"email": "info@hallowelt.com",
+			"homepage": "http://www.hallowelt.com"
+		}
+	],
+	"extra": {
+		"installer-name": "EnhancedStandardUIs"
+	},
+	"require": {
+		"composer/installers": "~1.0|~2"
+	},
 	"require-dev": {
 		"mediawiki/mediawiki-codesniffer": "41.0.0",
 		"mediawiki/mediawiki-phan-config": "0.12.1",
@@ -21,7 +35,9 @@
 		"phan": "phan -d . --long-progress-bar",
 		"phpcs": "phpcs -sp --cache"
 	},
-	"extra": {
-		"installer-name": "EnhancedStandardUIs"
+	"config": {
+		"allow-plugins": {
+			"composer/installers": true
+		}
 	}
 }

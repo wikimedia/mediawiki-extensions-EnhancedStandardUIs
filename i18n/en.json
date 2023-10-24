@@ -1,0 +1,16 @@
+{
+	"@metadata": {
+		"authors": [
+			"Miriam Schlindwein"
+		]
+	},
+	"enhanced-standard-uis-desc": "Provides user interfaces for MediaWiki standard user interfaces",
+	"enhanced-standard-uis-history-grid-header-revision-label": "Revision",
+	"enhanced-standard-uis-history-grid-header-author-label": "Changed by",
+	"enhanced-standard-uis-history-grid-header-size-label": "Size",
+	"enhanced-standard-uis-history-grid-header-summary-label": "Summary",
+	"enhanced-standard-uis-history-grid-header-tags-label": "Tags",
+	"enhanced-standard-uis-history-grid-header-undo-title": "Undo",
+	"enhanced-standard-uis-history-grid-header-hide-revision-title": "Hide revision",
+	"enhanced-standard-uis-history-compare-tool-title": "Compare versions"
+}

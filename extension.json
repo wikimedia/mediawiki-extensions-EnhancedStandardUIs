@@ -1,0 +1,68 @@
+{
+	"name": "EnhancedStandardUIs",
+	"author": [
+		"[https://www.hallowelt.com Hallo Welt! GmbH]"
+	],
+	"url": "https://www.hallowelt.com",
+	"descriptionmsg": "enhanced-standard-uis-desc",
+	"license-name": "GPL-3.0-only",
+	"requires": {
+		"MediaWiki": ">= 1.39.0"
+	},
+	"AutoloadNamespaces": {
+		"MediaWiki\\Extension\\EnhancedStandardUIs\\": "src/"
+	},
+	"attributes": {
+		"EnhancedStandardUIs": {
+			"HistoryPagePlugins": {}
+		}
+	},
+	"config": {
+	},
+	"HookHandlers": {
+	},
+	"Hooks": {
+	},
+	"MessagesDirs": {
+		"EnhancedStandardUIs": [
+			"i18n"
+		]
+	},
+	"ResourceModules": {
+		"ext.enhancedstandarduis.history": {
+			"packageFiles": [
+				"ext.enhancedUI.historyAction.js",
+				"panel/HistoryPanel.js",
+				"widget/HistoryToolbar.js",
+				"widget/HistoryGrid.js"
+			],
+			"styles": [
+				"stylesheets/ext.enhancedUI.historyAction.css"
+			],
+			"messages": [
+				"size-bytes",
+				"enhanced-standard-uis-history-grid-header-revision-label",
+				"enhanced-standard-uis-history-grid-header-author-label",
+				"enhanced-standard-uis-history-grid-header-size-label",
+				"enhanced-standard-uis-history-grid-header-summary-label",
+				"enhanced-standard-uis-history-grid-header-tags-label",
+				"enhanced-standard-uis-history-grid-header-undo-title",
+				"enhanced-standard-uis-history-grid-header-hide-revision-title",
+				"enhanced-standard-uis-history-compare-tool-title"
+			],
+			"dependencies": [
+				"oojs-ui",
+				"ext.oOJSPlus.data"
+			]
+		}
+	},
+	"ResourceFileModulePaths": {
+		"localBasePath": "resources",
+		"remoteExtPath": "EnhancedStandardUIs/resources"
+	},
+	"Actions": {
+		"history": "MediaWiki\\Extension\\EnhancedStandardUIs\\Action\\EnhancedHistoryAction"
+	},
+	"manifest_version": 2,
+	"load_composer_autoloader": true
+}

@@ -1,0 +1,15 @@
+.oojsplus-data-gridWidget-cell.action-cell > span {
+	opacity: 0;
+}
+
+.oojsplus-data-gridWidget-cell.action-cell:hover > span,
+.oojsplus-data-gridWidget-cell.action-cell:focus > span {
+	opacity: 1;
+}
+
+/* stylelint-disable declaration-no-important */
+#enhanced-history-cnt .oojsplus-data-gridWidget-column-header[ data-field='undo' ] {
+	/* oojs style is added with important */
+	border-right: 0 !important;
+}
+/* stylelint-enable declaration-no-important */
