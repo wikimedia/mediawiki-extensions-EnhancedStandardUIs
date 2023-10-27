@@ -139,6 +139,12 @@ ext.enhancedUI.panel.HistoryPanel.prototype.setupGridConfig = function () {
 				showImage: true,
 				sortable: false
 			},
+			diff: {
+				headerText: mw.message( 'enhanced-standard-uis-history-grid-header-diff-label' ).text(),
+				type: 'text',
+				sortable: false,
+				hidden: false
+			},
 			size: {
 				headerText: mw.message( 'enhanced-standard-uis-history-grid-header-size-label' ).text(),
 				type: 'text',
@@ -150,6 +156,7 @@ ext.enhancedUI.panel.HistoryPanel.prototype.setupGridConfig = function () {
 				type: 'text',
 				sortable: false,
 				hidden: false,
+				width: 300,
 				valueParser: function ( val ) {
 					return new OO.ui.HtmlSnippet( val );
 				}
