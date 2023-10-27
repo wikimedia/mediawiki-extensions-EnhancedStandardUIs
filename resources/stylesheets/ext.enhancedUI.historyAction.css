@@ -1,9 +1,9 @@
-.oojsplus-data-gridWidget-cell.action-cell > span {
+.oojsplus-data-gridWidget-cell.action-cell:not( .selection-cell ) > span {
 	opacity: 0;
 }
 
-.oojsplus-data-gridWidget-cell.action-cell:hover > span,
-.oojsplus-data-gridWidget-cell.action-cell:focus > span {
+.oojsplus-data-gridWidget-row:hover .oojsplus-data-gridWidget-cell.action-cell > span,
+.oojsplus-data-gridWidget-row .oojsplus-data-gridWidget-cell.action-cell:focus > span {
 	opacity: 1;
 }
 
@@ -13,3 +13,11 @@
 	border-right: 0 !important;
 }
 /* stylelint-enable declaration-no-important */
+
+.enhanced-history-diff-minus .text-cell[ data-column='diff' ] {
+	color: #8b0000;
+}
+
+.enhanced-history-diff-plus .text-cell[ data-column='diff' ] {
+	color: #006400;
+}

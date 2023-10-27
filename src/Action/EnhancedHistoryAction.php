@@ -107,7 +107,17 @@ class EnhancedHistoryAction extends HistoryAction {
 			$historyPagePlugin[$key] = $object;
 		}
 
+		$oldSize = 0;
 		foreach ( $res as $row ) {
+			$classes = [];
+			$sizeDiff = $row->rev_len - $oldSize;
+			$entry['diff'] = Message::newFromKey( 'size-bytes', $sizeDiff )->parse();
+			if ( $sizeDiff < 0 ) {
+				$classes[] = 'enhanced-history-diff-minus';
+			} elseif ( $sizeDiff > 0 ) {
+				$classes[] = 'enhanced-history-diff-plus';
+			}
+
 			$entry['check'] = false;
 			$entry['id'] = $row->rev_id;
 			$entry['revision'] = $language->userTimeAndDate( $row->rev_timestamp, $this->context->getUser() );
@@ -120,7 +130,6 @@ class EnhancedHistoryAction extends HistoryAction {
 			$entry['tagUrl'] = $titleFactory->newFromText( 'Special:Tags' )->getLocalURL();
 
 			$attribs = [];
-			$classes = [];
 			foreach ( $historyPagePlugin as $plugin ) {
 				$plugin->ammendRow( $this, $entry, $attribs, $classes );
 			}
@@ -128,6 +137,7 @@ class EnhancedHistoryAction extends HistoryAction {
 			$entry['attribs'] = $attribs;
 
 			$data[] = $entry;
+			$oldSize = $row->rev_len;
 		}
 		$orderedData = array_reverse( $data );
 

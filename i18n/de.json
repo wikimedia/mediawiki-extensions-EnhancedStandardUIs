@@ -12,5 +12,6 @@
 	"enhanced-standard-uis-history-grid-header-tags-label": "Tags",
 	"enhanced-standard-uis-history-grid-header-undo-title": "Rückgängig machen",
 	"enhanced-standard-uis-history-grid-header-hide-revision-title": "Version verstecken",
-	"enhanced-standard-uis-history-compare-tool-title": "Versionen vergleichen"
+	"enhanced-standard-uis-history-compare-tool-title": "Versionen vergleichen",
+	"enhanced-standard-uis-history-grid-header-diff-label": "Differenz"
 }
