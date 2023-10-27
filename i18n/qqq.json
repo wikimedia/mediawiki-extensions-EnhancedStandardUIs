@@ -4,7 +4,7 @@
 			"Miriam Schlindwein"
 		]
 	},
-	"enhanced-standard-uis-desc": "",
+	"enhanced-standard-uis-desc": "{{desc|name=EnhancedStandardUIs|url=https://www.mediawiki.org/wiki/Extension:EnhancedStandardUIs}}",
 	"enhanced-standard-uis-history-grid-header-revision-label": "Label for the version history grid column which contains the revision entry of a page",
 	"enhanced-standard-uis-history-grid-header-author-label": "Label for the version history grid column which contains the author of the revision",
 	"enhanced-standard-uis-history-grid-header-size-label": "Label for the version history grid column which contains the size of a revision",
@@ -12,5 +12,6 @@
 	"enhanced-standard-uis-history-grid-header-tags-label": "Label for the version history grid column which contains the tags of a revision",
 	"enhanced-standard-uis-history-grid-header-undo-title": "Label for the version history grid column which allows to undo the revision",
 	"enhanced-standard-uis-history-grid-header-hide-revision-title": "Label for the version history grid column which allows to hide the revision",
-	"enhanced-standard-uis-history-compare-tool-title": "Label for compare tool button to allow comparison of two selected versions"
+	"enhanced-standard-uis-history-compare-tool-title": "Label for compare tool button to allow comparison of two selected versions",
+	"enhanced-standard-uis-history-grid-header-diff-label": "Label for the version history grid column which contains difference of the size of a revision"
 }
