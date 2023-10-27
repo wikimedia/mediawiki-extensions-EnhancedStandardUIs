@@ -1,0 +1,16 @@
+{
+	"@metadata": {
+		"authors": [
+			"McDutchie"
+		]
+	},
+	"enhanced-standard-uis-desc": "Biedt gebruikersinterfaces voor de standaardgebruikersinterfaces van MediaWiki",
+	"enhanced-standard-uis-history-grid-header-revision-label": "Versie",
+	"enhanced-standard-uis-history-grid-header-author-label": "Veranderd door",
+	"enhanced-standard-uis-history-grid-header-size-label": "Grootte",
+	"enhanced-standard-uis-history-grid-header-summary-label": "Samenvatting",
+	"enhanced-standard-uis-history-grid-header-tags-label": "Labels",
+	"enhanced-standard-uis-history-grid-header-undo-title": "Ongedaan maken",
+	"enhanced-standard-uis-history-grid-header-hide-revision-title": "Versie verbergen",
+	"enhanced-standard-uis-history-compare-tool-title": "Versies vergelijken"
+}
