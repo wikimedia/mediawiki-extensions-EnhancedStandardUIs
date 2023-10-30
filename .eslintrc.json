@@ -13,6 +13,5 @@
 		"OOJSPlus": "readonly"
 	},
 	"rules": {
-		"no-implicit-globals": "off"
 	}
 }
