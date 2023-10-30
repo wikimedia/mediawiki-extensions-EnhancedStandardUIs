@@ -1,0 +1,16 @@
+{
+	"@metadata": {
+		"authors": [
+			"Rulebased"
+		]
+	},
+	"enhanced-standard-uis-desc": "رابط‌های کاربری را برای مجموعه رابط‌های کاربری استاندارد مدیاویکی تهیه می‌کند",
+	"enhanced-standard-uis-history-grid-header-revision-label": "بازبینی",
+	"enhanced-standard-uis-history-grid-header-author-label": "تغییر داده شده توسط",
+	"enhanced-standard-uis-history-grid-header-size-label": "اندازه",
+	"enhanced-standard-uis-history-grid-header-summary-label": "خلاصه",
+	"enhanced-standard-uis-history-grid-header-tags-label": "برچسب‌ها",
+	"enhanced-standard-uis-history-grid-header-undo-title": "واگردانی",
+	"enhanced-standard-uis-history-grid-header-hide-revision-title": "پنهان‌کردن بازبینی",
+	"enhanced-standard-uis-history-compare-tool-title": "مقایسه ویراست‌ها"
+}
