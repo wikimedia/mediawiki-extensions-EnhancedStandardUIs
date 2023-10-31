@@ -1,0 +1,16 @@
+{
+	"@metadata": {
+		"authors": [
+			"Eleassar"
+		]
+	},
+	"enhanced-standard-uis-desc": "Zagotavlja uporabniške vmesnike za standardne uporabniške vmesnike MediaWiki",
+	"enhanced-standard-uis-history-grid-header-revision-label": "Redakcija",
+	"enhanced-standard-uis-history-grid-header-author-label": "Spremenil",
+	"enhanced-standard-uis-history-grid-header-size-label": "Velikost",
+	"enhanced-standard-uis-history-grid-header-summary-label": "Povzetek",
+	"enhanced-standard-uis-history-grid-header-tags-label": "Oznake",
+	"enhanced-standard-uis-history-grid-header-undo-title": "Razveljavi",
+	"enhanced-standard-uis-history-grid-header-hide-revision-title": "Skrij redakcijo",
+	"enhanced-standard-uis-history-compare-tool-title": "Primerjava redakcij"
+}

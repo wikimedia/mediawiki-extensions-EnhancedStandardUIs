@@ -1,0 +1,16 @@
+{
+	"@metadata": {
+		"authors": [
+			"Kly"
+		]
+	},
+	"enhanced-standard-uis-desc": "為 MediaWiki 標準使用者介面提供使用者介面",
+	"enhanced-standard-uis-history-grid-header-revision-label": "修訂",
+	"enhanced-standard-uis-history-grid-header-author-label": "更改由",
+	"enhanced-standard-uis-history-grid-header-size-label": "大小",
+	"enhanced-standard-uis-history-grid-header-summary-label": "摘要",
+	"enhanced-standard-uis-history-grid-header-tags-label": "標籤",
+	"enhanced-standard-uis-history-grid-header-undo-title": "撤銷",
+	"enhanced-standard-uis-history-grid-header-hide-revision-title": "隱藏修訂",
+	"enhanced-standard-uis-history-compare-tool-title": "比較修訂"
+}
