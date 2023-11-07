@@ -12,5 +12,6 @@
 	"enhanced-standard-uis-history-grid-header-tags-label": "תגים",
 	"enhanced-standard-uis-history-grid-header-undo-title": "ביטול",
 	"enhanced-standard-uis-history-grid-header-hide-revision-title": "הסתרת גרסה",
-	"enhanced-standard-uis-history-compare-tool-title": "השוואת גרסאות"
+	"enhanced-standard-uis-history-compare-tool-title": "השוואת גרסאות",
+	"enhanced-standard-uis-history-grid-header-diff-label": "הבדלים"
 }

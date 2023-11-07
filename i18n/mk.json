@@ -12,5 +12,6 @@
 	"enhanced-standard-uis-history-grid-header-tags-label": "Ознаки",
 	"enhanced-standard-uis-history-grid-header-undo-title": "Врати",
 	"enhanced-standard-uis-history-grid-header-hide-revision-title": "Скриј преработка",
-	"enhanced-standard-uis-history-compare-tool-title": "Спореди верзии"
+	"enhanced-standard-uis-history-compare-tool-title": "Спореди верзии",
+	"enhanced-standard-uis-history-grid-header-diff-label": "Разлика"
 }

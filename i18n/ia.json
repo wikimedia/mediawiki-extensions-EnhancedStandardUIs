@@ -12,5 +12,6 @@
 	"enhanced-standard-uis-history-grid-header-tags-label": "Etiquettas",
 	"enhanced-standard-uis-history-grid-header-undo-title": "Disfacer",
 	"enhanced-standard-uis-history-grid-header-hide-revision-title": "Celar version",
-	"enhanced-standard-uis-history-compare-tool-title": "Comparar versiones"
+	"enhanced-standard-uis-history-compare-tool-title": "Comparar versiones",
+	"enhanced-standard-uis-history-grid-header-diff-label": "Differentia"
 }

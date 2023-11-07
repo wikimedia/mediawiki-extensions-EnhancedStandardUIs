@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ykhwong"
+		]
+	},
+	"enhanced-standard-uis-history-grid-header-size-label": "크기",
+	"enhanced-standard-uis-history-grid-header-summary-label": "요약",
+	"enhanced-standard-uis-history-grid-header-tags-label": "태그",
+	"enhanced-standard-uis-history-grid-header-diff-label": "차이"
+}

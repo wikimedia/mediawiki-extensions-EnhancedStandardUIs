@@ -11,5 +11,6 @@
 	"enhanced-standard-uis-history-grid-header-tags-label": "Ознаке",
 	"enhanced-standard-uis-history-grid-header-undo-title": "Поништи",
 	"enhanced-standard-uis-history-grid-header-hide-revision-title": "Сакрији измену",
-	"enhanced-standard-uis-history-compare-tool-title": "Упореди верзије"
+	"enhanced-standard-uis-history-compare-tool-title": "Упореди верзије",
+	"enhanced-standard-uis-history-grid-header-diff-label": "Разлика"
 }

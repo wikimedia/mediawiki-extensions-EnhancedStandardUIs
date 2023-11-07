@@ -13,5 +13,6 @@
 	"enhanced-standard-uis-history-grid-header-tags-label": "ট্যাগসমূহ",
 	"enhanced-standard-uis-history-grid-header-undo-title": "পূর্বাবস্থা",
 	"enhanced-standard-uis-history-grid-header-hide-revision-title": "সংস্করণ লুকান",
-	"enhanced-standard-uis-history-compare-tool-title": "সংস্করণ তুলনা করুন"
+	"enhanced-standard-uis-history-compare-tool-title": "সংস্করণ তুলনা করুন",
+	"enhanced-standard-uis-history-grid-header-diff-label": "পার্থক্য"
 }
