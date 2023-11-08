@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Jeeputer",
 			"Rulebased"
 		]
 	},
@@ -12,5 +13,6 @@
 	"enhanced-standard-uis-history-grid-header-tags-label": "برچسب‌ها",
 	"enhanced-standard-uis-history-grid-header-undo-title": "واگردانی",
 	"enhanced-standard-uis-history-grid-header-hide-revision-title": "پنهان‌کردن بازبینی",
-	"enhanced-standard-uis-history-compare-tool-title": "مقایسه ویراست‌ها"
+	"enhanced-standard-uis-history-compare-tool-title": "مقایسه ویراست‌ها",
+	"enhanced-standard-uis-history-grid-header-diff-label": "تفاوت"
 }
