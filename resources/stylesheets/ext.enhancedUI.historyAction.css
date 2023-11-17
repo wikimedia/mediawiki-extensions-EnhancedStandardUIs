@@ -21,3 +21,7 @@
 .enhanced-history-diff-plus .text-cell[ data-column='diff' ] {
 	color: #006400;
 }
+
+.enhanced-history-toolbar {
+	position: relative;
+}
