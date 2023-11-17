@@ -22,6 +22,10 @@
 		}
 	},
 	"config": {
+		"EnhancedUIsVersionHistoryToolbarOffset": {
+			"value": 0,
+			"public": true
+		}
 	},
 	"HookHandlers": {
 	},
@@ -36,6 +40,10 @@
 		"ext.enhancedstandarduis.history": {
 			"packageFiles": [
 				"ext.enhancedUI.historyAction.js",
+				{
+					"name": "addToolbarOffset.json",
+					"callback": "MediaWiki\\Extension\\EnhancedStandardUIs\\AddVersionHistoryToolbarOffset::makeConfigJson"
+				},
 				"panel/HistoryPanel.js",
 				"widget/HistoryToolbar.js",
 				"widget/HistoryGrid.js"
