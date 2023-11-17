@@ -4,7 +4,7 @@ ext.enhancedUI.widget = ext.enhancedUI.widget || {};
 
 ext.enhancedUI.widget.HistoryToolbar = function ( config ) {
 	config = config || {};
-
+	config.classes = [ 'enhanced-history-toolbar' ];
 	ext.enhancedUI.widget.HistoryToolbar.super.call( this,
 		new OO.ui.ToolFactory(), new OO.ui.ToolGroupFactory(), config
 	);
