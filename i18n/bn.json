@@ -1,0 +1,18 @@
+{
+	"@metadata": {
+		"authors": [
+			"আফতাবুজ্জামান",
+			"জয়শ্রীরাম সরকার"
+		]
+	},
+	"enhanced-standard-uis-desc": "মিডিয়াউইকির মানক ব্যবহারকারী ইন্টারফেসের জন্য ব্যবহারকারী ইন্টারফেস প্রদান করে",
+	"enhanced-standard-uis-history-grid-header-revision-label": "পুনঃপরীক্ষা",
+	"enhanced-standard-uis-history-grid-header-author-label": "পরিবর্তন করেছেন",
+	"enhanced-standard-uis-history-grid-header-size-label": "আকার",
+	"enhanced-standard-uis-history-grid-header-summary-label": "সারাংশ",
+	"enhanced-standard-uis-history-grid-header-tags-label": "ট্যাগসমূহ",
+	"enhanced-standard-uis-history-grid-header-undo-title": "পূর্বাবস্থা",
+	"enhanced-standard-uis-history-grid-header-hide-revision-title": "সংস্করণ লুকান",
+	"enhanced-standard-uis-history-compare-tool-title": "সংস্করণ তুলনা করুন",
+	"enhanced-standard-uis-history-grid-header-diff-label": "পার্থক্য"
+}

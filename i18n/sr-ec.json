@@ -1,0 +1,16 @@
+{
+	"@metadata": {
+		"authors": [
+			"Milicevic01"
+		]
+	},
+	"enhanced-standard-uis-history-grid-header-revision-label": "Ревизија",
+	"enhanced-standard-uis-history-grid-header-author-label": "Променио",
+	"enhanced-standard-uis-history-grid-header-size-label": "Величина",
+	"enhanced-standard-uis-history-grid-header-summary-label": "Опис",
+	"enhanced-standard-uis-history-grid-header-tags-label": "Ознаке",
+	"enhanced-standard-uis-history-grid-header-undo-title": "Поништи",
+	"enhanced-standard-uis-history-grid-header-hide-revision-title": "Сакрији измену",
+	"enhanced-standard-uis-history-compare-tool-title": "Упореди верзије",
+	"enhanced-standard-uis-history-grid-header-diff-label": "Разлика"
+}

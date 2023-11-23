@@ -1,0 +1,16 @@
+{
+	"@metadata": {
+		"authors": [
+			"Beta16"
+		]
+	},
+	"enhanced-standard-uis-history-grid-header-revision-label": "Versione",
+	"enhanced-standard-uis-history-grid-header-author-label": "Modificato da",
+	"enhanced-standard-uis-history-grid-header-size-label": "Dimensione",
+	"enhanced-standard-uis-history-grid-header-summary-label": "Oggetto",
+	"enhanced-standard-uis-history-grid-header-tags-label": "Etichette",
+	"enhanced-standard-uis-history-grid-header-undo-title": "Annulla",
+	"enhanced-standard-uis-history-grid-header-hide-revision-title": "Nascondi versione",
+	"enhanced-standard-uis-history-compare-tool-title": "Confronta versioni",
+	"enhanced-standard-uis-history-grid-header-diff-label": "Differenza"
+}

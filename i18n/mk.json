@@ -1,0 +1,17 @@
+{
+	"@metadata": {
+		"authors": [
+			"Bjankuloski06"
+		]
+	},
+	"enhanced-standard-uis-desc": "Обезбедува кориснички посредници за стандардните кориснички посредници на МедијаВики",
+	"enhanced-standard-uis-history-grid-header-revision-label": "Преработка",
+	"enhanced-standard-uis-history-grid-header-author-label": "Променето од",
+	"enhanced-standard-uis-history-grid-header-size-label": "Големина",
+	"enhanced-standard-uis-history-grid-header-summary-label": "Опис",
+	"enhanced-standard-uis-history-grid-header-tags-label": "Ознаки",
+	"enhanced-standard-uis-history-grid-header-undo-title": "Врати",
+	"enhanced-standard-uis-history-grid-header-hide-revision-title": "Скриј преработка",
+	"enhanced-standard-uis-history-compare-tool-title": "Спореди верзии",
+	"enhanced-standard-uis-history-grid-header-diff-label": "Разлика"
+}

@@ -1,0 +1,17 @@
+{
+	"@metadata": {
+		"authors": [
+			"Amire80"
+		]
+	},
+	"enhanced-standard-uis-desc": "מספקת ממשקי משתמש עבור ממשקי משתמש סטנדרטיים של מדיה־ויקי",
+	"enhanced-standard-uis-history-grid-header-revision-label": "גרסה",
+	"enhanced-standard-uis-history-grid-header-author-label": "שוּנה על־ידי",
+	"enhanced-standard-uis-history-grid-header-size-label": "גודל",
+	"enhanced-standard-uis-history-grid-header-summary-label": "תקציר",
+	"enhanced-standard-uis-history-grid-header-tags-label": "תגים",
+	"enhanced-standard-uis-history-grid-header-undo-title": "ביטול",
+	"enhanced-standard-uis-history-grid-header-hide-revision-title": "הסתרת גרסה",
+	"enhanced-standard-uis-history-compare-tool-title": "השוואת גרסאות",
+	"enhanced-standard-uis-history-grid-header-diff-label": "הבדלים"
+}

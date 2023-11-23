@@ -1,0 +1,17 @@
+{
+	"@metadata": {
+		"authors": [
+			"McDutchie"
+		]
+	},
+	"enhanced-standard-uis-desc": "Forni interfacies de usator pro le interfacies de usator standard de MediaWiki",
+	"enhanced-standard-uis-history-grid-header-revision-label": "Version",
+	"enhanced-standard-uis-history-grid-header-author-label": "Cambiate per",
+	"enhanced-standard-uis-history-grid-header-size-label": "Dimension",
+	"enhanced-standard-uis-history-grid-header-summary-label": "Summario",
+	"enhanced-standard-uis-history-grid-header-tags-label": "Etiquettas",
+	"enhanced-standard-uis-history-grid-header-undo-title": "Disfacer",
+	"enhanced-standard-uis-history-grid-header-hide-revision-title": "Celar version",
+	"enhanced-standard-uis-history-compare-tool-title": "Comparar versiones",
+	"enhanced-standard-uis-history-grid-header-diff-label": "Differentia"
+}
