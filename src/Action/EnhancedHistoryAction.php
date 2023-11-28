@@ -122,7 +122,7 @@ class EnhancedHistoryAction extends HistoryAction {
 			$entry['id'] = $row->rev_id;
 			$entry['revision'] = $language->userTimeAndDate( $row->rev_timestamp, $this->context->getUser() );
 			$entry['revisionUrl'] = $this->getTitle()->getLocalURL( [ 'oldid' => $row->rev_id ] );
-			$entry['author'] = $userFactory->newFromId( $row->rev_user )->getName();
+			$entry['author'] = $userFactory->newFromActorId( $row->rev_actor )->getName();
 			$entry['size'] = Message::newFromKey( 'size-bytes', $row->rev_len )->parse();
 			$summary = new RawMessage( $row->rev_comment_text );
 			$entry['summary'] = $summary->parse();
