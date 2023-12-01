@@ -18,11 +18,22 @@
 	},
 	"attributes": {
 		"EnhancedStandardUIs": {
-			"HistoryPagePlugins": {}
+			"HistoryPagePlugins": {},
+			"AllPagesPluginModules": []
 		}
+	},
+	"ExtensionMessagesFiles": {
+		"EnhancedAllPagesAlias": "languages/EnhancedAllPages.i18n.alias.php"
+	},
+	"SpecialPages": {
+		"EnhancedAllPages": "MediaWiki\\Extension\\EnhancedStandardUIs\\Special\\EnhancedAllPages"
 	},
 	"config": {
 		"EnhancedUIsVersionHistoryToolbarOffset": {
+			"value": 0,
+			"public": true
+		},
+		"EnhancedUIsAllPagesPaginatorOffset": {
 			"value": 0,
 			"public": true
 		}
@@ -30,10 +41,15 @@
 	"HookHandlers": {
 		"userpreference": {
 			"class": "\\MediaWiki\\Extension\\EnhancedStandardUIs\\HookHandler\\UserPreference"
+		},
+		"addTitleWatchInfo": {
+			"class": "\\MediaWiki\\Extension\\EnhancedStandardUIs\\HookHandler\\AddTitleWatchInfo",
+			"services": [ "WatchlistManager", "TitleFactory" ]
 		}
 	},
 	"Hooks": {
-		"GetPreferences": "userpreference"
+		"GetPreferences": "userpreference",
+		"MWStakeCommonWebAPIsQueryStoreResult": "addTitleWatchInfo"
 	},
 	"MessagesDirs": {
 		"EnhancedStandardUIs": [
@@ -74,6 +90,47 @@
 				"enhanced-standard-uis-history-grid-header-hide-revision-title",
 				"enhanced-standard-uis-history-compare-tool-title",
 				"enhanced-standard-uis-history-grid-header-diff-label"
+			],
+			"dependencies": [
+				"oojs-ui",
+				"ext.oOJSPlus.data"
+			]
+		},
+		"ext.enhancedstandarduis.special.allpages": {
+			"packageFiles": [
+				"ext.enhancedUI.special.allpages.js",
+				{
+					"name": "addPaginatorOffset.json",
+					"callback": "MediaWiki\\Extension\\EnhancedStandardUIs\\AddAllPagesPaginatorOffset::makeConfigJson"
+				},
+				"panel/AllPagesPanel.js",
+				"widget/NamespacesMenu.js",
+				{
+					"name": "widget/namespaceConfig.json",
+					"callback": "MediaWiki\\Extension\\EnhancedStandardUIs\\NamespaceClientConfig::makeNamespaceConfigJson"
+				},
+				"widget/NamespaceOptionWidget.js",
+				"widget/Paginator.js",
+				"data/PagesTree.js",
+				"data/PagesTreeItem.js",
+				"data/store/Store.js"
+			],
+			"styles": [
+				"stylesheets/ext.enhancedUI.special.allpages.css"
+			],
+			"messages": [
+				"enhanced-standard-uis-allpages-include-talk-ns",
+				"enhanced-standard-uis-allpages-include-non-content-ns",
+				"enhanced-standard-uis-allpages-include-redirect",
+				"enhanced-standard-uis-allpages-config-ns",
+				"enhanced-standard-uis-allpages-config",
+				"addedwatchtext-short",
+				"removedwatchtext-short",
+				"enhanced-standard-uis-allpages-paginator-first",
+				"enhanced-standard-uis-allpages-paginator-previous",
+				"enhanced-standard-uis-allpages-paginator-next",
+				"enhanced-standard-uis-allpages-paginator-last",
+				"enhanced-standard-uis-allpages-redirect-title"
 			],
 			"dependencies": [
 				"oojs-ui",

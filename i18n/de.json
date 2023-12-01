@@ -13,5 +13,16 @@
 	"enhanced-standard-uis-history-grid-header-undo-title": "Rückgängig machen",
 	"enhanced-standard-uis-history-grid-header-hide-revision-title": "Version verstecken",
 	"enhanced-standard-uis-history-compare-tool-title": "Versionen vergleichen",
-	"enhanced-standard-uis-history-grid-header-diff-label": "Differenz"
+	"enhanced-standard-uis-history-grid-header-diff-label": "Differenz",
+	"enhancedallpages": "Alle Seiten",
+	"enhanced-standard-uis-allpages-include-talk-ns": "Diskussionsnamensräume anzeigen",
+	"enhanced-standard-uis-allpages-include-non-content-ns": "Nicht-Inhalts-Namensräume anzeigen",
+	"enhanced-standard-uis-allpages-include-redirect": "Weiterleitungen anzeigen",
+	"enhanced-standard-uis-allpages-config-ns": "Namensraumauswahl konfigurieren",
+	"enhanced-standard-uis-allpages-config": "Konfiguration",
+	"enhanced-standard-uis-allpages-paginator-first": "Erste",
+	"enhanced-standard-uis-allpages-paginator-previous": "Vorherige",
+	"enhanced-standard-uis-allpages-paginator-next": "Nächste",
+	"enhanced-standard-uis-allpages-paginator-last": "Letzte",
+	"enhanced-standard-uis-allpages-redirect-title": "Weiterleitung"
 }
