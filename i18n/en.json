@@ -13,5 +13,16 @@
 	"enhanced-standard-uis-history-grid-header-undo-title": "Undo",
 	"enhanced-standard-uis-history-grid-header-hide-revision-title": "Hide revision",
 	"enhanced-standard-uis-history-compare-tool-title": "Compare versions",
-	"enhanced-standard-uis-history-grid-header-diff-label": "Difference"
+	"enhanced-standard-uis-history-grid-header-diff-label": "Difference",
+	"enhancedallpages": "All pages",
+	"enhanced-standard-uis-allpages-include-talk-ns": "Show talk namespaces",
+	"enhanced-standard-uis-allpages-include-non-content-ns": "Show non content namespaces",
+	"enhanced-standard-uis-allpages-include-redirect": "Show redirects",
+	"enhanced-standard-uis-allpages-config-ns": "Configure namespace selection",
+	"enhanced-standard-uis-allpages-config": "Configuration",
+	"enhanced-standard-uis-allpages-paginator-first": "First",
+	"enhanced-standard-uis-allpages-paginator-previous": "Previous",
+	"enhanced-standard-uis-allpages-paginator-next": "Next",
+	"enhanced-standard-uis-allpages-paginator-last": "Last",
+	"enhanced-standard-uis-allpages-redirect-title": "Redirect"
 }
