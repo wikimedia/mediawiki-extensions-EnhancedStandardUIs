@@ -12,5 +12,6 @@
 	"enhanced-standard-uis-history-grid-header-tags-label": "Oznake",
 	"enhanced-standard-uis-history-grid-header-undo-title": "Razveljavi",
 	"enhanced-standard-uis-history-grid-header-hide-revision-title": "Skrij redakcijo",
-	"enhanced-standard-uis-history-compare-tool-title": "Primerjava redakcij"
+	"enhanced-standard-uis-history-compare-tool-title": "Primerjava redakcij",
+	"enhanced-standard-uis-history-grid-header-diff-label": "Razlika"
 }
