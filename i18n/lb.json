@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Robby",
 			"Volvox"
 		]
 	},
@@ -10,5 +11,8 @@
 	"enhanced-standard-uis-history-grid-header-summary-label": "Resumé",
 	"enhanced-standard-uis-history-grid-header-undo-title": "Réckgängeg maachen",
 	"enhanced-standard-uis-history-grid-header-hide-revision-title": "Versioun verstoppen",
-	"enhanced-standard-uis-history-compare-tool-title": "Versioune vergläichen"
+	"enhanced-standard-uis-history-compare-tool-title": "Versioune vergläichen",
+	"enhanced-standard-uis-desc": "Stellt Benotzerinterface fir Standard-MediaWiki-Benotzer-interfacen zur Verfügung",
+	"enhanced-standard-uis-history-grid-header-tags-label": "Markéierungen",
+	"enhanced-standard-uis-history-grid-header-diff-label": "Ënnerscheed"
 }
