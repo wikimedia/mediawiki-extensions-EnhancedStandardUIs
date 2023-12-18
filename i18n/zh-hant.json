@@ -12,5 +12,6 @@
 	"enhanced-standard-uis-history-grid-header-tags-label": "標籤",
 	"enhanced-standard-uis-history-grid-header-undo-title": "撤銷",
 	"enhanced-standard-uis-history-grid-header-hide-revision-title": "隱藏修訂",
-	"enhanced-standard-uis-history-compare-tool-title": "比較修訂"
+	"enhanced-standard-uis-history-compare-tool-title": "比較修訂",
+	"enhanced-standard-uis-history-grid-header-diff-label": "差異"
 }
