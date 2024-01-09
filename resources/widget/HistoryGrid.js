@@ -33,11 +33,10 @@ ext.enhancedUI.widget.HistoryGrid.prototype.clickOnRow = function ( e ) {
 };
 
 ext.enhancedUI.widget.HistoryGrid.prototype.toggleRowSelectionButton = function ( selection ) {
-	for ( var i = 0; i < $( this.$table ).children().length; i++ ) {
-		var $row = $( this.$table ).children()[ i ];
-		if ( $row.tagName !== 'TR' ) {
-			continue;
-		}
+	var $tbody = $( this.$table ).find( 'tbody' ),
+		$rows = $tbody.find( 'tr' );
+	for ( var i = 0; i < $rows.length; i++ ) {
+		var $row = $( $rows[ i ] );
 		var rowId = parseInt( $( $row ).attr( 'id' ) );
 		var positionInArray = this.selectedRows.map( function ( e ) {
 			return parseInt( e.id );
