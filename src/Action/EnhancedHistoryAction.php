@@ -150,6 +150,7 @@ class EnhancedHistoryAction extends HistoryAction {
 		}
 
 		$out->addModules( $modules );
+		$out->addBodyClasses( 'enhanced-action-history' );
 		return $out->addHTML(
 			Html::element( 'div',
 			[
