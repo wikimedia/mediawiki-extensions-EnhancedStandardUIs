@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Iketsi"
+		]
+	},
+	"enhanced-standard-uis-history-grid-header-revision-label": "Révision",
+	"enhanced-standard-uis-history-grid-header-author-label": "Modifié par",
+	"enhanced-standard-uis-history-grid-header-size-label": "Taille",
+	"enhanced-standard-uis-history-grid-header-summary-label": "Résumé"
+}
