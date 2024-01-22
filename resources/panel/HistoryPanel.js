@@ -67,6 +67,12 @@ ext.enhancedUI.panel.HistoryPanel.prototype.setupGrid = function () {
 		rowSelected: 'rowSelect'
 	} );
 
+	// ERM35472 - hide reload button on history panel
+	var reloadItem = this.grid.toolbar.staticControls.items[ 1 ];
+	if ( reloadItem.icon === 'reload' ) {
+		this.grid.toolbar.staticControls.removeItems( [ reloadItem ] );
+	}
+
 	for ( var i = 1; i < $( this.grid.$table ).children().length; i++ ) {
 		var $row = $( this.grid.$table ).children()[ i ];
 		// First entry of grid is table header, so grid and data is not aligned with selector
