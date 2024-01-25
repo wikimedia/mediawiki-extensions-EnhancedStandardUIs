@@ -92,3 +92,42 @@ ext.enhancedUI.widget.HistoryGrid.prototype.selectionLimitReached = function () 
 	}
 	return false;
 };
+
+ext.enhancedUI.widget.HistoryGrid.prototype.setColumnsVisibility = function ( visible ) {
+	this.checkForColumnAddition( visible );
+	this.checkForColumnRemove( visible );
+	ext.enhancedUI.widget.HistoryGrid.parent.prototype.setColumnsVisibility.call( this, visible );
+};
+
+ext.enhancedUI.widget.HistoryGrid.prototype.checkForColumnAddition = function ( visible ) {
+	var addition = visible.filter( function ( x ) {
+		// eslint-disable-next-line es-x/no-string-prototype-includes, es-x/no-array-prototype-includes
+		return !this.visibleColumns.includes( x );
+	}.bind( this ) );
+	for ( var column in addition ) {
+		this.setPreference( addition[ column ], '1' );
+	}
+};
+
+ext.enhancedUI.widget.HistoryGrid.prototype.checkForColumnRemove = function ( visible ) {
+	var toRemove = this.visibleColumns.filter( function ( x ) {
+		// eslint-disable-next-line es-x/no-string-prototype-includes, es-x/no-array-prototype-includes
+		return !visible.includes( x );
+	} );
+	for ( var column in toRemove ) {
+		// eslint-disable-next-line es-x/no-string-prototype-includes, es-x/no-array-prototype-includes
+		if ( this.alwaysVisibleColumns.includes( toRemove[ column ] ) ) {
+			continue;
+		}
+		this.setPreference( toRemove[ column ], '0' );
+	}
+};
+
+ext.enhancedUI.widget.HistoryGrid.prototype.setPreference = function ( preference, value ) {
+	if ( !mw.user.isAnon() ) {
+		mw.loader.using( 'mediawiki.api' ).done( function () {
+			mw.user.options.set( 'history-show-' + preference, value );
+			new mw.Api().saveOption( 'history-show-' + preference, value );
+		} );
+	}
+};

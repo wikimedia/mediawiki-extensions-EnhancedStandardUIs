@@ -28,13 +28,25 @@
 		}
 	},
 	"HookHandlers": {
+		"userpreference": {
+			"class": "\\MediaWiki\\Extension\\EnhancedStandardUIs\\HookHandler\\UserPreference"
+		}
 	},
 	"Hooks": {
+		"GetPreferences": "userpreference"
 	},
 	"MessagesDirs": {
 		"EnhancedStandardUIs": [
 			"i18n"
 		]
+	},
+	"DefaultUserOptions": {
+		"history-show-revision": 1,
+		"history-show-author": 1,
+		"history-show-diff": 1,
+		"history-show-size": 0,
+		"history-show-summary": 1,
+		"history-show-tags": 0
 	},
 	"ResourceModules": {
 		"ext.enhancedstandarduis.history": {
