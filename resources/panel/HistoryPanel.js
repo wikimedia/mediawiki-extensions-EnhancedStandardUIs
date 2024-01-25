@@ -131,31 +131,33 @@ ext.enhancedUI.panel.HistoryPanel.prototype.setupGridConfig = function () {
 				headerText: mw.message( 'enhanced-standard-uis-history-grid-header-revision-label' ).text(),
 				type: 'url',
 				sortable: false,
-				urlProperty: 'revisionUrl'
+				urlProperty: 'revisionUrl',
+				hidden: !mw.user.options.get( 'history-show-revision' )
 			},
 			author: {
 				headerText: mw.message( 'enhanced-standard-uis-history-grid-header-author-label' ).text(),
 				type: 'user',
 				showImage: true,
-				sortable: false
+				sortable: false,
+				hidden: !mw.user.options.get( 'history-show-author' )
 			},
 			diff: {
 				headerText: mw.message( 'enhanced-standard-uis-history-grid-header-diff-label' ).text(),
 				type: 'text',
 				sortable: false,
-				hidden: false
+				hidden: !mw.user.options.get( 'history-show-diff' )
 			},
 			size: {
 				headerText: mw.message( 'enhanced-standard-uis-history-grid-header-size-label' ).text(),
 				type: 'text',
 				sortable: false,
-				hidden: true
+				hidden: !mw.user.options.get( 'history-show-size' )
 			},
 			summary: {
 				headerText: mw.message( 'enhanced-standard-uis-history-grid-header-summary-label' ).text(),
 				type: 'text',
 				sortable: false,
-				hidden: false,
+				hidden: !mw.user.options.get( 'history-show-summary' ),
 				width: 300,
 				valueParser: function ( val ) {
 					return new OO.ui.HtmlSnippet( val );
@@ -166,7 +168,7 @@ ext.enhancedUI.panel.HistoryPanel.prototype.setupGridConfig = function () {
 				type: 'url',
 				sortable: false,
 				urlProperty: 'tagUrl',
-				hidden: true
+				hidden: !mw.user.options.get( 'history-show-tags' )
 			}
 		},
 		data: this.historyData
