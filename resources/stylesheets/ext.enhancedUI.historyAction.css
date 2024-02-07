@@ -26,6 +26,6 @@
 	position: relative;
 }
 
-#enhanced-history-cnt .static-controls:nth-child(1) {
+#enhanced-history-cnt .static-controls:nth-child( 1 ) {
 	display: none;
 }

@@ -6,12 +6,10 @@
 		"wikimedia/mediawiki"
 	],
 	"globals": {
-		"$": "readonly",
 		"ext": "writable",
 		"mediaWiki": "readonly",
 		"jQuery": "readonly",
 		"OOJSPlus": "readonly"
 	},
-	"rules": {
-	}
+	"rules": {}
 }
