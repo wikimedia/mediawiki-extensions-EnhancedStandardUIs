@@ -3,9 +3,10 @@ ext.enhancedUI = ext.enhancedUI || {};
 ext.enhancedUI.widget = ext.enhancedUI.widget || {};
 
 ext.enhancedUI.widget.Paginator = function ( cfg ) {
+	cfg = cfg || {};
 	ext.enhancedUI.widget.Paginator.parent.call( this, cfg );
 
-	this.pageSize = 50;
+	this.pageSize = cfg.pageSize || 50;
 	this.total = 0;
 	this.loaded = 0;
 	this.rows = {};
@@ -13,7 +14,7 @@ ext.enhancedUI.widget.Paginator = function ( cfg ) {
 	this.hasPages = false;
 	this.currentPage = 0;
 	this.navigation = new OO.ui.HorizontalLayout();
-	this.$element.addClass( 'enhancedUI-allpages-paginator' );
+	this.$element.addClass( 'enhancedUI-paginator' );
 	this.$element.append( this.navigation.$element );
 
 	this.groupPaginator = new OO.ui.ButtonGroupWidget();
