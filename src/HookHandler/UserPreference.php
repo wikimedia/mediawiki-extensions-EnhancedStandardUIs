@@ -18,5 +18,13 @@ class UserPreference implements GetPreferencesHook {
 		$preferences[ 'history-show-size' ] = $api;
 		$preferences[ 'history-show-summary' ] = $api;
 		$preferences[ 'history-show-tags' ] = $api;
+		$preferences[ 'filelist-show-preview' ] = $api;
+		$preferences[ 'filelist-show-title' ] = $api;
+		$preferences[ 'filelist-show-author' ] = $api;
+		$preferences[ 'filelist-show-formatted_ts' ] = $api;
+		$preferences[ 'filelist-show-file_extension' ] = $api;
+		$preferences[ 'filelist-show-file_size' ] = $api;
+		$preferences[ 'filelist-show-categories' ] = $api;
+		$preferences[ 'filelist-show-comment' ] = $api;
 	}
 }
