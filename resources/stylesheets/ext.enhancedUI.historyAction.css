@@ -29,3 +29,20 @@
 #enhanced-history-cnt .static-controls:nth-child( 1 ) {
 	display: none;
 }
+
+.enhanced-history-revision-strikethrough .url-cell[ data-column='revision' ] .oojsplus-ui-widget-linkwidget-label {
+	text-decoration: line-through;
+	font-style: italic;
+}
+
+.enhanced-history-revision-grey .url-cell[ data-column='revision' ] .oojsplus-ui-widget-linkwidget-label {
+	color: #a5a5a5;
+}
+
+.enhanced-history-author-strikethrough .user-cell[ data-column='author' ] .user-display {
+	text-decoration: line-through;
+}
+
+.enhanced-history-summary-strikethrough .text-cell[ data-column='summary' ] {
+	text-decoration: line-through;
+}

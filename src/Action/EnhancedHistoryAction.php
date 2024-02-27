@@ -12,6 +12,7 @@ use LogEventsList;
 use MediaWiki\Extension\EnhancedStandardUIs\IHistoryPlugin;
 use MediaWiki\MainConfigNames;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Revision\RevisionRecord;
 use Message;
 use RawMessage;
 
@@ -30,6 +31,7 @@ class EnhancedHistoryAction extends HistoryAction {
 	 */
 	public function onView() {
 		$out = $this->getOutput();
+		$user = $out->getUser();
 		$request = $this->getRequest();
 		$config = $this->context->getConfig();
 		$services = MediaWikiServices::getInstance();
@@ -88,6 +90,7 @@ class EnhancedHistoryAction extends HistoryAction {
 
 		$data = [];
 		$userFactory = $services->getUserFactory();
+		$permissionManager = $services->getPermissionManager();
 		$language = $services->getContentLanguage();
 		$titleFactory = $services->getTitleFactory();
 
@@ -107,9 +110,24 @@ class EnhancedHistoryAction extends HistoryAction {
 			$historyPagePlugin[$key] = $object;
 		}
 
+		$hasPermission = $permissionManager->userHasRight( $user, 'deletedtext' );
 		$oldSize = 0;
 		foreach ( $res as $row ) {
 			$classes = [];
+			$deletedFields = $this->bitsToDeletedFields( $row->rev_deleted );
+			if ( $deletedFields['revision'] ) {
+				$classes[] = 'enhanced-history-revision-strikethrough';
+				if ( !$hasPermission ) {
+					$classes[] = 'enhanced-history-revision-grey';
+				}
+			}
+			if ( $deletedFields['author'] ) {
+				$classes[] = 'enhanced-history-author-strikethrough';
+			}
+			if ( $deletedFields['summary'] ) {
+				$classes[] = 'enhanced-history-summary-strikethrough';
+			}
+
 			$sizeDiff = $row->rev_len - $oldSize;
 			$entry['diff'] = Message::newFromKey( 'size-bytes', $sizeDiff )->parse();
 			if ( $sizeDiff < 0 ) {
@@ -120,12 +138,18 @@ class EnhancedHistoryAction extends HistoryAction {
 
 			$entry['check'] = false;
 			$entry['id'] = $row->rev_id;
-			$entry['revision'] = $language->userTimeAndDate( $row->rev_timestamp, $this->context->getUser() );
-			$entry['revisionUrl'] = $this->getTitle()->getLocalURL( [ 'oldid' => $row->rev_id ] );
-			$entry['author'] = $userFactory->newFromActorId( $row->rev_actor )->getName();
+			$entry['revision'] = $language->userTimeAndDate( $row->rev_timestamp, $user );
+			$entry['revisionUrl'] = $hasPermission || !$deletedFields['revision']
+				? $this->getTitle()->getLocalURL( [ 'oldid' => $row->rev_id ] )
+				: '';
+			$entry['author'] = $hasPermission || !$deletedFields['author']
+				? $userFactory->newFromActorId( $row->rev_actor )->getName()
+				: '';
 			$entry['size'] = Message::newFromKey( 'size-bytes', $row->rev_len )->parse();
 			$summary = new RawMessage( $row->rev_comment_text );
-			$entry['summary'] = $summary->parse();
+			$entry['summary'] = $hasPermission || !$deletedFields['summary']
+				? $summary->parse()
+				: '';
 			$entry['tags'] = $row->ts_tags;
 			$entry['tagUrl'] = $titleFactory->newFromText( 'Special:Tags' )->getLocalURL();
 
@@ -157,6 +181,34 @@ class EnhancedHistoryAction extends HistoryAction {
 				'id' => 'enhanced-history-cnt',
 				'data-history' => FormatJson::encode( $orderedData )
 			] ) );
+	}
+
+	/**
+	 * Converts revision.rev_deleted bitfield to an array with keys
+	 *
+	 * @param int $bits
+	 * @return array
+	 *   - 'revision' => Revision text
+	 *   - 'author' => Editor's username/IP address
+	 *   - 'summary' => Edit summary
+	 */
+	private function bitsToDeletedFields( $bits ): array {
+		return [
+			'revision' => $this->isDeleted( $bits, RevisionRecord::DELETED_TEXT ),
+			'author' => $this->isDeleted( $bits, RevisionRecord::DELETED_USER ),
+			'summary' => $this->isDeleted( $bits, RevisionRecord::DELETED_COMMENT ),
+		];
+	}
+
+	/**
+	 * Checks if RevisionRecord::DELETED_* field is set
+	 *
+	 * @param int $bits revision.rev_deleted bitfield
+	 * @param int $field RevisionRecord::DELETED_* field to check
+	 * @return bool
+	 */
+	private function isDeleted( $bits, $field ): bool {
+		return ( $bits & $field ) == $field;
 	}
 
 	/**
