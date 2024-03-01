@@ -14,5 +14,8 @@
 	},
 	"eslintIgnore": [
 		"vendor/**"
-	]
+	],
+	"dependencies": {
+		"eslint-plugin-jsdoc": "^48.0.2"
+	}
 }
