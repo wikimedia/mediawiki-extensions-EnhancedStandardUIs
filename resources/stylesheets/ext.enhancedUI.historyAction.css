@@ -3,7 +3,7 @@
 }
 
 .oojsplus-data-gridWidget-row:hover .oojsplus-data-gridWidget-cell.action-cell > span,
-.oojsplus-data-gridWidget-row .oojsplus-data-gridWidget-cell.action-cell:focus > span {
+.oojsplus-data-gridWidget-row .oojsplus-data-gridWidget-cell.action-cell > span:has( a:focus-visible ) {
 	opacity: 1;
 }
 
