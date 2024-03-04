@@ -12,5 +12,13 @@
 	"enhanced-standard-uis-history-grid-header-undo-title": "Поништи",
 	"enhanced-standard-uis-history-grid-header-hide-revision-title": "Сакрији измену",
 	"enhanced-standard-uis-history-compare-tool-title": "Упореди верзије",
-	"enhanced-standard-uis-history-grid-header-diff-label": "Разлика"
+	"enhanced-standard-uis-history-grid-header-diff-label": "Разлика",
+	"enhancedallpages": "Све странице",
+	"enhanced-standard-uis-allpages-include-redirect": "Прикажи преусмерења",
+	"enhanced-standard-uis-allpages-config-ns": "Подеси избор именских простора",
+	"enhanced-standard-uis-allpages-paginator-first": "Прва",
+	"enhanced-standard-uis-allpages-paginator-previous": "Претходно",
+	"enhanced-standard-uis-allpages-paginator-next": "Следеће",
+	"enhanced-standard-uis-allpages-paginator-last": "Последња",
+	"enhanced-standard-uis-allpages-redirect-title": "Преусмерење"
 }

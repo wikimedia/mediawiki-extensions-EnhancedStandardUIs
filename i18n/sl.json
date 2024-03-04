@@ -13,5 +13,16 @@
 	"enhanced-standard-uis-history-grid-header-undo-title": "Razveljavi",
 	"enhanced-standard-uis-history-grid-header-hide-revision-title": "Skrij redakcijo",
 	"enhanced-standard-uis-history-compare-tool-title": "Primerjava redakcij",
-	"enhanced-standard-uis-history-grid-header-diff-label": "Razlika"
+	"enhanced-standard-uis-history-grid-header-diff-label": "Razlika",
+	"enhancedallpages": "Vse strani",
+	"enhanced-standard-uis-allpages-include-talk-ns": "Prikaži pogovorne imenske prostore",
+	"enhanced-standard-uis-allpages-include-non-content-ns": "Prikaži nevsebinske imenske prostore",
+	"enhanced-standard-uis-allpages-include-redirect": "Prikaži preusmeritve",
+	"enhanced-standard-uis-allpages-config-ns": "Konfiguriranje izbire imenskega prostora",
+	"enhanced-standard-uis-allpages-config": "Konfiguracija",
+	"enhanced-standard-uis-allpages-paginator-first": "Prva",
+	"enhanced-standard-uis-allpages-paginator-previous": "Prejšnja",
+	"enhanced-standard-uis-allpages-paginator-next": "Naslednja",
+	"enhanced-standard-uis-allpages-paginator-last": "Zadnja",
+	"enhanced-standard-uis-allpages-redirect-title": "Preusmeritev"
 }
