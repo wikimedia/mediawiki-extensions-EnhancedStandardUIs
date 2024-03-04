@@ -14,5 +14,16 @@
 	"enhanced-standard-uis-history-compare-tool-title": "Versioune vergläichen",
 	"enhanced-standard-uis-desc": "Stellt Benotzerinterface fir Standard-MediaWiki-Benotzer-interfacen zur Verfügung",
 	"enhanced-standard-uis-history-grid-header-tags-label": "Markéierungen",
-	"enhanced-standard-uis-history-grid-header-diff-label": "Ënnerscheed"
+	"enhanced-standard-uis-history-grid-header-diff-label": "Ënnerscheed",
+	"enhancedallpages": "All Säiten",
+	"enhanced-standard-uis-allpages-include-talk-ns": "Diskussiounsnummraim weisen",
+	"enhanced-standard-uis-allpages-include-non-content-ns": "Net-Inhalts-Nummraim weisen",
+	"enhanced-standard-uis-allpages-include-redirect": "Viruleedunge weisen",
+	"enhanced-standard-uis-allpages-config-ns": "Nummraimauswiel konfiguréieren",
+	"enhanced-standard-uis-allpages-config": "Konfiguratioun",
+	"enhanced-standard-uis-allpages-paginator-first": "Éischt",
+	"enhanced-standard-uis-allpages-paginator-previous": "Vireg",
+	"enhanced-standard-uis-allpages-paginator-next": "Nächst",
+	"enhanced-standard-uis-allpages-paginator-last": "Lescht",
+	"enhanced-standard-uis-allpages-redirect-title": "Viruleedung"
 }
