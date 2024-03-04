@@ -13,5 +13,16 @@
 	"enhanced-standard-uis-history-grid-header-undo-title": "Врати",
 	"enhanced-standard-uis-history-grid-header-hide-revision-title": "Скриј преработка",
 	"enhanced-standard-uis-history-compare-tool-title": "Спореди верзии",
-	"enhanced-standard-uis-history-grid-header-diff-label": "Разлика"
+	"enhanced-standard-uis-history-grid-header-diff-label": "Разлика",
+	"enhancedallpages": "Сите страници",
+	"enhanced-standard-uis-allpages-include-talk-ns": "Прикажи разговорни именски простори",
+	"enhanced-standard-uis-allpages-include-non-content-ns": "Прикажи несодржински именски простори",
+	"enhanced-standard-uis-allpages-include-redirect": "Прикажи пренасочувања",
+	"enhanced-standard-uis-allpages-config-ns": "Постави избор на именски простори",
+	"enhanced-standard-uis-allpages-config": "Поставки",
+	"enhanced-standard-uis-allpages-paginator-first": "Прв",
+	"enhanced-standard-uis-allpages-paginator-previous": "Претходна",
+	"enhanced-standard-uis-allpages-paginator-next": "Следна",
+	"enhanced-standard-uis-allpages-paginator-last": "Последна",
+	"enhanced-standard-uis-allpages-redirect-title": "Пренасочување"
 }

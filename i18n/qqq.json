@@ -14,6 +14,7 @@
 	"enhanced-standard-uis-history-grid-header-hide-revision-title": "Label for the version history grid column which allows to hide the revision",
 	"enhanced-standard-uis-history-compare-tool-title": "Label for compare tool button to allow comparison of two selected versions",
 	"enhanced-standard-uis-history-grid-header-diff-label": "Label for the version history grid column which contains difference of the size of a revision",
+	"enhancedallpages": "Special page name for [[Special:EnhancedAllPages]] special page.\n{{Identical|AllPages}}",
 	"enhanced-standard-uis-allpages-include-talk-ns": "Label for checkbox to select talk namespaces",
 	"enhanced-standard-uis-allpages-include-non-content-ns": "Label for checkbox to select non content namespaces",
 	"enhanced-standard-uis-allpages-include-redirect": "Label for checkbox to include redirects",
@@ -23,6 +24,5 @@
 	"enhanced-standard-uis-allpages-paginator-previous": "Label for button to switch to previous panel page",
 	"enhanced-standard-uis-allpages-paginator-next": "Label for button to switch to next panel page",
 	"enhanced-standard-uis-allpages-paginator-last": "Label for button to switch to last panel page",
-	"enhancedallpages": "Special page name for [[Special:EnhancedAllPages]] special page.\n{{Identical|AllPages}}",
 	"enhanced-standard-uis-allpages-redirect-title": "Title for icon to mark link as a redirect link"
 }
