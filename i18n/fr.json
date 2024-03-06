@@ -1,11 +1,16 @@
 {
 	"@metadata": {
 		"authors": [
-			"Iketsi"
+			"Iketsi",
+			"MacOS Weed",
+			"SleaY"
 		]
 	},
 	"enhanced-standard-uis-history-grid-header-revision-label": "Révision",
 	"enhanced-standard-uis-history-grid-header-author-label": "Modifié par",
 	"enhanced-standard-uis-history-grid-header-size-label": "Taille",
-	"enhanced-standard-uis-history-grid-header-summary-label": "Résumé"
+	"enhanced-standard-uis-history-grid-header-summary-label": "Résumé",
+	"enhanced-standard-uis-allpages-config": "Configuration",
+	"enhanced-standard-uis-allpages-paginator-first": "Premier",
+	"enhanced-standard-uis-allpages-paginator-last": "Dernier"
 }
