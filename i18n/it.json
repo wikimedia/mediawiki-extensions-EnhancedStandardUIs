@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Beta16"
+			"Beta16",
+			"LametinoWiki"
 		]
 	},
 	"enhanced-standard-uis-history-grid-header-revision-label": "Versione",
@@ -14,5 +15,8 @@
 	"enhanced-standard-uis-history-compare-tool-title": "Confronta versioni",
 	"enhanced-standard-uis-history-grid-header-diff-label": "Differenza",
 	"enhancedallpages": "Tutte le pagine",
-	"enhanced-standard-uis-allpages-config": "Configurazione"
+	"enhanced-standard-uis-allpages-config": "Configurazione",
+	"enhanced-standard-uis-allpages-paginator-previous": "Precedente",
+	"enhanced-standard-uis-allpages-paginator-next": "Successivo",
+	"enhanced-standard-uis-allpages-redirect-title": "Reindirizzamento"
 }
