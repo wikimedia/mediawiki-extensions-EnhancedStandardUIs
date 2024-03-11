@@ -6,5 +6,8 @@
 	},
 	"enhancedallpages": "Բոլոր էջերը",
 	"enhanced-standard-uis-allpages-paginator-first": "Առաջին",
-	"enhanced-standard-uis-allpages-paginator-last": "Վերջին"
+	"enhanced-standard-uis-allpages-paginator-previous": "Նախորդ",
+	"enhanced-standard-uis-allpages-paginator-next": "Հաջորդ",
+	"enhanced-standard-uis-allpages-paginator-last": "Վերջին",
+	"enhanced-standard-uis-allpages-redirect-title": "Վերահղում"
 }

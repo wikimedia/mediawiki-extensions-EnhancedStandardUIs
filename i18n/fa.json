@@ -14,5 +14,16 @@
 	"enhanced-standard-uis-history-grid-header-undo-title": "واگردانی",
 	"enhanced-standard-uis-history-grid-header-hide-revision-title": "پنهان‌کردن بازبینی",
 	"enhanced-standard-uis-history-compare-tool-title": "مقایسه ویراست‌ها",
-	"enhanced-standard-uis-history-grid-header-diff-label": "تفاوت"
+	"enhanced-standard-uis-history-grid-header-diff-label": "تفاوت",
+	"enhancedallpages": "تمام صفحه‌ها",
+	"enhanced-standard-uis-allpages-include-talk-ns": "نمایش فضاهای نام بحث",
+	"enhanced-standard-uis-allpages-include-non-content-ns": "نمایش فضاهای نام غیر محتوایی",
+	"enhanced-standard-uis-allpages-include-redirect": "نمایش تغییرمسیرها",
+	"enhanced-standard-uis-allpages-config-ns": "پیکربندی فضاهای نام منتخب",
+	"enhanced-standard-uis-allpages-config": "پیکربندی",
+	"enhanced-standard-uis-allpages-paginator-first": "نخست",
+	"enhanced-standard-uis-allpages-paginator-previous": "قبلی",
+	"enhanced-standard-uis-allpages-paginator-next": "بعدی",
+	"enhanced-standard-uis-allpages-paginator-last": "آخر",
+	"enhanced-standard-uis-allpages-redirect-title": "تغییرمسیر"
 }
