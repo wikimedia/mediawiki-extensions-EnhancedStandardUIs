@@ -45,7 +45,7 @@ class AddTitleWatchInfo implements MWStakeCommonWebAPIsQueryStoreResultHook {
 				continue;
 			}
 			$isWatched = $this->watchlistManager->isWatched( $user, $title );
-			$record->set( 'watch',  $isWatched );
+			$record->set( 'watch', $isWatched );
 		}
 		$result = new ResultSet( $data, $result->getTotal() );
 	}
