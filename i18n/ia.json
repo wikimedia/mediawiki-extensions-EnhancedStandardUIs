@@ -13,5 +13,16 @@
 	"enhanced-standard-uis-history-grid-header-undo-title": "Disfacer",
 	"enhanced-standard-uis-history-grid-header-hide-revision-title": "Celar version",
 	"enhanced-standard-uis-history-compare-tool-title": "Comparar versiones",
-	"enhanced-standard-uis-history-grid-header-diff-label": "Differentia"
+	"enhanced-standard-uis-history-grid-header-diff-label": "Differentia",
+	"enhancedallpages": "Tote le paginas",
+	"enhanced-standard-uis-allpages-include-talk-ns": "Monstrar spatios de nomines de discussion",
+	"enhanced-standard-uis-allpages-include-non-content-ns": "Monstrar spatios de nomines non de contento",
+	"enhanced-standard-uis-allpages-include-redirect": "Monstrar redirectiones",
+	"enhanced-standard-uis-allpages-config-ns": "Configurar le selection de spatios de nomines",
+	"enhanced-standard-uis-allpages-config": "Configuration",
+	"enhanced-standard-uis-allpages-paginator-first": "Prime",
+	"enhanced-standard-uis-allpages-paginator-previous": "Precedente",
+	"enhanced-standard-uis-allpages-paginator-next": "Sequente",
+	"enhanced-standard-uis-allpages-paginator-last": "Ultime",
+	"enhanced-standard-uis-allpages-redirect-title": "Redirection"
 }
