@@ -226,7 +226,7 @@ class EnhancedHistoryAction extends HistoryAction {
 		$conds = $info['conds'] ?? [];
 		$options = $info['options'] ?? [];
 		$join_conds = $info['join_conds'] ?? [];
-		list( $tables, $fields, $conds, $fname, $options, $join_conds ) =
+		[ $tables, $fields, $conds, $fname, $options, $join_conds ] =
 			[ $tables, $fields, $conds, $fname, $options, $join_conds ];
 
 		$db = $services->getDBLoadBalancer()->getConnection( DB_REPLICA );
