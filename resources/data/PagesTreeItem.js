@@ -64,10 +64,10 @@ ext.enhancedUI.data.PagesTreeItem.prototype.addPageInfo = function () {
 		framed: false,
 		role: 'button',
 		icon: 'info',
-		href: mw.util.getUrl( this.buttonCfg.href, {
+		href: mw.util.getUrl( this.buttonCfg.title, {
 			action: 'info'
 		} ),
-		classes: [ 'oojsplus-data-tree-page-action' ]
+		classes: [ 'oojsplus-data-tree-page-action', 'page-tree-action-info' ]
 	} );
 	$( this.pageInfo.$element ).attr( 'data-title', this.buttonCfg.title );
 
