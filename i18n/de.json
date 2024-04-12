@@ -49,5 +49,8 @@
 	"enhanced-standard-uis-filelist-dialog-page-history-label": "Versionsgeschichte",
 	"enhanced-standard-uis-filelist-dialog-page-data-label": "Metadaten",
 	"enhanced-standard-uis-filelist-dialog-page-data-no-metadata-label": "Für diese Datei sind keine Metadaten verfügbar",
-	"enhanced-standard-uis-filelist-notify-copy-clipboard": "Der Dateilink wurde in die Zwischenablage kopiert"
+	"enhanced-standard-uis-filelist-notify-copy-clipboard": "Der Dateilink wurde in die Zwischenablage kopiert",
+	"enhanced-standard-uis-allpages-filter-pages-label": "Seiten filtern",
+	"enhanced-standard-uis-allpages-namespace-list-label": "Namensraumliste",
+	"enhanced-standard-uis-paginator-aria-label": "Paginierung"
 }

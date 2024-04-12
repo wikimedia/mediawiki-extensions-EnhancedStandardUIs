@@ -49,5 +49,8 @@
 	"enhanced-standard-uis-filelist-dialog-page-history-label": "Label for booklet menu to select version history page",
 	"enhanced-standard-uis-filelist-dialog-page-data-label": "Label for booklet menu to select meta data page",
 	"enhanced-standard-uis-filelist-dialog-page-data-no-metadata-label": "Label on dialog page if there is no metadata for this file",
-	"enhanced-standard-uis-filelist-notify-copy-clipboard": "Notification text for copy file link to clipboard"
+	"enhanced-standard-uis-filelist-notify-copy-clipboard": "Notification text for copy file link to clipboard",
+	"enhanced-standard-uis-allpages-filter-pages-label": "Label for input field to filter pages",
+	"enhanced-standard-uis-allpages-namespace-list-label": "Aria label for menu to select namespace",
+	"enhanced-standard-uis-paginator-aria-label": "Aria label for pagination"
 }

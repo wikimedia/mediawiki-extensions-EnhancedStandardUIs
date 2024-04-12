@@ -12,12 +12,12 @@ $specialPageAliases = [];
  * English
  */
 $specialPageAliases['en'] = [
-	'EnhancedAllPages' => [ 'All Pages' ],
+	'EnhancedAllPages' => [ 'Pages' ],
 ];
 
 /**
  * Deutsch
  */
 $specialPageAliases['de'] = [
-	'EnhancedAllPages' => [ 'Alle Seiten' ],
+	'EnhancedAllPages' => [ 'Seiten' ],
 ];
