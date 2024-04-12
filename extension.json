@@ -27,6 +27,11 @@
 		"EnhancedAllPagesAlias": "languages/EnhancedAllPages.i18n.alias.php",
 		"EnhancedFilelist": "languages/EnhancedFilelist.i18n.alias.php"
 	},
+	"MessagesDirs": {
+		"EnhancedStandardUIs": [
+			"i18n"
+		]
+	},
 	"SpecialPages": {
 		"EnhancedAllPages": "MediaWiki\\Extension\\EnhancedStandardUIs\\Special\\EnhancedAllPages",
 		"EnhancedFilelist": "MediaWiki\\Extension\\EnhancedStandardUIs\\Special\\EnhancedFilelist"
@@ -39,7 +44,18 @@
 		"EnhancedUIsAllPagesPaginatorOffset": {
 			"value": 0,
 			"public": true
+		},
+		"EnhancedUIsAllPagesOverride": {
+			"value": false
 		}
+	},
+	"Hooks": {
+		"GetPreferences": "userpreference",
+		"MWStakeCommonWebAPIsQueryStoreResult": [
+			"addTitleWatchInfo",
+			"addFilePath"
+		],
+		"SpecialPage_initList": "special-pages"
 	},
 	"HookHandlers": {
 		"userpreference": {
@@ -52,19 +68,11 @@
 		"addFilePath": {
 			"class": "\\MediaWiki\\Extension\\EnhancedStandardUIs\\HookHandler\\AddFileImagePath",
 			"services": [ "TitleFactory", "RepoGroup" ]
+		},
+		"special-pages": {
+			"class": "MediaWiki\\Extension\\EnhancedStandardUIs\\HookHandler\\OverwriteSpecialPages",
+			"services": [ "MainConfig" ]
 		}
-	},
-	"Hooks": {
-		"GetPreferences": "userpreference",
-		"MWStakeCommonWebAPIsQueryStoreResult": [
-			"addTitleWatchInfo",
-			"addFilePath"
-		]
-	},
-	"MessagesDirs": {
-		"EnhancedStandardUIs": [
-			"i18n"
-		]
 	},
 	"DefaultUserOptions": {
 		"history-show-revision": 1,
@@ -73,6 +81,9 @@
 		"history-show-size": 0,
 		"history-show-summary": 1,
 		"history-show-tags": 0,
+		"allpages-show-talk": 0,
+		"allpages-show-non-content": 0,
+		"allpages-show-redirect": 1,
 		"filelist-show-preview": 1,
 		"filelist-show-title": 1,
 		"filelist-show-author": 1,
@@ -133,9 +144,10 @@
 				"data/PagesTreeItem.js",
 				"data/store/Store.js"
 			],
-			"styles": [
-				"stylesheets/ext.enhancedUI.special.allpages.css"
-			],
+			"styles": {
+				"stylesheets/ext.enhancedUI.special.allpages.css": {},
+				"stylesheets/ext.enhancedUI.special.allpages.sm.css": { "media": "all and ( max-width: 767px )" }
+			},
 			"messages": [
 				"enhanced-standard-uis-allpages-include-talk-ns",
 				"enhanced-standard-uis-allpages-include-non-content-ns",
@@ -148,7 +160,9 @@
 				"enhanced-standard-uis-allpages-paginator-previous",
 				"enhanced-standard-uis-allpages-paginator-next",
 				"enhanced-standard-uis-allpages-paginator-last",
-				"enhanced-standard-uis-allpages-redirect-title"
+				"enhanced-standard-uis-allpages-redirect-title",
+				"enhanced-standard-uis-allpages-namespace-list-label",
+				"enhanced-standard-uis-paginator-aria-label"
 			],
 			"dependencies": [
 				"oojs-ui",
