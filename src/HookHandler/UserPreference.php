@@ -26,5 +26,8 @@ class UserPreference implements GetPreferencesHook {
 		$preferences[ 'filelist-show-file_size' ] = $api;
 		$preferences[ 'filelist-show-categories' ] = $api;
 		$preferences[ 'filelist-show-comment' ] = $api;
+		$preferences[ 'allpages-show-talk' ] = $api;
+		$preferences[ 'allpages-show-non-content' ] = $api;
+		$preferences[ 'allpages-show-redirect' ] = $api;
 	}
 }

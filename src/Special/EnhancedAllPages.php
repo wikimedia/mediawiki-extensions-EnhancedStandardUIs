@@ -1,6 +1,6 @@
 <?php
 
-namespace Mediawiki\Extension\EnhancedStandardUIs\Special;
+namespace MediaWiki\Extension\EnhancedStandardUIs\Special;
 
 use ExtensionRegistry;
 use Html;
@@ -19,19 +19,15 @@ class EnhancedAllPages extends SpecialPage {
 	 * @inheritDoc
 	 */
 	public function execute( $subPage ) {
-		$out = $this->getOutput();
+		parent::execute( $subPage );
 
-		$this->setHeaders();
-		$this->outputHeader();
-		$out->setPreventClickjacking( false );
-		$this->setHeaders();
-		$out->enableOOUI();
+		$this->getOutput()->enableOOUI();
 
-		$out->addModules( [ 'ext.enhancedstandarduis.special.allpages' ] );
+		$this->getOutput()->addModules( 'ext.enhancedstandarduis.special.allpages' );
 		$modules = ExtensionRegistry::getInstance()->getAttribute(
 			'EnhancedStandardUIsAllPagesPluginModules'
 		);
-		$out->addModules( $modules );
+		$this->getOutput()->addModules( $modules );
 
 		$html = Html::openElement(
 			'div',
@@ -41,7 +37,7 @@ class EnhancedAllPages extends SpecialPage {
 		);
 		$html .= $this->getSearchWidget();
 		$html .= Html::closeElement( 'div' );
-		$out->addHTML( $html );
+		$this->getOutput()->addHTML( $html );
 	}
 
 	/**
@@ -58,7 +54,8 @@ class EnhancedAllPages extends SpecialPage {
 			'class' => 'allpages-filter-cnt'
 		] );
 		$search .= new FieldLayout( $searchInput, [
-			'label' => 'Filter pages'
+			'label' => $this->msg( 'enhanced-standard-uis-allpages-filter-pages-label' )->text(),
+			'align' => 'left'
 		] );
 		$search .= Html::closeElement( 'div' );
 

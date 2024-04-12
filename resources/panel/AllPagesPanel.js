@@ -9,6 +9,7 @@ require( '../data/store/Store.js' );
 
 ext.enhancedUI.panel.AllPagesPanel = function ( cfg ) {
 	ext.enhancedUI.panel.AllPagesPanel.super.apply( this, cfg );
+	this.mobileView = cfg.mobileView;
 	this.pageSize = 50;
 	this.store = new ext.enhancedUI.data.store.Store();
 	this.$element = $( '<div>' ).addClass( 'enhanced-ui-allpages-panel' );
@@ -34,6 +35,20 @@ ext.enhancedUI.panel.AllPagesPanel.prototype.setupWidgets = function () {
 
 ext.enhancedUI.panel.AllPagesPanel.prototype.setupMenu = function () {
 	var $menuCnt = $( '<div>' ).addClass( 'enhanced-ui-allpages-panel-menu' );
+	if ( this.mobileView ) {
+		$menuCnt.addClass( 'collapsed' );
+		$menuCnt.addClass( 'oo-ui-icon-next' );
+		$( $menuCnt ).on( 'click', function () {
+			// eslint-disable-next-line no-jquery/no-class-state
+			if ( $( this ).hasClass( 'collapsed' ) ) {
+				$( this ).removeClass( 'collapsed' );
+				$( this ).removeClass( 'oo-ui-icon-next' );
+			} else {
+				$( this ).addClass( 'collapsed' );
+				$( this ).addClass( 'oo-ui-icon-next' );
+			}
+		} );
+	}
 	this.namespaceMenu = new ext.enhancedUI.widget.NamespacesMenu();
 	this.selectedNS = this.namespaceMenu.getSelectedNamespaceId();
 	this.includeRedirect = this.namespaceMenu.getRedirectStatus();
@@ -142,7 +157,7 @@ ext.enhancedUI.panel.AllPagesPanel.prototype.sortData = function ( data ) {
 	var sortedData = [];
 	var lastLetter = data[ 0 ].dbkey.slice( 0, 1 );
 	for ( var i in data ) {
-		if ( !this.includeRedirect && data[ i ].redirect === '1' ) {
+		if ( !this.includeRedirect && data[ i ].redirect === true ) {
 			continue;
 		}
 		var startLetter = data[ i ].dbkey.slice( 0, 1 );

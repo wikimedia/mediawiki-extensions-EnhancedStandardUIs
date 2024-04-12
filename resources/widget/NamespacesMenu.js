@@ -25,7 +25,9 @@ ext.enhancedUI.widget.NamespacesMenu.prototype.setupConfigButton = function () {
 	this.configPopupButton = new OO.ui.PopupButtonWidget( {
 		icon: 'settings',
 		framed: false,
-		popup: popupContent
+		popup: popupContent,
+		label: mw.message( 'enhanced-standard-uis-allpages-config' ).text(),
+		invisibleLabel: true
 	} );
 	var fieldlayout = new OO.ui.FieldLayout( this.configPopupButton, {
 		align: 'inline',
@@ -37,6 +39,8 @@ ext.enhancedUI.widget.NamespacesMenu.prototype.setupConfigButton = function () {
 
 ext.enhancedUI.widget.NamespacesMenu.prototype.setupNamespaceMenu = function () {
 	this.selectWidget = new OO.ui.OutlineSelectWidget();
+	this.selectWidget.$element.attr( 'aria-label',
+		mw.message( 'enhanced-standard-uis-allpages-namespace-list-label' ).text() );
 	this.selectWidget.connect( this, {
 		select: 'namespaceSelection'
 	} );
@@ -52,9 +56,14 @@ ext.enhancedUI.widget.NamespacesMenu.prototype.setupNamespaceMenu = function () 
 };
 
 ext.enhancedUI.widget.NamespacesMenu.prototype.getPopupContent = function () {
-	this.includeTalkNS = new OOJSPlus.ui.widget.CheckboxInputWidget();
+	this.includeTalkNS = new OOJSPlus.ui.widget.CheckboxInputWidget( {
+		selected: mw.user.options.get( 'allpages-show-talk' )
+	} );
 	this.includeTalkNS.connect( this, {
-		change: 'updateNSMenu'
+		change: function () {
+			this.updatePreference( 'talk', this.includeTalkNS.isSelected() );
+			this.updateNSMenu();
+		}
 	} );
 	var includeTalkLayout = new OO.ui.FieldLayout(
 		this.includeTalkNS,
@@ -63,9 +72,14 @@ ext.enhancedUI.widget.NamespacesMenu.prototype.getPopupContent = function () {
 			align: 'inline'
 		}
 	);
-	this.includeNonContentNS = new OOJSPlus.ui.widget.CheckboxInputWidget();
+	this.includeNonContentNS = new OOJSPlus.ui.widget.CheckboxInputWidget( {
+		selected: mw.user.options.get( 'allpages-show-non-content' )
+	} );
 	this.includeNonContentNS.connect( this, {
-		change: 'updateNSMenu'
+		change: function () {
+			this.updatePreference( 'non-content', this.includeNonContentNS.isSelected() );
+			this.updateNSMenu();
+		}
 	} );
 	var includeNonContentLayout = new OO.ui.FieldLayout(
 		this.includeNonContentNS,
@@ -75,7 +89,7 @@ ext.enhancedUI.widget.NamespacesMenu.prototype.getPopupContent = function () {
 		}
 	);
 	this.includeRedirect = new OOJSPlus.ui.widget.CheckboxInputWidget( {
-		selected: true
+		selected: mw.user.options.get( 'allpages-show-redirect' )
 	} );
 	this.includeRedirect.connect( this, {
 		change: 'updateRedirect'
@@ -111,17 +125,28 @@ ext.enhancedUI.widget.NamespacesMenu.prototype.updateNSMenu = function () {
 	for ( var nsId in this.namespaces ) {
 		var namespace = this.namespaces[ nsId ];
 		if ( includeTalk && namespace.isTalk ) {
-			var relatedNS = this.namespaces[ nsId - 1 ];
-			if ( !relatedNS.isContent && !includeNonContent ) {
+			var namespaceTalkId = namespace.id;
+			// eslint-disable-next-line
+			var relatedNS = this.namespaces.filter( function ( ns ) {
+				// eslint-disable-next-line no-loop-func
+				return ns.id === ( namespaceTalkId - 1 );
+			} );
+			if ( !relatedNS ) {
 				continue;
 			}
-			this.nsOptions.push(
-				new ext.enhancedUI.widget.NamespaceOptionWidget( {
-					data: namespace.id,
-					label: namespace.name,
-					count: namespace.pageCount
-				} )
-			);
+			if ( !relatedNS[ 0 ].isContent && !includeNonContent ) {
+				continue;
+			}
+			var option = new ext.enhancedUI.widget.NamespaceOptionWidget( {
+				data: namespace.id,
+				label: namespace.name,
+				count: namespace.pageCount
+			} );
+			if ( namespaceTalkId === 1 ) {
+				this.nsOptions.splice( 1, 0, option );
+			} else {
+				this.nsOptions.push( option );
+			}
 			continue;
 		}
 		if ( ( !includeNonContent && !namespace.isContent ) ||
@@ -151,9 +176,23 @@ ext.enhancedUI.widget.NamespacesMenu.prototype.namespaceSelection = function () 
 };
 
 ext.enhancedUI.widget.NamespacesMenu.prototype.updateRedirect = function () {
+	this.updatePreference( 'redirect', this.includeRedirect.isSelected() );
 	this.emit( 'redirectChange', this.includeRedirect.isSelected() );
 };
 
 ext.enhancedUI.widget.NamespacesMenu.prototype.getRedirectStatus = function () {
 	return this.includeRedirect.isSelected();
+};
+
+ext.enhancedUI.widget.NamespacesMenu.prototype.updatePreference = function ( preference, value ) {
+	var val = '0';
+	if ( value ) {
+		val = '1';
+	}
+	if ( !mw.user.isAnon() ) {
+		mw.loader.using( 'mediawiki.api' ).done( function () {
+			mw.user.options.set( 'allpages-show-' + preference, val );
+			new mw.Api().saveOption( 'allpages-show-' + preference, val );
+		} );
+	}
 };

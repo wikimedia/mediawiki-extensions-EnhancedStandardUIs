@@ -15,6 +15,8 @@ ext.enhancedUI.widget.Paginator = function ( cfg ) {
 	this.currentPage = 0;
 	this.navigation = new OO.ui.HorizontalLayout();
 	this.$element.addClass( 'enhancedUI-paginator' );
+	this.$element.attr( 'aria-label',
+		mw.message( 'enhanced-standard-uis-paginator-aria-label' ).text() );
 	this.$element.append( this.navigation.$element );
 
 	this.groupPaginator = new OO.ui.ButtonGroupWidget();
@@ -22,7 +24,7 @@ ext.enhancedUI.widget.Paginator = function ( cfg ) {
 
 OO.inheritClass( ext.enhancedUI.widget.Paginator, OO.ui.Widget );
 
-ext.enhancedUI.widget.Paginator.static.tagName = 'div';
+ext.enhancedUI.widget.Paginator.static.tagName = 'nav';
 
 ext.enhancedUI.widget.Paginator.prototype.init = function ( total ) {
 	this.total = total;
@@ -79,6 +81,8 @@ ext.enhancedUI.widget.Paginator.prototype.createPageButtons = function () {
 	this.buttonSelect = new OO.ui.ButtonSelectWidget( {
 		items: buttons
 	} );
+	this.buttonSelect.$element.attr( 'aria-label',
+		mw.message( '' ).text() );
 	this.buttonSelect.selectItem( this.buttonSelect.findFirstSelectableItem() );
 	this.buttonSelect.connect( this, {
 		select: 'selectNumberButton'
