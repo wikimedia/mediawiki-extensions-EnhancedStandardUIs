@@ -4,7 +4,7 @@
 			"Miriam Schlindwein"
 		]
 	},
-	"enhanced-standard-uis-desc": "{{desc|name=EnhancedStandardUIs|url=https:\/\/www.mediawiki.org\/wiki\/Extension:EnhancedStandardUIs}}",
+	"enhanced-standard-uis-desc": "{{desc|name=EnhancedStandardUIs|url=https://www.mediawiki.org/wiki/Extension:EnhancedStandardUIs}}",
 	"enhanced-standard-uis-history-grid-header-revision-label": "Label for the version history grid column which contains the revision entry of a page",
 	"enhanced-standard-uis-history-grid-header-author-label": "Label for the version history grid column which contains the author of the revision",
 	"enhanced-standard-uis-history-grid-header-size-label": "Label for the version history grid column which contains the size of a revision",
