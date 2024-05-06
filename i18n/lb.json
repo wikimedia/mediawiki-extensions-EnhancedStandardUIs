@@ -25,5 +25,18 @@
 	"enhanced-standard-uis-allpages-paginator-previous": "Vireg",
 	"enhanced-standard-uis-allpages-paginator-next": "Nächst",
 	"enhanced-standard-uis-allpages-paginator-last": "Lescht",
-	"enhanced-standard-uis-allpages-redirect-title": "Viruleedung"
+	"enhanced-standard-uis-allpages-redirect-title": "Viruleedung",
+	"enhanced-standard-uis-filelist-grid-author-title": "Auteur",
+	"enhanced-standard-uis-filelist-grid-date-title": "Datum",
+	"enhanced-standard-uis-filelist-grid-type-title": "Typ",
+	"enhanced-standard-uis-filelist-grid-size-title": "Gréisst",
+	"enhanced-standard-uis-filelist-grid-categories-title": "Kategorien",
+	"enhanced-standard-uis-filelist-grid-reupload-title": "Eroplueden",
+	"enhanced-standard-uis-filelist-grid-delete-title": "Läschen",
+	"enhanced-standard-uis-filelist-panel-search-placeholder-label": "Fichier sichen",
+	"enhanced-standard-uis-filelist-panel-new-file-label": "Neie Fichier",
+	"enhanced-standard-uis-filelist-panel-list-label": "Lëscht",
+	"enhanced-standard-uis-filelist-dialog-action-close-title": "Zoumaachen",
+	"enhanced-standard-uis-filelist-dialog-action-done-label": "Fäerdeg",
+	"enhanced-standard-uis-filelist-dialog-history-grid-version": "Versioun"
 }
