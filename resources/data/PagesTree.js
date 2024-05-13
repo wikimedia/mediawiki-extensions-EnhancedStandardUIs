@@ -6,7 +6,7 @@ require( './PagesTreeItem.js' );
 
 ext.enhancedUI.data.PagesTree = function ( cfg ) {
 	cfg = cfg || {};
-	cfg.id = 'enhanced-pages-tree';
+	cfg.classes = [ 'enhanced-pages-tree' ];
 	cfg.allowDeletions = false;
 	cfg.allowAdditions = false;
 	cfg.data = this.prepareData( cfg.pages );

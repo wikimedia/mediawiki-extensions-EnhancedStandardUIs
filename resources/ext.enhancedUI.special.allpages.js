@@ -4,7 +4,10 @@
 		require( './panel/AllPagesPanel.js' );
 		/* eslint-disable-next-line no-jquery/no-global-selector */
 		var $allPagesCnt = $( '#enhanced-ui-allpages-cnt' );
-		var allPagesPanel = new ext.enhancedUI.panel.AllPagesPanel();
+		var isMobile = $( window ).width() < 767;
+		var allPagesPanel = new ext.enhancedUI.panel.AllPagesPanel( {
+			mobileView: isMobile
+		} );
 		$allPagesCnt.append( allPagesPanel.$element );
 
 		var paginatorOffsetJson = require( './addPaginatorOffset.json' );

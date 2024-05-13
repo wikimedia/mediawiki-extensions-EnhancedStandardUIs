@@ -47,7 +47,8 @@ ext.enhancedUI.data.PagesTreeItem.prototype.addRedirectIcon = function () {
 		return;
 	}
 	this.redirectIcon = new OO.ui.IconWidget( {
-		title: mw.message( 'enhanced-standard-uis-allpages-redirect-title' ).text(),
+		label: mw.message( 'enhanced-standard-uis-allpages-redirect-title' ).text(),
+		invisibleLabel: true,
 		icon: 'share',
 		classes: [ 'oojsplus-data-tree-page-redirect' ]
 	} );

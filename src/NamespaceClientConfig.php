@@ -27,7 +27,7 @@ class NamespaceClientConfig {
 		$namespaceInfo = $services->getNamespaceInfo();
 		$namespaces = [];
 		foreach ( $lang->getFormattedNamespaces() as $ns => $title ) {
-			$namespaces[$ns] = [
+			$namespaces[] = [
 				'id' => $ns,
 				'name' => $title,
 				'isContent' => $namespaceInfo->isContent( $ns ),
@@ -35,6 +35,9 @@ class NamespaceClientConfig {
 				'pageCount' => (int)( $pageCounts[$ns] ?? 0 )
 			];
 		}
+		usort( $namespaces, static function ( $a, $b ) {
+			return $a[ 'name' ] <=> $b[ 'name' ];
+		} );
 
 		return $namespaces;
 	}
