@@ -37,5 +37,8 @@
 	"enhanced-standard-uis-filelist-dialog-action-done-label": "Fatto",
 	"enhanced-standard-uis-filelist-dialog-history-grid-version": "Versione",
 	"enhanced-standard-uis-filelist-dialog-page-preview-label": "Anteprima",
-	"enhanced-standard-uis-filelist-dialog-page-data-label": "Metadati"
+	"enhanced-standard-uis-filelist-dialog-page-data-label": "Metadati",
+	"enhanced-standard-uis-allpages-filter-pages-label": "Filtra pagine",
+	"enhanced-standard-uis-allpages-namespace-list-label": "Elenco namespace",
+	"enhanced-standard-uis-paginator-aria-label": "Impaginazione"
 }

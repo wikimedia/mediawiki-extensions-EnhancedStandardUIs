@@ -49,5 +49,8 @@
 	"enhanced-standard-uis-filelist-dialog-page-history-label": "היסטוריית גרסאות",
 	"enhanced-standard-uis-filelist-dialog-page-data-label": "מטא־נתונים",
 	"enhanced-standard-uis-filelist-dialog-page-data-no-metadata-label": "אין מטא־נתונים זמינים עבור הקובץ הזה",
-	"enhanced-standard-uis-filelist-notify-copy-clipboard": "קישור הקובץ הועתק ללוח"
+	"enhanced-standard-uis-filelist-notify-copy-clipboard": "קישור הקובץ הועתק ללוח",
+	"enhanced-standard-uis-allpages-filter-pages-label": "סינון דפים",
+	"enhanced-standard-uis-allpages-namespace-list-label": "רשימת מרחבי שם",
+	"enhanced-standard-uis-paginator-aria-label": "חלוקה לדפים"
 }
