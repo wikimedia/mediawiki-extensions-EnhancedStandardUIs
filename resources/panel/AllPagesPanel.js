@@ -18,6 +18,7 @@ ext.enhancedUI.panel.AllPagesPanel = function ( cfg ) {
 	this.searchWidget.connect( this, {
 		change: 'onFilterInput'
 	} );
+	this.searchWidget.$indicator.attr( 'tabindex', 0 );
 
 	this.setupWidgets();
 	this.getPages();
@@ -30,6 +31,8 @@ ext.enhancedUI.panel.AllPagesPanel.prototype.setupWidgets = function () {
 	this.$contentCnt = $( '<div>' ).addClass( 'enhanced-ui-allpages-panel-content' );
 	this.setupPaginator();
 	this.setupTree();
+	this.$resultCounter = $( '<div>' ).attr( 'aria-live', 'polite' ).addClass( 'visually-hidden' );
+	this.$contentCnt.append( this.$resultCounter );
 	this.$element.append( this.$contentCnt );
 };
 
@@ -143,9 +146,17 @@ ext.enhancedUI.panel.AllPagesPanel.prototype.onFilterInput = function () {
 	this.store.loadPages( this.selectedNS, searchString ).done( function ( data ) {
 		var sortedData = this.sortData( data );
 		this.pages = sortedData;
+		this.updateResults();
 		this.paginator.init( Math.ceil( this.store.getTotal() / this.pageSize ) );
 		this.updatePages();
 	}.bind( this ) );
+};
+
+ext.enhancedUI.panel.AllPagesPanel.prototype.updateResults = function () {
+	var length = this.pages.length;
+	this.$resultCounter.text(
+		mw.message( 'enhanced-standard-uis-allpages-filter-results-label', length ).text()
+	);
 };
 
 ext.enhancedUI.panel.AllPagesPanel.prototype.sortData = function ( data ) {
