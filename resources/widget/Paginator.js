@@ -13,6 +13,8 @@ ext.enhancedUI.widget.Paginator = function ( cfg ) {
 	this.range = { start: 0, end: 0 };
 	this.hasPages = false;
 	this.currentPage = 0;
+	this.splitPageButtons = false;
+	this.splitBreakPoint = cfg.splitBreakPoint || 5;
 	this.navigation = new OO.ui.HorizontalLayout();
 	this.$element.addClass( 'enhancedUI-paginator' );
 	this.$element.attr( 'aria-label',
@@ -71,11 +73,17 @@ ext.enhancedUI.widget.Paginator.prototype.createBackButton = function () {
 
 ext.enhancedUI.widget.Paginator.prototype.createPageButtons = function () {
 	var buttons = [];
+	if ( this.numberOfPages > 8 ) {
+		this.splitPageButtons = true;
+	}
 	for ( var i = 0; i <= this.numberOfPages; i++ ) {
 		var button = new OO.ui.ButtonOptionWidget( {
 			label: ( i + 1 ).toString(),
 			data: i
 		} );
+		if ( this.splitPageButtons && i > this.splitBreakPoint ) {
+			button.toggle( false );
+		}
 		buttons.push( button );
 	}
 	this.buttonSelect = new OO.ui.ButtonSelectWidget( {
@@ -136,6 +144,30 @@ ext.enhancedUI.widget.Paginator.prototype.updateControls = function () {
 	this.firstButton.setDisabled( this.currentPage === 0 );
 	this.nextButton.setDisabled( this.currentPage === this.numberOfPages );
 	this.lastButton.setDisabled( this.currentPage === this.numberOfPages );
+
+	if ( !this.splitPageButtons ) {
+		return;
+	}
+	var minRange = this.currentPage - 2;
+	var maxRange = this.currentPage + 2;
+	if ( minRange < 0 ) {
+		minRange = 0;
+		maxRange = this.currentPage + 4;
+	}
+	if ( maxRange > this.numberOfPages ) {
+		maxRange = this.numberOfPages;
+		minRange = this.currentPage - 4;
+	}
+
+	this.buttonSelect.items.forEach( function ( button ) {
+		if ( minRange <= button.data && button.data <= maxRange ) {
+			button.toggle( true );
+		} else {
+			if ( button.isVisible() ) {
+				button.toggle( false );
+			}
+		}
+	} );
 };
 
 ext.enhancedUI.widget.Paginator.prototype.first = function () {
