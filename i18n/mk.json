@@ -49,5 +49,8 @@
 	"enhanced-standard-uis-filelist-dialog-page-history-label": "Историја на верзиите",
 	"enhanced-standard-uis-filelist-dialog-page-data-label": "Метаподатоци",
 	"enhanced-standard-uis-filelist-dialog-page-data-no-metadata-label": "Нема достапни метаподатоци за оваа податотека",
-	"enhanced-standard-uis-filelist-notify-copy-clipboard": "Податотечната врска е прекопирана во меѓускладот"
+	"enhanced-standard-uis-filelist-notify-copy-clipboard": "Податотечната врска е прекопирана во меѓускладот",
+	"enhanced-standard-uis-allpages-filter-pages-label": "Филтрирај страници",
+	"enhanced-standard-uis-allpages-namespace-list-label": "Список на имен. простори",
+	"enhanced-standard-uis-paginator-aria-label": "Пагинација"
 }
