@@ -49,5 +49,8 @@
 	"enhanced-standard-uis-filelist-dialog-page-history-label": "Historia de versiones",
 	"enhanced-standard-uis-filelist-dialog-page-data-label": "Metadatos",
 	"enhanced-standard-uis-filelist-dialog-page-data-no-metadata-label": "Necun metadatos disponibile pro iste file",
-	"enhanced-standard-uis-filelist-notify-copy-clipboard": "Ligamine al file copiate al area de transferentia"
+	"enhanced-standard-uis-filelist-notify-copy-clipboard": "Ligamine al file copiate al area de transferentia",
+	"enhanced-standard-uis-allpages-filter-pages-label": "Filtrar paginas",
+	"enhanced-standard-uis-allpages-namespace-list-label": "Lista de spatios de nomines",
+	"enhanced-standard-uis-paginator-aria-label": "Pagination"
 }
