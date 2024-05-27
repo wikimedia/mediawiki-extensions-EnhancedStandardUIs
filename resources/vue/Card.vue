@@ -1,14 +1,14 @@
 <template>
 	<div id="enhanced-files-tiles-cnt" class="enhanced-files-overview">
-		<ul class="enhanced-files-tiles">
+		<div class="enhanced-files-tiles">
 			<cdx-card
 				v-for="card in cards"
 				:key="card.id"
 				class="enhanced-files-file-card"
 				:thumbnail="card.thumbnail"
 				tabindex="0"
-				@click="onImageClick( card )"
-				@keyup.enter="onImageClick( card )">
+				@click="onImageClick( $event,card )"
+				@keyup.enter="onImageClick( $event,card )">
 				<template #title>
 					{{ card.title }}
 					<cdx-button
@@ -20,7 +20,7 @@
 					</cdx-button>
 				</template>
 			</cdx-card>
-		</ul>
+		</div>
 	</div>
 </template>
 
@@ -52,9 +52,12 @@ module.exports = defineComponent( {
 		onShareClick( event, fileUrl ) {
 			navigator.clipboard.writeText( fileUrl );
 			mw.notify( mw.message( 'enhanced-standard-uis-filelist-notify-copy-clipboard' ).text() );
-			event.stopPropagation()
+			event.stopPropagation();
 		},
-		onImageClick( card ) {
+		onImageClick( event, card ) {
+			if ( event.target.classList.contains( 'cdx-button') ) {
+				return;
+			}
 			var windowManager = new OO.ui.WindowManager();
 			$( document.body ).append( windowManager.$element );
 			var infoDialog = new ext.enhancedUI.dialog.FileInfoDialog( {

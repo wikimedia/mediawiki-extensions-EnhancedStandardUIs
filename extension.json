@@ -47,6 +47,9 @@
 		},
 		"EnhancedUIsAllPagesOverride": {
 			"value": false
+		},
+		"EnhancedUIsExtendedFilelistOverride": {
+			"value": false
 		}
 	},
 	"Hooks": {
@@ -225,7 +228,8 @@
 				"enhanced-standard-uis-filelist-dialog-page-history-label",
 				"enhanced-standard-uis-filelist-dialog-page-data-label",
 				"enhanced-standard-uis-filelist-dialog-page-data-no-metadata-label",
-				"enhanced-standard-uis-filelist-notify-copy-clipboard"
+				"enhanced-standard-uis-filelist-notify-copy-clipboard",
+				"enhanced-standard-uis-filelist-grid-preview-title"
 			],
 			"dependencies": [
 				"oojs-ui",
