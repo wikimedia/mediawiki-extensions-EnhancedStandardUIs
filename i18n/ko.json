@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ykhwong"
+			"Ykhwong",
+			"Markingdots"
 		]
 	},
 	"enhanced-standard-uis-history-grid-header-size-label": "크기",
@@ -32,5 +33,6 @@
 	"enhanced-standard-uis-filelist-dialog-page-history-label": "편집 역사",
 	"enhanced-standard-uis-filelist-dialog-page-data-label": "메타데이터",
 	"enhanced-standard-uis-filelist-dialog-page-data-no-metadata-label": "이 파일에 사용할 수 있는 메타데이터가 없습니다",
-	"enhanced-standard-uis-filelist-notify-copy-clipboard": "파일 링크가 클립보드에 복사되었습니다"
+	"enhanced-standard-uis-filelist-notify-copy-clipboard": "파일 링크가 클립보드에 복사되었습니다",
+	"enhanced-standard-uis-allpages-namespace-list-label": "이름공간 목록"
 }
