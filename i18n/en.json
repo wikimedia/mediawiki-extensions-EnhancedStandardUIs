@@ -56,5 +56,6 @@
 	"enhanced-standard-uis-allpages-watch-label": "Watch page $1",
 	"enhanced-standard-uis-allpages-unwatch-label": "Unwatch page $1",
 	"enhanced-standard-uis-allpages-pageinfo-label": "Show page info for $1",
-	"enhanced-standard-uis-allpages-filter-results-label": "$1 {{PLURAL:$1|result|results}} found"
+	"enhanced-standard-uis-allpages-filter-results-label": "$1 {{PLURAL:$1|result|results}} found",
+	"enhanced-standard-uis-filelist-grid-preview-title": "Preview"
 }

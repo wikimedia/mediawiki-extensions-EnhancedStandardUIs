@@ -61,7 +61,7 @@ ext.enhancedUI.panel.FilelistPanel.prototype.setupTools = function () {
 	this.input = new OO.ui.SearchInputWidget( {
 		placeholder: mw.message( 'enhanced-standard-uis-filelist-panel-search-placeholder-label' ).text()
 	} );
-	toolsItems.push( this.input );
+
 	this.typingTimer = null;
 	this.typingDoneInterval = 200;
 	this.input.connect( this, {
@@ -74,9 +74,10 @@ ext.enhancedUI.panel.FilelistPanel.prototype.setupTools = function () {
 			label: mw.message( 'enhanced-standard-uis-filelist-panel-new-file-label' ).text(),
 			icon: 'upload',
 			id: 'enhanced-filelist-upload-file',
-			href: mw.util.getUrl( 'Special:Upload' )
+			href: mw.util.getUrl( 'Special:Upload' ),
+			invisibleLabel: true
 		} );
-		toolsItems.push( this.uploadBtn );
+		toolsItems.push( new OO.ui.FieldLayout( this.uploadBtn ) );
 	}
 
 	this.typeSwitch = new OO.ui.ButtonSelectWidget( {
@@ -84,26 +85,37 @@ ext.enhancedUI.panel.FilelistPanel.prototype.setupTools = function () {
 			new OO.ui.ButtonOptionWidget( {
 				data: 'tiles',
 				label: mw.message( 'enhanced-standard-uis-filelist-panel-tiles-label' ).text(),
+				title: mw.message( 'enhanced-standard-uis-filelist-panel-tiles-label' ).text(),
 				icon: 'viewCompact'
 			} ),
 			new OO.ui.ButtonOptionWidget( {
 				data: 'list',
 				label: mw.message( 'enhanced-standard-uis-filelist-panel-list-label' ).text(),
+				title: mw.message( 'enhanced-standard-uis-filelist-panel-list-label' ).text(),
 				icon: 'listBullet'
 			} )
 		],
 		classes: [ '' ]
 	} );
+	$( this.typeSwitch.$element ).attr( 'aria-label', 'Select view mode' );
 	this.typeSwitch.selectItemByData( this.mode );
 	this.typeSwitch.connect( this, {
 		select: 'onTypeSwitchChange'
 	} );
 
-	toolsItems.push( this.typeSwitch );
+	toolsItems.push( new OO.ui.FieldLayout( this.typeSwitch, {
+		classes: [ 'enhanced-filelist-tools-btn-select' ]
+	} ) );
 
 	this.toolsLayout = new OO.ui.HorizontalLayout( {
 		classes: [ 'enhanced-filelist-tools' ],
-		items: toolsItems
+		items: [
+			this.input,
+			new OO.ui.HorizontalLayout( {
+				classes: [ 'enhanced-filelist-tools-align-right' ],
+				items: toolsItems
+			} )
+		]
 	} );
 	this.$element.append( this.toolsLayout.$element );
 };
