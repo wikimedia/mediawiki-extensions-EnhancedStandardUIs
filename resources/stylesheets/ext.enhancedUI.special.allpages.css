@@ -92,16 +92,16 @@
 	margin-top: 75px;
 }
 
-.enhanced-ui-allpages-panel-tree label {
+.enhanced-ui-allpages-panel-tree h2 {
 	font-size: 21px;
 	color: #747474;
 }
 
-.enhanced-ui-allpages-panel-tree label:not( :first-child ) {
+.enhanced-ui-allpages-panel-tree h2:not( :first-child ) {
 	margin: 1.5em 0 1em 1.6em;
 }
 
-.enhanced-ui-allpages-panel-tree label:first-child {
+.enhanced-ui-allpages-panel-tree h2:first-child {
 	margin: 0 0 1em 1.6em;
 }
 
