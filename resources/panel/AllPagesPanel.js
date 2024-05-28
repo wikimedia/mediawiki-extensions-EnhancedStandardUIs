@@ -125,9 +125,8 @@ ext.enhancedUI.panel.AllPagesPanel.prototype.updatePages = function () {
 		}
 	}
 	for ( var i in this.pages ) {
-		var pageTreeLetter = new OO.ui.LabelWidget( {
-			label: this.alphabetIndex[ i ]
-		} );
+		// eslint-disable-next-line no-jquery/variable-pattern
+		var pageTreeLetter = $( '<h2>' ).text( this.alphabetIndex[ i ] );
 		var pageTree = new ext.enhancedUI.data.PagesTree( {
 			style: {
 				IconExpand: 'next',
@@ -136,7 +135,7 @@ ext.enhancedUI.panel.AllPagesPanel.prototype.updatePages = function () {
 			pages: this.pages[ i ],
 			store: this.store
 		} );
-		this.$treeCnt.append( pageTreeLetter.$element );
+		this.$treeCnt.append( pageTreeLetter );
 		this.$treeCnt.append( pageTree.$element );
 	}
 };
