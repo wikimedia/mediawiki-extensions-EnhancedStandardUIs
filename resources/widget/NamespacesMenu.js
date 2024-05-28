@@ -126,9 +126,8 @@ ext.enhancedUI.widget.NamespacesMenu.prototype.updateNSMenu = function () {
 		var namespace = this.namespaces[ nsId ];
 		if ( includeTalk && namespace.isTalk ) {
 			var namespaceTalkId = namespace.id;
-			// eslint-disable-next-line
+			// eslint-disable-next-line no-loop-func
 			var relatedNS = this.namespaces.filter( function ( ns ) {
-				// eslint-disable-next-line no-loop-func
 				return ns.id === ( namespaceTalkId - 1 );
 			} );
 			if ( !relatedNS ) {

@@ -52,5 +52,9 @@
 	"enhanced-standard-uis-filelist-notify-copy-clipboard": "File link copied to clipboard",
 	"enhanced-standard-uis-allpages-filter-pages-label": "Filter pages",
 	"enhanced-standard-uis-allpages-namespace-list-label": "Namespace list",
-	"enhanced-standard-uis-paginator-aria-label": "Pagination"
+	"enhanced-standard-uis-paginator-aria-label": "Pagination",
+	"enhanced-standard-uis-allpages-watch-label": "Watch page $1",
+	"enhanced-standard-uis-allpages-unwatch-label": "Unwatch page $1",
+	"enhanced-standard-uis-allpages-pageinfo-label": "Show page info for $1",
+	"enhanced-standard-uis-allpages-filter-results-label": "$1 {{PLURAL:$1|result|results}} found"
 }

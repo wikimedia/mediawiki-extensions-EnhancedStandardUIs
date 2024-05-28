@@ -140,3 +140,12 @@
 .enhanced-pages-tree .oojs-ui-data-tree-item > div:hover .oojsplus-data-tree-page-action a {
 	opacity: 0.6;
 }
+
+.enhanced-pages-tree .oojsplus-data-tree-items .oojs-ui-data-tree-item .oojsplus-data-tree-expander a:focus {
+	box-shadow: none;
+	border-color: transparent;
+}
+
+.enhanced-pages-tree .oojsplus-data-tree-items .oojs-ui-data-tree-item .oojsplus-data-tree-expander a:focus-visible {
+	outline: 1px solid #36c;
+}
