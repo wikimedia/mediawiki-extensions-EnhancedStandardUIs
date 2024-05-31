@@ -52,5 +52,9 @@
 	"enhanced-standard-uis-filelist-notify-copy-clipboard": "Податотечната врска е прекопирана во меѓускладот",
 	"enhanced-standard-uis-allpages-filter-pages-label": "Филтрирај страници",
 	"enhanced-standard-uis-allpages-namespace-list-label": "Список на имен. простори",
-	"enhanced-standard-uis-paginator-aria-label": "Пагинација"
+	"enhanced-standard-uis-paginator-aria-label": "Пагинација",
+	"enhanced-standard-uis-allpages-watch-label": "Набљудувај ја страницата $1",
+	"enhanced-standard-uis-allpages-unwatch-label": "Тргни ја страницата $1 од набљудувани",
+	"enhanced-standard-uis-allpages-pageinfo-label": "Прикажи информации за страницата $1",
+	"enhanced-standard-uis-allpages-filter-results-label": "Пронајдов $1 {{PLURAL:$1|ставка|ставки}}"
 }
