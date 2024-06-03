@@ -40,5 +40,9 @@
 	"enhanced-standard-uis-filelist-dialog-action-done-label": "Fäerdeg",
 	"enhanced-standard-uis-filelist-dialog-history-grid-version": "Versioun",
 	"enhanced-standard-uis-allpages-filter-pages-label": "Säite filteren",
-	"enhanced-standard-uis-allpages-namespace-list-label": "Nummraumlëscht"
+	"enhanced-standard-uis-allpages-namespace-list-label": "Nummraumlëscht",
+	"enhanced-standard-uis-allpages-watch-label": "D'Säit $1 iwwerwaachen",
+	"enhanced-standard-uis-allpages-unwatch-label": "D'Säit $1 net méi iwwerwaachen",
+	"enhanced-standard-uis-allpages-pageinfo-label": "Säiteninformatioune fir $1 weisen",
+	"enhanced-standard-uis-allpages-filter-results-label": "$1 {{PLURAL:$1|Resultat|Resultater}} fonnt"
 }

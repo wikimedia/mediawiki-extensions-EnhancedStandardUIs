@@ -40,5 +40,7 @@
 	"enhanced-standard-uis-filelist-dialog-page-data-label": "Metadati",
 	"enhanced-standard-uis-allpages-filter-pages-label": "Filtra pagine",
 	"enhanced-standard-uis-allpages-namespace-list-label": "Elenco namespace",
-	"enhanced-standard-uis-paginator-aria-label": "Impaginazione"
+	"enhanced-standard-uis-paginator-aria-label": "Impaginazione",
+	"enhanced-standard-uis-allpages-pageinfo-label": "Mostra informazioni della pagina per $1",
+	"enhanced-standard-uis-allpages-filter-results-label": "$1 {{PLURAL:$1|risultato trovato|risultati trovati}}"
 }

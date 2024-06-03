@@ -27,5 +27,8 @@
 	"enhanced-standard-uis-filelist-dialog-page-history-label": "Versjonshistorikk",
 	"enhanced-standard-uis-filelist-dialog-page-data-label": "Metadata",
 	"enhanced-standard-uis-filelist-dialog-page-data-no-metadata-label": "Ingen metadata tilgjengelig for denne fila",
-	"enhanced-standard-uis-filelist-notify-copy-clipboard": "Fillenke kopiert til utklippstavlen."
+	"enhanced-standard-uis-filelist-notify-copy-clipboard": "Fillenke kopiert til utklippstavlen.",
+	"enhanced-standard-uis-allpages-watch-label": "Overvåk siden $1",
+	"enhanced-standard-uis-allpages-unwatch-label": "Avslutt overvåking av siden $1",
+	"enhanced-standard-uis-allpages-filter-results-label": "$1 {{PLURAL:$1|resultat|resultater}} funnet"
 }

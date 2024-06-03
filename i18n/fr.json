@@ -3,7 +3,8 @@
 		"authors": [
 			"Iketsi",
 			"MacOS Weed",
-			"SleaY"
+			"SleaY",
+			"Graineahumus"
 		]
 	},
 	"enhanced-standard-uis-history-grid-header-revision-label": "Révision",
@@ -12,5 +13,14 @@
 	"enhanced-standard-uis-history-grid-header-summary-label": "Résumé",
 	"enhanced-standard-uis-allpages-config": "Configuration",
 	"enhanced-standard-uis-allpages-paginator-first": "Premier",
-	"enhanced-standard-uis-allpages-paginator-last": "Dernier"
+	"enhanced-standard-uis-allpages-paginator-last": "Dernier",
+	"enhanced-standard-uis-filelist-grid-author-title": "Auteur",
+	"enhanced-standard-uis-filelist-grid-date-title": "Date",
+	"enhanced-standard-uis-filelist-grid-size-title": "Taille",
+	"enhanced-standard-uis-filelist-grid-categories-title": "Catégories",
+	"enhanced-standard-uis-filelist-grid-comment-title": "Commentaire",
+	"enhanced-standard-uis-filelist-panel-list-label": "Liste",
+	"enhanced-standard-uis-filelist-dialog-history-grid-version": "Version",
+	"enhanced-standard-uis-allpages-watch-label": "Regarder la page $1",
+	"enhanced-standard-uis-allpages-filter-results-label": "$1 {{PLURAL:$1|résultat|résultats}} {{PLURAL:$1|trouvé|trouvés}}"
 }
