@@ -238,14 +238,8 @@ ext.enhancedUI.panel.FilelistPanel.prototype.setItems = function ( data ) {
 };
 
 ext.enhancedUI.panel.FilelistPanel.prototype.onInputChange = function ( value ) {
-	if ( !value ) {
-		value = '*';
-	}
-
-	this.hasSearchTerm = value !== '*';
-
 	clearTimeout( this.typingTimer );
-	if ( value === '*' ) {
+	if ( value === '' ) {
 		this.store.clearQuery();
 		this.store.reload();
 		return;

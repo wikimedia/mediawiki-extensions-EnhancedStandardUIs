@@ -26,7 +26,7 @@ ext.enhancedUI.widget.FilelistGrid.prototype.getColumnDefinitions = function () 
 			type: 'url',
 			sortable: true,
 			urlProperty: 'url',
-			filter: { type: 'string' },
+			filterable: false,
 			hidden: !mw.user.options.get( 'filelist-show-title' )
 		},
 		author: {
@@ -38,10 +38,13 @@ ext.enhancedUI.widget.FilelistGrid.prototype.getColumnDefinitions = function () 
 			hidden: !mw.user.options.get( 'filelist-show-author' )
 		},
 		// eslint-disable-next-line camelcase
-		formatted_ts: {
+		timestamp: {
 			headerText: mw.message( 'enhanced-standard-uis-filelist-grid-date-title' ).text(),
 			type: 'date',
 			filter: { type: 'date' },
+			valueParser: function ( value, row ) {
+				return row.formatted_ts;
+			},
 			hidden: !mw.user.options.get( 'filelist-show-formatted_ts' )
 		},
 		// eslint-disable-next-line camelcase
