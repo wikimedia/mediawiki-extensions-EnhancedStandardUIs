@@ -18,7 +18,8 @@ ext.enhancedUI.widget.FilelistGrid.prototype.getColumnDefinitions = function () 
 		preview: {
 			type: 'image',
 			filenameProperty: 'dbkey',
-			hidden: !mw.user.options.get( 'filelist-show-preview' )
+			hidden: !mw.user.options.get( 'filelist-show-preview' ),
+			headerText: mw.message( 'enhanced-standard-uis-filelist-grid-preview-title' ).text()
 		},
 		title: {
 			headerText: mw.message( 'enhanced-standard-uis-filelist-grid-file-title' ).text(),
@@ -83,7 +84,9 @@ ext.enhancedUI.widget.FilelistGrid.prototype.getColumnDefinitions = function () 
 		type: 'action',
 		title: mw.message( 'enhanced-standard-uis-filelist-grid-info-title' ).text(),
 		actionId: 'info',
-		icon: 'info'
+		icon: 'info',
+		headerText: mw.message( 'enhanced-standard-uis-filelist-grid-info-title' ).text(),
+		invisibleHeader: true
 	};
 
 	if ( this.rights.indexOf( 'reupload' ) !== -1 &&
@@ -92,7 +95,9 @@ ext.enhancedUI.widget.FilelistGrid.prototype.getColumnDefinitions = function () 
 			type: 'action',
 			title: mw.message( 'enhanced-standard-uis-filelist-grid-reupload-title' ).text(),
 			actionId: 'reupload',
-			icon: 'upload'
+			icon: 'upload',
+			headerText: mw.message( 'enhanced-standard-uis-filelist-grid-reupload-title' ).text(),
+			invisibleHeader: true
 		};
 	}
 
@@ -101,7 +106,9 @@ ext.enhancedUI.widget.FilelistGrid.prototype.getColumnDefinitions = function () 
 			type: 'action',
 			title: mw.message( 'enhanced-standard-uis-filelist-grid-delete-title' ).text(),
 			actionId: 'delete',
-			icon: 'trash'
+			icon: 'trash',
+			headerText: mw.message( 'enhanced-standard-uis-filelist-grid-delete-title' ).text(),
+			invisibleHeader: true
 		};
 	}
 
