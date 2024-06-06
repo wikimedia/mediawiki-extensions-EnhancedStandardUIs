@@ -37,7 +37,7 @@ ext.enhancedUI.widget.FilelistGrid.prototype.getColumnDefinitions = function () 
 			filter: { type: 'user' },
 			hidden: !mw.user.options.get( 'filelist-show-author' )
 		},
-		// eslint-disable-next-line camelcase
+
 		timestamp: {
 			headerText: mw.message( 'enhanced-standard-uis-filelist-grid-date-title' ).text(),
 			type: 'date',

@@ -11,5 +11,7 @@
 		"jQuery": "readonly",
 		"OOJSPlus": "readonly"
 	},
-	"rules": {}
+	"rules": {
+		"no-jquery/no-extend": "warn"
+	}
 }

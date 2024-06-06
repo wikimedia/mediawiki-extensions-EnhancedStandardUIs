@@ -7,8 +7,8 @@
 				class="enhanced-files-file-card"
 				:thumbnail="card.thumbnail"
 				tabindex="0"
-				@click="onImageClick( $event,card )"
-				@keyup.enter="onImageClick( $event,card )">
+				@click="onImageClick( $event, card )"
+				@keyup.enter="onImageClick( $event, card )">
 				<template #title>
 					{{ card.title }}
 					<cdx-button
