@@ -105,9 +105,6 @@ OOJSPlus.ui.data.Tree.prototype.prepareData = function ( pages ) {
 	for ( var i in pages ) {
 		var title = pages[ i ].title.split( '/' );
 		var label = title[ title.length - 1 ];
-		if ( pages[ i ].display_title.length > 0 ) {
-			label = pages[ i ].display_title;
-		}
 
 		var entry = {
 			id: pages[ i ].id,
