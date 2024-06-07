@@ -42,5 +42,6 @@
 	"enhanced-standard-uis-filelist-dialog-page-history-label": "Историја измена",
 	"enhanced-standard-uis-filelist-dialog-page-data-label": "Метаподаци",
 	"enhanced-standard-uis-filelist-dialog-page-data-no-metadata-label": "Нема метаподатака за ову датотеку",
-	"enhanced-standard-uis-allpages-filter-results-label": "$1 {{PLURAL:$1|резултата}} пронађено"
+	"enhanced-standard-uis-allpages-filter-results-label": "$1 {{PLURAL:$1|резултата}} пронађено",
+	"enhanced-standard-uis-filelist-grid-preview-title": "Преглед"
 }

@@ -21,5 +21,6 @@
 	"enhanced-standard-uis-allpages-paginator-next": "পরবর্তী",
 	"enhanced-standard-uis-allpages-paginator-last": "সর্বশেষ",
 	"enhanced-standard-uis-allpages-redirect-title": "পুনর্নির্দেশ",
-	"enhanced-standard-uis-allpages-filter-results-label": "$1টি {{PLURAL:$1|ফলাফল}} পাওয়া গেছে"
+	"enhanced-standard-uis-allpages-filter-results-label": "$1টি {{PLURAL:$1|ফলাফল}} পাওয়া গেছে",
+	"enhanced-standard-uis-filelist-grid-preview-title": "প্রাকদর্শন"
 }
