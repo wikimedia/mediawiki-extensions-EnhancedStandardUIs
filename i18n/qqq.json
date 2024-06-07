@@ -57,5 +57,7 @@
 	"enhanced-standard-uis-allpages-unwatch-label": "Label for button to unwatch page\nParameters:\n* $1 - name of page",
 	"enhanced-standard-uis-allpages-pageinfo-label": "Label for button to show page info\nParameters:\n* $1 - name of page",
 	"enhanced-standard-uis-allpages-filter-results-label": "Label for results found from filtering\nParameters:\n* $1 - number of results",
-	"enhanced-standard-uis-filelist-grid-preview-title": "Label for filelist grid column which contains preview of file"
+	"enhanced-standard-uis-filelist-grid-preview-title": "Label for filelist grid column which contains preview of file",
+	"enhanced-standard-uis-filelist-ga-title": "Label for the GlobalAction item to open the file list",
+	"enhanced-standard-uis-filelist-ga-aria": "Arial label for the GlobalAction item to open the file list"
 }
