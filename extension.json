@@ -58,7 +58,8 @@
 			"addTitleWatchInfo",
 			"addFilePath"
 		],
-		"SpecialPage_initList": "special-pages"
+		"SpecialPage_initList": "special-pages",
+		"MWStakeCommonUIRegisterSkinSlotComponents": "registerGlobalActions"
 	},
 	"HookHandlers": {
 		"userpreference": {
@@ -75,6 +76,9 @@
 		"special-pages": {
 			"class": "MediaWiki\\Extension\\EnhancedStandardUIs\\HookHandler\\OverwriteSpecialPages",
 			"services": [ "MainConfig" ]
+		},
+		"registerGlobalActions": {
+			"class": "MediaWiki\\Extension\\EnhancedStandardUIs\\HookHandler\\RegisterGlobalActions"
 		}
 	},
 	"DefaultUserOptions": {
