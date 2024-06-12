@@ -5,8 +5,14 @@
 		/* eslint-disable-next-line no-jquery/no-global-selector */
 		var $allPagesCnt = $( '#enhanced-ui-allpages-cnt' );
 		var isMobile = $( window ).width() < 767;
+
+		var namespaceId = 0;
+		if ( mw.util.getParamValue( 'namespace' ) ) {
+			namespaceId = parseInt( mw.util.getParamValue( 'namespace' ) );
+		}
 		var allPagesPanel = new ext.enhancedUI.panel.AllPagesPanel( {
-			mobileView: isMobile
+			mobileView: isMobile,
+			namespaceId: namespaceId
 		} );
 		$allPagesCnt.append( allPagesPanel.$element );
 

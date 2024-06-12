@@ -10,6 +10,7 @@ require( '../data/store/Store.js' );
 ext.enhancedUI.panel.AllPagesPanel = function ( cfg ) {
 	ext.enhancedUI.panel.AllPagesPanel.super.apply( this, cfg );
 	this.mobileView = cfg.mobileView;
+	this.selectedNamespaceId = cfg.namespaceId;
 	this.pageSize = 50;
 	this.store = new ext.enhancedUI.data.store.Store();
 	this.$element = $( '<div>' ).addClass( 'enhanced-ui-allpages-panel' );
@@ -52,7 +53,9 @@ ext.enhancedUI.panel.AllPagesPanel.prototype.setupMenu = function () {
 			}
 		} );
 	}
-	this.namespaceMenu = new ext.enhancedUI.widget.NamespacesMenu();
+	this.namespaceMenu = new ext.enhancedUI.widget.NamespacesMenu( {
+		selectedNSId: this.selectedNamespaceId
+	} );
 	this.selectedNS = this.namespaceMenu.getSelectedNamespaceId();
 	this.includeRedirect = this.namespaceMenu.getRedirectStatus();
 	this.namespaceMenu.connect( this, {
@@ -133,7 +136,8 @@ ext.enhancedUI.panel.AllPagesPanel.prototype.updatePages = function () {
 				IconCollapse: 'expand'
 			},
 			pages: this.pages[ i ],
-			store: this.store
+			store: this.store,
+			includeRedirect: this.includeRedirect
 		} );
 		this.$treeCnt.append( pageTreeLetter );
 		this.$treeCnt.append( pageTree.$element );

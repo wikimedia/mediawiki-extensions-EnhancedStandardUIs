@@ -7,13 +7,24 @@ require( './NamespaceOptionWidget.js' );
 ext.enhancedUI.widget.NamespacesMenu = function ( cfg ) {
 	cfg = cfg || {};
 	ext.enhancedUI.widget.NamespacesMenu.super.call( this, cfg );
+	this.selectedNSId = cfg.selectedNSId || 0;
 	this.namespaces = require( './namespaceConfig.json' );
 	this.namespaces[ 0 ].name = mw.message( 'blanknamespace' ).text();
+	this.checkSelectedNS();
 	this.setup();
 
 };
 
 OO.inheritClass( ext.enhancedUI.widget.NamespacesMenu, OO.ui.Widget );
+
+ext.enhancedUI.widget.NamespacesMenu.prototype.checkSelectedNS = function () {
+	// eslint-disable-next-line no-loop-func
+	var namespace = this.namespaces.find( function ( ns ) {
+		return ns.id === this.selectedNSId;
+	}.bind( this ) );
+	this.selectedNSIsContent = namespace.isContent;
+	this.selectedNSIsTalk = namespace.isTalk;
+};
 
 ext.enhancedUI.widget.NamespacesMenu.prototype.setup = function () {
 	this.setupConfigButton();
@@ -120,7 +131,13 @@ ext.enhancedUI.widget.NamespacesMenu.prototype.updateNSMenu = function () {
 	this.selectWidget.clearItems();
 	this.nsOptions = [];
 	var includeNonContent = this.includeNonContentNS.isSelected();
+	if ( !this.selectedNSIsContent ) {
+		includeNonContent = true;
+	}
 	var includeTalk = this.includeTalkNS.isSelected();
+	if ( this.selectedNSIsTalk ) {
+		includeTalk = true;
+	}
 
 	for ( var nsId in this.namespaces ) {
 		var namespace = this.namespaces[ nsId ];
@@ -161,7 +178,7 @@ ext.enhancedUI.widget.NamespacesMenu.prototype.updateNSMenu = function () {
 		);
 	}
 	this.selectWidget.addItems( this.nsOptions );
-	this.selectWidget.selectItemByData( selectedItem ? selectedItem.data : 0 );
+	this.selectWidget.selectItemByData( selectedItem ? selectedItem.data : this.selectedNSId );
 };
 
 ext.enhancedUI.widget.NamespacesMenu.prototype.getSelectedNamespaceId = function () {
