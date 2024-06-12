@@ -9,6 +9,7 @@ ext.enhancedUI.data.PagesTree = function ( cfg ) {
 	cfg.classes = [ 'enhanced-pages-tree' ];
 	cfg.allowDeletions = false;
 	cfg.allowAdditions = false;
+	this.includeRedirect = cfg.includeRedirect || false;
 	cfg.data = this.prepareData( cfg.pages );
 	cfg.fixed = true;
 
@@ -66,7 +67,7 @@ ext.enhancedUI.data.PagesTree.prototype.createItemWidget = function (
 	}, item ) );
 };
 
-OOJSPlus.ui.data.Tree.prototype.expandNode = function ( name ) {
+ext.enhancedUI.data.PagesTree.prototype.expandNode = function ( name ) {
 	var node = this.getItem( name );
 	if ( !node ) {
 		return;
@@ -100,11 +101,19 @@ OOJSPlus.ui.data.Tree.prototype.expandNode = function ( name ) {
 	}
 };
 
-OOJSPlus.ui.data.Tree.prototype.prepareData = function ( pages ) {
+ext.enhancedUI.data.PagesTree.prototype.setIncludeRedirect = function ( redirect ) {
+	this.includeRedirect = redirect;
+};
+
+ext.enhancedUI.data.PagesTree.prototype.prepareData = function ( pages ) {
 	var data = [];
 	for ( var i in pages ) {
 		var title = pages[ i ].title.split( '/' );
 		var label = title[ title.length - 1 ];
+
+		if ( !this.includeRedirect && pages[ i ].redirect === true ) {
+			continue;
+		}
 
 		var entry = {
 			id: pages[ i ].id,
