@@ -12,7 +12,7 @@ $specialPageAliases = [];
  * English
  */
 $specialPageAliases['en'] = [
-	'EnhancedFilelist' => [ 'File list' ]
+	'EnhancedFilelist' => [ 'Filelist', 'FileList', 'File list' ]
 ];
 
 /**
