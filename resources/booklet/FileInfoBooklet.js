@@ -18,14 +18,17 @@ ext.enhancedUI.booklet.FileInfoBooklet.prototype.makePages = function () {
 	this.pages = [
 		new ext.enhancedUI.booklet.PreviewPage( 'Preview', {
 			expanded: false,
+			padded: true,
 			fileData: this.fileData
 		} ),
 		new ext.enhancedUI.booklet.DataPage( 'Data', {
 			expanded: false,
+			padded: true,
 			fileData: this.fileData
 		} ),
 		new ext.enhancedUI.booklet.HistoryPage( 'History', {
 			expanded: false,
+			padded: true,
 			fileData: this.fileData
 		} )
 	];
