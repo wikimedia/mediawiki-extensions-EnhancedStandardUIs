@@ -4,14 +4,14 @@ ext.enhancedUI.booklet.PreviewPage = function ( name, cfg ) {
 	this.fileName = cfg.fileData.dbkey;
 	this.fileUrl = cfg.fileData.fileUrl;
 	this.fileWidth = cfg.width || 300;
-	this.fileHeight = cfg.height || 300;
+	this.fileHeight = cfg.height || 'auto';
 	ext.enhancedUI.booklet.PreviewPage.parent.call( this, name, cfg );
 
-	var mimeType = this.fileData.mime_major;
+	var mimeType = this.fileData.img_mime_major;
 	if ( mimeType !== 'image' ) {
 		this.fileUrl = this.fileData.preview_url;
 		this.fileWidth = 120;
-		this.fileHeight = 120;
+		this.fileHeight = 'auto';
 	}
 
 	var $image = $( '<img>' ).addClass( 'file-info-image' )

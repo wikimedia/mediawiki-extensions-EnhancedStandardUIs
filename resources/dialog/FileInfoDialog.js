@@ -44,7 +44,7 @@ ext.enhancedUI.dialog.FileInfoDialog.static.actions = [
 
 ext.enhancedUI.dialog.FileInfoDialog.prototype.initialize = function () {
 	// Parent method
-	ext.enhancedUI.dialog.FileInfoDialog.super.prototype.initialize.call( this );
+	ext.enhancedUI.dialog.FileInfoDialog.super.prototype.initialize.apply( this, arguments );
 
 	this.booklet = new ext.enhancedUI.booklet.FileInfoBooklet( {
 		expanded: false,
