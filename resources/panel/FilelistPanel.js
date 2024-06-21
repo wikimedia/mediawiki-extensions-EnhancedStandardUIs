@@ -15,7 +15,10 @@ ext.enhancedUI.panel.FilelistPanel = function ( cfg ) {
 	this.pageSize = 25;
 	this.store = new OOJSPlus.ui.data.store.RemoteRestStore( {
 		path: 'mws/v1/file-query-store',
-		pageSize: this.pageSize
+		pageSize: this.pageSize,
+		sorter: {
+			timestamp: { direction: 'desc' }
+		}
 	} );
 
 	this.setupWidgets();
