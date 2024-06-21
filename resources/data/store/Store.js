@@ -79,6 +79,7 @@ ext.enhancedUI.data.store.Store.prototype.getSubpages = function ( pageName ) {
 	this.node = pageName;
 	this.filters = [];
 	this.limit = 999;
+	this.offset = 0;
 
 	return this.reload();
 };
