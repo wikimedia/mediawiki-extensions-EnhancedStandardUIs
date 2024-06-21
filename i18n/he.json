@@ -57,5 +57,7 @@
 	"enhanced-standard-uis-allpages-unwatch-label": "להפסיק לעקוב אחר הדף $1",
 	"enhanced-standard-uis-allpages-pageinfo-label": "הצגת פרטי הדף עבור $1",
 	"enhanced-standard-uis-allpages-filter-results-label": "{{PLURAL:$1|נמצאה תוצאה אחת|נמצאו $1 תוצאות}}",
-	"enhanced-standard-uis-filelist-grid-preview-title": "תצוגה מקדימה"
+	"enhanced-standard-uis-filelist-grid-preview-title": "תצוגה מקדימה",
+	"enhanced-standard-uis-filelist-ga-title": "קבצים",
+	"enhanced-standard-uis-filelist-ga-aria": "רשימת קבצים"
 }
