@@ -72,7 +72,7 @@ ext.enhancedUI.dialog.FileInfoDialog.prototype.initialize = function () {
 };
 
 ext.enhancedUI.dialog.FileInfoDialog.prototype.getSetupProcess = function ( data ) {
-	data = $.extend( data, {
+	data = Object.assign( data, {
 		title: this.fileName
 	} );
 	return ext.enhancedUI.dialog.FileInfoDialog.parent.prototype.getSetupProcess.call( this, data );
