@@ -50,12 +50,14 @@
 	"enhanced-standard-uis-filelist-dialog-page-data-label": "מטא־נתונים",
 	"enhanced-standard-uis-filelist-dialog-page-data-no-metadata-label": "אין מטא־נתונים זמינים עבור הקובץ הזה",
 	"enhanced-standard-uis-filelist-notify-copy-clipboard": "קישור הקובץ הועתק ללוח",
-	"enhanced-standard-uis-allpages-filter-pages-label": "סינון דפים",
+	"enhanced-standard-uis-allpages-filter-pages-label": "מסנן",
 	"enhanced-standard-uis-allpages-namespace-list-label": "רשימת מרחבי שם",
 	"enhanced-standard-uis-paginator-aria-label": "חלוקה לדפים",
 	"enhanced-standard-uis-allpages-watch-label": "לעקוב אחר הדף $1",
 	"enhanced-standard-uis-allpages-unwatch-label": "להפסיק לעקוב אחר הדף $1",
 	"enhanced-standard-uis-allpages-pageinfo-label": "הצגת פרטי הדף עבור $1",
 	"enhanced-standard-uis-allpages-filter-results-label": "{{PLURAL:$1|נמצאה תוצאה אחת|נמצאו $1 תוצאות}}",
-	"enhanced-standard-uis-filelist-grid-preview-title": "תצוגה מקדימה"
+	"enhanced-standard-uis-filelist-grid-preview-title": "תצוגה מקדימה",
+	"enhanced-standard-uis-filelist-ga-title": "קבצים",
+	"enhanced-standard-uis-filelist-ga-aria": "רשימת קבצים"
 }

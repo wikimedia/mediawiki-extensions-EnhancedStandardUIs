@@ -50,12 +50,14 @@
 	"enhanced-standard-uis-filelist-dialog-page-data-label": "Metadatos",
 	"enhanced-standard-uis-filelist-dialog-page-data-no-metadata-label": "Necun metadatos disponibile pro iste file",
 	"enhanced-standard-uis-filelist-notify-copy-clipboard": "Ligamine al file copiate al area de transferentia",
-	"enhanced-standard-uis-allpages-filter-pages-label": "Filtrar paginas",
+	"enhanced-standard-uis-allpages-filter-pages-label": "Filtrar",
 	"enhanced-standard-uis-allpages-namespace-list-label": "Lista de spatios de nomines",
 	"enhanced-standard-uis-paginator-aria-label": "Pagination",
 	"enhanced-standard-uis-allpages-watch-label": "Observar pagina $1",
 	"enhanced-standard-uis-allpages-unwatch-label": "Disobservar pagina $1",
 	"enhanced-standard-uis-allpages-pageinfo-label": "Monstrar information pro le pagina $1",
 	"enhanced-standard-uis-allpages-filter-results-label": "$1 resultato{{PLURAL:$1||s}} trovate",
-	"enhanced-standard-uis-filelist-grid-preview-title": "Previsualisation"
+	"enhanced-standard-uis-filelist-grid-preview-title": "Previsualisation",
+	"enhanced-standard-uis-filelist-ga-title": "Files",
+	"enhanced-standard-uis-filelist-ga-aria": "Lista de files"
 }
