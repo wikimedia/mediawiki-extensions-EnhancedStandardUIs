@@ -35,7 +35,8 @@ ext.enhancedUI.widget.FilelistGrid.prototype.getColumnDefinitions = function () 
 			showImage: false,
 			sortable: false,
 			filter: { type: 'user' },
-			hidden: !mw.user.options.get( 'filelist-show-author' )
+			hidden: !mw.user.options.get( 'filelist-show-author' ),
+			autoClosePopup: true
 		},
 
 		timestamp: {
@@ -45,7 +46,8 @@ ext.enhancedUI.widget.FilelistGrid.prototype.getColumnDefinitions = function () 
 			valueParser: function ( value, row ) {
 				return row.formatted_ts;
 			},
-			hidden: !mw.user.options.get( 'filelist-show-formatted_ts' )
+			hidden: !mw.user.options.get( 'filelist-show-formatted_ts' ),
+			autoClosePopup: true
 		},
 		// eslint-disable-next-line camelcase
 		file_extension: {
@@ -53,7 +55,8 @@ ext.enhancedUI.widget.FilelistGrid.prototype.getColumnDefinitions = function () 
 			type: 'text',
 			sortable: true,
 			filter: { type: 'string' },
-			hidden: !mw.user.options.get( 'filelist-show-file_extension' )
+			hidden: !mw.user.options.get( 'filelist-show-file_extension' ),
+			autoClosePopup: true
 		},
 		// eslint-disable-next-line camelcase
 		file_size: {
@@ -61,7 +64,8 @@ ext.enhancedUI.widget.FilelistGrid.prototype.getColumnDefinitions = function () 
 			type: 'number',
 			sortable: true,
 			filter: { type: 'number' },
-			hidden: !mw.user.options.get( 'filelist-show-file_size' )
+			hidden: !mw.user.options.get( 'filelist-show-file_size' ),
+			autoClosePopup: true
 		},
 		categories: {
 			headerText: mw.message( 'enhanced-standard-uis-filelist-grid-categories-title' ).text(),
@@ -71,13 +75,15 @@ ext.enhancedUI.widget.FilelistGrid.prototype.getColumnDefinitions = function () 
 			limitValue: 2,
 			sortable: true,
 			filter: { type: 'string' },
-			hidden: !mw.user.options.get( 'filelist-show-categories' )
+			hidden: !mw.user.options.get( 'filelist-show-categories' ),
+			autoClosePopup: true
 		},
 		comment: {
 			headerText: mw.message( 'enhanced-standard-uis-filelist-grid-comment-title' ).text(),
 			type: 'text',
 			sortable: true,
-			hidden: !mw.user.options.get( 'filelist-show-comment' )
+			hidden: !mw.user.options.get( 'filelist-show-comment' ),
+			autoClosePopup: true
 		}
 	};
 
