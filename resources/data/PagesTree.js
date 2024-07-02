@@ -110,11 +110,16 @@ ext.enhancedUI.data.PagesTree.prototype.prepareData = function ( pages ) {
 	for ( var i in pages ) {
 		var title = pages[ i ].title.split( '/' );
 		var label = title[ title.length - 1 ];
-
+		var classes = [];
 		if ( !this.includeRedirect && pages[ i ].redirect === true ) {
 			continue;
 		}
+		if ( label === '' ) {
+			label = mw.message( 'enhanced-standard-uis-allpages-untitled' ).text();
+			classes.push( 'enhancedui-allpages-untitled-page' );
+		}
 
+		// eslint-disable-next-line mediawiki/class-doc
 		var entry = {
 			id: pages[ i ].id,
 			title: pages[ i ].prefixed,
@@ -123,7 +128,8 @@ ext.enhancedUI.data.PagesTree.prototype.prepareData = function ( pages ) {
 			leaf: pages[ i ].leaf,
 			label: label,
 			exists: pages[ i ].exists,
-			redirect: pages[ i ].redirect
+			redirect: pages[ i ].redirect,
+			classes: classes
 		};
 		if ( pages[ i ].children.length > 0 ) {
 			entry.children = this.prepareData( pages[ i ].children );

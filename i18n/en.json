@@ -59,5 +59,6 @@
 	"enhanced-standard-uis-allpages-filter-results-label": "$1 {{PLURAL:$1|result|results}} found",
 	"enhanced-standard-uis-filelist-grid-preview-title": "Preview",
 	"enhanced-standard-uis-filelist-ga-title": "Files",
-	"enhanced-standard-uis-filelist-ga-aria": "File list"
+	"enhanced-standard-uis-filelist-ga-aria": "File list",
+	"enhanced-standard-uis-allpages-untitled": "Untitled"
 }
