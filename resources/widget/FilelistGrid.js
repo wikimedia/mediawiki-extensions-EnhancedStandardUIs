@@ -81,7 +81,6 @@ ext.enhancedUI.widget.FilelistGrid.prototype.getColumnDefinitions = function () 
 		comment: {
 			headerText: mw.message( 'enhanced-standard-uis-filelist-grid-comment-title' ).text(),
 			type: 'text',
-			sortable: true,
 			hidden: !mw.user.options.get( 'filelist-show-comment' ),
 			autoClosePopup: true
 		}
