@@ -153,3 +153,7 @@
 .enhanced-pages-tree .oojsplus-data-tree-items .oojs-ui-data-tree-item .oojsplus-data-tree-expander a:focus-visible {
 	outline: 1px solid #36c;
 }
+
+.enhancedui-allpages-untitled-page {
+	font-style: italic;
+}
