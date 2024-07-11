@@ -47,5 +47,6 @@
 	"enhanced-standard-uis-allpages-filter-results-label": "$1 {{PLURAL:$1|резултата}} пронађено",
 	"enhanced-standard-uis-filelist-grid-preview-title": "Преглед",
 	"enhanced-standard-uis-filelist-ga-title": "Датотеке",
-	"enhanced-standard-uis-filelist-ga-aria": "Списак датотека"
+	"enhanced-standard-uis-filelist-ga-aria": "Списак датотека",
+	"enhanced-standard-uis-allpages-untitled": "Без наслова"
 }
