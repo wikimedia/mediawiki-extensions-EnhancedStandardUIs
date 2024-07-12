@@ -59,5 +59,6 @@
 	"enhanced-standard-uis-allpages-filter-results-label": "Пронајдов $1 {{PLURAL:$1|ставка|ставки}}",
 	"enhanced-standard-uis-filelist-grid-preview-title": "Преглед",
 	"enhanced-standard-uis-filelist-ga-title": "Податотеки",
-	"enhanced-standard-uis-filelist-ga-aria": "Список на податотеки"
+	"enhanced-standard-uis-filelist-ga-aria": "Список на податотеки",
+	"enhanced-standard-uis-allpages-untitled": "Без наслов"
 }
