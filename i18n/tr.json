@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Hedda"
+			"Hedda",
+			"İmmortalance"
 		]
 	},
 	"enhanced-standard-uis-desc": "MediaWiki standart kullanıcı arayüzleri için kullanıcı arayüzleri sağlar",
@@ -12,5 +13,7 @@
 	"enhanced-standard-uis-history-grid-header-tags-label": "Etiketler",
 	"enhanced-standard-uis-history-grid-header-undo-title": "Geri al",
 	"enhanced-standard-uis-history-grid-header-hide-revision-title": "Sürümü gizle",
-	"enhanced-standard-uis-history-compare-tool-title": "Sürümleri karşılaştır"
+	"enhanced-standard-uis-history-compare-tool-title": "Sürümleri karşılaştır",
+	"enhanced-standard-uis-filelist-ga-title": "Dosyalar",
+	"enhanced-standard-uis-filelist-ga-aria": "Dosya listesi"
 }
