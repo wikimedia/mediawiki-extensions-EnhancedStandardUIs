@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"McDutchie"
+			"McDutchie",
+			"Siebrand"
 		]
 	},
 	"enhanced-standard-uis-desc": "Biedt gebruikersinterfaces voor de standaardgebruikersinterfaces van MediaWiki",
@@ -15,9 +16,9 @@
 	"enhanced-standard-uis-history-compare-tool-title": "Versies vergelijken",
 	"enhanced-standard-uis-history-grid-header-diff-label": "Verschil",
 	"enhancedallpages": "Alle pagina’s",
-	"enhanced-standard-uis-allpages-include-talk-ns": "Overlegnaamruimten tonen",
-	"enhanced-standard-uis-allpages-include-non-content-ns": "Niet-inhoudsnaamruimten tonen",
-	"enhanced-standard-uis-allpages-include-redirect": "Doorverwijzingen tonen",
+	"enhanced-standard-uis-allpages-include-talk-ns": "Overlegnaamruimten weergeven",
+	"enhanced-standard-uis-allpages-include-non-content-ns": "Niet-inhoudsnaamruimten weergeven",
+	"enhanced-standard-uis-allpages-include-redirect": "Doorverwijzingen weergeven",
 	"enhanced-standard-uis-allpages-config-ns": "Naamruimteselectie instellen",
 	"enhanced-standard-uis-allpages-config": "Instellingen",
 	"enhanced-standard-uis-allpages-paginator-first": "Eerste",

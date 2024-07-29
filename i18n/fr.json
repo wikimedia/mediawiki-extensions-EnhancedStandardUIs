@@ -24,5 +24,6 @@
 	"enhanced-standard-uis-allpages-filter-pages-label": "Filtre",
 	"enhanced-standard-uis-allpages-watch-label": "Regarder la page $1",
 	"enhanced-standard-uis-allpages-filter-results-label": "$1 {{PLURAL:$1|résultat|résultats}} {{PLURAL:$1|trouvé|trouvés}}",
-	"enhanced-standard-uis-filelist-grid-preview-title": "Prévisualiser"
+	"enhanced-standard-uis-filelist-grid-preview-title": "Prévisualiser",
+	"enhanced-standard-uis-allpages-untitled": "Sans titre"
 }
