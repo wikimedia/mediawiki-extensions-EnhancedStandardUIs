@@ -40,7 +40,7 @@ class EnhancedHistoryAction extends HistoryAction {
 		$out->setFeedAppendQuery( 'action=history' );
 
 		$this->addHelpLink(
-			'https://meta.wikimedia.org/wiki/Special:MyLanguage/Help:Page_history',
+			'https://www.mediawiki.org/wiki/Special:MyLanguage/Help:History',
 			true
 		);
 
