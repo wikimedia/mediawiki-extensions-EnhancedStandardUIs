@@ -28,6 +28,9 @@ ext.enhancedUI.panel.HistoryPanel.prototype.setupToolbar = function () {
 	this.historyToolbar.connect( this, {
 		compare: function () {
 			var compareValues = this.getCompareValues();
+			if ( !compareValues ) {
+				return;
+			}
 			var url = mw.util.getUrl( mw.config.get( 'wgPageName' ),
 				{
 					type: 'revision',
@@ -45,8 +48,12 @@ ext.enhancedUI.panel.HistoryPanel.prototype.setupToolbar = function () {
 
 ext.enhancedUI.panel.HistoryPanel.prototype.getCompareValues = function () {
 	var selectedElements = this.grid.getSelectedRows();
-	var diffValue = selectedElements[ 0 ].id;
-	var oldIdValue = selectedElements[ 1 ].id;
+	var diffValue = parseInt( selectedElements[ 0 ].id );
+	var oldIdValue = parseInt( selectedElements[ 1 ].id );
+
+	if ( isNaN( diffValue ) || isNaN( oldIdValue ) ) {
+		return null;
+	}
 
 	if ( diffValue < oldIdValue ) {
 		var switchValue = diffValue;
