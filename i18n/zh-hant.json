@@ -59,5 +59,6 @@
 	"enhanced-standard-uis-allpages-filter-results-label": "找到 $1 {{PLURAL:$1|個結果}}",
 	"enhanced-standard-uis-filelist-grid-preview-title": "預覽",
 	"enhanced-standard-uis-filelist-ga-title": "檔案",
-	"enhanced-standard-uis-filelist-ga-aria": "檔案清單"
+	"enhanced-standard-uis-filelist-ga-aria": "檔案清單",
+	"enhanced-standard-uis-allpages-untitled": "無標題"
 }
