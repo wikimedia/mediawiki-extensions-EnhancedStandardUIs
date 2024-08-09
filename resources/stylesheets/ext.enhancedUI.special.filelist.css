@@ -22,18 +22,6 @@
 	/* oojs style is added with important */
 	border-right: 0 !important;
 }
-
-#enhanced-ui-filelist-cnt .oojsplus-data-gridWidget-column-header[ data-field='preview' ] .header-button .oo-ui-labelElement-label {
-	display: block;
-	position: absolute;
-	clip: rect( 1px, 1px, 1px, 1px );
-	width: 1px;
-	height: 1px;
-	margin: -1px;
-	border: 0;
-	padding: 0;
-	overflow: hidden;
-}
 /* stylelint-enable declaration-no-important */
 
 .enhancedUI-paginator .oo-ui-buttonSelectWidget {
