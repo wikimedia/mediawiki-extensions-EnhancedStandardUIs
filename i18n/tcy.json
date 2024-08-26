@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"ChiK"
+			"ChiK",
+			"Mahaveer Indra"
 		]
 	},
-	"enhanced-standard-uis-history-grid-header-summary-label": "ಸಾರಾಂಸೊ"
+	"enhanced-standard-uis-history-grid-header-summary-label": "ಸಾರಾಂಸೊ",
+	"enhanced-standard-uis-filter-results-label": "$1ದಾತ್ {{PLURAL:$1|result|ನಾಡಿನ ಫಲಿತಾಂಸೊ}}ಲು"
 }
