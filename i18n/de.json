@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Justman10000",
 			"Miriam Schlindwein"
 		]
 	},
@@ -50,7 +51,7 @@
 	"enhanced-standard-uis-filelist-dialog-page-data-label": "Metadaten",
 	"enhanced-standard-uis-filelist-dialog-page-data-no-metadata-label": "Für diese Datei sind keine Metadaten verfügbar",
 	"enhanced-standard-uis-filelist-notify-copy-clipboard": "Der Dateilink wurde in die Zwischenablage kopiert",
-	"enhanced-standard-uis-allpages-filter-pages-label": "Seiten filtern",
+	"enhanced-standard-uis-allpages-filter-pages-label": "Filtern",
 	"enhanced-standard-uis-allpages-namespace-list-label": "Namensraumliste",
 	"enhanced-standard-uis-paginator-aria-label": "Paginierung",
 	"enhanced-standard-uis-allpages-watch-label": "Seite $1 beobachten",
@@ -58,5 +59,8 @@
 	"enhanced-standard-uis-allpages-pageinfo-label": "Seiteninformationen für $1 anzeigen",
 	"enhanced-standard-uis-allpages-filter-results-label": "$1 {{PLURAL:$1|Ergebnis|Ergebnisse}} gefunden",
 	"enhanced-standard-uis-filelist-grid-preview-title": "Vorschau",
-	"enhanced-standard-uis-allpages-untitled": "Ohne Titel"
+	"enhanced-standard-uis-allpages-untitled": "Ohne Titel",
+	"enhanced-standard-uis-filelist-ga-title": "Dateien",
+	"enhanced-standard-uis-filelist-ga-aria": "Dateiliste",
+	"enhanced-standard-uis-filter-results-label": "$1 {{PLURAL:$1|Ergebnis|Ergebnisse}} gefunden"
 }
