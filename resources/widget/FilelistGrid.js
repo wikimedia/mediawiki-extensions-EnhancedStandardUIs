@@ -38,7 +38,6 @@ ext.enhancedUI.widget.FilelistGrid.prototype.getColumnDefinitions = function () 
 			hidden: !mw.user.options.get( 'filelist-show-author' ),
 			autoClosePopup: true
 		},
-
 		timestamp: {
 			headerText: mw.message( 'enhanced-standard-uis-filelist-grid-date-title' ).text(),
 			type: 'date',

@@ -149,14 +149,14 @@ ext.enhancedUI.panel.AllPagesPanel.prototype.onFilterInput = function () {
 	this.store.loadPages( this.selectedNS, searchString ).done( function ( data ) {
 		var sortedData = this.sortData( data );
 		this.pages = sortedData;
-		this.updateResults();
+		this.updateResults( data );
 		this.paginator.init( Math.ceil( this.store.getTotal() / this.pageSize ) );
 		this.updatePages();
 	}.bind( this ) );
 };
 
-ext.enhancedUI.panel.AllPagesPanel.prototype.updateResults = function () {
-	var length = this.pages.length;
+ext.enhancedUI.panel.AllPagesPanel.prototype.updateResults = function ( data ) {
+	var length = Object.keys( data ).length;
 	this.$resultCounter.text(
 		mw.message( 'enhanced-standard-uis-allpages-filter-results-label', length ).text()
 	);

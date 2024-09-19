@@ -92,12 +92,10 @@ ext.enhancedUI.data.PagesTree.prototype.expandNode = function ( name ) {
 				$( $element ).append( $li );
 				this.reEvaluateParent( nodeElement );
 				$( $element ).show();
-				$( node.$element ).attr( 'aria-expanded', 'true' );
 			}
 		}.bind( this ) );
 	} else {
 		$( $element ).show();
-		$( node.$element ).attr( 'aria-expanded', 'true' );
 	}
 };
 

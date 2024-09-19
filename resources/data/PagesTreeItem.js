@@ -25,6 +25,7 @@ ext.enhancedUI.data.PagesTreeItem.prototype.possiblyAddExpander = function () {
 			icon: this.expanded ? this.style.IconCollapse : this.style.IconExpand,
 			classes: [ 'oojsplus-data-tree-expander' ]
 		} );
+		this.expander.$button.attr( 'aria-expanded', this.expanded );
 		this.expander.connect( this, {
 			click: 'onExpanderClick'
 		} );
@@ -52,7 +53,8 @@ ext.enhancedUI.data.PagesTreeItem.prototype.addRedirectIcon = function () {
 		icon: 'share',
 		classes: [ 'oojsplus-data-tree-page-redirect' ]
 	} );
-
+	$( this.labelWidget.$link ).attr( 'aria-label',
+		mw.message( 'enhanced-standard-uis-allpages-redirect-label', this.buttonCfg.title ).text() );
 	this.$wrapper.append( this.redirectIcon.$element );
 };
 
@@ -97,7 +99,7 @@ ext.enhancedUI.data.PagesTreeItem.prototype.addWatchIcon = function () {
 		// Messages that can be used here:
 		// * enhanced-standard-uis-allpages-watch-label
 		// * enhanced-standard-uis-allpages-unwatch-label
-		label: mw.message( 'enhanced-standard-uis-allpages-' + action + 'label', this.buttonCfg.title ).text(),
+		label: mw.message( 'enhanced-standard-uis-allpages-' + action + '-label', this.buttonCfg.title ).text(),
 		invisibleLabel: true,
 		title: this.buttonCfg.title,
 		data: {
@@ -116,10 +118,12 @@ ext.enhancedUI.data.PagesTreeItem.prototype.onExpanderClick = function () {
 	if ( this.expanded ) {
 		this.tree.collapseNode( this.getName() );
 		this.expander.setIcon( this.style.IconExpand );
+		this.expander.$button.attr( 'aria-expanded', 'false' );
 		this.expanded = false;
 	} else {
 		this.tree.expandNode( this.getName() );
 		this.expander.setIcon( this.style.IconCollapse );
+		this.expander.$button.attr( 'aria-expanded', 'true' );
 		this.expanded = true;
 	}
 };
