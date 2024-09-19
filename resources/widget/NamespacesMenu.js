@@ -59,7 +59,6 @@ ext.enhancedUI.widget.NamespacesMenu.prototype.setupNamespaceMenu = function () 
 
 	this.menuPanel = new OO.ui.PanelLayout( {
 		expanded: false,
-		scrollable: true,
 		$content: this.selectWidget.$element
 	} );
 
