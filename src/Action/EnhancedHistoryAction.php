@@ -15,6 +15,7 @@ use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionRecord;
 use Message;
 use RawMessage;
+use Wikimedia\Rdbms\IResultWrapper;
 
 class EnhancedHistoryAction extends HistoryAction {
 

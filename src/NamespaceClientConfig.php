@@ -5,6 +5,7 @@ namespace MediaWiki\Extension\EnhancedStandardUIs;
 use Config;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\ResourceLoader\Context;
+use Wikimedia\Rdbms\ILoadBalancer;
 
 class NamespaceClientConfig {
 
