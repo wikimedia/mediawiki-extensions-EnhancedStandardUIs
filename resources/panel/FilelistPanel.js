@@ -121,8 +121,6 @@ ext.enhancedUI.panel.FilelistPanel.prototype.setupTools = function () {
 		]
 	} );
 	this.$element.append( this.toolsLayout.$element );
-	this.$resultCounter = $( '<div>' ).attr( 'aria-live', 'polite' ).addClass( 'visually-hidden' );
-	this.$element.append( this.$resultCounter );
 };
 
 ext.enhancedUI.panel.FilelistPanel.prototype.setupTilesView = function () {
@@ -240,10 +238,6 @@ ext.enhancedUI.panel.FilelistPanel.prototype.setItems = function ( data ) {
 	} else {
 		this.grid.setItems( data );
 	}
-	var length = data.length;
-	this.$resultCounter.text(
-		mw.message( 'enhanced-standard-uis-filter-results-label', length ).text()
-	);
 };
 
 ext.enhancedUI.panel.FilelistPanel.prototype.onInputChange = function ( value ) {
