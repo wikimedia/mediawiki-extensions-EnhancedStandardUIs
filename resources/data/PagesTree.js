@@ -57,7 +57,7 @@ ext.enhancedUI.data.PagesTree.prototype.build = function ( data, lvl ) {
 
 ext.enhancedUI.data.PagesTree.prototype.createItemWidget = function (
 	item, lvl, isLeaf, labelledby, expanded ) {
-	return new ext.enhancedUI.data.PagesTreeItem( $.extend( {}, {
+	return new ext.enhancedUI.data.PagesTreeItem( Object.assign( {}, {
 		level: lvl,
 		leaf: isLeaf,
 		tree: this,

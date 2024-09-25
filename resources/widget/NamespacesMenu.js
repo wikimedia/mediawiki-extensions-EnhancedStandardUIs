@@ -18,7 +18,7 @@ ext.enhancedUI.widget.NamespacesMenu = function ( cfg ) {
 OO.inheritClass( ext.enhancedUI.widget.NamespacesMenu, OO.ui.Widget );
 
 ext.enhancedUI.widget.NamespacesMenu.prototype.checkSelectedNS = function () {
-	// eslint-disable-next-line no-loop-func
+
 	var namespace = this.namespaces.find( function ( ns ) {
 		return ns.id === this.selectedNSId;
 	}.bind( this ) );
