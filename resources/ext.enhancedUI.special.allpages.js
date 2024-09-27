@@ -16,8 +16,8 @@
 		} );
 		$allPagesCnt.append( allPagesPanel.$element );
 
-		var paginatorOffsetJson = require( './addPaginatorOffset.json' );
-		var paginatorOffsetHeight = paginatorOffsetJson.offsetHeight;
+		var offsetJson = require( './addOffset.json' );
+		var offsetHeight = offsetJson.offsetHeight;
 		var floatingPaginator = false;
 		var rightPos = getRightValue();
 		var $paginator = $( '.enhanced-ui-allpages-panel-paginator' ); // eslint-disable-line no-jquery/no-global-selector
@@ -27,7 +27,7 @@
 			var windowTop = $( this ).scrollTop();
 			if ( windowTop > topValue ) {
 				if ( !floatingPaginator ) {
-					$paginator.css( 'top', paginatorOffsetHeight );
+					$paginator.css( 'top', offsetHeight );
 					$paginator.css( 'position', 'fixed' );
 					$paginator.css( 'right', rightPos );
 					floatingPaginator = true;
@@ -38,6 +38,23 @@
 					floatingPaginator = false;
 				}
 			}
+		} );
+
+		$( '.oo-ui-outlineSelectWidget' ).on( 'focus', function ( e ) { // eslint-disable-line no-jquery/no-global-selector
+			var target = e.target;
+			if ( window.innerHeight < target.clientHeight ) {
+				$( target ).css( 'top', offsetHeight );
+				$( target ).css( 'position', 'fixed' );
+				$( target ).css( 'width', $( target ).parent().width() );
+				$( target ).css( 'height', 'calc( 100vh - ' + offsetHeight + 'px )' );
+				$( target ).css( 'background-color', 'white' );
+				$( target ).css( 'overflow', 'auto' );
+				$( '.enhanced-ui-allpages-panel' ).css( 'min-height', target.clientHeight ); // eslint-disable-line no-jquery/no-global-selector
+			}
+		} );
+		$( '.oo-ui-outlineSelectWidget' ).on( 'blur', function ( e ) { // eslint-disable-line no-jquery/no-global-selector
+			$( e.target ).removeAttr( 'style' );
+			$( '.enhanced-ui-allpages-panel' ).removeAttr( 'style' ); // eslint-disable-line no-jquery/no-global-selector
 		} );
 	} );
 
