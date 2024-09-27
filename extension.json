@@ -137,7 +137,7 @@
 			"packageFiles": [
 				"ext.enhancedUI.special.allpages.js",
 				{
-					"name": "addPaginatorOffset.json",
+					"name": "addOffset.json",
 					"callback": "MediaWiki\\Extension\\EnhancedStandardUIs\\AddAllPagesPaginatorOffset::makeConfigJson"
 				},
 				"panel/AllPagesPanel.js",
