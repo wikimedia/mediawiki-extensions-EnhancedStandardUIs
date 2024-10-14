@@ -156,10 +156,27 @@ ext.enhancedUI.panel.AllPagesPanel.prototype.onFilterInput = function () {
 };
 
 ext.enhancedUI.panel.AllPagesPanel.prototype.updateResults = function ( data ) {
-	var length = Object.keys( data ).length;
+	var resultNumber = this.calculateResultNumber( data, 0 );
 	this.$resultCounter.text(
-		mw.message( 'enhanced-standard-uis-allpages-filter-results-label', length ).text()
+		mw.message( 'enhanced-standard-uis-allpages-filter-results-label', resultNumber ).text()
 	);
+};
+
+ext.enhancedUI.panel.AllPagesPanel.prototype.calculateResultNumber = function ( items, resultNumber ) {
+	for ( var i in items ) {
+		if ( !items[ i ].expanded ) {
+			resultNumber += 1;
+			continue;
+		}
+		for ( var j in items[ i ].children ) {
+			if ( !items[ i ].children[ j ].expanded ) {
+				resultNumber += 1;
+				continue;
+			}
+			return this.calculateResultNumber( [ items[ i ].children[ j ] ], resultNumber );
+		}
+	}
+	return resultNumber;
 };
 
 ext.enhancedUI.panel.AllPagesPanel.prototype.sortData = function ( data ) {
