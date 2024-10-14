@@ -60,9 +60,9 @@
 	"enhanced-standard-uis-filelist-grid-preview-title": "Preview",
 	"enhanced-standard-uis-filelist-ga-title": "Files",
 	"enhanced-standard-uis-filelist-ga-aria": "File list",
-	"enhanced-standard-uis-allpages-untitled": "Untitled",
 	"enhanced-standard-uis-filter-results-label": "$1 {{PLURAL:$1|result|results}} found",
 	"enhanced-standard-uis-allpages-redirect-label": "$1 (redirect)",
+	"enhanced-standard-uis-allpages-untitled": "Untitled",
 	"enhancedspecialpages": "Special pages",
 	"right-enhancedstandarduis-viewuncustomizedspecialpageslist": "View certain special pages on the list [{{canonicalurl:Special:SpecialPages}} Special:SpecialPages], that are hidden for users of pure reader role",
 	"action-enhancedstandarduis-viewuncustomizedspecialpageslist": "view certain special pages on the list [{{canonicalurl:Special:SpecialPages}} Special:SpecialPages], that are hidden for users of pure reader role"
