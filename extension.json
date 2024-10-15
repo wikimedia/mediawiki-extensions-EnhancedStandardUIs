@@ -21,11 +21,39 @@
 			"HistoryPagePlugins": {},
 			"AllPagesPluginModules": [],
 			"FilelistPluginModules": []
+		},
+		"BlueSpiceFoundation": {
+			"PermissionRegistry": {
+				"enhancedstandarduis-viewuncustomizedspecialpageslist": {
+					"type": "global",
+					"roles": [
+						"accountselfcreate",
+						"commenter",
+						"author",
+						"editor",
+						"reviewer",
+						"structuremanager",
+						"accountmanager",
+						"admin",
+						"bot",
+						"maintenanceadmin"
+					]
+				}
+			}
+		}
+	},
+	"AvailableRights": [
+		"enhancedstandarduis-viewuncustomizedspecialpageslist"
+	],
+	"GroupPermissions": {
+		"*": {
+			"enhancedstandarduis-viewuncustomizedspecialpageslist": true
 		}
 	},
 	"ExtensionMessagesFiles": {
 		"EnhancedAllPagesAlias": "languages/EnhancedAllPages.i18n.alias.php",
-		"EnhancedFilelist": "languages/EnhancedFilelist.i18n.alias.php"
+		"EnhancedFilelist": "languages/EnhancedFilelist.i18n.alias.php",
+		"EnhancedSpecialPages": "languages/EnhancedSpecialPages.i18n.alias.php"
 	},
 	"MessagesDirs": {
 		"EnhancedStandardUIs": [
@@ -34,7 +62,8 @@
 	},
 	"SpecialPages": {
 		"EnhancedAllPages": "MediaWiki\\Extension\\EnhancedStandardUIs\\Special\\EnhancedAllPages",
-		"EnhancedFilelist": "MediaWiki\\Extension\\EnhancedStandardUIs\\Special\\EnhancedFilelist"
+		"EnhancedFilelist": "MediaWiki\\Extension\\EnhancedStandardUIs\\Special\\EnhancedFilelist",
+		"EnhancedSpecialPages": "MediaWiki\\Extension\\EnhancedStandardUIs\\Special\\EnhancedSpecialPages"
 	},
 	"config": {
 		"EnhancedUIsVersionHistoryToolbarOffset": {
@@ -48,7 +77,13 @@
 		"EnhancedUIsAllPagesOverride": {
 			"value": false
 		},
+		"EnhancedUIsFilelistOverride": {
+			"value": false
+		},
 		"EnhancedUIsExtendedFilelistOverride": {
+			"value": false
+		},
+		"EnhancedUIsSpecialSpecialPagesOverride": {
 			"value": false
 		}
 	},
