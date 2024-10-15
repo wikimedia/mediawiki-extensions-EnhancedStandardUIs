@@ -62,5 +62,8 @@
 	"enhanced-standard-uis-filelist-ga-aria": "Arial label for the GlobalAction item to open the file list",
 	"enhanced-standard-uis-allpages-untitled": "Label for page link if subpage only contains '/'",
 	"enhanced-standard-uis-filter-results-label": "Label for results found from filtering\nParameters:\n* $1 - number of results",
-	"enhanced-standard-uis-allpages-redirect-label": "Label to announce link is redirect\nParameters:\n* $1- page title"
+	"enhanced-standard-uis-allpages-redirect-label": "Label to announce link is redirect\nParameters:\n* $1- page title",
+	"enhancedspecialpages": "Special page name for [[Special:EnhancedSpecialPages]] special page.",
+	"right-enhancedstandarduis-viewuncustomizedspecialpageslist": "{{doc-right|enhancedstandarduis-viewuncustomizedspecialpageslist}}",
+	"action-enhancedstandarduis-viewuncustomizedspecialpageslist": "{{doc-action|enhancedstandarduis-viewuncustomizedspecialpageslist}}"
 }
