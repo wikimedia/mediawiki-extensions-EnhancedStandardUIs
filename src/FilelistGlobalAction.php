@@ -9,7 +9,9 @@ use SpecialPage;
 class FilelistGlobalAction extends RestrictedTextLink {
 
 	public function __construct() {
-		parent::__construct( [] );
+		parent::__construct( [
+			'role' => 'menuitem'
+		] );
 	}
 
 	/**
