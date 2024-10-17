@@ -34,8 +34,6 @@ class EnhancedSpecialPages extends UnlistedSpecialPage {
 		'BlockList',
 		'SocialProfiles',
 		'WithoutInterwiki',
-		'Protectedpages',
-		'Protectedtitles',
 		'Uncategorizedcategories',
 		'Uncategorizedimages',
 		'Uncategorizedpages',
@@ -76,10 +74,9 @@ class EnhancedSpecialPages extends UnlistedSpecialPage {
 		'PageHistory',
 		'PageInfo',
 		'PermanentLink',
-		'SpecialProtectPage',
 		'Purge',
 		'RandomInCategory',
-		'RandomRedirect',
+		'Randomredirect',
 		'Randomrootpage',
 		'Whatlinkshere',
 		'Mostlinkedcategories',
@@ -96,7 +93,7 @@ class EnhancedSpecialPages extends UnlistedSpecialPage {
 		'Templates',
 		'Ask',
 		'Concepts',
-		'ConstraintErcrorList',
+		'ConstraintErrorList',
 		'ExportRDF',
 		'GetData',
 		'MissingRedirectAnnotations',
@@ -105,7 +102,12 @@ class EnhancedSpecialPages extends UnlistedSpecialPage {
 		'PropertyLabelSimilarity',
 		'Types',
 		'UnusedProperties',
-		'WantedProperties'
+		'WantedProperties',
+		'Allmessages',
+		'Protectedpages',
+		'Protectedtitles',
+		'SpecialProtectPage',
+		'ProtectPage'
 	];
 
 	public function __construct() {
