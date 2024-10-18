@@ -49,5 +49,17 @@
 	"enhanced-standard-uis-filelist-ga-title": "Датотеке",
 	"enhanced-standard-uis-filelist-ga-aria": "Списак датотека",
 	"enhanced-standard-uis-allpages-untitled": "Без наслова",
-	"enhanced-standard-uis-allpages-redirect-label": "$1 (преусмерење)"
+	"enhanced-standard-uis-allpages-redirect-label": "$1 (преусмерење)",
+	"enhanced-standard-uis-allpages-include-talk-ns": "Прикажи именске просторе разговора",
+	"enhanced-standard-uis-allpages-include-non-content-ns": "Прикажи несадржинске именске просторе",
+	"enhanced-standard-uis-allpages-config": "Конфигурација",
+	"enhanced-standard-uis-filelist-panel-search-placeholder-label": "Претражи датотеку",
+	"enhanced-standard-uis-filelist-panel-tiles-label": "Плочице",
+	"enhanced-standard-uis-filelist-dialog-action-file-label": "Отвори страницу датотеке",
+	"enhanced-standard-uis-allpages-namespace-list-label": "Списак именских простора",
+	"enhanced-standard-uis-allpages-watch-label": "Надгледај страницу $1",
+	"enhanced-standard-uis-allpages-unwatch-label": "Прекини надгледање странице $1",
+	"enhanced-standard-uis-allpages-pageinfo-label": "Прикажи информације о страници $1",
+	"enhanced-standard-uis-filter-results-label": "$1 {{PLURAL:$1|резултат је пронађен|резултата је пронађено}}",
+	"enhancedspecialpages": "Посебне странице"
 }
