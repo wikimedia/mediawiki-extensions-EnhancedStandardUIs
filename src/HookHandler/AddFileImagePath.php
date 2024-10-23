@@ -34,7 +34,7 @@ class AddFileImagePath implements MWStakeCommonWebAPIsQueryStoreResultHook {
 		}
 		$data = $result->getRecords();
 		foreach ( $data as $record ) {
-			$title = $this->titleFactory->newFromText( $record->get( 'title' ), NS_FILE );
+			$title = $this->titleFactory->newFromText( 'File:' . $record->get( 'title' ) );
 			$file = $this->repoGroup->getLocalRepo()->newFile( $title );
 			if ( $file ) {
 				$record->set( 'fileUrl', $file->getUrl() );
