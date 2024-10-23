@@ -117,6 +117,10 @@ ext.enhancedUI.data.PagesTree.prototype.prepareData = function ( pages ) {
 			classes.push( 'enhancedui-allpages-untitled-page' );
 		}
 
+		if ( !pages[ i ].allows_subpages ) {
+			label = pages[ i ].title;
+		}
+
 		// eslint-disable-next-line mediawiki/class-doc
 		var entry = {
 			id: pages[ i ].id,
