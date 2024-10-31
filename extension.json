@@ -4,7 +4,7 @@
 	"author": [
 		"[https://www.hallowelt.com Hallo Welt! GmbH]"
 	],
-	"url": "https://www.hallowelt.com",
+	"url": "https://www.mediawiki.org/wiki/Extension:EnhancedStandardUIs",
 	"descriptionmsg": "enhanced-standard-uis-desc",
 	"license-name": "GPL-3.0-only",
 	"requires": {
