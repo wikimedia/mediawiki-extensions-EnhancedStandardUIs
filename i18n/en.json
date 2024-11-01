@@ -65,5 +65,5 @@
 	"enhanced-standard-uis-allpages-redirect-label": "$1 (redirect)",
 	"enhancedspecialpages": "Special pages",
 	"right-enhancedstandarduis-viewuncustomizedspecialpageslist": "View certain special pages on the list [{{canonicalurl:Special:SpecialPages}} Special:SpecialPages], that are hidden for users of pure reader role",
-	"action-enhancedstandarduis-viewuncustomizedspecialpageslist": "View certain special pages on the list[{{canonicalurl:Special:SpecialPages}} Special:SpecialPages], that are hidden for users of pure reader role"
+	"action-enhancedstandarduis-viewuncustomizedspecialpageslist": "view certain special pages on the list [{{canonicalurl:Special:SpecialPages}} Special:SpecialPages], that are hidden for users of pure reader role"
 }
