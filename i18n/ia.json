@@ -60,9 +60,9 @@
 	"enhanced-standard-uis-filelist-grid-preview-title": "Previsualisation",
 	"enhanced-standard-uis-filelist-ga-title": "Files",
 	"enhanced-standard-uis-filelist-ga-aria": "Lista de files",
-	"enhanced-standard-uis-allpages-untitled": "Sin titulo",
 	"enhanced-standard-uis-filter-results-label": "$1 resultato{{PLURAL:$1||s}} trovate",
 	"enhanced-standard-uis-allpages-redirect-label": "$1 (redirection)",
+	"enhanced-standard-uis-allpages-untitled": "Sin titulo",
 	"enhancedspecialpages": "Paginas special",
 	"right-enhancedstandarduis-viewuncustomizedspecialpageslist": "Vider certe paginas special in le lista [{{canonicalurl:Special:SpecialPages}} Special:Paginas special] le quales es celate pro le usatores con rolo de lectura sol",
 	"action-enhancedstandarduis-viewuncustomizedspecialpageslist": "vider certe paginas special in le lista [{{canonicalurl:Special:SpecialPages}} Special:Paginas special] le quales es celate pro le usatores con rolo de lectura sol"

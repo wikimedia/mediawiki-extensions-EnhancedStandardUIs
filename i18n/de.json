@@ -61,10 +61,10 @@
 	"enhanced-standard-uis-filelist-grid-preview-title": "Vorschau",
 	"enhanced-standard-uis-filelist-ga-title": "Dateien",
 	"enhanced-standard-uis-filelist-ga-aria": "Dateiliste",
-	"enhanced-standard-uis-allpages-untitled": "Ohne Titel",
 	"enhanced-standard-uis-filter-results-label": "$1 {{PLURAL:$1|Ergebnis|Ergebnisse}} gefunden",
 	"enhanced-standard-uis-allpages-redirect-label": "$1 (Weiterleitung)",
+	"enhanced-standard-uis-allpages-untitled": "Ohne Titel",
 	"enhancedspecialpages": "Spezialseiten",
 	"right-enhancedstandarduis-viewuncustomizedspecialpageslist": "Spezialseiten in der Liste [{{canonicalurl:Special:SpecialPages}} Spezial:Spezialseiten] anzeigen, die für Benutzer mit reiner Leserrolle ausgeblendet sind",
-	"action-enhancedstandarduis-viewuncustomizedspecialpageslist": "Spezialseiten in der Liste [{{canonicalurl:Special:SpecialPages}} Spezial:Spezialseiten] anzeigen, die für Benutzer mit reiner Leserrolle ausgeblendet sind"
+	"action-enhancedstandarduis-viewuncustomizedspecialpageslist": "Spezialseiten in der Liste [{{canonicalurl:Special:SpecialPages}} Spezial:Spezialseiten] anzuzeigen, die für Benutzer mit reiner Leserrolle ausgeblendet sind"
 }
