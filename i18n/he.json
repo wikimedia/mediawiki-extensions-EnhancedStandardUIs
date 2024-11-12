@@ -60,7 +60,10 @@
 	"enhanced-standard-uis-filelist-grid-preview-title": "תצוגה מקדימה",
 	"enhanced-standard-uis-filelist-ga-title": "קבצים",
 	"enhanced-standard-uis-filelist-ga-aria": "רשימת קבצים",
-	"enhanced-standard-uis-allpages-untitled": "ללא כותרת",
 	"enhanced-standard-uis-filter-results-label": "{{PLURAL:$1|נמצאה תוצאה אחת|נמצאו $1 תוצאות}}",
-	"enhanced-standard-uis-allpages-redirect-label": "$1 (הפניה)"
+	"enhanced-standard-uis-allpages-redirect-label": "$1 (הפניה)",
+	"enhanced-standard-uis-allpages-untitled": "ללא כותרת",
+	"enhancedspecialpages": "דפים מיוחדים",
+	"right-enhancedstandarduis-viewuncustomizedspecialpageslist": "צפייה בדפים מיוחדים מסוימים ברשימה [{{canonicalurl:Special:SpecialPages}} Special:SpecialPages] שמוסתרים ממשתמשים בעלי תפקיד קורא טהור",
+	"action-enhancedstandarduis-viewuncustomizedspecialpageslist": "לצפות בדפים מיוחדים מסוימים ברשימה [{{canonicalurl:Special:SpecialPages}} Special:SpecialPages] שמוסתרים ממשתמשים בעלי תפקיד קורא טהור"
 }

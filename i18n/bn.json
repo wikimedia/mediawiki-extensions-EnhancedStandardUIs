@@ -24,5 +24,6 @@
 	"enhanced-standard-uis-allpages-filter-results-label": "$1টি {{PLURAL:$1|ফলাফল}} পাওয়া গেছে",
 	"enhanced-standard-uis-filelist-grid-preview-title": "প্রাকদর্শন",
 	"enhanced-standard-uis-filter-results-label": "$1টি {{PLURAL:$1|ফলাফল}} পাওয়া গেছে",
-	"enhanced-standard-uis-allpages-redirect-label": "$1 (পুনর্নির্দেশ)"
+	"enhanced-standard-uis-allpages-redirect-label": "$1 (পুনর্নির্দেশ)",
+	"enhancedspecialpages": "বিশেষ পাতাসমূহ"
 }

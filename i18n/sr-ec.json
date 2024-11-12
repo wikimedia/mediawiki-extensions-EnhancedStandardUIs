@@ -58,8 +58,8 @@
 	"enhanced-standard-uis-filelist-grid-preview-title": "Преглед",
 	"enhanced-standard-uis-filelist-ga-title": "Датотеке",
 	"enhanced-standard-uis-filelist-ga-aria": "Списак датотека",
-	"enhanced-standard-uis-allpages-untitled": "Без наслова",
 	"enhanced-standard-uis-filter-results-label": "$1 {{PLURAL:$1|резултат је пронађен|резултата је пронађено}}",
 	"enhanced-standard-uis-allpages-redirect-label": "$1 (преусмерење)",
+	"enhanced-standard-uis-allpages-untitled": "Без наслова",
 	"enhancedspecialpages": "Посебне странице"
 }
