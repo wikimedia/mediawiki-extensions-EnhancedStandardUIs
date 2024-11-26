@@ -127,6 +127,8 @@ ext.enhancedUI.panel.HistoryPanel.prototype.doActionOnRow = function ( action, r
 		hideUrl += '&ids[' + row.id + ']=1';
 		window.location.href = hideUrl;
 	}
+
+	mw.hook( 'enhanced.versionhistory.rowAction' ).fire( action, row );
 };
 
 ext.enhancedUI.panel.HistoryPanel.prototype.rowSelect = function () {
