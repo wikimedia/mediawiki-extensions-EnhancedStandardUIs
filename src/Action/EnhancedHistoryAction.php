@@ -148,7 +148,7 @@ class EnhancedHistoryAction extends HistoryAction {
 			$entry['size'] = Message::newFromKey( 'size-bytes', $row->rev_len )->parse();
 			$summary = new RawMessage( $row->rev_comment_text );
 			$entry['summary'] = $hasPermission || !$deletedFields['summary']
-				? $summary->parse()
+				? $summary->text()
 				: '';
 			$entry['tags'] = $row->ts_tags;
 			$entry['tagUrl'] = $titleFactory->newFromText( 'Special:Tags' )->getLocalURL();
