@@ -179,7 +179,8 @@ class EnhancedSpecialPages extends UnlistedSpecialPage {
 			if ( !isset( $groups[$group] ) ) {
 				$groups[$group] = [];
 			}
-			$groups[$group][$page->getDescription()] = [
+			$desc = (string)$page->getDescription();
+			$groups[$group][$desc] = [
 				$page->getPageTitle(),
 				$page->isRestricted(),
 				$page->isCached()
