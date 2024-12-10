@@ -16,14 +16,6 @@
 	opacity: 1;
 }
 
-/* stylelint-disable declaration-no-important */
-#enhanced-ui-filelist-cnt .oojsplus-data-gridWidget-column-header[ data-field='upload' ],
-#enhanced-ui-filelist-cnt .oojsplus-data-gridWidget-column-header[ data-field='info' ] {
-	/* oojs style is added with important */
-	border-right: 0 !important;
-}
-/* stylelint-enable declaration-no-important */
-
 .enhancedUI-paginator .oo-ui-buttonSelectWidget {
 	margin-right: -1px;
 }
