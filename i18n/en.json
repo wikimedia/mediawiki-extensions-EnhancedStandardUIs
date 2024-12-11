@@ -65,5 +65,6 @@
 	"enhanced-standard-uis-allpages-untitled": "Untitled",
 	"enhancedspecialpages": "Special pages",
 	"right-enhancedstandarduis-viewuncustomizedspecialpageslist": "View certain special pages on the list [{{canonicalurl:Special:SpecialPages}} Special:SpecialPages], that are hidden for users of pure reader role",
-	"action-enhancedstandarduis-viewuncustomizedspecialpageslist": "view certain special pages on the list [{{canonicalurl:Special:SpecialPages}} Special:SpecialPages], that are hidden for users of pure reader role"
+	"action-enhancedstandarduis-viewuncustomizedspecialpageslist": "view certain special pages on the list [{{canonicalurl:Special:SpecialPages}} Special:SpecialPages], that are hidden for users of pure reader role",
+	"enhanced-standard-uis-ve-filegrid-title": "Advanced search"
 }
