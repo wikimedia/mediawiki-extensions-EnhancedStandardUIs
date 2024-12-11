@@ -65,5 +65,6 @@
 	"enhanced-standard-uis-allpages-untitled": "Label for page link if subpage only contains '/'",
 	"enhancedspecialpages": "Special page name for [[Special:EnhancedSpecialPages]] special page.",
 	"right-enhancedstandarduis-viewuncustomizedspecialpageslist": "{{doc-right|enhancedstandarduis-viewuncustomizedspecialpageslist}}",
-	"action-enhancedstandarduis-viewuncustomizedspecialpageslist": "{{doc-action|enhancedstandarduis-viewuncustomizedspecialpageslist}}"
+	"action-enhancedstandarduis-viewuncustomizedspecialpageslist": "{{doc-action|enhancedstandarduis-viewuncustomizedspecialpageslist}}",
+	"enhanced-standard-uis-ve-filegrid-title": "Title for the tab in VisualEditor media dialog"
 }

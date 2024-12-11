@@ -11,6 +11,7 @@ ext.enhancedUI.panel.FilelistPanel = function ( cfg ) {
 	this.$element = $( '<div>' ).addClass( 'enhanced-ui-filelist-panel' );
 
 	this.rights = cfg.rights || [];
+	this.canSwitchModes = typeof cfg.canSwitchModes === 'undefined' ? true : cfg.canSwitchModes;
 	this.mode = 'list';
 	this.pageSize = 25;
 	this.store = new OOJSPlus.ui.data.store.RemoteRestStore( {
@@ -83,32 +84,34 @@ ext.enhancedUI.panel.FilelistPanel.prototype.setupTools = function () {
 		toolsItems.push( new OO.ui.FieldLayout( this.uploadBtn ) );
 	}
 
-	this.typeSwitch = new OO.ui.ButtonSelectWidget( {
-		items: [
-			new OO.ui.ButtonOptionWidget( {
-				data: 'tiles',
-				label: mw.message( 'enhanced-standard-uis-filelist-panel-tiles-label' ).text(),
-				title: mw.message( 'enhanced-standard-uis-filelist-panel-tiles-label' ).text(),
-				icon: 'viewCompact'
-			} ),
-			new OO.ui.ButtonOptionWidget( {
-				data: 'list',
-				label: mw.message( 'enhanced-standard-uis-filelist-panel-list-label' ).text(),
-				title: mw.message( 'enhanced-standard-uis-filelist-panel-list-label' ).text(),
-				icon: 'listBullet'
-			} )
-		],
-		classes: [ '' ]
-	} );
-	$( this.typeSwitch.$element ).attr( 'aria-label', 'Select view mode' );
-	this.typeSwitch.selectItemByData( this.mode );
-	this.typeSwitch.connect( this, {
-		select: 'onTypeSwitchChange'
-	} );
+	if ( this.canSwitchModes ) {
+		this.typeSwitch = new OO.ui.ButtonSelectWidget( {
+			items: [
+				new OO.ui.ButtonOptionWidget( {
+					data: 'tiles',
+					label: mw.message( 'enhanced-standard-uis-filelist-panel-tiles-label' ).text(),
+					title: mw.message( 'enhanced-standard-uis-filelist-panel-tiles-label' ).text(),
+					icon: 'viewCompact'
+				} ),
+				new OO.ui.ButtonOptionWidget( {
+					data: 'list',
+					label: mw.message( 'enhanced-standard-uis-filelist-panel-list-label' ).text(),
+					title: mw.message( 'enhanced-standard-uis-filelist-panel-list-label' ).text(),
+					icon: 'listBullet'
+				} )
+			],
+			classes: [ '' ]
+		} );
+		$( this.typeSwitch.$element ).attr( 'aria-label', 'Select view mode' );
+		this.typeSwitch.selectItemByData( this.mode );
+		this.typeSwitch.connect( this, {
+			select: 'onTypeSwitchChange'
+		} );
 
-	toolsItems.push( new OO.ui.FieldLayout( this.typeSwitch, {
-		classes: [ 'enhanced-filelist-tools-btn-select' ]
-	} ) );
+		toolsItems.push( new OO.ui.FieldLayout( this.typeSwitch, {
+			classes: [ 'enhanced-filelist-tools-btn-select' ]
+		} ) );
+	}
 
 	this.toolsLayout = new OO.ui.HorizontalLayout( {
 		classes: [ 'enhanced-filelist-tools' ],
