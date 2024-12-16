@@ -1,11 +1,11 @@
 ( function ( mw, $ ) {
 
-	$( function () {
+	$( () => {
 		require( './panel/FilelistPanel.js' );
-		mw.user.getRights().done( function ( rights ) {
+		mw.user.getRights().done( ( rights ) => {
 			/* eslint-disable-next-line no-jquery/no-global-selector */
-			var $allFilesCnt = $( '#enhanced-ui-filelist-cnt' );
-			var filesPanel = new ext.enhancedUI.panel.FilelistPanel( {
+			const $allFilesCnt = $( '#enhanced-ui-filelist-cnt' );
+			const filesPanel = new ext.enhancedUI.panel.FilelistPanel( {
 				rights: rights
 			} );
 			$( $allFilesCnt ).append( filesPanel.$element );

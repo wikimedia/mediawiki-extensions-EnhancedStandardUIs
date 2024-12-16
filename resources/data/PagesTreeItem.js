@@ -84,9 +84,9 @@ ext.enhancedUI.data.PagesTreeItem.prototype.addWatchIcon = function () {
 		return;
 	}
 
-	var isWatched = this.buttonCfg.watch;
-	var iconClass = 'star';
-	var action = 'watch';
+	const isWatched = this.buttonCfg.watch;
+	let iconClass = 'star';
+	let action = 'watch';
 	if ( isWatched ) {
 		iconClass = 'unStar';
 		action = 'unwatch';
@@ -129,22 +129,22 @@ ext.enhancedUI.data.PagesTreeItem.prototype.onExpanderClick = function () {
 };
 
 ext.enhancedUI.data.PagesTreeItem.prototype.onWatchIconClick = function () {
-	var title = this.watch.data.title;
-	var action = this.watch.data.action;
-	mw.loader.using( 'mediawiki.api' ).done( function () {
-		var api = new mw.Api();
+	const title = this.watch.data.title;
+	const action = this.watch.data.action;
+	mw.loader.using( 'mediawiki.api' ).done( () => {
+		const api = new mw.Api();
 		if ( action === 'watch' ) {
-			api.watch( title ).done( function () {
+			api.watch( title ).done( () => {
 				this.watch.data.action = 'unwatch';
 				this.watch.setIcon( 'unStar' );
 				mw.notify( mw.message( 'addedwatchtext-short', title ).text() );
-			}.bind( this ) );
+			} );
 		} else {
-			api.unwatch( title ).done( function () {
+			api.unwatch( title ).done( () => {
 				this.watch.data.action = 'watch';
 				this.watch.setIcon( 'star' );
 				mw.notify( mw.message( 'removedwatchtext-short', title ).text() );
-			}.bind( this ) );
+			} );
 		}
-	}.bind( this ) );
+	} );
 };
