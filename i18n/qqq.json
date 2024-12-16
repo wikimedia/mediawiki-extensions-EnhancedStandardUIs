@@ -65,5 +65,6 @@
 	"enhanced-standard-uis-allpages-redirect-label": "Label to announce link is redirect\nParameters:\n* $1- page title",
 	"enhancedspecialpages": "Special page name for [[Special:EnhancedSpecialPages]] special page.",
 	"right-enhancedstandarduis-viewuncustomizedspecialpageslist": "{{doc-right|enhancedstandarduis-viewuncustomizedspecialpageslist}}",
-	"action-enhancedstandarduis-viewuncustomizedspecialpageslist": "{{doc-action|enhancedstandarduis-viewuncustomizedspecialpageslist}}"
+	"action-enhancedstandarduis-viewuncustomizedspecialpageslist": "{{doc-action|enhancedstandarduis-viewuncustomizedspecialpageslist}}",
+	"enhanced-standard-uis-ve-filegrid-title": "Title for the tab in VisualEditor media dialog"
 }
