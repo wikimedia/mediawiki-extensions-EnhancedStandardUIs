@@ -84,7 +84,7 @@ ext.enhancedUI.dialog.FileInfoDialog.prototype.getActionProcess = function ( act
 	).next(
 		function () {
 			if ( action === 'file' ) {
-				var filePageUrl = mw.util.getUrl( 'File:' + this.fileName );
+				const filePageUrl = mw.util.getUrl( 'File:' + this.fileName );
 				window.location.href = filePageUrl;
 			}
 			return ext.enhancedUI.dialog.FileInfoDialog.parent.prototype.getActionProcess.call(

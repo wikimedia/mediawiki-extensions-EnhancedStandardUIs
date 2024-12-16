@@ -19,9 +19,7 @@ OO.inheritClass( ext.enhancedUI.widget.NamespacesMenu, OO.ui.Widget );
 
 ext.enhancedUI.widget.NamespacesMenu.prototype.checkSelectedNS = function () {
 
-	var namespace = this.namespaces.find( function ( ns ) {
-		return ns.id === this.selectedNSId;
-	}.bind( this ) );
+	const namespace = this.namespaces.find( ( ns ) => ns.id === this.selectedNSId );
 	this.selectedNSIsContent = namespace.isContent;
 	this.selectedNSIsTalk = namespace.isTalk;
 };
@@ -32,7 +30,7 @@ ext.enhancedUI.widget.NamespacesMenu.prototype.setup = function () {
 };
 
 ext.enhancedUI.widget.NamespacesMenu.prototype.setupConfigButton = function () {
-	var popupContent = this.getPopupContent();
+	const popupContent = this.getPopupContent();
 	this.configPopupButton = new OO.ui.PopupButtonWidget( {
 		icon: 'settings',
 		framed: false,
@@ -40,7 +38,7 @@ ext.enhancedUI.widget.NamespacesMenu.prototype.setupConfigButton = function () {
 		label: mw.message( 'enhanced-standard-uis-allpages-config' ).text(),
 		invisibleLabel: true
 	} );
-	var fieldlayout = new OO.ui.FieldLayout( this.configPopupButton, {
+	const fieldlayout = new OO.ui.FieldLayout( this.configPopupButton, {
 		align: 'inline',
 		label: mw.message( 'enhanced-standard-uis-allpages-config' ).text(),
 		classes: [ 'enhanced-ui-allpages-config-header' ]
@@ -75,7 +73,7 @@ ext.enhancedUI.widget.NamespacesMenu.prototype.getPopupContent = function () {
 			this.updateNSMenu();
 		}
 	} );
-	var includeTalkLayout = new OO.ui.FieldLayout(
+	const includeTalkLayout = new OO.ui.FieldLayout(
 		this.includeTalkNS,
 		{
 			label: mw.message( 'enhanced-standard-uis-allpages-include-talk-ns' ).text(),
@@ -91,7 +89,7 @@ ext.enhancedUI.widget.NamespacesMenu.prototype.getPopupContent = function () {
 			this.updateNSMenu();
 		}
 	} );
-	var includeNonContentLayout = new OO.ui.FieldLayout(
+	const includeNonContentLayout = new OO.ui.FieldLayout(
 		this.includeNonContentNS,
 		{
 			label: mw.message( 'enhanced-standard-uis-allpages-include-non-content-ns' ).text(),
@@ -104,14 +102,14 @@ ext.enhancedUI.widget.NamespacesMenu.prototype.getPopupContent = function () {
 	this.includeRedirect.connect( this, {
 		change: 'updateRedirect'
 	} );
-	var includeRedirectsLayout = new OO.ui.FieldLayout(
+	const includeRedirectsLayout = new OO.ui.FieldLayout(
 		this.includeRedirect,
 		{
 			label: mw.message( 'enhanced-standard-uis-allpages-include-redirect' ).text(),
 			align: 'inline'
 		}
 	);
-	var $content = $( '<div>' );
+	const $content = $( '<div>' );
 	$content.append( includeTalkLayout.$element );
 	$content.append( includeNonContentLayout.$element );
 	$content.append( includeRedirectsLayout.$element );
@@ -126,33 +124,31 @@ ext.enhancedUI.widget.NamespacesMenu.prototype.getPopupContent = function () {
 };
 
 ext.enhancedUI.widget.NamespacesMenu.prototype.updateNSMenu = function () {
-	var selectedItem = this.selectWidget.findFirstSelectedItem();
+	const selectedItem = this.selectWidget.findFirstSelectedItem();
 	this.selectWidget.clearItems();
 	this.nsOptions = [];
-	var includeNonContent = this.includeNonContentNS.isSelected();
+	let includeNonContent = this.includeNonContentNS.isSelected();
 	if ( !this.selectedNSIsContent ) {
 		includeNonContent = true;
 	}
-	var includeTalk = this.includeTalkNS.isSelected();
+	let includeTalk = this.includeTalkNS.isSelected();
 	if ( this.selectedNSIsTalk ) {
 		includeTalk = true;
 	}
 
-	for ( var nsId in this.namespaces ) {
-		var namespace = this.namespaces[ nsId ];
+	for ( const nsId in this.namespaces ) {
+		const namespace = this.namespaces[ nsId ];
 		if ( includeTalk && namespace.isTalk ) {
-			var namespaceTalkId = namespace.id;
-			// eslint-disable-next-line no-loop-func
-			var relatedNS = this.namespaces.filter( function ( ns ) {
-				return ns.id === ( namespaceTalkId - 1 );
-			} );
+			const namespaceTalkId = namespace.id;
+
+			const relatedNS = this.namespaces.filter( ( ns ) => ns.id === ( namespaceTalkId - 1 ) );
 			if ( !relatedNS ) {
 				continue;
 			}
 			if ( !relatedNS[ 0 ].isContent && !includeNonContent ) {
 				continue;
 			}
-			var option = new ext.enhancedUI.widget.NamespaceOptionWidget( {
+			const option = new ext.enhancedUI.widget.NamespaceOptionWidget( {
 				data: namespace.id,
 				label: namespace.name,
 				count: namespace.pageCount
@@ -181,12 +177,12 @@ ext.enhancedUI.widget.NamespacesMenu.prototype.updateNSMenu = function () {
 };
 
 ext.enhancedUI.widget.NamespacesMenu.prototype.getSelectedNamespaceId = function () {
-	var nsOption = this.selectWidget.findSelectedItem();
+	const nsOption = this.selectWidget.findSelectedItem();
 	return nsOption.data;
 };
 
 ext.enhancedUI.widget.NamespacesMenu.prototype.namespaceSelection = function () {
-	var nsOption = this.selectWidget.findSelectedItem();
+	const nsOption = this.selectWidget.findSelectedItem();
 	this.emit( 'select', nsOption.data );
 };
 
@@ -200,12 +196,12 @@ ext.enhancedUI.widget.NamespacesMenu.prototype.getRedirectStatus = function () {
 };
 
 ext.enhancedUI.widget.NamespacesMenu.prototype.updatePreference = function ( preference, value ) {
-	var val = '0';
+	let val = '0';
 	if ( value ) {
 		val = '1';
 	}
 	if ( !mw.user.isAnon() ) {
-		mw.loader.using( 'mediawiki.api' ).done( function () {
+		mw.loader.using( 'mediawiki.api' ).done( () => {
 			mw.user.options.set( 'allpages-show-' + preference, val );
 			new mw.Api().saveOption( 'allpages-show-' + preference, val );
 		} );

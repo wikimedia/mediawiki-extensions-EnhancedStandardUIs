@@ -2,13 +2,13 @@ window.ext = window.ext || {};
 ext.enhancedUI = ext.enhancedUI || {};
 ext.enhancedUI.ve = ext.enhancedUI.ve || {};
 
-ext.enhancedUI.ve.MediaDialogFileGrid = function( component ) {
+ext.enhancedUI.ve.MediaDialogFileGrid = function ( component ) { // eslint-disable-line no-unused-vars
 	ext.enhancedUI.ve.MediaDialogFileGrid.super.apply( this, arguments );
 };
 
 OO.inheritClass( ext.enhancedUI.ve.MediaDialogFileGrid, bs.vec.ui.plugin.MWMediaDialog );
 
-ext.enhancedUI.ve.MediaDialogFileGrid.prototype.initialize = function() {
+ext.enhancedUI.ve.MediaDialogFileGrid.prototype.initialize = function () {
 	this.advancedSearchTab = new OO.ui.TabPanelLayout( 'enhanced-stadard-uis-ve-filegrid-panel', {
 		label: ve.msg( 'enhanced-standard-uis-ve-filegrid-title' ),
 		padded: false
@@ -26,8 +26,8 @@ ext.enhancedUI.ve.MediaDialogFileGrid.prototype.initialize = function() {
 	this.component.searchTabs.on( 'set', this.onSearchTabsSet, [], this );
 };
 
-ext.enhancedUI.ve.MediaDialogFileGrid.prototype.onSearchTabsSet = function( selectedTab ) {
-	if( selectedTab === this.advancedSearchTab ) {
+ext.enhancedUI.ve.MediaDialogFileGrid.prototype.onSearchTabsSet = function ( selectedTab ) {
+	if ( selectedTab === this.advancedSearchTab ) {
 		this.component.setSize( 'larger' );
 		this.component.actions.setAbilities( { cancel: true } );
 		this.component.searchTabs.toggleMenu( true );
@@ -46,7 +46,7 @@ ext.enhancedUI.ve.MediaDialogFileGrid.prototype.onSearchTabsSet = function( sele
 	}
 };
 
-ext.enhancedUI.ve.MediaDialogFileGrid.prototype.initFileRepoGrid = function() {
+ext.enhancedUI.ve.MediaDialogFileGrid.prototype.initFileRepoGrid = function () {
 	this.fileRepoGrid = new ext.enhancedUI.panel.FilelistPanel( {
 		rights: [],
 		canSwitchModes: false
@@ -58,7 +58,7 @@ ext.enhancedUI.ve.MediaDialogFileGrid.prototype.initFileRepoGrid = function() {
 	this.advancedSearchTab.$element.html( this.fileRepoGrid.$element );
 };
 
-ext.enhancedUI.ve.MediaDialogFileGrid.prototype.onFileRepoGridSelect = function( data ) {
+ext.enhancedUI.ve.MediaDialogFileGrid.prototype.onFileRepoGridSelect = function ( data ) {
 	const row = data.item;
 	const imageInfo = {
 		title: row.prefixed,
@@ -76,7 +76,7 @@ ext.enhancedUI.ve.MediaDialogFileGrid.prototype.onFileRepoGridSelect = function(
 	this.component.chooseImageInfo( imageInfo );
 };
 
-ext.enhancedUI.ve.MediaDialogFileGrid.prototype.onFileRepoGridLoaded = function() {
+ext.enhancedUI.ve.MediaDialogFileGrid.prototype.onFileRepoGridLoaded = function () {
 	const height = this.fileRepoGrid.grid.$element.height() + 100;
 	this.component.setBodyHeight( height > 910 ? height : 910 );
 	this.component.updateSize();

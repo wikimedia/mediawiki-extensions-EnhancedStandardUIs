@@ -38,7 +38,7 @@ ext.enhancedUI.panel.AllPagesPanel.prototype.setupWidgets = function () {
 };
 
 ext.enhancedUI.panel.AllPagesPanel.prototype.setupMenu = function () {
-	var $menuCnt = $( '<div>' ).addClass( 'enhanced-ui-allpages-panel-menu' );
+	const $menuCnt = $( '<div>' ).addClass( 'enhanced-ui-allpages-panel-menu' );
 	if ( this.mobileView ) {
 		$menuCnt.addClass( 'collapsed' );
 		$menuCnt.addClass( 'oo-ui-icon-next' );
@@ -67,7 +67,7 @@ ext.enhancedUI.panel.AllPagesPanel.prototype.setupMenu = function () {
 };
 
 ext.enhancedUI.panel.AllPagesPanel.prototype.setupPaginator = function () {
-	var $paginatorCnt = $( '<div>' ).addClass( 'enhanced-ui-allpages-panel-paginator' );
+	const $paginatorCnt = $( '<div>' ).addClass( 'enhanced-ui-allpages-panel-paginator' );
 	this.paginator = new ext.enhancedUI.widget.Paginator();
 	this.paginator.connect( this, {
 		selectPage: function ( nextPage ) {
@@ -103,15 +103,15 @@ ext.enhancedUI.panel.AllPagesPanel.prototype.updateRedirect = function ( redirec
 
 ext.enhancedUI.panel.AllPagesPanel.prototype.getPages = function ( start ) {
 	start = start || 0;
-	this.store.loadNS( this.selectedNS, start ).done( function ( data ) {
-		var sortedData = this.sortData( data );
+	this.store.loadNS( this.selectedNS, start ).done( ( data ) => {
+		const sortedData = this.sortData( data );
 		this.pages = sortedData;
 		if ( this.changeFromPaginator !== true ) {
 			this.paginator.init( Math.ceil( this.store.getTotal() / this.pageSize ) );
 		}
 		this.changeFromPaginator = false;
 		this.updatePages();
-	}.bind( this ) );
+	} );
 };
 
 ext.enhancedUI.panel.AllPagesPanel.prototype.updatePages = function () {
@@ -127,10 +127,10 @@ ext.enhancedUI.panel.AllPagesPanel.prototype.updatePages = function () {
 			$( this.$treeCnt ).removeClass( 'enhanced-ui-allpages-columns' );
 		}
 	}
-	for ( var i in this.pages ) {
+	for ( const i in this.pages ) {
 		// eslint-disable-next-line no-jquery/variable-pattern
-		var pageTreeLetter = $( '<h2>' ).text( this.alphabetIndex[ i ] );
-		var pageTree = new ext.enhancedUI.data.PagesTree( {
+		const pageTreeLetter = $( '<h2>' ).text( this.alphabetIndex[ i ] );
+		const pageTree = new ext.enhancedUI.data.PagesTree( {
 			style: {
 				IconExpand: 'next',
 				IconCollapse: 'expand'
@@ -145,30 +145,30 @@ ext.enhancedUI.panel.AllPagesPanel.prototype.updatePages = function () {
 };
 
 ext.enhancedUI.panel.AllPagesPanel.prototype.onFilterInput = function () {
-	var searchString = this.searchWidget.getValue();
-	this.store.loadPages( this.selectedNS, searchString ).done( function ( data ) {
-		var sortedData = this.sortData( data );
+	const searchString = this.searchWidget.getValue();
+	this.store.loadPages( this.selectedNS, searchString ).done( ( data ) => {
+		const sortedData = this.sortData( data );
 		this.pages = sortedData;
 		this.updateResults( data );
 		this.paginator.init( Math.ceil( this.store.getTotal() / this.pageSize ) );
 		this.updatePages();
-	}.bind( this ) );
+	} );
 };
 
 ext.enhancedUI.panel.AllPagesPanel.prototype.updateResults = function ( data ) {
-	var resultNumber = this.calculateResultNumber( data, 0 );
+	const resultNumber = this.calculateResultNumber( data, 0 );
 	this.$resultCounter.text(
 		mw.message( 'enhanced-standard-uis-allpages-filter-results-label', resultNumber ).text()
 	);
 };
 
 ext.enhancedUI.panel.AllPagesPanel.prototype.calculateResultNumber = function ( items, resultNumber ) {
-	for ( var i in items ) {
+	for ( const i in items ) {
 		if ( !items[ i ].expanded ) {
 			resultNumber += 1;
 			continue;
 		}
-		for ( var j in items[ i ].children ) {
+		for ( const j in items[ i ].children ) {
 			if ( !items[ i ].children[ j ].expanded ) {
 				resultNumber += 1;
 				continue;
@@ -184,14 +184,14 @@ ext.enhancedUI.panel.AllPagesPanel.prototype.sortData = function ( data ) {
 	if ( Object.keys( data ).length === 0 ) {
 		return [];
 	}
-	var alphabetValue = [];
-	var sortedData = [];
-	var lastLetter = data[ 0 ].dbkey.slice( 0, 1 );
-	for ( var i in data ) {
+	let alphabetValue = [];
+	const sortedData = [];
+	let lastLetter = data[ 0 ].dbkey.slice( 0, 1 );
+	for ( const i in data ) {
 		if ( !this.includeRedirect && data[ i ].redirect === true ) {
 			continue;
 		}
-		var startLetter = data[ i ].dbkey.slice( 0, 1 );
+		const startLetter = data[ i ].dbkey.slice( 0, 1 );
 		if ( lastLetter !== startLetter ) {
 			sortedData.push( alphabetValue );
 			alphabetValue = [];

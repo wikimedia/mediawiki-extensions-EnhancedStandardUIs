@@ -25,8 +25,8 @@ ext.enhancedUI.panel.FilelistPanel = function ( cfg ) {
 	this.setupWidgets();
 	this.store.connect( this, {
 		loaded: function ( data ) {
-			var visibleData = {};
-			for ( var item in data ) {
+			const visibleData = {};
+			for ( const item in data ) {
 				if ( item < this.page ) {
 					continue;
 				}
@@ -61,7 +61,7 @@ ext.enhancedUI.panel.FilelistPanel.prototype.setupWidgets = function () {
 };
 
 ext.enhancedUI.panel.FilelistPanel.prototype.setupTools = function () {
-	var toolsItems = [];
+	const toolsItems = [];
 	this.input = new OO.ui.SearchInputWidget( {
 		placeholder: mw.message( 'enhanced-standard-uis-filelist-panel-search-placeholder-label' ).text()
 	} );
@@ -148,16 +148,16 @@ ext.enhancedUI.panel.FilelistPanel.prototype.setupTilesView = function () {
 };
 
 ext.enhancedUI.panel.FilelistPanel.prototype.onGridAction = function ( action, row ) {
-	var data = {
+	const data = {
 		action: action,
 		row: row
 	};
 	mw.hook( 'enhanced.filelist.action' ).fire( data );
 	action = data.action;
 	if ( action === 'info' ) {
-		var windowManager = new OO.ui.WindowManager();
+		const windowManager = new OO.ui.WindowManager();
 		$( document.body ).append( windowManager.$element );
-		var infoDialog = new ext.enhancedUI.dialog.FileInfoDialog( {
+		const infoDialog = new ext.enhancedUI.dialog.FileInfoDialog( {
 			data: row,
 			page: 'Data'
 		} );
@@ -165,7 +165,7 @@ ext.enhancedUI.panel.FilelistPanel.prototype.onGridAction = function ( action, r
 		windowManager.openWindow( infoDialog );
 	}
 	if ( action === 'reupload' ) {
-		var reuploadUrl = mw.util.getUrl( 'Special:Upload',
+		const reuploadUrl = mw.util.getUrl( 'Special:Upload',
 			{
 				wpDestFile: row.dbkey,
 				wpForReUpload: 1
@@ -174,7 +174,7 @@ ext.enhancedUI.panel.FilelistPanel.prototype.onGridAction = function ( action, r
 		window.location.href = reuploadUrl;
 	}
 	if ( action === 'delete' ) {
-		var deleteUrl = mw.util.getUrl( 'File:' + row.dbkey,
+		const deleteUrl = mw.util.getUrl( 'File:' + row.dbkey,
 			{
 				action: 'delete'
 			}
@@ -184,9 +184,9 @@ ext.enhancedUI.panel.FilelistPanel.prototype.onGridAction = function ( action, r
 };
 
 ext.enhancedUI.panel.FilelistPanel.prototype.onGridPreview = function ( action, row ) {
-	var windowManager = new OO.ui.WindowManager();
+	const windowManager = new OO.ui.WindowManager();
 	$( document.body ).append( windowManager.$element );
-	var infoDialog = new ext.enhancedUI.dialog.FileInfoDialog( {
+	const infoDialog = new ext.enhancedUI.dialog.FileInfoDialog( {
 		data: row,
 		page: 'Preview'
 	} );
@@ -217,17 +217,17 @@ ext.enhancedUI.panel.FilelistPanel.prototype.setItems = function ( data ) {
 			return;
 		}
 		this.grid.$element.hide();
-		var Vue = require( 'vue' ),
+		const Vue = require( 'vue' ),
 			FileCard = require( './../vue/Card.vue' );
 		this.$tileContainer.empty();
-		for ( var item in data ) {
+		for ( const item in data ) {
 			data[ item ].thumbnail = {
 				width: 200,
 				height: 180,
 				url: data[ item ].preview_url
 			};
 		}
-		var vm = Vue.createMwApp( FileCard, {
+		const vm = Vue.createMwApp( FileCard, {
 			cards: data
 		} );
 		vm.mount( '#tileview' );
@@ -251,7 +251,7 @@ ext.enhancedUI.panel.FilelistPanel.prototype.onInputChange = function ( value ) 
 		return;
 	}
 
-	this.typingTimer = setTimeout( function () {
+	this.typingTimer = setTimeout( () => {
 		this.store.query( value );
-	}.bind( this ), this.typingDoneInterval );
+	}, this.typingDoneInterval );
 };
