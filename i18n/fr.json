@@ -69,5 +69,6 @@
 	"enhanced-standard-uis-allpages-untitled": "Sans titre",
 	"enhancedspecialpages": "Pages spéciales",
 	"right-enhancedstandarduis-viewuncustomizedspecialpageslist": "Afficher certaines pages spéciales de la liste [{{canonicalurl:Special:SpecialPages}} Special:SpecialPages], qui sont masquées pour les utilisateurs ayant un rôle de simple lecteur",
-	"action-enhancedstandarduis-viewuncustomizedspecialpageslist": "voir certaines pages spéciales de la liste [{{canonicalurl:Special:SpecialPages}} Special:SpecialPages], qui sont masquées pour les utilisateurs ayant un rôle de simple lecteur"
+	"action-enhancedstandarduis-viewuncustomizedspecialpageslist": "voir certaines pages spéciales de la liste [{{canonicalurl:Special:SpecialPages}} Special:SpecialPages], qui sont masquées pour les utilisateurs ayant un rôle de simple lecteur",
+	"enhanced-standard-uis-ve-filegrid-title": "Recherche avancée"
 }

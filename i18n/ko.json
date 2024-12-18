@@ -36,5 +36,6 @@
 	"enhanced-standard-uis-filelist-notify-copy-clipboard": "파일 링크가 클립보드에 복사되었습니다",
 	"enhanced-standard-uis-allpages-namespace-list-label": "이름공간 목록",
 	"enhanced-standard-uis-allpages-redirect-label": "$1 (넘겨주기)",
-	"enhancedspecialpages": "특수 문서"
+	"enhancedspecialpages": "특수 문서",
+	"enhanced-standard-uis-ve-filegrid-title": "고급 검색"
 }
