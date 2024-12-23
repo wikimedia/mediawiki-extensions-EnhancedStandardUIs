@@ -60,10 +60,10 @@
 	"enhanced-standard-uis-filelist-grid-preview-title": "Преглед",
 	"enhanced-standard-uis-filelist-ga-title": "Податотеки",
 	"enhanced-standard-uis-filelist-ga-aria": "Список на податотеки",
-	"enhanced-standard-uis-allpages-untitled": "Без наслов",
 	"enhanced-standard-uis-filter-results-label": "Пронајдов $1 {{PLURAL:$1|ставка|ставки}}",
 	"enhanced-standard-uis-allpages-redirect-label": "$1 (пренасочување)",
+	"enhanced-standard-uis-allpages-untitled": "Без наслов",
 	"enhancedspecialpages": "Службени страници",
 	"right-enhancedstandarduis-viewuncustomizedspecialpageslist": "Преглед на извесни службени страници на списокот [{{canonicalurl:Special:SpecialPages}} Special:SpecialPages] кои се скриени за корисници кои се само читатели",
-	"action-enhancedstandarduis-viewuncustomizedspecialpageslist": "Преглед на извесни службени страници на списокот[{{canonicalurl:Special:SpecialPages}} Special:SpecialPages] кои се скриени за корисници кои се само читатели"
+	"action-enhancedstandarduis-viewuncustomizedspecialpageslist": "преглед на извесни службени страници на списокот [{{canonicalurl:Special:SpecialPages}} Special:SpecialPages] кои се скриени за корисници кои се само читатели"
 }
