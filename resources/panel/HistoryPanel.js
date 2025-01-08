@@ -7,6 +7,8 @@ require( '../widget/HistoryGrid.js' );
 
 ext.enhancedUI.panel.HistoryPanel = function ( cfg ) {
 	ext.enhancedUI.panel.HistoryPanel.super.apply( this, cfg );
+	const defaultModeConfig = require( './viewmode.json' );
+	this.defaultMode = defaultModeConfig.mode;
 	this.selectedElements = [];
 	this.rights = cfg.rights || [];
 	this.historyData = cfg.data || [];
@@ -36,7 +38,7 @@ ext.enhancedUI.panel.HistoryPanel.prototype.setupToolbar = function () {
 					type: 'revision',
 					diff: compareValues.diff,
 					oldid: compareValues.oldid,
-					diffmode: 'source'
+					diffmode: this.defaultMode
 				}
 			);
 			window.location.href = url;
