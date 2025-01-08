@@ -90,6 +90,10 @@
 		},
 		"EnhancedUIsSpecialSpecialPagesOverride": {
 			"value": false
+		},
+		"EnhancedUIsVersionHistoryDiffMode": {
+			"value": "visual",
+			"public": true
 		}
 	},
 	"Hooks": {
@@ -149,6 +153,10 @@
 					"callback": "MediaWiki\\Extension\\EnhancedStandardUIs\\AddVersionHistoryToolbarOffset::makeConfigJson"
 				},
 				"panel/HistoryPanel.js",
+				{
+					"name": "panel/viewmode.json",
+					"config": { "mode": "EnhancedUIsVersionHistoryDiffMode" }
+				},
 				"widget/HistoryToolbar.js",
 				"widget/HistoryGrid.js"
 			],
