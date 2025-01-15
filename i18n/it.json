@@ -45,5 +45,6 @@
 	"enhanced-standard-uis-allpages-filter-results-label": "$1 {{PLURAL:$1|risultato trovato|risultati trovati}}",
 	"enhanced-standard-uis-filelist-grid-preview-title": "Anteprima",
 	"enhanced-standard-uis-allpages-untitled": "Senza titolo",
-	"enhanced-standard-uis-allpages-redirect-label": "$1 (reindirizzamento)"
+	"enhanced-standard-uis-allpages-redirect-label": "$1 (reindirizzamento)",
+	"enhanced-standard-uis-ve-filegrid-title": "Ricerca avanzata"
 }

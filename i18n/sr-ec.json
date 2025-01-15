@@ -61,5 +61,6 @@
 	"enhanced-standard-uis-allpages-unwatch-label": "Прекини надгледање странице $1",
 	"enhanced-standard-uis-allpages-pageinfo-label": "Прикажи информације о страници $1",
 	"enhanced-standard-uis-filter-results-label": "$1 {{PLURAL:$1|резултат је пронађен|резултата је пронађено}}",
-	"enhancedspecialpages": "Посебне странице"
+	"enhancedspecialpages": "Посебне странице",
+	"enhanced-standard-uis-ve-filegrid-title": "Напредна претрага"
 }
