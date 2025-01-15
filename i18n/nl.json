@@ -66,5 +66,6 @@
 	"enhanced-standard-uis-allpages-untitled": "Zonder titel",
 	"enhancedspecialpages": "Speciale pagina’s",
 	"right-enhancedstandarduis-viewuncustomizedspecialpageslist": "Bepaalde speciale pagina’s bekijken op de lijst [{{canonicalurl:Special:SpecialPages}} Speciaal:SpecialePaginas], die verborgen zijn voor gebruikers aan wie slechts een lezer-rol is toegekend",
-	"action-enhancedstandarduis-viewuncustomizedspecialpageslist": "bepaalde speciale pagina’s te bekijken op de lijst [{{canonicalurl:Special:SpecialPages}} Speciaal:SpecialePaginas], die verborgen zijn voor gebruikers aan wie slechts een lezer-rol is toegekend"
+	"action-enhancedstandarduis-viewuncustomizedspecialpageslist": "bepaalde speciale pagina’s te bekijken op de lijst [{{canonicalurl:Special:SpecialPages}} Speciaal:SpecialePaginas], die verborgen zijn voor gebruikers aan wie slechts een lezer-rol is toegekend",
+	"enhanced-standard-uis-ve-filegrid-title": "Geavanceerd zoeken"
 }
