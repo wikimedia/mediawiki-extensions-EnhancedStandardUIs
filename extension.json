@@ -246,6 +246,10 @@
 						"cdxIconCopy"
 					]
 				},
+				{
+					"name": "panel/pluginModules.json",
+					"callback": "MediaWiki\\Extension\\EnhancedStandardUIs\\FilelistPluginModules::getModules"
+				},
 				"dialog/FileInfoDialog.js",
 				"booklet/FileInfoBooklet.js",
 				"booklet/pages/DataPage.js",

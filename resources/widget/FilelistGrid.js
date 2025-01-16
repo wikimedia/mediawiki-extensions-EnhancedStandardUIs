@@ -7,6 +7,7 @@ ext.enhancedUI.widget.FilelistGrid = function ( cfg ) {
 	this.input = cfg.input;
 	this.rights = cfg.rights || [];
 	this.pageSize = 50;
+	this.$overlay = cfg.$overlay || null;
 	cfg.columns = this.getColumnDefinitions();
 	ext.enhancedUI.widget.FilelistGrid.super.call( this, cfg );
 };
@@ -34,7 +35,7 @@ ext.enhancedUI.widget.FilelistGrid.prototype.getColumnDefinitions = function () 
 			type: 'user',
 			showImage: false,
 			sortable: false,
-			filter: { type: 'user' },
+			filter: { type: 'user', $overlay: this.$overlay },
 			hidden: !mw.user.options.get( 'filelist-show-author' ),
 			autoClosePopup: true
 		},
