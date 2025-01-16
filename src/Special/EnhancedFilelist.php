@@ -2,7 +2,6 @@
 
 namespace MediaWiki\Extension\EnhancedStandardUIs\Special;
 
-use ExtensionRegistry;
 use Html;
 use SpecialPage;
 
@@ -25,15 +24,11 @@ class EnhancedFilelist extends SpecialPage {
 
 		$this->setHeaders();
 		$this->outputHeader();
-		$out->setPreventClickjacking( false );
+		$out->getMetadata()->setPreventClickjacking( false );
 		$this->setHeaders();
 		$out->enableOOUI();
 
 		$out->addModules( [ 'ext.enhancedstandarduis.special.filelist' ] );
-		$modules = ExtensionRegistry::getInstance()->getAttribute(
-			'EnhancedStandardUIsFilelistPluginModules'
-		);
-		$out->addModules( $modules );
 
 		$html = Html::element(
 			'div',

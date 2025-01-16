@@ -10,9 +10,13 @@ ext.enhancedUI.panel.FilelistPanel = function ( cfg ) {
 	ext.enhancedUI.panel.FilelistPanel.super.apply( this, cfg );
 	this.$element = $( '<div>' ).addClass( 'enhanced-ui-filelist-panel' );
 
+	this.pluginModules = require( './pluginModules.json' );
 	this.rights = cfg.rights || [];
 	this.canSwitchModes = typeof cfg.canSwitchModes === 'undefined' ? true : cfg.canSwitchModes;
 	this.mode = 'list';
+	this.$overlay = cfg.$overlay || null;
+	this.enablePreview = typeof cfg.enablePreview === 'undefined' ? true : cfg.enablePreview;
+
 	this.pageSize = 25;
 	this.store = new OOJSPlus.ui.data.store.RemoteRestStore( {
 		path: 'mws/v1/file-query-store',
@@ -49,15 +53,18 @@ ext.enhancedUI.panel.FilelistPanel.prototype.setupWidgets = function () {
 	this.setupTools();
 	this.setupTilesView();
 
-	this.grid = new ext.enhancedUI.widget.FilelistGrid( {
-		store: this.store,
-		rights: this.rights
+	mw.loader.using( this.pluginModules, () => {
+		this.grid = new ext.enhancedUI.widget.FilelistGrid( {
+			store: this.store,
+			rights: this.rights,
+			$overlay: this.$overlay
+		} );
+		this.grid.connect( this, {
+			action: 'onGridAction',
+			preview: 'onGridPreview'
+		} );
+		this.$element.append( this.grid.$element );
 	} );
-	this.grid.connect( this, {
-		action: 'onGridAction',
-		preview: 'onGridPreview'
-	} );
-	this.$element.append( this.grid.$element );
 };
 
 ext.enhancedUI.panel.FilelistPanel.prototype.setupTools = function () {
@@ -184,6 +191,9 @@ ext.enhancedUI.panel.FilelistPanel.prototype.onGridAction = function ( action, r
 };
 
 ext.enhancedUI.panel.FilelistPanel.prototype.onGridPreview = function ( action, row ) {
+	if ( !this.enablePreview ) {
+		return;
+	}
 	const windowManager = new OO.ui.WindowManager();
 	$( document.body ).append( windowManager.$element );
 	const infoDialog = new ext.enhancedUI.dialog.FileInfoDialog( {

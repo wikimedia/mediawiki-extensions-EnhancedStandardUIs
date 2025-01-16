@@ -49,7 +49,9 @@ ext.enhancedUI.ve.MediaDialogFileGrid.prototype.onSearchTabsSet = function ( sel
 ext.enhancedUI.ve.MediaDialogFileGrid.prototype.initFileRepoGrid = function () {
 	this.fileRepoGrid = new ext.enhancedUI.panel.FilelistPanel( {
 		rights: [],
-		canSwitchModes: false
+		canSwitchModes: false,
+		enablePreview: false,
+		$overlay: this.component.$overlay
 	} );
 	this.fileRepoGrid.grid.connect( this, {
 		rowSelected: 'onFileRepoGridSelect',
