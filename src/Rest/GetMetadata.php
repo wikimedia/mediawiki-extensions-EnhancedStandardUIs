@@ -2,9 +2,9 @@
 
 namespace Mediawiki\Extension\EnhancedStandardUIs\Rest;
 
+use MediaWiki\Context\RequestContext;
 use MediaWiki\Rest\SimpleHandler;
 use RepoGroup;
-use RequestContext;
 use TitleFactory;
 use Wikimedia\ParamValidator\ParamValidator;
 
