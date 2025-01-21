@@ -2,11 +2,11 @@
 
 namespace MediaWiki\Extension\EnhancedStandardUIs\HookHandler;
 
+use MediaWiki\Context\RequestContext;
 use MediaWiki\Watchlist\WatchlistManager;
 use MWStake\MediaWiki\Component\CommonWebAPIs\Hook\MWStakeCommonWebAPIsQueryStoreResultHook;
 use MWStake\MediaWiki\Component\CommonWebAPIs\Rest\TitleTreeStore;
 use MWStake\MediaWiki\Component\DataStore\ResultSet;
-use RequestContext;
 use TitleFactory;
 
 class AddTitleWatchInfo implements MWStakeCommonWebAPIsQueryStoreResultHook {
