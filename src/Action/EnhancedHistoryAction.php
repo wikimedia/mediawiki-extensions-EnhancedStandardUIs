@@ -12,8 +12,8 @@ use LogEventsList;
 use MediaWiki\Extension\EnhancedStandardUIs\IHistoryPlugin;
 use MediaWiki\MainConfigNames;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Message\Message;
 use MediaWiki\Revision\RevisionRecord;
-use Message;
 use RawMessage;
 use Wikimedia\Rdbms\IResultWrapper;
 
