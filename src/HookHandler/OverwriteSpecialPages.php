@@ -4,7 +4,7 @@
 
 namespace MediaWiki\Extension\EnhancedStandardUIs\HookHandler;
 
-use Config;
+use MediaWiki\Config\Config;
 use MediaWiki\Extension\EnhancedStandardUIs\Special\EnhancedAllPages;
 use MediaWiki\Extension\EnhancedStandardUIs\Special\EnhancedFilelist;
 use MediaWiki\Extension\EnhancedStandardUIs\Special\EnhancedSpecialPages;
