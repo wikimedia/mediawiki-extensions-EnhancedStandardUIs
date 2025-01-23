@@ -2,7 +2,7 @@
 
 namespace MediaWiki\Extension\EnhancedStandardUIs;
 
-use Config;
+use MediaWiki\Config\Config;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\ResourceLoader\Context;
 use Wikimedia\Rdbms\ILoadBalancer;
