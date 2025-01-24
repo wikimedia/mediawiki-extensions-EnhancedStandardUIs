@@ -16,6 +16,7 @@ ext.enhancedUI.panel.FilelistPanel = function ( cfg ) {
 	this.mode = 'list';
 	this.$overlay = cfg.$overlay || null;
 	this.enablePreview = typeof cfg.enablePreview === 'undefined' ? true : cfg.enablePreview;
+	this.allowFileInfoDialog = typeof cfg.allowFileInfoDialog === 'undefined' ? true : cfg.allowFileInfoDialog;
 
 	this.pageSize = 25;
 	this.store = new OOJSPlus.ui.data.store.RemoteRestStore( {
@@ -57,7 +58,8 @@ ext.enhancedUI.panel.FilelistPanel.prototype.setupWidgets = function () {
 		this.grid = new ext.enhancedUI.widget.FilelistGrid( {
 			store: this.store,
 			rights: this.rights,
-			$overlay: this.$overlay
+			$overlay: this.$overlay,
+			allowFileInfoDialog: this.allowFileInfoDialog
 		} );
 		this.grid.connect( this, {
 			action: 'onGridAction',
@@ -264,4 +266,14 @@ ext.enhancedUI.panel.FilelistPanel.prototype.onInputChange = function ( value ) 
 	this.typingTimer = setTimeout( () => {
 		this.store.query( value );
 	}, this.typingDoneInterval );
+};
+
+ext.enhancedUI.panel.FilelistPanel.prototype.closeFilters = function () {
+	// Make sure to close all grid filter popups
+	// Useful in case grid is getting hidden
+	for ( const columnId in this.grid.columns ) {
+		if ( this.grid.columns[ columnId ].filterButton ) {
+			this.grid.columns[ columnId ].filterButton.getPopup().toggle( false );
+		}
+	}
 };

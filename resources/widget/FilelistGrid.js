@@ -8,6 +8,7 @@ ext.enhancedUI.widget.FilelistGrid = function ( cfg ) {
 	this.rights = cfg.rights || [];
 	this.pageSize = 50;
 	this.$overlay = cfg.$overlay || null;
+	this.allowFileInfoDialog = typeof cfg.allowFileInfoDialog === 'undefined' ? true : cfg.allowFileInfoDialog;
 	cfg.columns = this.getColumnDefinitions();
 	ext.enhancedUI.widget.FilelistGrid.super.call( this, cfg );
 };
@@ -88,14 +89,16 @@ ext.enhancedUI.widget.FilelistGrid.prototype.getColumnDefinitions = function () 
 
 	mw.hook( 'enhanced.filelist.gridconfig' ).fire( columnCfg );
 
-	columnCfg.info = {
-		type: 'action',
-		title: mw.message( 'enhanced-standard-uis-filelist-grid-info-title' ).text(),
-		actionId: 'info',
-		icon: 'info',
-		headerText: mw.message( 'enhanced-standard-uis-filelist-grid-info-title' ).text(),
-		invisibleHeader: true
-	};
+	if ( this.allowFileInfoDialog ) {
+		columnCfg.info = {
+			type: 'action',
+			title: mw.message( 'enhanced-standard-uis-filelist-grid-info-title' ).text(),
+			actionId: 'info',
+			icon: 'info',
+			headerText: mw.message( 'enhanced-standard-uis-filelist-grid-info-title' ).text(),
+			invisibleHeader: true
+		};
+	}
 
 	if ( this.rights.indexOf( 'reupload' ) !== -1 &&
 		this.rights.indexOf( 'reupload-shared' ) !== -1 ) {
