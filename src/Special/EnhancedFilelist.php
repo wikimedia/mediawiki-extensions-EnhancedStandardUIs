@@ -2,7 +2,7 @@
 
 namespace MediaWiki\Extension\EnhancedStandardUIs\Special;
 
-use Html;
+use MediaWiki\Html\Html;
 use MediaWiki\SpecialPage\SpecialPage;
 
 class EnhancedFilelist extends SpecialPage {
