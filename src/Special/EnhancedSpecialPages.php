@@ -2,7 +2,7 @@
 
 namespace MediaWiki\Extension\EnhancedStandardUIs\Special;
 
-use Html;
+use MediaWiki\Html\Html;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\SpecialPage\SpecialPage;
 use UnlistedSpecialPage;
