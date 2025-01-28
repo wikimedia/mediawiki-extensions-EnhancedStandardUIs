@@ -4,9 +4,9 @@ namespace MediaWiki\Extension\EnhancedStandardUIs\Special;
 
 use ExtensionRegistry;
 use Html;
+use MediaWiki\SpecialPage\SpecialPage;
 use OOUI\FieldLayout;
 use OOUI\SearchInputWidget;
-use SpecialPage;
 
 class EnhancedAllPages extends SpecialPage {
 
