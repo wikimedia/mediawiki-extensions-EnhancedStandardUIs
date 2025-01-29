@@ -4,12 +4,12 @@ namespace MediaWiki\Extension\EnhancedStandardUIs\Action;
 
 use ChangeTags;
 use ExtensionRegistry;
-use FormatJson;
 use HistoryAction;
 use InvalidArgumentException;
 use LogEventsList;
 use MediaWiki\Extension\EnhancedStandardUIs\IHistoryPlugin;
 use MediaWiki\Html\Html;
+use MediaWiki\Json\FormatJson;
 use MediaWiki\MainConfigNames;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Message\Message;
