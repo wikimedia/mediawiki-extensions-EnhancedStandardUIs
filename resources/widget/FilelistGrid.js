@@ -41,6 +41,7 @@ ext.enhancedUI.widget.FilelistGrid.prototype.getColumnDefinitions = function () 
 		timestamp: {
 			headerText: mw.message( 'enhanced-standard-uis-filelist-grid-date-title' ).text(),
 			type: 'date',
+			sortable: true,
 			filter: { type: 'date' },
 			valueParser: function ( value, row ) {
 				return row.formatted_ts;
@@ -72,7 +73,7 @@ ext.enhancedUI.widget.FilelistGrid.prototype.getColumnDefinitions = function () 
 			type: 'url',
 			limitShownData: true,
 			limitValue: 2,
-			sortable: true,
+			sortable: false,
 			filter: { type: 'string' },
 			hidden: !mw.user.options.get( 'filelist-show-categories' ),
 			autoClosePopup: true
