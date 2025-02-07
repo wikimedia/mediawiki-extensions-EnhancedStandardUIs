@@ -9,12 +9,12 @@ use LogEventsList;
 use MediaWiki\Extension\EnhancedStandardUIs\IHistoryPlugin;
 use MediaWiki\Html\Html;
 use MediaWiki\Json\FormatJson;
+use MediaWiki\Language\RawMessage;
 use MediaWiki\MainConfigNames;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Message\Message;
 use MediaWiki\Registration\ExtensionRegistry;
 use MediaWiki\Revision\RevisionRecord;
-use RawMessage;
 use Wikimedia\Rdbms\IResultWrapper;
 
 class EnhancedHistoryAction extends HistoryAction {
