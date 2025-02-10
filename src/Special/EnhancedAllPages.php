@@ -2,8 +2,8 @@
 
 namespace MediaWiki\Extension\EnhancedStandardUIs\Special;
 
-use ExtensionRegistry;
 use MediaWiki\Html\Html;
+use MediaWiki\Registration\ExtensionRegistry;
 use MediaWiki\SpecialPage\SpecialPage;
 use OOUI\FieldLayout;
 use OOUI\SearchInputWidget;

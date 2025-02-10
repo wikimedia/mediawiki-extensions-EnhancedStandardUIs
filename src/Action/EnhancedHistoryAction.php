@@ -3,7 +3,6 @@
 namespace MediaWiki\Extension\EnhancedStandardUIs\Action;
 
 use ChangeTags;
-use ExtensionRegistry;
 use HistoryAction;
 use InvalidArgumentException;
 use LogEventsList;
@@ -14,6 +13,7 @@ use MediaWiki\Language\RawMessage;
 use MediaWiki\MainConfigNames;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Message\Message;
+use MediaWiki\Registration\ExtensionRegistry;
 use MediaWiki\Revision\RevisionRecord;
 use Wikimedia\Rdbms\IResultWrapper;
 
