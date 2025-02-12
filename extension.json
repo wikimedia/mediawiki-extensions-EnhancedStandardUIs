@@ -85,9 +85,6 @@
 		"EnhancedUIsFilelistOverride": {
 			"value": false
 		},
-		"EnhancedUIsExtendedFilelistOverride": {
-			"value": false
-		},
 		"EnhancedUIsSpecialSpecialPagesOverride": {
 			"value": false
 		},
