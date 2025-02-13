@@ -5,7 +5,7 @@ namespace MediaWiki\Extension\EnhancedStandardUIs\Special;
 use MediaWiki\Html\Html;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\SpecialPage\SpecialPage;
-use UnlistedSpecialPage;
+use MediaWiki\SpecialPage\UnlistedSpecialPage;
 
 /**
  * Override the default Special:SpecialPages page,
