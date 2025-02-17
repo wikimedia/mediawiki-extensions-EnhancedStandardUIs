@@ -176,7 +176,8 @@ ext.enhancedUI.panel.HistoryPanel.prototype.setupGridConfig = function () {
 				sortable: false,
 				maxLabelLength: 100,
 				hidden: !mw.user.options.get( 'history-show-summary' ),
-				width: 300
+				width: 300,
+				valueParser: ( value ) => new OO.ui.HtmlSnippet( value )
 			},
 			tags: {
 				headerText: mw.message( 'enhanced-standard-uis-history-grid-header-tags-label' ).text(),
