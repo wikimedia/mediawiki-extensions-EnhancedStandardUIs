@@ -65,5 +65,6 @@
 	"enhanced-standard-uis-allpages-untitled": "Sin titulo",
 	"enhancedspecialpages": "Paginas special",
 	"right-enhancedstandarduis-viewuncustomizedspecialpageslist": "Vider certe paginas special in le lista [{{canonicalurl:Special:SpecialPages}} Special:Paginas special] le quales es celate pro le usatores con rolo de lectura sol",
-	"action-enhancedstandarduis-viewuncustomizedspecialpageslist": "vider certe paginas special in le lista [{{canonicalurl:Special:SpecialPages}} Special:Paginas special] le quales es celate pro le usatores con rolo de lectura sol"
+	"action-enhancedstandarduis-viewuncustomizedspecialpageslist": "vider certe paginas special in le lista [{{canonicalurl:Special:SpecialPages}} Special:Paginas special] le quales es celate pro le usatores con rolo de lectura sol",
+	"enhanced-standard-uis-ve-filegrid-title": "Recerca avantiate"
 }
