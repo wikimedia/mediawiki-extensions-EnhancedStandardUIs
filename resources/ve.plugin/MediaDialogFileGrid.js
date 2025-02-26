@@ -61,7 +61,7 @@ ext.enhancedUI.ve.MediaDialogFileGrid.prototype.onBeforePanelSwitch = function (
 };
 
 ext.enhancedUI.ve.MediaDialogFileGrid.prototype.onPanelSwitch = function ( panel ) {
-	if ( panel === 'search'  && this.presetTab === 'enhanced-stadard-uis-ve-filegrid-panel' ) {
+	if ( panel === 'search' && this.presetTab === 'enhanced-stadard-uis-ve-filegrid-panel' ) {
 		this.component.searchTabs.setTabPanel( this.presetTab );
 		this.presetTab = null;
 	}
