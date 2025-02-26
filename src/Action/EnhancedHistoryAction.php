@@ -116,21 +116,30 @@ class EnhancedHistoryAction extends HistoryAction {
 		foreach ( $res as $row ) {
 			$classes = [];
 			$deletedFields = $this->bitsToDeletedFields( $row->rev_deleted );
-			if ( $deletedFields['revision'] ) {
-				$classes[] = 'enhanced-history-revision-strikethrough';
-				if ( !$hasPermission ) {
-					$classes[] = 'enhanced-history-revision-grey';
+
+			/**
+			 * CSS classes
+			 * - revision: enhanced-history-revision-strikethrough, enhanced-history-revision-grey
+			 * - author:   enhanced-history-author-strikethrough,   enhanced-history-author-grey
+			 * - summary:  enhanced-history-summary-strikethrough,  enhanced-history-summary-grey
+			 */
+			$deletionClasses = [
+				'revision' => 'enhanced-history-revision',
+				'author' => 'enhanced-history-author',
+				'summary' => 'enhanced-history-summary'
+			];
+
+			foreach ( $deletionClasses as $field => $baseClass ) {
+				if ( $deletedFields[$field] ) {
+					$classes[] = "{$baseClass}-strikethrough";
+					if ( !$hasPermission ) {
+						$classes[] = "{$baseClass}-grey";
+					}
 				}
-			}
-			if ( $deletedFields['author'] ) {
-				$classes[] = 'enhanced-history-author-strikethrough';
-			}
-			if ( $deletedFields['summary'] ) {
-				$classes[] = 'enhanced-history-summary-strikethrough';
 			}
 
 			$sizeDiff = $row->rev_len - $oldSize;
-			$entry['diff'] = Message::newFromKey( 'size-bytes', $sizeDiff )->parse();
+			$entry['diff'] = Message::newFromKey( 'size-bytes', $sizeDiff )->escaped();
 			if ( $sizeDiff < 0 ) {
 				$classes[] = 'enhanced-history-diff-minus';
 			} elseif ( $sizeDiff > 0 ) {
@@ -145,12 +154,13 @@ class EnhancedHistoryAction extends HistoryAction {
 				: '';
 			$entry['author'] = $hasPermission || !$deletedFields['author']
 				? $userFactory->newFromActorId( $row->rev_actor )->getName()
-				: '';
-			$entry['size'] = Message::newFromKey( 'size-bytes', $row->rev_len )->parse();
+				: Message::newFromKey( 'rev-deleted-user' )->escaped();
+
+			$entry['size'] = Message::newFromKey( 'size-bytes', $row->rev_len )->escaped();
 			$summary = new RawMessage( $row->rev_comment_text );
 			$entry['summary'] = $hasPermission || !$deletedFields['summary']
-				? $summary->text()
-				: '';
+				? $summary->escaped()
+				: Message::newFromKey( 'rev-deleted-comment' )->escaped();
 			$entry['tags'] = $row->ts_tags;
 			$entry['tagUrl'] = $titleFactory->newFromText( 'Special:Tags' )->getLocalURL();
 
