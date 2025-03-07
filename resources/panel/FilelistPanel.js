@@ -86,7 +86,7 @@ ext.enhancedUI.panel.FilelistPanel.prototype.setupTools = function () {
 			data: 'upload',
 			label: mw.message( 'enhanced-standard-uis-filelist-panel-new-file-label' ).text(),
 			icon: 'upload',
-			id: 'enhanced-filelist-upload-file',
+			classes: [ 'enhanced-filelist-upload-file' ],
 			href: mw.util.getUrl( 'Special:Upload' ),
 			invisibleLabel: true
 		} );
