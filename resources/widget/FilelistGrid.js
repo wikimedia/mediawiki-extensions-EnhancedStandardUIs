@@ -9,6 +9,7 @@ ext.enhancedUI.widget.FilelistGrid = function ( cfg ) {
 	this.pageSize = 50;
 	this.$overlay = cfg.$overlay || null;
 	this.allowFileInfoDialog = typeof cfg.allowFileInfoDialog === 'undefined' ? true : cfg.allowFileInfoDialog;
+	this.mediaDialog = cfg.mediaDialog || false;
 	cfg.columns = this.getColumnDefinitions();
 	ext.enhancedUI.widget.FilelistGrid.super.call( this, cfg );
 };
@@ -25,7 +26,7 @@ ext.enhancedUI.widget.FilelistGrid.prototype.getColumnDefinitions = function () 
 		},
 		title: {
 			headerText: mw.message( 'enhanced-standard-uis-filelist-grid-file-title' ).text(),
-			type: 'url',
+			type: this.mediaDialog ? 'text' : 'url',
 			sortable: true,
 			urlProperty: 'url',
 			filterable: false,
@@ -37,7 +38,7 @@ ext.enhancedUI.widget.FilelistGrid.prototype.getColumnDefinitions = function () 
 			showImage: false,
 			sortable: false,
 			filter: { type: 'user', $overlay: this.$overlay },
-			hidden: !mw.user.options.get( 'filelist-show-author' ),
+			hidden: this.mediaDialog ? true : !mw.user.options.get( 'filelist-show-author' ),
 			autoClosePopup: true
 		},
 		timestamp: {
@@ -77,7 +78,7 @@ ext.enhancedUI.widget.FilelistGrid.prototype.getColumnDefinitions = function () 
 			limitValue: 2,
 			sortable: false,
 			filter: { type: 'string' },
-			hidden: !mw.user.options.get( 'filelist-show-categories' ),
+			hidden: this.mediaDialog ? true : !mw.user.options.get( 'filelist-show-categories' ),
 			autoClosePopup: true
 		},
 		comment: {

@@ -17,6 +17,7 @@ ext.enhancedUI.panel.FilelistPanel = function ( cfg ) {
 	this.$overlay = cfg.$overlay || null;
 	this.enablePreview = typeof cfg.enablePreview === 'undefined' ? true : cfg.enablePreview;
 	this.allowFileInfoDialog = typeof cfg.allowFileInfoDialog === 'undefined' ? true : cfg.allowFileInfoDialog;
+	this.mediaDialog = cfg.mediaDialog || false;
 
 	this.pageSize = 25;
 	this.store = new OOJSPlus.ui.data.store.RemoteRestStore( {
@@ -59,7 +60,8 @@ ext.enhancedUI.panel.FilelistPanel.prototype.setupWidgets = function () {
 			store: this.store,
 			rights: this.rights,
 			$overlay: this.$overlay,
-			allowFileInfoDialog: this.allowFileInfoDialog
+			allowFileInfoDialog: this.allowFileInfoDialog,
+			mediaDialog: this.mediaDialog
 		} );
 		this.grid.connect( this, {
 			action: 'onGridAction',

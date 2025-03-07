@@ -77,7 +77,8 @@ ext.enhancedUI.ve.MediaDialogFileGrid.prototype.initFileRepoGrid = function () {
 		enablePreview: false,
 		// Prevent opening a dialog in a dialog, also VE has its own "file info"
 		allowFileInfoDialog: false,
-		$overlay: this.component.$overlay
+		$overlay: this.component.$overlay,
+		mediaDialog: true
 	} );
 	this.fileRepoGrid.grid.connect( this, {
 		rowSelected: 'onFileRepoGridSelect',
