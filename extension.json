@@ -187,10 +187,6 @@
 				},
 				"panel/AllPagesPanel.js",
 				"widget/NamespacesMenu.js",
-				{
-					"name": "widget/namespaceConfig.json",
-					"callback": "MediaWiki\\Extension\\EnhancedStandardUIs\\NamespaceClientConfig::makeNamespaceConfigJson"
-				},
 				"widget/NamespaceOptionWidget.js",
 				"widget/Paginator.js",
 				"data/PagesTree.js",
@@ -221,7 +217,9 @@
 				"enhanced-standard-uis-allpages-pageinfo-label",
 				"enhanced-standard-uis-allpages-filter-results-label",
 				"enhanced-standard-uis-allpages-untitled",
-				"enhanced-standard-uis-allpages-redirect-label"
+				"enhanced-standard-uis-allpages-redirect-label",
+				"enhanced-standard-uis-allpages-empty-namespaces-text",
+				"enhanced-standard-uis-allpages-empty-pages-text"
 			],
 			"dependencies": [
 				"oojs-ui",
@@ -328,6 +326,17 @@
 			"path": "/standarduis/file-metadata/{filename}",
 			"class": "MediaWiki\\Extension\\EnhancedStandardUIs\\Rest\\GetMetadata",
 			"services": [ "TitleFactory", "RepoGroup" ]
+		},
+		{
+			"path": "/standarduis/namespaces",
+			"class": "MediaWiki\\Extension\\EnhancedStandardUIs\\Rest\\GetNamespaces",
+			"services": [
+				"TitleFactory",
+				"PermissionManager",
+				"DBLoadBalancer",
+				"NamespaceInfo",
+				"LanguageFactory"
+			]
 		}
 	],
 	"manifest_version": 2,

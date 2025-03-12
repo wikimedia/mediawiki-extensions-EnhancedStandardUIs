@@ -22,7 +22,6 @@ ext.enhancedUI.panel.AllPagesPanel = function ( cfg ) {
 	this.searchWidget.$indicator.attr( 'tabindex', 0 );
 
 	this.setupWidgets();
-	this.getPages();
 };
 
 OO.inheritClass( ext.enhancedUI.panel.AllPagesPanel, OO.ui.PanelLayout );
@@ -56,11 +55,13 @@ ext.enhancedUI.panel.AllPagesPanel.prototype.setupMenu = function () {
 	this.namespaceMenu = new ext.enhancedUI.widget.NamespacesMenu( {
 		selectedNSId: this.selectedNamespaceId
 	} );
-	this.selectedNS = this.namespaceMenu.getSelectedNamespaceId();
-	this.includeRedirect = this.namespaceMenu.getRedirectStatus();
 	this.namespaceMenu.connect( this, {
 		select: 'namespaceSelected',
-		redirectChange: 'updateRedirect'
+		redirectChange: 'updateRedirect',
+		setup: function () {
+			this.selectedNS = this.namespaceMenu.getSelectedNamespaceId();
+			this.includeRedirect = this.namespaceMenu.getRedirectStatus();
+		}
 	} );
 	$menuCnt.append( this.namespaceMenu.$element );
 	this.$element.append( $menuCnt );
@@ -126,6 +127,16 @@ ext.enhancedUI.panel.AllPagesPanel.prototype.updatePages = function () {
 		if ( $( this.$treeCnt ).hasClass( 'enhanced-ui-allpages-columns' ) ) {
 			$( this.$treeCnt ).removeClass( 'enhanced-ui-allpages-columns' );
 		}
+	}
+	if ( this.pages.length === 0 ) {
+		this.$treeCnt.append(
+			new OOJSPlus.ui.widget.NoContentPlaceholderWidget( {
+				icon: 'allpages-no-page',
+				classes: [ 'allpages-empty-pages-cnt' ],
+				label: mw.message( 'enhanced-standard-uis-allpages-empty-pages-text' ).text()
+			} ).$element
+		);
+		return;
 	}
 	for ( const i in this.pages ) {
 		// eslint-disable-next-line no-jquery/variable-pattern
