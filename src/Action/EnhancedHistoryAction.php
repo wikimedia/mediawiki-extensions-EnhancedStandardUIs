@@ -92,7 +92,7 @@ class EnhancedHistoryAction extends HistoryAction {
 		$data = [];
 		$userFactory = $services->getUserFactory();
 		$permissionManager = $services->getPermissionManager();
-		$language = $services->getContentLanguage();
+		$language = $this->context->getLanguage();
 		$titleFactory = $services->getTitleFactory();
 
 		$registry = ExtensionRegistry::getInstance()->getAttribute(
