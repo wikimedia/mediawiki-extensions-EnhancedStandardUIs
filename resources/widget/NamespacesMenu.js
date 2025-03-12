@@ -8,18 +8,35 @@ ext.enhancedUI.widget.NamespacesMenu = function ( cfg ) {
 	cfg = cfg || {};
 	ext.enhancedUI.widget.NamespacesMenu.super.call( this, cfg );
 	this.selectedNSId = cfg.selectedNSId || 0;
-	this.namespaces = require( './namespaceConfig.json' );
-	this.namespaces[ 0 ].name = mw.message( 'blanknamespace' ).text();
-	this.checkSelectedNS();
-	this.setup();
-
+	mw.loader.using( [ 'ext.enhancedstandarduis.api' ], () => {
+		const api = new ext.enhancedUI.api.Api();
+		api.getNamespaces().done( ( data ) => {
+			this.namespaces = data.namespaces;
+			if ( this.namespaces.length === 0 ) {
+				this.$element.append( new OO.ui.MessageWidget( {
+					type: 'info',
+					inline: true,
+					label: mw.message( 'enhanced-standard-uis-allpages-empty-namespaces-text' ).text()
+				} ).$element );
+				return;
+			}
+			this.namespaces[ 0 ].name = mw.message( 'blanknamespace' ).text();
+			this.checkSelectedNS();
+			this.setup();
+			this.emit( 'setup' );
+		} );
+	} );
 };
 
 OO.inheritClass( ext.enhancedUI.widget.NamespacesMenu, OO.ui.Widget );
 
 ext.enhancedUI.widget.NamespacesMenu.prototype.checkSelectedNS = function () {
-
-	const namespace = this.namespaces.find( ( ns ) => ns.id === this.selectedNSId );
+	let namespace = this.namespaces.find( ( ns ) => ns.id === this.selectedNSId );
+	if ( namespace === undefined ) {
+		const namespaceId = this.namespaces[ 0 ].id;
+		this.selectedNSId = namespaceId;
+		namespace = this.namespaces.find( ( ns ) => ns.id === this.selectedNSId );
+	}
 	this.selectedNSIsContent = namespace.isContent;
 	this.selectedNSIsTalk = namespace.isTalk;
 };
@@ -178,6 +195,9 @@ ext.enhancedUI.widget.NamespacesMenu.prototype.updateNSMenu = function () {
 
 ext.enhancedUI.widget.NamespacesMenu.prototype.getSelectedNamespaceId = function () {
 	const nsOption = this.selectWidget.findSelectedItem();
+	if ( nsOption === null ) {
+		return {};
+	}
 	return nsOption.data;
 };
 

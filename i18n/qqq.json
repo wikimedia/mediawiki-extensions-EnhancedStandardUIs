@@ -66,5 +66,7 @@
 	"enhancedspecialpages": "Special page name for [[Special:EnhancedSpecialPages]] special page.",
 	"right-enhancedstandarduis-viewuncustomizedspecialpageslist": "{{doc-right|enhancedstandarduis-viewuncustomizedspecialpageslist}}",
 	"action-enhancedstandarduis-viewuncustomizedspecialpageslist": "{{doc-action|enhancedstandarduis-viewuncustomizedspecialpageslist}}",
-	"enhanced-standard-uis-ve-filegrid-title": "Title for the tab in VisualEditor media dialog"
+	"enhanced-standard-uis-ve-filegrid-title": "Title for the tab in VisualEditor media dialog",
+	"enhanced-standard-uis-allpages-empty-namespaces-text": "Label if no namespaces can be shown",
+	"enhanced-standard-uis-allpages-empty-pages-text": "Label if no pages are in this namespace"
 }

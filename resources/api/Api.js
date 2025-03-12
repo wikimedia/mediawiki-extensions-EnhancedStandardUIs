@@ -49,3 +49,7 @@ ext.enhancedUI.api.Api.prototype.ajax = function ( path, data, method ) {
 ext.enhancedUI.api.Api.prototype.getFileMetadata = function ( filename ) {
 	return this.get( 'file-metadata/' + encodeURIComponent( filename ) );
 };
+
+ext.enhancedUI.api.Api.prototype.getNamespaces = function () {
+	return this.get( 'namespaces' );
+};
