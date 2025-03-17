@@ -66,5 +66,7 @@
 	"enhancedspecialpages": "דפים מיוחדים",
 	"right-enhancedstandarduis-viewuncustomizedspecialpageslist": "צפייה בדפים מיוחדים מסוימים ברשימה [{{canonicalurl:Special:SpecialPages}} Special:SpecialPages] שמוסתרים ממשתמשים בעלי תפקיד קורא טהור",
 	"action-enhancedstandarduis-viewuncustomizedspecialpageslist": "לצפות בדפים מיוחדים מסוימים ברשימה [{{canonicalurl:Special:SpecialPages}} Special:SpecialPages] שמוסתרים ממשתמשים בעלי תפקיד קורא טהור",
-	"enhanced-standard-uis-ve-filegrid-title": "חיפוש מתקדם"
+	"enhanced-standard-uis-ve-filegrid-title": "חיפוש מתקדם",
+	"enhanced-standard-uis-allpages-empty-namespaces-text": "אין מרחבי שם זמינים",
+	"enhanced-standard-uis-allpages-empty-pages-text": "כרגע אין דפים במרחב השם הזה"
 }

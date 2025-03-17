@@ -3,6 +3,7 @@
 		"authors": [
 			"Graineahumus",
 			"Iketsi",
+			"JLTRY",
 			"MacOS Weed",
 			"Mahabarata",
 			"Nikop",
@@ -72,6 +73,6 @@
 	"right-enhancedstandarduis-viewuncustomizedspecialpageslist": "Afficher certaines pages spéciales de la liste [{{canonicalurl:Special:SpecialPages}} Special:SpecialPages], qui sont masquées pour les utilisateurs ayant un rôle de simple lecteur",
 	"action-enhancedstandarduis-viewuncustomizedspecialpageslist": "voir certaines pages spéciales de la liste [{{canonicalurl:Special:SpecialPages}} Special:SpecialPages], qui sont masquées pour les utilisateurs ayant un rôle de simple lecteur",
 	"enhanced-standard-uis-ve-filegrid-title": "Recherche avancée",
-	"enhanced-standard-uis-allpages-empty-namespaces-text": "Aucun espaces de noms disponible",
+	"enhanced-standard-uis-allpages-empty-namespaces-text": "Aucun espace de noms disponible",
 	"enhanced-standard-uis-allpages-empty-pages-text": "Il n'y a actuellement aucune page dans cet espace de noms"
 }

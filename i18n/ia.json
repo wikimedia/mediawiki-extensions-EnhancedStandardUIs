@@ -66,5 +66,7 @@
 	"enhancedspecialpages": "Paginas special",
 	"right-enhancedstandarduis-viewuncustomizedspecialpageslist": "Vider certe paginas special in le lista [{{canonicalurl:Special:SpecialPages}} Special:Paginas special] le quales es celate pro le usatores con rolo de lectura sol",
 	"action-enhancedstandarduis-viewuncustomizedspecialpageslist": "vider certe paginas special in le lista [{{canonicalurl:Special:SpecialPages}} Special:Paginas special] le quales es celate pro le usatores con rolo de lectura sol",
-	"enhanced-standard-uis-ve-filegrid-title": "Recerca avantiate"
+	"enhanced-standard-uis-ve-filegrid-title": "Recerca avantiate",
+	"enhanced-standard-uis-allpages-empty-namespaces-text": "Necun spatio de nomines disponibile",
+	"enhanced-standard-uis-allpages-empty-pages-text": "Il non ha actualmente alcun pagina in iste spatio de nomines"
 }
