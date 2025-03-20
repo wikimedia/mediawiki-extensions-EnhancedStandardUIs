@@ -113,6 +113,7 @@ class EnhancedHistoryAction extends HistoryAction {
 
 		$hasPermission = $permissionManager->userHasRight( $user, 'deletedtext' );
 		$oldSize = 0;
+		$firstRevision = true;
 		foreach ( $res as $row ) {
 			$classes = [];
 			$deletedFields = $this->bitsToDeletedFields( $row->rev_deleted );
@@ -157,10 +158,18 @@ class EnhancedHistoryAction extends HistoryAction {
 				: Message::newFromKey( 'rev-deleted-user' )->escaped();
 
 			$entry['size'] = Message::newFromKey( 'size-bytes', $row->rev_len )->escaped();
-			$summary = new RawMessage( $row->rev_comment_text );
-			$entry['summary'] = $hasPermission || !$deletedFields['summary']
-				? $summary->parse()
-				: Message::newFromKey( 'rev-deleted-comment' )->escaped();
+			if ( $firstRevision ) {
+				// The first revision's summary contains the whole initial wikitext.
+				// Parsing it will result in very odd behavior,
+				// e.g. images are being displayed, while tables are not
+				// Therefore we completely omit parsing the summary for the first revision
+				$entry['summary'] = $row->rev_comment_text;
+			} else {
+				$summary = new RawMessage( $row->rev_comment_text );
+				$entry['summary'] = $hasPermission || !$deletedFields['summary']
+					? $summary->parse()
+					: Message::newFromKey( 'rev-deleted-comment' )->escaped();
+			}
 			$entry['tags'] = $row->ts_tags;
 			$entry['tagUrl'] = $titleFactory->newFromText( 'Special:Tags' )->getLocalURL();
 
@@ -173,6 +182,7 @@ class EnhancedHistoryAction extends HistoryAction {
 
 			$data[] = $entry;
 			$oldSize = $row->rev_len;
+			$firstRevision = false;
 		}
 		$orderedData = array_reverse( $data );
 
