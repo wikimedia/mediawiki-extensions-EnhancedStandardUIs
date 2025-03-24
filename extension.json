@@ -1,6 +1,6 @@
 {
 	"name": "EnhancedStandardUIs",
-	"version": "2.0.0-alpha",
+	"version": "3.0.0-alpha",
 	"author": [
 		"[https://www.hallowelt.com Hallo Welt! GmbH]"
 	],
@@ -8,9 +8,9 @@
 	"descriptionmsg": "enhanced-standard-uis-desc",
 	"license-name": "GPL-3.0-only",
 	"requires": {
-		"MediaWiki": ">= 1.39.0",
+		"MediaWiki": ">= 1.43.0",
 		"extensions": {
-			"OOJSPlus": ">= 2.0.0"
+			"OOJSPlus": ">= 3.0.0"
 		}
 	},
 	"AutoloadNamespaces": {
