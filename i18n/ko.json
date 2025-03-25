@@ -37,5 +37,6 @@
 	"enhanced-standard-uis-allpages-namespace-list-label": "이름공간 목록",
 	"enhanced-standard-uis-allpages-redirect-label": "$1 (넘겨주기)",
 	"enhancedspecialpages": "특수 문서",
-	"enhanced-standard-uis-ve-filegrid-title": "고급 검색"
+	"enhanced-standard-uis-ve-filegrid-title": "고급 검색",
+	"enhanced-standard-uis-allpages-empty-namespaces-text": "사용 가능한 이름 공간이 없음"
 }
