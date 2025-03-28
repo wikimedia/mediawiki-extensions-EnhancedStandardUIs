@@ -46,6 +46,9 @@ class GetNamespaces extends SimpleHandler {
 		$lang = $this->languageFactory->getLanguage( $langCode );
 
 		foreach ( $lang->getFormattedNamespaces() as $ns => $title ) {
+			if ( $ns < 0 ) {
+				continue;
+			}
 			$testTitle = $this->titleFactory->newFromText( 'Enhanced_DummyPage', $ns );
 			if ( !$this->permissionManager->userCan( 'read', $user, $testTitle ) ) {
 				continue;
