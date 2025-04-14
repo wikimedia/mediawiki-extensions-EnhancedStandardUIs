@@ -175,3 +175,14 @@
 	height: 120px;
 	width: 120px;
 }
+
+.allpages-skeleton-namespace-widgets .oojs-skeleton--tree-line {
+	height: 30px;
+	margin: 10px 0;
+}
+
+.allpages-skeleton--tree {
+	margin-left: 30px;
+	columns: 2;
+	column-gap: 20px;
+}
