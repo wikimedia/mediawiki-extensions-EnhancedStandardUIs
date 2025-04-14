@@ -38,6 +38,12 @@ ext.enhancedUI.panel.AllPagesPanel.prototype.setupWidgets = function () {
 
 ext.enhancedUI.panel.AllPagesPanel.prototype.setupMenu = function () {
 	const $menuCnt = $( '<div>' ).addClass( 'enhanced-ui-allpages-panel-menu' );
+	// eslint-disable-next-line no-jquery/no-global-selector
+	this.$menuPlaceholder = $( '#skeleton-namespaces' ).clone();
+	$menuCnt.append( this.$menuPlaceholder );
+	this.$menuPlaceholder.attr( 'id', 'enhanced-allpages-skeleton-namespaces' );
+	// eslint-disable-next-line no-jquery/no-global-selector
+	$( '#skeleton-namespaces' ).empty();
 	if ( this.mobileView ) {
 		$menuCnt.addClass( 'collapsed' );
 		$menuCnt.addClass( 'oo-ui-icon-next' );
@@ -61,6 +67,7 @@ ext.enhancedUI.panel.AllPagesPanel.prototype.setupMenu = function () {
 		setup: function () {
 			this.selectedNS = this.namespaceMenu.getSelectedNamespaceId();
 			this.includeRedirect = this.namespaceMenu.getRedirectStatus();
+			this.$menuPlaceholder.empty();
 		}
 	} );
 	$menuCnt.append( this.namespaceMenu.$element );
@@ -81,9 +88,20 @@ ext.enhancedUI.panel.AllPagesPanel.prototype.setupPaginator = function () {
 };
 
 ext.enhancedUI.panel.AllPagesPanel.prototype.setupTree = function () {
+	this.$outerTreeCnt = $( '<div>' ).addClass(
+		'enhanced-ui-allpages-panel-tree-cnt' );
 	this.$treeCnt = $( '<div>' ).addClass(
 		'enhanced-ui-allpages-panel-tree enhanced-ui-allpages-columns' );
-	this.$contentCnt.append( this.$treeCnt );
+
+	// eslint-disable-next-line no-jquery/no-global-selector
+	this.$treePlaceholder = $( '#skeleton-tree' ).clone();
+	this.$outerTreeCnt.append( this.$treePlaceholder );
+	this.$treePlaceholder.attr( 'id', 'enhanced-allpages-skeleton-tree' );
+	// eslint-disable-next-line no-jquery/no-global-selector
+	$( '#skeleton-tree' ).empty();
+
+	this.$outerTreeCnt.append( this.$treeCnt );
+	this.$contentCnt.append( this.$outerTreeCnt );
 };
 
 ext.enhancedUI.panel.AllPagesPanel.prototype.namespaceSelected = function ( nsId ) {
@@ -128,6 +146,7 @@ ext.enhancedUI.panel.AllPagesPanel.prototype.updatePages = function () {
 			$( this.$treeCnt ).removeClass( 'enhanced-ui-allpages-columns' );
 		}
 	}
+	this.$treePlaceholder.empty();
 	if ( this.pages.length === 0 ) {
 		this.$treeCnt.append(
 			new OOJSPlus.ui.widget.NoContentPlaceholderWidget( {
@@ -156,6 +175,7 @@ ext.enhancedUI.panel.AllPagesPanel.prototype.updatePages = function () {
 };
 
 ext.enhancedUI.panel.AllPagesPanel.prototype.onFilterInput = function () {
+	this.searchWidget.$input.addClass( 'oo-ui-pendingElement-pending' );
 	const searchString = this.searchWidget.getValue();
 	this.store.loadPages( this.selectedNS, searchString ).done( ( data ) => {
 		const sortedData = this.sortData( data );
@@ -163,6 +183,7 @@ ext.enhancedUI.panel.AllPagesPanel.prototype.onFilterInput = function () {
 		this.updateResults( data );
 		this.paginator.init( Math.ceil( this.store.getTotal() / this.pageSize ) );
 		this.updatePages();
+		this.searchWidget.$input.removeClass( 'oo-ui-pendingElement-pending' );
 	} );
 };
 
