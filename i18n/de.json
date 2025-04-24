@@ -67,5 +67,7 @@
 	"enhancedspecialpages": "Spezialseiten",
 	"right-enhancedstandarduis-viewuncustomizedspecialpageslist": "Spezialseiten in der Liste [{{canonicalurl:Special:SpecialPages}} Spezial:Spezialseiten] anzeigen, die für Benutzer mit reiner Leserrolle ausgeblendet sind",
 	"action-enhancedstandarduis-viewuncustomizedspecialpageslist": "Spezialseiten in der Liste [{{canonicalurl:Special:SpecialPages}} Spezial:Spezialseiten] anzuzeigen, die für Benutzer mit reiner Leserrolle ausgeblendet sind",
-	"enhanced-standard-uis-ve-filegrid-title": "Erweiterte Suche"
+	"enhanced-standard-uis-ve-filegrid-title": "Erweiterte Suche",
+	"enhanced-standard-uis-allpages-empty-namespaces-text": "Keine Namensräume vorhanden",
+	"enhanced-standard-uis-allpages-empty-pages-text": "Es gibt noch keine Seiten in diesem Namensraum"
 }

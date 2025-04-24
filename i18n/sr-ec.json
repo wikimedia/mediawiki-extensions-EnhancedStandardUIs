@@ -62,5 +62,6 @@
 	"enhanced-standard-uis-allpages-pageinfo-label": "Прикажи информације о страници $1",
 	"enhanced-standard-uis-filter-results-label": "$1 {{PLURAL:$1|резултат је пронађен|резултата је пронађено}}",
 	"enhancedspecialpages": "Посебне странице",
-	"enhanced-standard-uis-ve-filegrid-title": "Напредна претрага"
+	"enhanced-standard-uis-ve-filegrid-title": "Напредна претрага",
+	"enhanced-standard-uis-allpages-empty-namespaces-text": "Нема доступног именског простора"
 }

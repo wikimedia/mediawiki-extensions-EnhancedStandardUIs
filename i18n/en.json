@@ -66,5 +66,7 @@
 	"enhancedspecialpages": "Special pages",
 	"right-enhancedstandarduis-viewuncustomizedspecialpageslist": "View certain special pages on the list [{{canonicalurl:Special:SpecialPages}} Special:SpecialPages], that are hidden for users of pure reader role",
 	"action-enhancedstandarduis-viewuncustomizedspecialpageslist": "view certain special pages on the list [{{canonicalurl:Special:SpecialPages}} Special:SpecialPages], that are hidden for users of pure reader role",
-	"enhanced-standard-uis-ve-filegrid-title": "Advanced search"
+	"enhanced-standard-uis-ve-filegrid-title": "Advanced search",
+	"enhanced-standard-uis-allpages-empty-namespaces-text": "No namespaces available",
+	"enhanced-standard-uis-allpages-empty-pages-text": "There are currently no pages in this namespace"
 }

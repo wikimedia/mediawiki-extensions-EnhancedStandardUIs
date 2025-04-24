@@ -66,5 +66,7 @@
 	"enhancedspecialpages": "Службени страници",
 	"right-enhancedstandarduis-viewuncustomizedspecialpageslist": "Преглед на извесни службени страници на списокот [{{canonicalurl:Special:SpecialPages}} Special:SpecialPages] кои се скриени за корисници кои се само читатели",
 	"action-enhancedstandarduis-viewuncustomizedspecialpageslist": "преглед на извесни службени страници на списокот [{{canonicalurl:Special:SpecialPages}} Special:SpecialPages] кои се скриени за корисници кои се само читатели",
-	"enhanced-standard-uis-ve-filegrid-title": "Напредно пребарување"
+	"enhanced-standard-uis-ve-filegrid-title": "Напредно пребарување",
+	"enhanced-standard-uis-allpages-empty-namespaces-text": "Нема достапни именски простори",
+	"enhanced-standard-uis-allpages-empty-pages-text": "Во моментов нема страници во овој именски простор"
 }
