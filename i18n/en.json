@@ -83,5 +83,6 @@
 	"enhanced-standard-uis-prefs-reset-button-label": "Reset to default preferences",
 	"enhanced-standard-uis-prefs-reset-not-allowed-label": "You are not allowed to reset user preferences",
 	"enhanced-standard-uis-prefs-reset-notify": "The preferences have been reset to the default preferences",
-	"enhanced-standard-uis-prefs-menu-aria-label": "Sections of preferences"
+	"enhanced-standard-uis-prefs-menu-aria-label": "Sections of preferences",
+	"enhanced-standard-uis-filelist-panel-select-view-aria-label": "Select view mode"
 }

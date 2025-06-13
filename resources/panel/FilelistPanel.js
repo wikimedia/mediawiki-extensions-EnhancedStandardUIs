@@ -114,7 +114,8 @@ ext.enhancedUI.panel.FilelistPanel.prototype.setupTools = function () {
 			],
 			classes: [ '' ]
 		} );
-		$( this.typeSwitch.$element ).attr( 'aria-label', 'Select view mode' );
+		$( this.typeSwitch.$element ).attr( 'aria-label',
+			mw.message( 'enhanced-standard-uis-filelist-panel-select-view-aria-label' ).text() );
 		this.typeSwitch.selectItemByData( this.mode );
 		this.typeSwitch.connect( this, {
 			select: 'onTypeSwitchChange'
