@@ -64,7 +64,7 @@ ext.enhancedUI.widget.NamespacesMenu.prototype.setupConfigButton = function () {
 };
 
 ext.enhancedUI.widget.NamespacesMenu.prototype.setupNamespaceMenu = function () {
-	this.selectWidget = new OO.ui.OutlineSelectWidget();
+	this.selectWidget = new OOJSPlus.ui.widget.OutlineSelectWidget();
 	this.selectWidget.$element.attr( 'aria-label',
 		mw.message( 'enhanced-standard-uis-allpages-namespace-list-label' ).text() );
 	this.selectWidget.connect( this, {
