@@ -85,5 +85,6 @@
 	"enhanced-standard-uis-prefs-reset-button-label": "Auf Standardeinstellungen zurücksetzen",
 	"enhanced-standard-uis-prefs-reset-not-allowed-label": "Du bist nicht berechtigt die Benutzereinstellungen zurückzusetzen",
 	"enhanced-standard-uis-prefs-reset-notify": "Die Einstellungen wurden auf die Standardeinstellungen zurückgesetzt",
-	"enhanced-standard-uis-prefs-menu-aria-label": "Abschnitte der Einstellungen"
+	"enhanced-standard-uis-prefs-menu-aria-label": "Abschnitte der Einstellungen",
+	"enhanced-standard-uis-filelist-panel-select-view-aria-label": "Ansichtsmodus auswählen"
 }
