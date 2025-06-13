@@ -159,6 +159,8 @@ ext.enhancedUI.panel.AllPagesPanel.prototype.updatePages = function () {
 	}
 	for ( const i in this.pages ) {
 		// eslint-disable-next-line no-jquery/variable-pattern
+		const section = $( '<section>' );
+		// eslint-disable-next-line no-jquery/variable-pattern
 		const pageTreeLetter = $( '<h2>' ).text( this.alphabetIndex[ i ] );
 		const pageTree = new ext.enhancedUI.data.PagesTree( {
 			style: {
@@ -167,10 +169,12 @@ ext.enhancedUI.panel.AllPagesPanel.prototype.updatePages = function () {
 			},
 			pages: this.pages[ i ],
 			store: this.store,
-			includeRedirect: this.includeRedirect
+			includeRedirect: this.includeRedirect,
+			id: 'tree-' + this.alphabetIndex[ i ]
 		} );
-		this.$treeCnt.append( pageTreeLetter );
-		this.$treeCnt.append( pageTree.$element );
+		section.append( pageTreeLetter );
+		section.append( pageTree.$element );
+		this.$treeCnt.append( section );
 	}
 };
 
