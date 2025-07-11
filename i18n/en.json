@@ -70,5 +70,10 @@
 	"enhanced-standard-uis-allpages-empty-namespaces-text": "No namespaces available",
 	"enhanced-standard-uis-allpages-empty-pages-text": "There are currently no pages in this namespace",
 	"enhanced-standard-uis-allpages-namespace-badge-aria-label": "contains {{PLURAL:$1|one page| $1 pages}}",
-	"enhanced-standard-uis-allpages-page-tree-item-expander-label": "Subpages"
+	"enhanced-standard-uis-allpages-page-tree-item-expander-label": "Subpages",
+	"enhancedpreferences": "Preferences",
+	"enhanced-pref-username": "{{GENDER:$1|Username}}",
+	"enhanced-prefs-memberingroups": "{{GENDER:$2|Member}} of {{PLURAL:$1|group|groups}}",
+	"enhanced-standard-uis-preferences-date-label": "Select display format",
+	"enhanced-standard-uis-prefs-panel-search-label": "Search"
 }
