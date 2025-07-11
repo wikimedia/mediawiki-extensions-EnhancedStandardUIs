@@ -58,7 +58,8 @@
 	"ExtensionMessagesFiles": {
 		"EnhancedAllPagesAlias": "languages/EnhancedAllPages.i18n.alias.php",
 		"EnhancedFilelist": "languages/EnhancedFilelist.i18n.alias.php",
-		"EnhancedSpecialPages": "languages/EnhancedSpecialPages.i18n.alias.php"
+		"EnhancedSpecialPages": "languages/EnhancedSpecialPages.i18n.alias.php",
+		"EnhancedPreferences": "languages/EnhancedPreferences.i18n.alias.php"
 	},
 	"MessagesDirs": {
 		"EnhancedStandardUIs": [
@@ -68,7 +69,11 @@
 	"SpecialPages": {
 		"EnhancedAllPages": "MediaWiki\\Extension\\EnhancedStandardUIs\\Special\\EnhancedAllPages",
 		"EnhancedFilelist": "MediaWiki\\Extension\\EnhancedStandardUIs\\Special\\EnhancedFilelist",
-		"EnhancedSpecialPages": "MediaWiki\\Extension\\EnhancedStandardUIs\\Special\\EnhancedSpecialPages"
+		"EnhancedSpecialPages": "MediaWiki\\Extension\\EnhancedStandardUIs\\Special\\EnhancedSpecialPages",
+		"EnhancedPreferences": {
+			"class": "MediaWiki\\Extension\\EnhancedStandardUIs\\Special\\EnhancedPreferences",
+			"services": [ "PreferencesFactory", "MainConfig", "MessageFormatterFactory" ]
+		}
 	},
 	"config": {
 		"EnhancedUIsVersionHistoryToolbarOffset": {
@@ -91,6 +96,20 @@
 		"EnhancedUIsVersionHistoryDiffMode": {
 			"value": "visual",
 			"public": true
+		},
+		"EnhancedUIsPrefSectionIcons": {
+			"value": {
+				"editing": "edit",
+				"extendedsearch": "search",
+				"notifications": "bell",
+				"personal": "userAvatar",
+				"rc": "history",
+				"rendering": "palette",
+				"watchlist": "watchlist"
+			}
+		},
+		"EnhancedUIsSpecialPreferencesOverride": {
+			"value": false
 		}
 	},
 	"Hooks": {
@@ -100,7 +119,8 @@
 			"addFilePath"
 		],
 		"SpecialPage_initList": "special-pages",
-		"MWStakeCommonUIRegisterSkinSlotComponents": "registerGlobalActions"
+		"MWStakeCommonUIRegisterSkinSlotComponents": "registerGlobalActions",
+		"MessageCacheFetchOverrides": "overrideMessages"
 	},
 	"HookHandlers": {
 		"userpreference": {
@@ -120,6 +140,9 @@
 		},
 		"registerGlobalActions": {
 			"class": "MediaWiki\\Extension\\EnhancedStandardUIs\\HookHandler\\RegisterGlobalActions"
+		},
+		"overrideMessages": {
+			"class": "MediaWiki\\Extension\\EnhancedStandardUIs\\HookHandler\\MessageCacheFetchGetOverrides"
 		}
 	},
 	"DefaultUserOptions": {
@@ -314,6 +337,36 @@
 			"dependencies": [
 				"ext.enhancedstandarduis.special.filelist"
 			]
+		},
+		"ext.enhancedstandarduis.special.preferences": {
+			"es6": true,
+			"packageFiles": [
+				"ext.enhancedUI.special.preferences.js",
+				"panel/PreferencesPanel.js",
+				"booklet/pages/PreferencesPage.js",
+				{
+					"name": "booklet/pages/icons.json",
+					"config": { "icons": "EnhancedUIsPrefSectionIcons" }
+				}
+			],
+			"styles": [
+				"stylesheets/ext.enhancedUI.special.preferences.css"
+			],
+			"messages": [
+				"enhanced-standard-uis-prefs-panel-search-label",
+				"savedprefs"
+			],
+			"dependencies": [
+				"oojs-ui",
+				"oojs-ui.styles.icons-user",
+				"oojs-ui.styles.icons-alerts",
+				"oojs-ui.styles.icons-interactions",
+				"oojs-ui.styles.icons-editing-core",
+				"oojs-ui.styles.icons-editing-advanced",
+				"ext.oOJSPlus.managerPanel",
+				"ext.oOJSPlus.widgets",
+				"mediawiki.widgets.SelectWithInputWidget"
+			]
 		}
 	},
 	"ResourceFileModulePaths": {
@@ -338,6 +391,17 @@
 				"DBLoadBalancer",
 				"NamespaceInfo",
 				"LanguageFactory"
+			]
+		},
+		{
+			"path": "/standarduis/preferences",
+			"method": "POST",
+			"class": "MediaWiki\\Extension\\EnhancedStandardUIs\\Rest\\SavePreferences",
+			"services": [
+				"UserOptionsManager",
+				"PreferencesFactory",
+				"SpecialPageFactory",
+				"MainConfig"
 			]
 		}
 	],
