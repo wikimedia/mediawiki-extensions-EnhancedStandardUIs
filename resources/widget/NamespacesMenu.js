@@ -159,7 +159,7 @@ ext.enhancedUI.widget.NamespacesMenu.prototype.updateNSMenu = function () {
 			const namespaceTalkId = namespace.id;
 
 			const relatedNS = this.namespaces.filter( ( ns ) => ns.id === ( namespaceTalkId - 1 ) );
-			if ( !relatedNS ) {
+			if ( !relatedNS || relatedNS.length === 0 ) {
 				continue;
 			}
 			if ( !relatedNS[ 0 ].isContent && !includeNonContent ) {
