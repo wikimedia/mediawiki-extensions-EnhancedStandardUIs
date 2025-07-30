@@ -71,5 +71,10 @@
 	"enhanced-standard-uis-allpages-empty-namespaces-text": "Keine Namensräume vorhanden",
 	"enhanced-standard-uis-allpages-empty-pages-text": "Es gibt noch keine Seiten in diesem Namensraum",
 	"enhanced-standard-uis-allpages-namespace-badge-aria-label": "enthält {{PLURAL:$1|1 Seite| $1 Seiten}}",
-	"enhanced-standard-uis-allpages-page-tree-item-expander-label": "Unterseiten"
+	"enhanced-standard-uis-allpages-page-tree-item-expander-label": "Unterseiten",
+	"enhancedpreferences": "Einstellungen",
+	"enhanced-pref-username": "{{GENDER:$1|Benutzername",
+	"enhanced-prefs-memberingroups": "{{GENDER:$2|Mitglied}} der {{PLURAL:$1|Gruppe|Gruppen}}",
+	"enhanced-standard-uis-preferences-date-label": "Anzeigeformat auswählen",
+	"enhanced-standard-uis-prefs-panel-search-label": "Suche"
 }
