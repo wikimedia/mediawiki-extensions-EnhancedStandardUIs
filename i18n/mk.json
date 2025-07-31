@@ -70,5 +70,10 @@
 	"enhanced-standard-uis-allpages-empty-namespaces-text": "Нема достапни именски простори",
 	"enhanced-standard-uis-allpages-empty-pages-text": "Во моментов нема страници во овој именски простор",
 	"enhanced-standard-uis-allpages-namespace-badge-aria-label": "содржи {{PLURAL:$1|една страница| $1 страници}}",
-	"enhanced-standard-uis-allpages-page-tree-item-expander-label": "Потстраници"
+	"enhanced-standard-uis-allpages-page-tree-item-expander-label": "Потстраници",
+	"enhancedpreferences": "Нагодувања",
+	"enhanced-pref-username": "{{GENDER:$1|Корисничко име}}",
+	"enhanced-prefs-memberingroups": "{{GENDER:$2|Член}} на {{PLURAL:$1|групата|групите}}",
+	"enhanced-standard-uis-preferences-date-label": "Изберете формат за приказ",
+	"enhanced-standard-uis-prefs-panel-search-label": "Пребарај"
 }
