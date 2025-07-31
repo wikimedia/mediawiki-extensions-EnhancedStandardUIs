@@ -48,5 +48,10 @@
 	"enhanced-standard-uis-allpages-untitled": "Senza titolo",
 	"enhanced-standard-uis-ve-filegrid-title": "Ricerca avanzata",
 	"enhanced-standard-uis-allpages-namespace-badge-aria-label": "contiene {{PLURAL:$1|una pagina|$1 pagine}}",
-	"enhanced-standard-uis-allpages-page-tree-item-expander-label": "Sottopagine"
+	"enhanced-standard-uis-allpages-page-tree-item-expander-label": "Sottopagine",
+	"enhancedpreferences": "Preferenze",
+	"enhanced-pref-username": "{{GENDER:$1|Nome utente}}",
+	"enhanced-prefs-memberingroups": "{{GENDER:$2|Membro}} {{PLURAL:$1|del gruppo|dei gruppi}}",
+	"enhanced-standard-uis-preferences-date-label": "Seleziona il formato di visualizzazione",
+	"enhanced-standard-uis-prefs-panel-search-label": "Cerca"
 }
