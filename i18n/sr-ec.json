@@ -63,5 +63,8 @@
 	"enhanced-standard-uis-filter-results-label": "$1 {{PLURAL:$1|резултат је пронађен|резултата је пронађено}}",
 	"enhancedspecialpages": "Посебне странице",
 	"enhanced-standard-uis-ve-filegrid-title": "Напредна претрага",
-	"enhanced-standard-uis-allpages-empty-namespaces-text": "Нема доступног именског простора"
+	"enhanced-standard-uis-allpages-empty-namespaces-text": "Нема доступног именског простора",
+	"enhancedpreferences": "Подешавања",
+	"enhanced-pref-username": "{{GENDER:$1|Корисничко име}}",
+	"enhanced-standard-uis-prefs-panel-search-label": "Претрага"
 }

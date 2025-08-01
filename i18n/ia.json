@@ -70,5 +70,10 @@
 	"enhanced-standard-uis-allpages-empty-namespaces-text": "Necun spatio de nomines disponibile",
 	"enhanced-standard-uis-allpages-empty-pages-text": "Il non ha actualmente alcun pagina in iste spatio de nomines",
 	"enhanced-standard-uis-allpages-namespace-badge-aria-label": "contine {{PLURAL:$1|un sol pagina| $1 paginas}}",
-	"enhanced-standard-uis-allpages-page-tree-item-expander-label": "Subpaginas"
+	"enhanced-standard-uis-allpages-page-tree-item-expander-label": "Subpaginas",
+	"enhancedpreferences": "Preferentias",
+	"enhanced-pref-username": "{{GENDER:$1|Nomine de usator}}",
+	"enhanced-prefs-memberingroups": "{{GENDER:$2|Membro}} del {{PLURAL:$1|gruppo|gruppos}}",
+	"enhanced-standard-uis-preferences-date-label": "Selige formato de visualisation",
+	"enhanced-standard-uis-prefs-panel-search-label": "Cercar"
 }
