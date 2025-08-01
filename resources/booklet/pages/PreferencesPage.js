@@ -77,11 +77,13 @@ ext.enhancedUI.booklet.PreferencesPage.prototype.setupPrefSection = function () 
 			} else {
 				const infoField = new OO.ui.FieldLayout(
 					prefInput,
+					// eslint-disable-next-line mediawiki/class-doc
 					{
 						align: this.mobile ? 'top' : 'left',
 						label: pref[ 'label-message' ] ? new OO.ui.HtmlSnippet( pref[ 'label-message' ] ) : '',
 						help: pref[ 'help-message' ] ? new OO.ui.HtmlSnippet( pref[ 'help-message' ] ) : '',
-						helpInline: true
+						helpInline: true,
+						classes: [ 'mw-pref-' + key ]
 					} );
 				$section.append( infoField.$element );
 			}
