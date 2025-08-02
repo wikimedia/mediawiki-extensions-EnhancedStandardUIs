@@ -71,5 +71,10 @@
 	"enhanced-standard-uis-allpages-empty-namespaces-text": "Geen naamruimten beschikbaar",
 	"enhanced-standard-uis-allpages-empty-pages-text": "Er zijn momenteel geen pagina’s in deze naamruimte",
 	"enhanced-standard-uis-allpages-namespace-badge-aria-label": "bevat {{PLURAL:$1|één pagina| $1 pagina’s}}",
-	"enhanced-standard-uis-allpages-page-tree-item-expander-label": "Subpagina’s"
+	"enhanced-standard-uis-allpages-page-tree-item-expander-label": "Subpagina’s",
+	"enhancedpreferences": "Voorkeuren",
+	"enhanced-pref-username": "{{GENDER:$1|Gebruikersnaam}}",
+	"enhanced-prefs-memberingroups": "{{GENDER:$2|Lid}} van de {{PLURAL:$1|groep|groepen}}:",
+	"enhanced-standard-uis-preferences-date-label": "Selecteer weergaveformaat",
+	"enhanced-standard-uis-prefs-panel-search-label": "Zoeken"
 }
