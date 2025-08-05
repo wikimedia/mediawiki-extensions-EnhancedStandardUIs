@@ -66,6 +66,6 @@
 	"enhanced-standard-uis-allpages-empty-namespaces-text": "Нема доступног именског простора",
 	"enhancedpreferences": "Подешавања",
 	"enhanced-pref-username": "{{GENDER:$1|Корисничко име}}",
-	"enhanced-standard-uis-prefs-panel-search-label": "Претрага",
-	"enhanced-prefs-memberingroups": "{{GENDER:$2|Члан|Чланица}} {{PLURAL:$1|групе|група}}"
+	"enhanced-prefs-memberingroups": "{{GENDER:$2|Члан|Чланица}} {{PLURAL:$1|групе|група}}",
+	"enhanced-standard-uis-prefs-panel-search-label": "Претрага"
 }
