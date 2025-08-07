@@ -80,6 +80,8 @@ ext.enhancedUI.panel.AllPagesPanel.prototype.setupPaginator = function () {
 	this.paginator.connect( this, {
 		selectPage: function ( nextPage ) {
 			this.changeFromPaginator = true;
+			this.togglePlaceholder();
+			this.$treeCnt.children().remove();
 			this.getPages( nextPage * this.pageSize );
 		}
 	} );
@@ -133,6 +135,11 @@ ext.enhancedUI.panel.AllPagesPanel.prototype.getPages = function ( start ) {
 	} );
 };
 
+ext.enhancedUI.panel.AllPagesPanel.prototype.togglePlaceholder = function () {
+	// eslint-disable-next-line no-jquery/no-class-state
+	$( this.$treePlaceholder ).toggleClass( 'hidden' );
+};
+
 ext.enhancedUI.panel.AllPagesPanel.prototype.updatePages = function () {
 	this.$treeCnt.children().remove();
 	if ( this.pages.length > 1 ) {
@@ -146,7 +153,7 @@ ext.enhancedUI.panel.AllPagesPanel.prototype.updatePages = function () {
 			$( this.$treeCnt ).removeClass( 'enhanced-ui-allpages-columns' );
 		}
 	}
-	this.$treePlaceholder.empty();
+	this.togglePlaceholder();
 	if ( this.pages.length === 0 ) {
 		this.$treeCnt.append(
 			new OOJSPlus.ui.widget.NoContentPlaceholderWidget( {
