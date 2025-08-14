@@ -14,6 +14,7 @@ use MediaWiki\Rest\SimpleHandler;
 use MediaWiki\SpecialPage\SpecialPageFactory;
 use MediaWiki\User\Options\UserOptionsLookup;
 use MediaWiki\User\Options\UserOptionsManager;
+use PreferencesFormOOUI;
 use Wikimedia\ParamValidator\ParamValidator;
 
 class SavePreferences extends SimpleHandler {
@@ -74,6 +75,7 @@ class SavePreferences extends SimpleHandler {
 		$pageContext->setTitle( $specialPage->getPageTitle() );
 		$pageContext->setOutput( $specialPage->getOutput() );
 		$preferences = $this->preferencesFactory->getFormDescriptor( $user, $pageContext );
+		$form = $this->preferencesFactory->getForm( $user, $pageContext, PreferencesFormOOUI::class );
 
 		$hiddenPrefs = $serviceOptions->get( MainConfigNames::HiddenPrefs );
 		$saveOptions = $options;
@@ -101,8 +103,8 @@ class SavePreferences extends SimpleHandler {
 
 			// If the user changed the rclimit preference, also change the rcfilters-rclimit preference
 			if (
-				isset( $formData['rclimit'] ) &&
-				intval( $formData[ 'rclimit' ] ) !== $this->userOptionsManager->getIntOption( $user, 'rclimit' )
+				isset( $options['rclimit'] ) &&
+				intval( $options[ 'rclimit' ] ) !== $this->userOptionsManager->getIntOption( $user, 'rclimit' )
 			) {
 				$options['rcfilters-limit'] = $options['rclimit'];
 			}
@@ -117,6 +119,9 @@ class SavePreferences extends SimpleHandler {
 				// hidden prefs are added to options as well
 				if ( isset( $saveOptions[$key] ) ) {
 					$prefConfig = $preferences[ $key ];
+					if ( !isset( $prefConfig['parent'] ) ) {
+						$prefConfig['parent'] = $form;
+					}
 					$validated = $this->validateWithFormClass( $key, $prefConfig, $value );
 					if ( !$validated ) {
 						$wrongValidated[ $key ] = $validated;

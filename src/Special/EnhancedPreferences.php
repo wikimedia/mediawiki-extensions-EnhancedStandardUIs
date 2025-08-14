@@ -67,6 +67,10 @@ class EnhancedPreferences extends OOJSBookletSpecialPage {
 			if ( isset( $info['type'] ) && $info['type'] === 'api' ) {
 				unset( $preferences[$name] );
 			}
+			// specialpage will handle this on its own
+			if ( $name === 'restoreprefs' ) {
+				unset( $preferences[$name] );
+			}
 		}
 
 		$filteredPrefs = [];

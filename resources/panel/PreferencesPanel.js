@@ -3,6 +3,7 @@ ext.enhancedUI = ext.enhancedUI || {};
 ext.enhancedUI.panel = ext.enhancedUI.panel || {};
 
 require( './../booklet/pages/PreferencesPage.js' );
+require( './../dialog/ResetPrefsDialog.js' );
 
 ext.enhancedUI.panel.PreferencesPanel = function ( cfg ) {
 	cfg = cfg || {};
@@ -43,6 +44,9 @@ ext.enhancedUI.panel.PreferencesPanel.prototype.setup = function () {
 			location.hash = 'mw-prefsection-' + page.getName();
 		}
 	} );
+	this.bookletLayout.outlineSelectWidget.$element.attr( 'aria-label',
+		mw.message( 'enhanced-standard-uis-prefs-menu-aria-label' ).text()
+	);
 
 	if ( this.mobile ) {
 		this.mobileSetup();
@@ -72,6 +76,9 @@ ext.enhancedUI.panel.PreferencesPanel.prototype.createPages = function () {
 				prefs: this.preferences[ section ]
 			}
 		);
+		if ( prefPage.$element[ 0 ].children.length === 0 ) {
+			continue;
+		}
 		// eslint-disable-next-line es-x/no-array-prototype-includes
 		if ( this.activePages.includes( prefPage ) ) {
 			prefPage.markActive();
@@ -87,7 +94,29 @@ ext.enhancedUI.panel.PreferencesPanel.prototype.createPages = function () {
 ext.enhancedUI.panel.PreferencesPanel.prototype.setupToolbar = function () {
 	this.toolbar = new OOJSPlus.ui.toolbar.ManagerToolbar( {
 		saveable: true,
-		sticky: true
+		sticky: true,
+		actions: [
+			new OOJSPlus.ui.toolbar.tool.ToolbarTool( {
+				name: 'resetPrefs',
+				icon: 'reload',
+				displayBothIconAndLabel: true,
+				title: mw.message( 'enhanced-standard-uis-prefs-reset-button-label' ).text(),
+				callback: ( toolInstance ) => {
+					const windowManager = new OO.ui.WindowManager();
+					$( document.body ).append( windowManager.$element );
+					const resetDialog = new ext.enhancedUI.dialog.ResetPrefsDialog();
+					resetDialog.connect( this, {
+						'reset-done': () => {
+							mw.notify( mw.message( 'enhanced-standard-uis-prefs-reset-notify' ).text() );
+							window.location.reload();
+						}
+					} );
+					windowManager.addWindows( [ resetDialog ] );
+					windowManager.openWindow( resetDialog );
+					toolInstance.setActive( false );
+				}
+			} )
+		]
 	} );
 	this.toolbar.setup();
 	this.toolbar.initialize();
@@ -99,6 +128,7 @@ ext.enhancedUI.panel.PreferencesPanel.prototype.setupToolbar = function () {
 			mw.loader.using( 'ext.enhancedstandarduis.api' ).done( () => {
 				const api = new ext.enhancedUI.api.Api();
 				api.savePreferences( this.changedPrefs ).done( () => {
+					this.deactivateLeaveWarning();
 					mw.notify( mw.message( 'savedprefs' ).text() );
 					window.location.reload();
 				} );
@@ -153,7 +183,16 @@ ext.enhancedUI.panel.PreferencesPanel.prototype.addPrefForSave = function ( page
 	}
 	if ( this.saveTool.isDisabled() ) {
 		this.saveTool.setDisabled( false );
+		this.activateLeaveWarning();
 	}
+};
+
+ext.enhancedUI.panel.PreferencesPanel.prototype.activateLeaveWarning = function () {
+	this.allowCloseWindow = mw.confirmCloseWindow();
+};
+
+ext.enhancedUI.panel.PreferencesPanel.prototype.deactivateLeaveWarning = function () {
+	this.allowCloseWindow.release();
 };
 
 ext.enhancedUI.panel.PreferencesPanel.prototype.searchForValue = function ( searchTerm ) {
