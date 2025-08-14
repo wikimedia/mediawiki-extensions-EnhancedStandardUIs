@@ -78,5 +78,12 @@
 	"enhanced-prefs-memberingroups": "{{GENDER:$2|Mitglied}} der {{PLURAL:$1|Gruppe|Gruppen}}",
 	"enhanced-standard-uis-preferences-date-label": "Anzeigeformat auswählen",
 	"enhanced-standard-uis-prefs-panel-search-label": "Suche",
-	"enhanced-standard-uis-filelist-dialog-booklet-page-select-aria-label": "Informationen zur Datei"
+	"enhanced-standard-uis-filelist-dialog-booklet-page-select-aria-label": "Informationen zur Datei",
+	"enhanced-standard-uis-prefs-reset-dlg-title": "Auf Standardeinstellungen zurücksetzen",
+	"enhanced-standard-uis-prefs-reset-dlg-action-label": "Zurücksetzen",
+	"enhanced-standard-uis-prefs-reset-dlg-confirm-label": "Bist du dir sicher, dass du die Einstellungen auf die Standardeinstellungen zurücksetzen möchtest? Dies kann nicht rückgängig gemacht werden.",
+	"enhanced-standard-uis-prefs-reset-button-label": "Auf Standardeinstellungen zurücksetzen",
+	"enhanced-standard-uis-prefs-reset-not-allowed-label": "Du bist nicht berechtigt die Benutzereinstellungen zurückzusetzen",
+	"enhanced-standard-uis-prefs-reset-notify": "Die Einstellungen wurden auf die Standardeinstellungen zurückgesetzt",
+	"enhanced-standard-uis-prefs-menu-aria-label": "Abschnitte der Einstellungen"
 }

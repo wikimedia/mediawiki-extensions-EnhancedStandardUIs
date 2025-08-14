@@ -184,11 +184,12 @@ ext.enhancedUI.booklet.PreferencesPage.prototype.getPrefWidget = function ( pref
 			}
 			prefInput = new OO.ui.DropdownInputWidget( {
 				options: options,
-				value: pref.default
+				value: pref.default,
+				$overlay: true
 			} );
 			prefInput.connect( this, {
 				change: ( value ) => {
-					this.onPrefValueChanged( 'prefChange', pref.pref, value );
+					this.onPrefValueChanged( pref.pref, value );
 				}
 			} );
 			break;
@@ -225,11 +226,14 @@ ext.enhancedUI.booklet.PreferencesPage.prototype.getPrefWidget = function ( pref
 		}
 		case 'int':
 		case 'float': {
-			prefInput = new OOJSPlus.ui.widget.NumberInputWidget( {
+			const cfg = {
 				input: { value: pref.default },
-				min: pref.min || 0,
-				max: pref.max
-			} );
+				min: pref.min || 0
+			};
+			if ( pref.max ) {
+				cfg.max = pref.max;
+			}
+			prefInput = new OOJSPlus.ui.widget.NumberInputWidget( cfg );
 			prefInput.connect( this, {
 				change: ( value ) => {
 					this.onPrefValueChanged( pref.pref, value );
@@ -302,6 +306,7 @@ ext.enhancedUI.booklet.PreferencesPage.prototype.getPrefWidget = function ( pref
 
 			prefInput = new OO.ui.MenuTagMultiselectWidget( {
 				options: options,
+				$overlay: true,
 				inputPosition: 'outline',
 				selected: selectedOptions
 			} );
@@ -325,34 +330,7 @@ ext.enhancedUI.booklet.PreferencesPage.prototype.getPrefWidget = function ( pref
 
 			customPrefInput.connect( this, {
 				change: function ( value ) {
-					function deepEqual( obj1, obj2 ) {
-						if ( obj1 === obj2 ) {
-							return true;
-						}
-
-						if (
-							typeof obj1 !== 'object' || obj1 === null ||
-							typeof obj2 !== 'object' || obj2 === null
-						) {
-							return false;
-						}
-
-						const keys1 = Object.keys( obj1 );
-						const keys2 = Object.keys( obj2 );
-
-						if ( keys1.length !== keys2.length ) {
-							return false;
-						}
-
-						return keys1.every(
-							// eslint-disable-next-line es-x/no-array-prototype-includes
-							( key ) => keys2.includes( key ) && deepEqual( obj1[ key ], obj2[ key ] )
-						);
-					}
-					const valueIsSame = deepEqual( value, customCfg.cfg.data );
-					if ( !valueIsSame ) {
-						this.onPrefValueChanged( pref.pref, JSON.stringify( value ) );
-					}
+					this.onPrefValueChanged( pref.pref, JSON.stringify( value ) );
 				}
 			} );
 			prefInput = customPrefInput;

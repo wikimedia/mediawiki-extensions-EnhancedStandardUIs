@@ -62,3 +62,7 @@ ext.enhancedUI.api.Api.prototype.getNamespaces = function () {
 ext.enhancedUI.api.Api.prototype.savePreferences = function ( prefs ) {
 	return this.post( 'preferences', prefs );
 };
+
+ext.enhancedUI.api.Api.prototype.resetPreferences = function () {
+	return this.post( 'reset-preferences' );
+};

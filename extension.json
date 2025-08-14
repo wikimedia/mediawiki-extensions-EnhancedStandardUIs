@@ -353,14 +353,22 @@
 				{
 					"name": "booklet/pages/icons.json",
 					"config": { "icons": "EnhancedUIsPrefSectionIcons" }
-				}
+				},
+				"dialog/ResetPrefsDialog.js"
 			],
 			"styles": [
 				"stylesheets/ext.enhancedUI.special.preferences.css"
 			],
 			"messages": [
 				"enhanced-standard-uis-prefs-panel-search-label",
-				"savedprefs"
+				"savedprefs",
+				"enhanced-standard-uis-prefs-reset-dlg-title",
+				"cancel",
+				"enhanced-standard-uis-prefs-reset-dlg-action-label",
+				"enhanced-standard-uis-prefs-reset-dlg-confirm-label",
+				"enhanced-standard-uis-prefs-reset-button-label",
+				"enhanced-standard-uis-prefs-reset-notify",
+				"enhanced-standard-uis-prefs-menu-aria-label"
 			],
 			"dependencies": [
 				"oojs-ui",
@@ -371,7 +379,8 @@
 				"oojs-ui.styles.icons-editing-advanced",
 				"ext.oOJSPlus.managerPanel",
 				"ext.oOJSPlus.widgets",
-				"mediawiki.widgets.SelectWithInputWidget"
+				"mediawiki.widgets.SelectWithInputWidget",
+				"mediawiki.confirmCloseWindow"
 			]
 		}
 	},
@@ -409,6 +418,12 @@
 				"SpecialPageFactory",
 				"MainConfig"
 			]
+		},
+		{
+			"path": "/standarduis/reset-preferences",
+			"method": "POST",
+			"class": "MediaWiki\\Extension\\EnhancedStandardUIs\\Rest\\ResetPreferences",
+			"services": [ "UserOptionsManager" ]
 		}
 	],
 	"manifest_version": 2,
