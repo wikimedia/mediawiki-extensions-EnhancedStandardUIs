@@ -71,6 +71,6 @@
 	"enhanced-standard-uis-allpages-empty-namespaces-text": "אין מרחבי שם זמינים",
 	"enhanced-standard-uis-allpages-empty-pages-text": "כרגע אין דפים במרחב השם הזה",
 	"enhancedpreferences": "העדפות",
-	"enhanced-pref-username": "{{GENDER:$1|משתמש|משתמשת}}",
+	"enhanced-pref-username": "שם {{GENDER:$1|משתמש|משתמשת}}",
 	"enhanced-standard-uis-prefs-panel-search-label": "חיפוש"
 }

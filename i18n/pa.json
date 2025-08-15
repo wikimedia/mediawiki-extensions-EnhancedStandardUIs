@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Cabal"
+			"Cabal",
+			"Kuldeepburjbhalaike"
 		]
 	},
 	"enhancedspecialpages": "ਖ਼ਾਸ ਸਫ਼ੇ",
@@ -41,7 +42,7 @@
 	"enhanced-standard-uis-filelist-dialog-action-file-label": "ਫਾਇਲ ਸਫ਼ਾ ਖੋਲ੍ਹੋ",
 	"enhanced-standard-uis-filelist-dialog-page-preview-label": "ਝਾਤ",
 	"enhanced-standard-uis-allpages-filter-pages-label": "ਛਾਨਣੀ",
-	"enhanced-standard-uis-allpages-namespace-list-label": "ਨਾਂ-ਥਾਂ ਸੂਚੀ",
+	"enhanced-standard-uis-allpages-namespace-list-label": "ਨਾਮ-ਸਥਾਨ",
 	"enhanced-standard-uis-allpages-filter-results-label": "$1 {{PLURAL:$1|ਨਤੀਜਾ|ਨਤੀਜੇ}} ਮਿਲੇ",
 	"enhanced-standard-uis-filelist-grid-preview-title": "ਝਾਤ",
 	"enhanced-standard-uis-filelist-ga-title": "ਫ਼ਾਈਲਾਂ",
