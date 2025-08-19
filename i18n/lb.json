@@ -56,6 +56,6 @@
 	"enhanced-standard-uis-allpages-page-tree-item-expander-label": "Ënnersäiten",
 	"enhancedpreferences": "Astellungen",
 	"enhanced-pref-username": "{{GENDER:$1|Benotzernumm}}",
-	"enhanced-standard-uis-prefs-panel-search-label": "Sichen",
-	"enhanced-prefs-memberingroups": "{{GENDER:$2|Member}} vun {{PLURAL:$1|der Grupp|de Gruppen}}"
+	"enhanced-prefs-memberingroups": "{{GENDER:$2|Member}} vun {{PLURAL:$1|der Grupp|de Gruppen}}",
+	"enhanced-standard-uis-prefs-panel-search-label": "Sichen"
 }
