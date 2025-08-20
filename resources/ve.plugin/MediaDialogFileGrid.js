@@ -41,9 +41,7 @@ ext.enhancedUI.ve.MediaDialogFileGrid.prototype.onSearchTabsSet = function ( sel
 		this.component.actions.setMode( 'select' );
 		this.component.search.runLayoutQueue();
 
-		if ( !this.fileRepoGrid ) {
-			this.initFileRepoGrid();
-		} else {
+		if ( this.fileRepoGrid ) {
 			// Reset size on tab switch when already loaded
 			this.onFileRepoGridLoaded();
 		}
@@ -65,6 +63,9 @@ ext.enhancedUI.ve.MediaDialogFileGrid.prototype.onPanelSwitch = function ( panel
 		this.component.searchTabs.setTabPanel( this.presetTab );
 		this.presetTab = null;
 	}
+	if ( !this.fileRepoGrid ) {
+		this.initFileRepoGrid();
+	}
 	if ( this.fileRepoGrid ) {
 		this.fileRepoGrid.closeFilters();
 	}
@@ -80,9 +81,13 @@ ext.enhancedUI.ve.MediaDialogFileGrid.prototype.initFileRepoGrid = function () {
 		$overlay: this.component.$overlay,
 		mediaDialog: true
 	} );
-	this.fileRepoGrid.grid.connect( this, {
-		rowSelected: 'onFileRepoGridSelect',
-		datasetChange: 'onFileRepoGridLoaded'
+	this.fileRepoGrid.connect( this, {
+		gridLoaded: () => {
+			this.fileRepoGrid.grid.connect( this, {
+				rowSelected: 'onFileRepoGridSelect',
+				datasetChange: 'onFileRepoGridLoaded'
+			} );
+		}
 	} );
 	this.advancedSearchTab.$element.html( this.fileRepoGrid.$element );
 };
