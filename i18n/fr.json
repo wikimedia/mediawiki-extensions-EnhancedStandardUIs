@@ -1,14 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
+			"Derugon",
 			"Graineahumus",
 			"Iketsi",
 			"JLTRY",
 			"MacOS Weed",
 			"Mahabarata",
 			"Nikop",
-			"SleaY",
-			"Derugon"
+			"SleaY"
 		]
 	},
 	"enhanced-standard-uis-desc": "Fournit des interfaces utilisateur pour les interfaces utilisateur standard de MédiaWiki",
