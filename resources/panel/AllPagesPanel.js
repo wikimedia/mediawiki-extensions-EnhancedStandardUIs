@@ -186,6 +186,8 @@ ext.enhancedUI.panel.AllPagesPanel.prototype.updatePages = function () {
 };
 
 ext.enhancedUI.panel.AllPagesPanel.prototype.onFilterInput = function () {
+	this.togglePlaceholder();
+	this.$treeCnt.children().remove();
 	this.searchWidget.$input.addClass( 'oo-ui-pendingElement-pending' );
 	const searchString = this.searchWidget.getValue();
 	this.store.loadPages( this.selectedNS, searchString ).done( ( data ) => {
