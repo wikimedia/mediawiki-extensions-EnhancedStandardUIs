@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Jon Harald Søby"
+			"Jon Harald Søby",
+			"Yupik"
 		]
 	},
+	"enhanced-standard-uis-history-grid-header-size-label": "Størrelse",
 	"enhancedfilelist": "Filliste",
 	"enhanced-standard-uis-filelist-grid-file-title": "Filnavn",
 	"enhanced-standard-uis-filelist-grid-author-title": "Opphavsperson",
