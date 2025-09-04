@@ -75,5 +75,6 @@
 	"enhanced-pref-username": "{{GENDER:$1|Username}}",
 	"enhanced-prefs-memberingroups": "{{GENDER:$2|Member}} of {{PLURAL:$1|group|groups}}",
 	"enhanced-standard-uis-preferences-date-label": "Select display format",
-	"enhanced-standard-uis-prefs-panel-search-label": "Search"
+	"enhanced-standard-uis-prefs-panel-search-label": "Search",
+	"enhanced-standard-uis-filelist-dialog-booklet-page-select-aria-label": "Information about the file"
 }

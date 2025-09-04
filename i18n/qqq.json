@@ -75,5 +75,6 @@
 	"enhanced-pref-username": "Username field in [[Special:Preferences]].\nParameters:\n* $1 - username",
 	"enhanced-prefs-memberingroups": "Usergroups list shown in preferences nParameters:\n* $1 - number of groups\n* $2 - username",
 	"enhanced-standard-uis-preferences-date-label": "Label for date format radio group",
-	"enhanced-standard-uis-prefs-panel-search-label": "Label for search input field\n{{Identical:Search}}"
+	"enhanced-standard-uis-prefs-panel-search-label": "Label for search input field\n{{Identical:Search}}",
+	"enhanced-standard-uis-filelist-dialog-booklet-page-select-aria-label": "Aria label for dialog to select preview, meta data and version history of a file"
 }
