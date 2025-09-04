@@ -80,7 +80,7 @@ ext.enhancedUI.panel.AllPagesPanel.prototype.setupPaginator = function () {
 	this.paginator.connect( this, {
 		selectPage: function ( nextPage ) {
 			this.changeFromPaginator = true;
-			this.togglePlaceholder();
+			this.showPlaceholder();
 			this.$treeCnt.children().remove();
 			this.getPages( nextPage * this.pageSize );
 		}
@@ -110,6 +110,8 @@ ext.enhancedUI.panel.AllPagesPanel.prototype.namespaceSelected = function ( nsId
 	if ( this.selectedNS === nsId ) {
 		return;
 	}
+	this.$treeCnt.children().remove();
+	this.showPlaceholder();
 	this.selectedNS = nsId;
 	this.getPages();
 };
@@ -135,9 +137,12 @@ ext.enhancedUI.panel.AllPagesPanel.prototype.getPages = function ( start ) {
 	} );
 };
 
-ext.enhancedUI.panel.AllPagesPanel.prototype.togglePlaceholder = function () {
-	// eslint-disable-next-line no-jquery/no-class-state
-	$( this.$treePlaceholder ).toggleClass( 'hidden' );
+ext.enhancedUI.panel.AllPagesPanel.prototype.showPlaceholder = function () {
+	$( this.$treePlaceholder ).removeClass( 'hidden' );
+};
+
+ext.enhancedUI.panel.AllPagesPanel.prototype.hidePlaceholder = function () {
+	$( this.$treePlaceholder ).addClass( 'hidden' );
 };
 
 ext.enhancedUI.panel.AllPagesPanel.prototype.updatePages = function () {
@@ -153,7 +158,7 @@ ext.enhancedUI.panel.AllPagesPanel.prototype.updatePages = function () {
 			$( this.$treeCnt ).removeClass( 'enhanced-ui-allpages-columns' );
 		}
 	}
-	this.togglePlaceholder();
+	this.hidePlaceholder();
 	if ( this.pages.length === 0 ) {
 		this.$treeCnt.append(
 			new OOJSPlus.ui.widget.NoContentPlaceholderWidget( {
@@ -186,7 +191,7 @@ ext.enhancedUI.panel.AllPagesPanel.prototype.updatePages = function () {
 };
 
 ext.enhancedUI.panel.AllPagesPanel.prototype.onFilterInput = function () {
-	this.togglePlaceholder();
+	this.showPlaceholder();
 	this.$treeCnt.children().remove();
 	this.searchWidget.$input.addClass( 'oo-ui-pendingElement-pending' );
 	const searchString = this.searchWidget.getValue();
