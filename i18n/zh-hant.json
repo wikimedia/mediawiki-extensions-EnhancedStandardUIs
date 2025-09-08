@@ -62,5 +62,9 @@
 	"enhanced-standard-uis-filelist-ga-aria": "檔案清單",
 	"enhanced-standard-uis-filter-results-label": "找到 $1 {{PLURAL:$1|個結果}}",
 	"enhanced-standard-uis-allpages-redirect-label": "$1（重新導向）",
-	"enhanced-standard-uis-allpages-untitled": "無標題"
+	"enhanced-standard-uis-allpages-untitled": "無標題",
+	"enhancedspecialpages": "特殊頁面",
+	"right-enhancedstandarduis-viewuncustomizedspecialpageslist": "查看在清單 [{{canonicalurl:Special:SpecialPages}} Special:SpecialPages] 中的某些特殊頁面，這些頁面不會顯示在純粹讀者身份的使用者面前",
+	"action-enhancedstandarduis-viewuncustomizedspecialpageslist": "查看在清單 [{{canonicalurl:Special:SpecialPages}} Special:SpecialPages] 中的某些特殊頁面，這些頁面不會顯示在純粹讀者身份的使用者面前",
+	"enhanced-standard-uis-ve-filegrid-title": "進階搜尋"
 }
