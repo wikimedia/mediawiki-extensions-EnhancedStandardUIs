@@ -53,5 +53,6 @@
 	"enhanced-pref-username": "{{GENDER:$1|Nome utente}}",
 	"enhanced-prefs-memberingroups": "{{GENDER:$2|Membro}} {{PLURAL:$1|del gruppo|dei gruppi}}",
 	"enhanced-standard-uis-preferences-date-label": "Seleziona il formato di visualizzazione",
-	"enhanced-standard-uis-prefs-panel-search-label": "Cerca"
+	"enhanced-standard-uis-prefs-panel-search-label": "Cerca",
+	"enhanced-standard-uis-filelist-dialog-booklet-page-select-aria-label": "Informazioni sul file"
 }
