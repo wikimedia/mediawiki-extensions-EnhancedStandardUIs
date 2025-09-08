@@ -75,5 +75,6 @@
 	"enhanced-pref-username": "{{GENDER:$1|Корисничко име}}",
 	"enhanced-prefs-memberingroups": "{{GENDER:$2|Член}} на {{PLURAL:$1|групата|групите}}",
 	"enhanced-standard-uis-preferences-date-label": "Изберете формат за приказ",
-	"enhanced-standard-uis-prefs-panel-search-label": "Пребарај"
+	"enhanced-standard-uis-prefs-panel-search-label": "Пребарај",
+	"enhanced-standard-uis-filelist-dialog-booklet-page-select-aria-label": "Информации за податотекава"
 }
