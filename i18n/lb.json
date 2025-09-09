@@ -2,14 +2,15 @@
 	"@metadata": {
 		"authors": [
 			"Robby",
-			"Volvox"
+			"Volvox",
+			"GilPe"
 		]
 	},
 	"enhanced-standard-uis-desc": "Stellt Benotzerinterface fir Standard-MediaWiki-Benotzer-interfacen zur Verfügung",
 	"enhanced-standard-uis-history-grid-header-revision-label": "Versioun",
 	"enhanced-standard-uis-history-grid-header-author-label": "Geännert vun",
 	"enhanced-standard-uis-history-grid-header-size-label": "Gréisst",
-	"enhanced-standard-uis-history-grid-header-summary-label": "Resumé",
+	"enhanced-standard-uis-history-grid-header-summary-label": "Resümmee",
 	"enhanced-standard-uis-history-grid-header-tags-label": "Markéierungen",
 	"enhanced-standard-uis-history-grid-header-undo-title": "Réckgängeg maachen",
 	"enhanced-standard-uis-history-grid-header-hide-revision-title": "Versioun verstoppen",
@@ -57,5 +58,6 @@
 	"enhancedpreferences": "Astellungen",
 	"enhanced-pref-username": "{{GENDER:$1|Benotzernumm}}",
 	"enhanced-prefs-memberingroups": "{{GENDER:$2|Member}} vun {{PLURAL:$1|der Grupp|de Gruppen}}",
-	"enhanced-standard-uis-prefs-panel-search-label": "Sichen"
+	"enhanced-standard-uis-prefs-panel-search-label": "Sichen",
+	"enhanced-standard-uis-filelist-dialog-booklet-page-select-aria-label": "Informatiounen iwwer de Fichier"
 }
