@@ -59,5 +59,9 @@
 	"enhanced-pref-username": "{{GENDER:$1|Benotzernumm}}",
 	"enhanced-standard-uis-prefs-panel-search-label": "Sichen",
 	"enhanced-prefs-memberingroups": "{{GENDER:$2|Member}} vun {{PLURAL:$1|der Grupp|de Gruppen}}",
-	"enhanced-standard-uis-filelist-dialog-booklet-page-select-aria-label": "Informatiounen iwwer de Fichier"
+	"enhanced-standard-uis-filelist-dialog-booklet-page-select-aria-label": "Informatiounen iwwer de Fichier",
+	"enhanced-standard-uis-prefs-reset-dlg-action-label": "Zerécksetzen",
+	"enhanced-standard-uis-prefs-reset-dlg-confirm-label": "Sidd Dir sécher, datt Dir Är Astellungen op d'Standardwäerter zerécksetze wëllt? Dat kann net réckgängeg gemaach ginn.",
+	"enhanced-standard-uis-prefs-reset-not-allowed-label": "Dir sidd net berechtegt fir Är Astellungen zeréckzesetzen",
+	"enhanced-standard-uis-prefs-reset-notify": "D'Astellunge goufen op d'Standardwäerter zeréckgesat"
 }
