@@ -76,5 +76,13 @@
 	"enhanced-prefs-memberingroups": "{{GENDER:$2|Membro}} del {{PLURAL:$1|gruppo|gruppos}}",
 	"enhanced-standard-uis-preferences-date-label": "Selige formato de visualisation",
 	"enhanced-standard-uis-prefs-panel-search-label": "Cercar",
-	"enhanced-standard-uis-filelist-dialog-booklet-page-select-aria-label": "Information sur le file"
+	"enhanced-standard-uis-filelist-dialog-booklet-page-select-aria-label": "Information sur le file",
+	"enhanced-standard-uis-prefs-reset-dlg-title": "Restaurar le preferentias predefinite",
+	"enhanced-standard-uis-prefs-reset-dlg-action-label": "Reinitialisar",
+	"enhanced-standard-uis-prefs-reset-dlg-confirm-label": "Es tu secur de voler reinitialisar tu preferentias al valores predefinite? Isto non pote esser disfacite.",
+	"enhanced-standard-uis-prefs-reset-button-label": "Restaurar le preferentias predefinite",
+	"enhanced-standard-uis-prefs-reset-not-allowed-label": "Tu non ha le permission de reinitialisar le preferentias del usator",
+	"enhanced-standard-uis-prefs-reset-notify": "Le preferentias ha essite reinitialisate al valores predefinite",
+	"enhanced-standard-uis-prefs-menu-aria-label": "Sectiones de preferentias",
+	"enhanced-standard-uis-filelist-panel-select-view-aria-label": "Selige modo de visualisation"
 }
