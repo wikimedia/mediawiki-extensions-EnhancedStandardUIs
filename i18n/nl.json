@@ -77,5 +77,13 @@
 	"enhanced-prefs-memberingroups": "{{GENDER:$2|Lid}} van de {{PLURAL:$1|groep|groepen}}:",
 	"enhanced-standard-uis-preferences-date-label": "Selecteer weergaveformaat",
 	"enhanced-standard-uis-prefs-panel-search-label": "Zoeken",
-	"enhanced-standard-uis-filelist-dialog-booklet-page-select-aria-label": "Informatie over het bestand"
+	"enhanced-standard-uis-filelist-dialog-booklet-page-select-aria-label": "Informatie over het bestand",
+	"enhanced-standard-uis-prefs-reset-dlg-title": "Terugzetten op standaardvoorkeuren",
+	"enhanced-standard-uis-prefs-reset-dlg-action-label": "Terugzetten",
+	"enhanced-standard-uis-prefs-reset-dlg-confirm-label": "Weet u zeker dat u uw voorkeuren wilt terugzetten op de standaardinstellingen? Dit kan niet ongedaan worden gemaakt.",
+	"enhanced-standard-uis-prefs-reset-button-label": "Terugzetten op standaardvoorkeuren",
+	"enhanced-standard-uis-prefs-reset-not-allowed-label": "U hebt geen toestemming om de voorkeuren van de gebruiker terug te zetten",
+	"enhanced-standard-uis-prefs-reset-notify": "De voorkeuren zijn teruggezet op de standaardinstellingen",
+	"enhanced-standard-uis-prefs-menu-aria-label": "Voorkeurensecties",
+	"enhanced-standard-uis-filelist-panel-select-view-aria-label": "Kies weergavemodus"
 }
