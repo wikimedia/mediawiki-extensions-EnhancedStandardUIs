@@ -84,7 +84,7 @@ ext.enhancedUI.panel.FilelistPanel.prototype.setupTools = function () {
 		change: 'onInputChange'
 	} );
 
-	if ( this.rights.indexOf( 'upload' ) !== -1 ) {
+	if ( this.rights.includes( 'upload' ) ) {
 		this.uploadBtn = new OO.ui.ButtonWidget( {
 			data: 'upload',
 			label: mw.message( 'enhanced-standard-uis-filelist-panel-new-file-label' ).text(),

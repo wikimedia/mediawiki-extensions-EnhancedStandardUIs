@@ -192,7 +192,7 @@ ext.enhancedUI.panel.HistoryPanel.prototype.setupGridConfig = function () {
 
 	mw.hook( 'enhanced.versionhistory' ).fire( gridCfg );
 
-	if ( this.rights.indexOf( 'rollback' ) !== -1 ) {
+	if ( this.rights.includes( 'rollback' ) ) {
 		gridCfg.columns.undo = {
 			type: 'action',
 			title: mw.message( 'enhanced-standard-uis-history-grid-header-undo-title' ).text(),
@@ -200,7 +200,7 @@ ext.enhancedUI.panel.HistoryPanel.prototype.setupGridConfig = function () {
 			icon: 'undo'
 		};
 	}
-	if ( this.rights.indexOf( 'deleterevision' ) !== -1 ) {
+	if ( this.rights.includes( 'deleterevision' ) ) {
 		gridCfg.columns.hide = {
 			type: 'action',
 			title: mw.message( 'enhanced-standard-uis-history-grid-header-hide-revision-title' ).text(),

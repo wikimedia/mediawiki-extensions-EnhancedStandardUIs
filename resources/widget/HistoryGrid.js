@@ -98,16 +98,16 @@ ext.enhancedUI.widget.HistoryGrid.prototype.setColumnsVisibility = function ( vi
 };
 
 ext.enhancedUI.widget.HistoryGrid.prototype.checkForColumnAddition = function ( visible ) {
-	const addition = visible.filter( ( x ) => !this.visibleColumns.includes( x ) ); // eslint-disable-line es-x/no-array-prototype-includes
+	const addition = visible.filter( ( x ) => !this.visibleColumns.includes( x ) );
 	for ( const column in addition ) {
 		this.setPreference( addition[ column ], '1' );
 	}
 };
 
 ext.enhancedUI.widget.HistoryGrid.prototype.checkForColumnRemove = function ( visible ) {
-	const toRemove = this.visibleColumns.filter( ( x ) => !visible.includes( x ) ); // eslint-disable-line es-x/no-array-prototype-includes
+	const toRemove = this.visibleColumns.filter( ( x ) => !visible.includes( x ) );
 	for ( const column in toRemove ) {
-		// eslint-disable-next-line es-x/no-array-prototype-includes
+
 		if ( this.alwaysVisibleColumns.includes( toRemove[ column ] ) ) {
 			continue;
 		}

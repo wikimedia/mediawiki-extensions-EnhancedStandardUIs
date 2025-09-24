@@ -246,7 +246,7 @@ ext.enhancedUI.panel.AllPagesPanel.prototype.sortData = function ( data ) {
 			sortedData.push( alphabetValue );
 			alphabetValue = [];
 		}
-		if ( this.alphabetIndex.indexOf( startLetter ) === -1 ) {
+		if ( !this.alphabetIndex.includes( startLetter ) ) {
 			this.alphabetIndex.push( startLetter );
 		}
 		alphabetValue.push( data[ i ] );

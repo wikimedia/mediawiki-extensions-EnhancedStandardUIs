@@ -79,7 +79,7 @@ ext.enhancedUI.panel.PreferencesPanel.prototype.createPages = function () {
 		if ( prefPage.$element[ 0 ].children.length === 0 ) {
 			continue;
 		}
-		// eslint-disable-next-line es-x/no-array-prototype-includes
+
 		if ( this.activePages.includes( prefPage ) ) {
 			prefPage.markActive();
 		}
@@ -176,7 +176,7 @@ ext.enhancedUI.panel.PreferencesPanel.prototype.mobileSetup = function () {
 
 ext.enhancedUI.panel.PreferencesPanel.prototype.addPrefForSave = function ( page, pref, value ) {
 	this.changedPrefs[ pref ] = value;
-	// eslint-disable-next-line es-x/no-array-prototype-includes
+
 	if ( !this.activePages.includes( page ) ) {
 		this.activePages.push( page );
 		page.markActive();
@@ -209,7 +209,7 @@ ext.enhancedUI.panel.PreferencesPanel.prototype.searchForValue = function ( sear
 		// eslint-disable-next-line es-x/no-object-entries
 		for ( const [ key, value ] of Object.entries( page.sectionLabels ) ) {
 			if ( value && typeof value.message === 'string' &&
-				// eslint-disable-next-line es-x/no-array-prototype-includes
+
 				value.message.toLowerCase().includes( searchTerm.toLowerCase() )
 			) {
 				resultKey = key;
@@ -231,23 +231,23 @@ ext.enhancedUI.panel.PreferencesPanel.prototype.searchForValue = function ( sear
 				let labelMatch = false;
 
 				if ( entry && entry[ 'label-message' ] && typeof entry[ 'label-message' ] === 'string' ) {
-					// eslint-disable-next-line es-x/no-array-prototype-includes
+
 					labelMatch = entry[ 'label-message' ].toLowerCase().includes( lowerSearch );
 				}
 
 				// eslint-disable-next-line no-prototype-builtins
 				const defaultMatch = entry.hasOwnProperty( 'default' ) &&
-				// eslint-disable-next-line es-x/no-array-prototype-includes
+
 					String( entry.default ).toLowerCase().includes( lowerSearch );
 
 				const optionKeyMatch = Object.keys( entry.options || {} ).some(
-					// eslint-disable-next-line es-x/no-array-prototype-includes
+
 					( optKey ) => optKey.toLowerCase().includes( lowerSearch )
 				);
 
 				// eslint-disable-next-line es-x/no-object-values
 				const optionValueMatch = Object.values( entry.options || {} ).some(
-					// eslint-disable-next-line es-x/no-array-prototype-includes
+
 					( optVal ) => typeof optVal === 'string' && optVal.toLowerCase().includes( lowerSearch )
 				);
 
@@ -280,7 +280,7 @@ ext.enhancedUI.panel.PreferencesPanel.prototype.filterPrefs = function () {
 				prefs: this.searchedPrefs[ section ]
 			}
 		);
-		// eslint-disable-next-line es-x/no-array-prototype-includes
+
 		if ( this.activePages.includes( prefPage ) ) {
 			prefPage.markActive();
 		}

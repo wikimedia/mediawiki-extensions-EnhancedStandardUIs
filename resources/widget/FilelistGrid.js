@@ -102,8 +102,8 @@ ext.enhancedUI.widget.FilelistGrid.prototype.getColumnDefinitions = function () 
 		};
 	}
 
-	if ( this.rights.indexOf( 'reupload' ) !== -1 &&
-		this.rights.indexOf( 'reupload-shared' ) !== -1 ) {
+	if ( this.rights.includes( 'reupload' ) &&
+		this.rights.includes( 'reupload-shared' ) ) {
 		columnCfg.upload = {
 			type: 'action',
 			title: mw.message( 'enhanced-standard-uis-filelist-grid-reupload-title' ).text(),
@@ -114,7 +114,7 @@ ext.enhancedUI.widget.FilelistGrid.prototype.getColumnDefinitions = function () 
 		};
 	}
 
-	if ( this.rights.indexOf( 'delete' ) !== -1 ) {
+	if ( this.rights.includes( 'delete' ) ) {
 		columnCfg.delete = {
 			type: 'action',
 			title: mw.message( 'enhanced-standard-uis-filelist-grid-delete-title' ).text(),
@@ -175,16 +175,16 @@ ext.enhancedUI.widget.FilelistGrid.prototype.setColumnsVisibility = function ( v
 };
 
 ext.enhancedUI.widget.FilelistGrid.prototype.checkForColumnAddition = function ( visible ) {
-	const addition = visible.filter( ( x ) => !this.visibleColumns.includes( x ) ); // eslint-disable-line es-x/no-array-prototype-includes
+	const addition = visible.filter( ( x ) => !this.visibleColumns.includes( x ) );
 	for ( const column in addition ) {
 		this.setPreference( addition[ column ], '1' );
 	}
 };
 
 ext.enhancedUI.widget.FilelistGrid.prototype.checkForColumnRemove = function ( visible ) {
-	const toRemove = this.visibleColumns.filter( ( x ) => !visible.includes( x ) ); // eslint-disable-line es-x/no-array-prototype-includes
+	const toRemove = this.visibleColumns.filter( ( x ) => !visible.includes( x ) );
 	for ( const column in toRemove ) {
-		// eslint-disable-next-line es-x/no-array-prototype-includes
+
 		if ( this.alwaysVisibleColumns.includes( toRemove[ column ] ) ) {
 			continue;
 		}
