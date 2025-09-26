@@ -13,7 +13,6 @@ use MediaWiki\SpecialPage\UnlistedSpecialPage;
  *
  * Introduced to hide some special pages for users of pure reader role,
  * and can be extended to add more customizations in the future.
- *
  */
 
 class EnhancedSpecialPages extends UnlistedSpecialPage {

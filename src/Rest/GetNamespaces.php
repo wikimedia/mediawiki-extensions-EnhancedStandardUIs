@@ -19,7 +19,6 @@ class GetNamespaces extends SimpleHandler {
 	private LanguageFactory $languageFactory;
 
 	/**
-	 *
 	 * @param TitleFactory $titleFactory
 	 * @param PermissionManager $permissionManager
 	 * @param LoadBalancer $loadBalancer

@@ -206,7 +206,7 @@ ext.enhancedUI.panel.PreferencesPanel.prototype.searchForValue = function ( sear
 	for ( const i in this.prefPages ) {
 		const page = this.prefPages[ i ];
 		let resultKey = null;
-		// eslint-disable-next-line es-x/no-object-entries
+
 		for ( const [ key, value ] of Object.entries( page.sectionLabels ) ) {
 			if ( value && typeof value.message === 'string' &&
 
@@ -222,7 +222,7 @@ ext.enhancedUI.panel.PreferencesPanel.prototype.searchForValue = function ( sear
 			};
 		}
 		const lowerSearch = searchTerm.toLowerCase();
-		// eslint-disable-next-line no-unused-vars, es-x/no-object-entries
+		// eslint-disable-next-line no-unused-vars
 		const resultKeys = Object.entries( page.prefs ).filter( ( [ sectionKey, entries ] ) => {
 			if ( !Array.isArray( entries ) ) {
 				return false;
@@ -245,7 +245,6 @@ ext.enhancedUI.panel.PreferencesPanel.prototype.searchForValue = function ( sear
 					( optKey ) => optKey.toLowerCase().includes( lowerSearch )
 				);
 
-				// eslint-disable-next-line es-x/no-object-values
 				const optionValueMatch = Object.values( entry.options || {} ).some(
 
 					( optVal ) => typeof optVal === 'string' && optVal.toLowerCase().includes( lowerSearch )

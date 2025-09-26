@@ -17,7 +17,6 @@ class GetMetadata extends SimpleHandler {
 	private $repoGroup;
 
 	/**
-	 *
 	 * @param TitleFactory $titleFactory
 	 * @param RepoGroup $repoGroup
 	 */
