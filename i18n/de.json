@@ -86,5 +86,7 @@
 	"enhanced-standard-uis-prefs-reset-not-allowed-label": "Du bist nicht berechtigt die Benutzereinstellungen zurückzusetzen",
 	"enhanced-standard-uis-prefs-reset-notify": "Die Einstellungen wurden auf die Standardeinstellungen zurückgesetzt",
 	"enhanced-standard-uis-prefs-menu-aria-label": "Abschnitte der Einstellungen",
-	"enhanced-standard-uis-filelist-panel-select-view-aria-label": "Ansichtsmodus auswählen"
+	"enhanced-standard-uis-filelist-panel-select-view-aria-label": "Ansichtsmodus auswählen",
+	"enhanced-standard-uis-paginator-page-aria-label": "Seite $1",
+	"enhanced-standard-uis-allpages-section-heading-aria-label": "Seiten beginnend mit $1"
 }

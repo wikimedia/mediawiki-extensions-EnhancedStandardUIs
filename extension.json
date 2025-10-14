@@ -236,7 +236,6 @@
 				"enhanced-standard-uis-allpages-namespace-list-label",
 				"enhanced-standard-uis-paginator-aria-label",
 				"enhanced-standard-uis-allpages-watch-label",
-				"enhanced-standard-uis-allpages-unwatch-label",
 				"enhanced-standard-uis-allpages-pageinfo-label",
 				"enhanced-standard-uis-allpages-filter-results-label",
 				"enhanced-standard-uis-allpages-untitled",
@@ -244,7 +243,9 @@
 				"enhanced-standard-uis-allpages-empty-namespaces-text",
 				"enhanced-standard-uis-allpages-empty-pages-text",
 				"enhanced-standard-uis-allpages-namespace-badge-aria-label",
-				"enhanced-standard-uis-allpages-page-tree-item-expander-label"
+				"enhanced-standard-uis-allpages-page-tree-item-expander-label",
+				"enhanced-standard-uis-paginator-page-aria-label",
+				"enhanced-standard-uis-allpages-section-heading-aria-label"
 			],
 			"dependencies": [
 				"oojs-ui",
