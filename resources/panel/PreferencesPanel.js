@@ -36,7 +36,7 @@ ext.enhancedUI.panel.PreferencesPanel.prototype.setup = function () {
 	this.setupSearch();
 
 	this.bookletLayout = new OOJSPlus.ui.booklet.Booklet( {
-		outlined: true,
+		outlined: !this.mobile,
 		expanded: false
 	} );
 	this.bookletLayout.connect( this, {
@@ -44,12 +44,13 @@ ext.enhancedUI.panel.PreferencesPanel.prototype.setup = function () {
 			location.hash = 'mw-prefsection-' + page.getName();
 		}
 	} );
-	this.bookletLayout.outlineSelectWidget.$element.attr( 'aria-label',
-		mw.message( 'enhanced-standard-uis-prefs-menu-aria-label' ).text()
-	);
 
 	if ( this.mobile ) {
 		this.mobileSetup();
+	} else {
+		this.bookletLayout.outlineSelectWidget.$element.attr( 'aria-label',
+			mw.message( 'enhanced-standard-uis-prefs-menu-aria-label' ).text()
+		);
 	}
 
 	this.createPages();
@@ -58,8 +59,15 @@ ext.enhancedUI.panel.PreferencesPanel.prototype.setup = function () {
 	if ( location.hash ) {
 		const section = location.hash.replace( '#mw-prefsection-', '' );
 		this.bookletLayout.setPage( section );
+		if ( this.mobile ) {
+			this.pageDropdown.getMenu().selectItemByData( section );
+		}
 	} else {
 		this.bookletLayout.selectFirstSelectablePage();
+		if ( this.mobile ) {
+			const firstItem = this.pageDropdown.getMenu().findFirstSelectableItem();
+			this.pageDropdown.getMenu().selectItem( [ firstItem ] );
+		}
 	}
 };
 
@@ -147,6 +155,7 @@ ext.enhancedUI.panel.PreferencesPanel.prototype.setupSearch = function () {
 
 	this.$content.append(
 		new OO.ui.FieldLayout( this.search, {
+			align: this.mobile ? 'top' : 'left',
 			label: mw.message( 'enhanced-standard-uis-prefs-panel-search-label' ).text(),
 			classes: [ 'enhanced-ui-preferences-search' ]
 		} ).$element
@@ -171,7 +180,14 @@ ext.enhancedUI.panel.PreferencesPanel.prototype.mobileSetup = function () {
 			this.bookletLayout.setPage( option.getData() );
 		}
 	} );
-	this.$content.append( this.pageDropdown.$element );
+
+	const mobileDropdownField = new OO.ui.FieldLayout( this.pageDropdown, {
+		label: mw.message( 'enhanced-standard-uis-prefs-menu-aria-label' ).text(),
+		align: 'top',
+		padded: true,
+		classes: [ 'enhanced-ui-preferences-mobile-pref-dropdown' ]
+	} );
+	this.$content.append( mobileDropdownField.$element );
 };
 
 ext.enhancedUI.panel.PreferencesPanel.prototype.addPrefForSave = function ( page, pref, value ) {
