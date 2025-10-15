@@ -358,9 +358,10 @@
 				},
 				"dialog/ResetPrefsDialog.js"
 			],
-			"styles": [
-				"stylesheets/ext.enhancedUI.special.preferences.css"
-			],
+			"styles": {
+				"stylesheets/ext.enhancedUI.special.preferences.css": {},
+				"stylesheets/ext.enhancedUI.special.preferences.sm.css": { "media": "all and ( max-width: 767px )" }
+			},
 			"messages": [
 				"enhanced-standard-uis-prefs-panel-search-label",
 				"savedprefs",

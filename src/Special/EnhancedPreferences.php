@@ -11,6 +11,7 @@ use MediaWiki\MainConfigNames;
 use MediaWiki\Message\Message;
 use MediaWiki\Message\MessageFormatterFactory;
 use MediaWiki\Preferences\PreferencesFactory;
+use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\User\UserTimeCorrection;
 use MediaWiki\Utils\MWTimestamp;
 use OOJSPlus\Special\OOJSBookletSpecialPage;
@@ -76,6 +77,7 @@ class EnhancedPreferences extends OOJSBookletSpecialPage {
 		$filteredPrefs = [];
 		$sections = [];
 		$rlModules = [];
+		$preferences = $this->fixRawPreferences( $preferences );
 		foreach ( $preferences as $key => $preference ) {
 			$filteredPref = $preference;
 
@@ -300,5 +302,90 @@ class EnhancedPreferences extends OOJSBookletSpecialPage {
 		}
 
 		return $timeZoneList;
+	}
+
+	/**
+	 * @param array $preferences
+	 * @return array
+	 */
+	private function fixRawPreferences( $preferences ) {
+		if ( isset( $preferences['mwoauth-prefs-managegrants'] ) ) {
+			$preferences['mwoauth-prefs-managegrants']['default'] = Html::element(
+				'a',
+				[
+					'href' => SpecialPage::getTitleFor( 'OAuthManageMyGrants' )->getLinkURL(),
+				],
+				Message::newFromKey( 'mwoauth-prefs-managegrantslink' )->numParams( 0 )->text()
+			);
+		}
+		if ( isset( $preferences['password'] ) ) {
+			$preferences['password']['default'] = Html::element(
+				'a',
+				[
+					'href' => SpecialPage::getTitleFor( 'ChangePassword' )->getLinkURL( [
+						'returnto' => SpecialPage::getTitleFor( 'Preferences' )->getPrefixedText()
+					] )
+				],
+				Message::newFromKey( 'prefs-resetpass' )->text()
+			);
+		}
+		if ( isset( $preferences['editwatchlist'] ) ) {
+			$editWatchlistModes = [
+				'edit' => [ 'subpage' => false ],
+				'raw' => [ 'subpage' => 'raw' ],
+				'clear' => [ 'subpage' => 'clear' ],
+			];
+			$editWatchlistLinks = Html::openElement( 'div' );
+			foreach ( $editWatchlistModes as $mode => $options ) {
+				// Messages: prefs-editwatchlist-edit, prefs-editwatchlist-raw, prefs-editwatchlist-clear
+				$editWatchlistLinks .=
+					Html::element(
+						'a',
+						[
+							'href' => SpecialPage::getTitleFor( 'EditWatchlist', $options['subpage'] )->getLinkURL(),
+						],
+						Message::newFromKey( "prefs-editwatchlist-{$mode}" )->parse()
+					);
+					$editWatchlistLinks .= Html::element( 'br' );
+			}
+			$editWatchlistLinks .= Html::closeElement( 'div' );
+			$preferences['editwatchlist']['default'] = $editWatchlistLinks;
+		}
+		if ( isset( $preferences['emailaddress'] ) ) {
+			$mail = $this->getUser()->getEmail();
+			$emailAddress = $mail ? htmlspecialchars( $mail ) : '';
+			$currentDefault = $preferences['emailaddress']['default'];
+			$changeMailPageTitle = SpecialPage::getTitleFor( 'ChangeEmail' );
+			if ( $emailAddress !== $currentDefault &&
+				str_contains( $currentDefault, $changeMailPageTitle->getPrefixedText() ) ) {
+				$changeLink = Html::element(
+					'a',
+					[
+						'href' => $changeMailPageTitle->getLinkURL( [
+							'returnto' => SpecialPage::getTitleFor( 'Preferences' )->getPrefixedText()
+						] )
+					],
+					Message::newFromKey( $mail ? 'prefs-changeemail' : 'prefs-setemail' )->text()
+				);
+
+				$preferences['emailaddress']['default'] = $emailAddress . '<br />' . $changeLink;
+			}
+		}
+		if ( isset( $preferences['oathauth-module'] ) ) {
+			$currentDefault = $preferences['oathauth-module']['default'];
+			$newoAuthLink = Html::element(
+				'a',
+				[
+					'href' => SpecialPage::getTitleFor( 'OATHManage' )->getLocalURL()
+				],
+				Message::newFromKey( 'oathauth-ui-manage' )->text()
+			);
+			// Since name of oauth module could be part of this, it's only possible to replace button
+			$newAuthDefault = preg_replace( '/<span.*<\/span>/', $newoAuthLink, $currentDefault );
+
+			$preferences['oathauth-module']['default'] = $newAuthDefault;
+		}
+
+		return $preferences;
 	}
 }
