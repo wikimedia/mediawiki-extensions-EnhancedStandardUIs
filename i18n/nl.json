@@ -21,10 +21,10 @@
 	"enhanced-standard-uis-allpages-include-redirect": "Doorverwijzingen weergeven",
 	"enhanced-standard-uis-allpages-config-ns": "Naamruimteselectie instellen",
 	"enhanced-standard-uis-allpages-config": "Instellingen",
-	"enhanced-standard-uis-allpages-paginator-first": "Eerste",
-	"enhanced-standard-uis-allpages-paginator-previous": "Vorige",
-	"enhanced-standard-uis-allpages-paginator-next": "Volgende",
-	"enhanced-standard-uis-allpages-paginator-last": "Laatste",
+	"enhanced-standard-uis-allpages-paginator-first": "Eerste pagina",
+	"enhanced-standard-uis-allpages-paginator-previous": "Vorige pagina",
+	"enhanced-standard-uis-allpages-paginator-next": "Volgende pagina",
+	"enhanced-standard-uis-allpages-paginator-last": "Laatste pagina",
 	"enhanced-standard-uis-allpages-redirect-title": "Doorverwijzing",
 	"enhancedfilelist": "Bestandslijst",
 	"enhanced-standard-uis-filelist-grid-file-title": "Bestandsnaam",
@@ -55,7 +55,6 @@
 	"enhanced-standard-uis-allpages-namespace-list-label": "Naamruimte",
 	"enhanced-standard-uis-paginator-aria-label": "Paginering",
 	"enhanced-standard-uis-allpages-watch-label": "Pagina “$1” volgen",
-	"enhanced-standard-uis-allpages-unwatch-label": "Pagina “$1” ontvolgen",
 	"enhanced-standard-uis-allpages-pageinfo-label": "Pagina-info voor “$1” weergeven",
 	"enhanced-standard-uis-allpages-filter-results-label": "{{PLURAL:$1|Eén resultaat|$1 resultaten}} gevonden",
 	"enhanced-standard-uis-filelist-grid-preview-title": "Voorvertoning",
@@ -85,5 +84,7 @@
 	"enhanced-standard-uis-prefs-reset-not-allowed-label": "U hebt geen toestemming om de voorkeuren van de gebruiker terug te zetten",
 	"enhanced-standard-uis-prefs-reset-notify": "De voorkeuren zijn teruggezet op de standaardinstellingen",
 	"enhanced-standard-uis-prefs-menu-aria-label": "Voorkeurensecties",
-	"enhanced-standard-uis-filelist-panel-select-view-aria-label": "Kies weergavemodus"
+	"enhanced-standard-uis-filelist-panel-select-view-aria-label": "Kies weergavemodus",
+	"enhanced-standard-uis-paginator-page-aria-label": "Pagina $1",
+	"enhanced-standard-uis-allpages-section-heading-aria-label": "Pagina’s die met $1 beginnen"
 }
