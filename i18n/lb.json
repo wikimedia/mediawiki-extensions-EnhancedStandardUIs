@@ -22,10 +22,10 @@
 	"enhanced-standard-uis-allpages-include-redirect": "Viruleedunge weisen",
 	"enhanced-standard-uis-allpages-config-ns": "Nummraimauswiel konfiguréieren",
 	"enhanced-standard-uis-allpages-config": "Konfiguratioun",
-	"enhanced-standard-uis-allpages-paginator-first": "Éischt",
-	"enhanced-standard-uis-allpages-paginator-previous": "Vireg",
-	"enhanced-standard-uis-allpages-paginator-next": "Nächst",
-	"enhanced-standard-uis-allpages-paginator-last": "Lescht",
+	"enhanced-standard-uis-allpages-paginator-first": "Éischt Säit",
+	"enhanced-standard-uis-allpages-paginator-previous": "Vireg Säit",
+	"enhanced-standard-uis-allpages-paginator-next": "Nächst Säit",
+	"enhanced-standard-uis-allpages-paginator-last": "Lescht Säit",
 	"enhanced-standard-uis-allpages-redirect-title": "Viruleedung",
 	"enhanced-standard-uis-filelist-grid-author-title": "Auteur",
 	"enhanced-standard-uis-filelist-grid-date-title": "Datum",
@@ -63,5 +63,7 @@
 	"enhanced-standard-uis-prefs-reset-dlg-action-label": "Zerécksetzen",
 	"enhanced-standard-uis-prefs-reset-dlg-confirm-label": "Sidd Dir sécher, datt Dir Är Astellungen op d'Standardwäerter zerécksetze wëllt? Dat kann net réckgängeg gemaach ginn.",
 	"enhanced-standard-uis-prefs-reset-not-allowed-label": "Dir sidd net berechtegt fir Är Astellungen zeréckzesetzen",
-	"enhanced-standard-uis-prefs-reset-notify": "D'Astellunge goufen op d'Standardwäerter zeréckgesat"
+	"enhanced-standard-uis-prefs-reset-notify": "D'Astellunge goufen op d'Standardwäerter zeréckgesat",
+	"enhanced-standard-uis-paginator-page-aria-label": "Säit $1",
+	"enhanced-standard-uis-allpages-section-heading-aria-label": "Säiten ugefaange mat $1"
 }
