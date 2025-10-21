@@ -55,7 +55,6 @@
 	"enhanced-standard-uis-allpages-namespace-list-label": "מרחב שם",
 	"enhanced-standard-uis-paginator-aria-label": "חלוקה לדפים",
 	"enhanced-standard-uis-allpages-watch-label": "לעקוב אחר הדף $1",
-	"enhanced-standard-uis-allpages-unwatch-label": "להפסיק לעקוב אחר הדף $1",
 	"enhanced-standard-uis-allpages-pageinfo-label": "הצגת פרטי הדף עבור $1",
 	"enhanced-standard-uis-allpages-filter-results-label": "{{PLURAL:$1|נמצאה תוצאה אחת|נמצאו $1 תוצאות}}",
 	"enhanced-standard-uis-filelist-grid-preview-title": "תצוגה מקדימה",

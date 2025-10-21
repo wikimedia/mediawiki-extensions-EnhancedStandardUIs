@@ -20,10 +20,10 @@
 	"enhanced-standard-uis-allpages-include-redirect": "Прикажи пренасочувања",
 	"enhanced-standard-uis-allpages-config-ns": "Постави избор на именски простори",
 	"enhanced-standard-uis-allpages-config": "Поставки",
-	"enhanced-standard-uis-allpages-paginator-first": "Прв",
-	"enhanced-standard-uis-allpages-paginator-previous": "Претходна",
-	"enhanced-standard-uis-allpages-paginator-next": "Следна",
-	"enhanced-standard-uis-allpages-paginator-last": "Последна",
+	"enhanced-standard-uis-allpages-paginator-first": "Прва страница",
+	"enhanced-standard-uis-allpages-paginator-previous": "Претходна страница",
+	"enhanced-standard-uis-allpages-paginator-next": "Следна страница",
+	"enhanced-standard-uis-allpages-paginator-last": "Последна страница",
 	"enhanced-standard-uis-allpages-redirect-title": "Пренасочување",
 	"enhancedfilelist": "Список на податотеки",
 	"enhanced-standard-uis-filelist-grid-file-title": "Име на податотека",
@@ -54,7 +54,6 @@
 	"enhanced-standard-uis-allpages-namespace-list-label": "Именски простор",
 	"enhanced-standard-uis-paginator-aria-label": "Пагинација",
 	"enhanced-standard-uis-allpages-watch-label": "Набљудувај ја страницата $1",
-	"enhanced-standard-uis-allpages-unwatch-label": "Тргни ја страницата $1 од набљудувани",
 	"enhanced-standard-uis-allpages-pageinfo-label": "Прикажи информации за страницата $1",
 	"enhanced-standard-uis-allpages-filter-results-label": "Пронајдов $1 {{PLURAL:$1|ставка|ставки}}",
 	"enhanced-standard-uis-filelist-grid-preview-title": "Преглед",
@@ -84,5 +83,7 @@
 	"enhanced-standard-uis-prefs-reset-not-allowed-label": "Не ви е дозволено да враќате кориснички нагодувања",
 	"enhanced-standard-uis-prefs-reset-notify": "Нагодувањата се вратени по основно",
 	"enhanced-standard-uis-prefs-menu-aria-label": "Оддели на нагодувања",
-	"enhanced-standard-uis-filelist-panel-select-view-aria-label": "Изберете режим на преглед"
+	"enhanced-standard-uis-filelist-panel-select-view-aria-label": "Изберете режим на преглед",
+	"enhanced-standard-uis-paginator-page-aria-label": "Страница $1",
+	"enhanced-standard-uis-allpages-section-heading-aria-label": "Страници што почнуваат со $1"
 }
