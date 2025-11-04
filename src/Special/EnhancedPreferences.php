@@ -77,7 +77,7 @@ class EnhancedPreferences extends OOJSBookletSpecialPage {
 		$filteredPrefs = [];
 		$sections = [];
 		$rlModules = [];
-		$preferences = $this->fixRawPreferences( $preferences );
+		$preferences = $this->fixPreferences( $preferences );
 		foreach ( $preferences as $key => $preference ) {
 			$filteredPref = $preference;
 
@@ -308,7 +308,7 @@ class EnhancedPreferences extends OOJSBookletSpecialPage {
 	 * @param array $preferences
 	 * @return array
 	 */
-	private function fixRawPreferences( $preferences ) {
+	private function fixPreferences( $preferences ) {
 		if ( isset( $preferences['mwoauth-prefs-managegrants'] ) ) {
 			$preferences['mwoauth-prefs-managegrants']['default'] = Html::element(
 				'a',
@@ -384,6 +384,14 @@ class EnhancedPreferences extends OOJSBookletSpecialPage {
 			$newAuthDefault = preg_replace( '/<span.*<\/span>/', $newoAuthLink, $currentDefault );
 
 			$preferences['oathauth-module']['default'] = $newAuthDefault;
+		}
+		if ( isset( $preferences['rcdays'] ) ) {
+			$preferences['rcdays']['type'] = 'int';
+			$preferences['rcdays']['min'] = 1;
+		}
+		if ( isset( $preferences['watchlistdays'] ) ) {
+			$preferences['rcdays']['type'] = 'int';
+			$preferences['rcdays']['min'] = 1;
 		}
 
 		return $preferences;
