@@ -390,8 +390,8 @@ class EnhancedPreferences extends OOJSBookletSpecialPage {
 			$preferences['rcdays']['min'] = 1;
 		}
 		if ( isset( $preferences['watchlistdays'] ) ) {
-			$preferences['rcdays']['type'] = 'int';
-			$preferences['rcdays']['min'] = 1;
+			$preferences['watchlistdays']['type'] = 'int';
+			$preferences['watchlistdays']['min'] = 1;
 		}
 
 		return $preferences;
