@@ -22,8 +22,12 @@
 }
 
 .enhanced-filelist-tools {
-	display: flex;
 	justify-content: space-between;
+}
+
+.enhanced-filelist-search-field {
+	max-width: 50em;
+	width: 100%;
 }
 
 .enhanced-filelist-tools-btn-select .oo-ui-fieldLayout-header {

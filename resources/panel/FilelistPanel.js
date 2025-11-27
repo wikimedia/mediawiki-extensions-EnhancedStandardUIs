@@ -129,7 +129,11 @@ ext.enhancedUI.panel.FilelistPanel.prototype.setupTools = function () {
 	this.toolsLayout = new OO.ui.HorizontalLayout( {
 		classes: [ 'enhanced-filelist-tools' ],
 		items: [
-			this.input,
+			new OO.ui.FieldLayout( this.input, {
+				label: mw.msg( 'enhanced-standard-uis-filelist-panel-search-aria-label' ),
+				invisibleLabel: true,
+				classes: [ 'enhanced-filelist-search-field' ]
+			} ),
 			new OO.ui.HorizontalLayout( {
 				classes: [ 'enhanced-filelist-tools-align-right' ],
 				items: toolsItems
