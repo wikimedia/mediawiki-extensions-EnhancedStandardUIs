@@ -37,9 +37,8 @@ class ResetPreferences extends SimpleHandler {
 			);
 		}
 
-		$userForUpdate = $user->getInstanceForUpdate();
-		$this->userOptionsManager->resetAllOptions( $userForUpdate );
-		$userForUpdate->saveSettings();
+		$this->userOptionsManager->resetAllOptions( $user );
+		$this->userOptionsManager->saveOptions( $user );
 		return $this->getResponseFactory()->createJson( [ 'success' => true ] );
 	}
 
