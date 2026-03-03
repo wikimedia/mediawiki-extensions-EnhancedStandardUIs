@@ -77,5 +77,7 @@
 	"enhanced-standard-uis-preferences-date-label": "נא לבחור תסדיר תצוגה",
 	"enhanced-standard-uis-prefs-panel-search-label": "חיפוש",
 	"enhanced-standard-uis-filelist-dialog-booklet-page-select-aria-label": "מידע על הקובץ",
-	"enhanced-standard-uis-prefs-reset-dlg-action-label": "איפוס"
+	"enhanced-standard-uis-prefs-reset-dlg-title": "שחזור להעדפות ברירת המחדל",
+	"enhanced-standard-uis-prefs-reset-dlg-action-label": "איפוס",
+	"enhanced-standard-uis-prefs-reset-button-label": "שחזור להעדפות ברירת המחדל"
 }
