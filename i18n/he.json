@@ -78,5 +78,7 @@
 	"enhanced-prefs-memberingroups": "{{GENDER:$2|חבר|חברה}} {{PLURAL:$1|בקבוצה|בקבוצות}}",
 	"enhanced-standard-uis-preferences-date-label": "נא לבחור תסדיר תצוגה",
 	"enhanced-standard-uis-filelist-dialog-booklet-page-select-aria-label": "מידע על הקובץ",
-	"enhanced-standard-uis-prefs-reset-dlg-action-label": "איפוס"
+	"enhanced-standard-uis-prefs-reset-dlg-action-label": "איפוס",
+	"enhanced-standard-uis-prefs-reset-dlg-title": "שחזור להעדפות ברירת המחדל",
+	"enhanced-standard-uis-prefs-reset-button-label": "שחזור להעדפות ברירת המחדל"
 }
