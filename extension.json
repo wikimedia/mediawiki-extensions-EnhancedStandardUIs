@@ -139,7 +139,8 @@
 			"services": [ "MainConfig" ]
 		},
 		"registerGlobalActions": {
-			"class": "MediaWiki\\Extension\\EnhancedStandardUIs\\HookHandler\\RegisterGlobalActions"
+			"class": "MediaWiki\\Extension\\EnhancedStandardUIs\\HookHandler\\RegisterGlobalActions",
+			"services": [ "PermissionManager" ]
 		},
 		"overrideMessages": {
 			"class": "MediaWiki\\Extension\\EnhancedStandardUIs\\HookHandler\\MessageCacheFetchGetOverrides"
@@ -279,6 +280,9 @@
 			"styles": [
 				"stylesheets/ext.enhancedUI.special.filelist.css"
 			],
+			"skinStyles": {
+				"bluespiceeclipse": "stylesheets/ext.enhancedUI.special.filelist.eclipse.css"
+			},
 			"messages": [
 				"enhanced-standard-uis-filelist-grid-file-title",
 				"enhanced-standard-uis-filelist-grid-author-title",

@@ -113,7 +113,14 @@ ext.enhancedUI.panel.AllPagesPanel.prototype.namespaceSelected = function ( nsId
 	this.$treeCnt.children().remove();
 	this.showPlaceholder();
 	this.selectedNS = nsId;
+	this.updateUrlNamespace( nsId );
 	this.getPages();
+};
+
+ext.enhancedUI.panel.AllPagesPanel.prototype.updateUrlNamespace = function ( nsId ) {
+	const url = new URL( window.location.href );
+	url.searchParams.set( 'namespace', nsId );
+	window.history.replaceState( null, document.title, url.toString() );
 };
 
 ext.enhancedUI.panel.AllPagesPanel.prototype.updateRedirect = function ( redirect ) {
