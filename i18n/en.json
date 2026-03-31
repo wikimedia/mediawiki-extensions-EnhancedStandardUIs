@@ -86,5 +86,9 @@
 	"enhanced-standard-uis-filelist-panel-select-view-aria-label": "Select view mode",
 	"enhanced-standard-uis-paginator-page-aria-label": "Page $1",
 	"enhanced-standard-uis-allpages-section-heading-aria-label": "Pages starting with $1",
-	"enhanced-standard-uis-filelist-panel-search-aria-label": "Search for file"
+	"enhanced-standard-uis-filelist-panel-search-aria-label": "Search for file",
+	"enhanced-standard-uis-allpages-create-new-page-title": "Create a new page",
+	"enhanced-standard-uis-allpages-create-new-page-aria-label": "Create a new page",
+	"enhanced-standard-uis-filelist-upload-new-file-title": "Upload a new file",
+	"enhanced-standard-uis-filelist-upload-new-file-aria-label": "Upload a new file"
 }
