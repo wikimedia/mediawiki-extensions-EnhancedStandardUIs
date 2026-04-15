@@ -158,7 +158,9 @@ class EnhancedSpecialPages extends UnlistedSpecialPage {
 	 * @return array|bool
 	 */
 	private function getPageGroups() {
-		$pages = $this->getSpecialPageFactory()->getUsablePages( $this->getUser() );
+		$pages = $this->getSpecialPageFactory()->getUsablePages(
+			$this->getUser(), $this->getContext()
+		);
 
 		if ( $pages === [] ) {
 			// Yeah, that was pointless. Thanks for coming.
