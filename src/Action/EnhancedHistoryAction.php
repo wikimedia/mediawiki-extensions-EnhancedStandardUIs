@@ -270,6 +270,7 @@ class EnhancedHistoryAction extends HistoryAction {
 					$conds
 				)
 			)
+			->useIndex( [ 'revision' => 'rev_page_timestamp' ] )
 			->caller( __METHOD__ );
 
 		$services->getChangeTagsStore()->modifyDisplayQueryBuilder(
