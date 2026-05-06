@@ -131,7 +131,6 @@ ext.enhancedUI.data.PagesTree.prototype.prepareData = function ( pages ) {
 			label = pages[ i ].title;
 		}
 
-		// eslint-disable-next-line mediawiki/class-doc
 		const entry = {
 			id: pages[ i ].id,
 			title: pages[ i ].prefixed,
