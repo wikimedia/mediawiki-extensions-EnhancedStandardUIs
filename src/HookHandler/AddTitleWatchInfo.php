@@ -7,7 +7,6 @@ use MediaWiki\Title\TitleFactory;
 use MediaWiki\Watchlist\WatchlistManager;
 use MWStake\MediaWiki\Component\CommonWebAPIs\Hook\MWStakeCommonWebAPIsQueryStoreResultHook;
 use MWStake\MediaWiki\Component\CommonWebAPIs\Rest\TitleTreeStore;
-use MWStake\MediaWiki\Component\DataStore\ResultSet;
 
 class AddTitleWatchInfo implements MWStakeCommonWebAPIsQueryStoreResultHook {
 
@@ -38,7 +37,7 @@ class AddTitleWatchInfo implements MWStakeCommonWebAPIsQueryStoreResultHook {
 			return;
 		}
 		$data = $result->getRecords();
-		foreach ( $data as $record ) {
+		foreach ( $data as &$record ) {
 			$title = $this->titleFactory->newFromText( $record->get( 'prefixed' ) );
 			$isWatchable = $this->watchlistManager->isWatchable( $title );
 			if ( !$isWatchable ) {
@@ -47,6 +46,5 @@ class AddTitleWatchInfo implements MWStakeCommonWebAPIsQueryStoreResultHook {
 			$isWatched = $this->watchlistManager->isWatched( $user, $title );
 			$record->set( 'watch', $isWatched );
 		}
-		$result = new ResultSet( $data, $result->getTotal() );
 	}
 }
