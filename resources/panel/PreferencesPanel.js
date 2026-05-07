@@ -251,7 +251,6 @@ ext.enhancedUI.panel.PreferencesPanel.prototype.searchForValue = function ( sear
 					labelMatch = entry[ 'label-message' ].toLowerCase().includes( lowerSearch );
 				}
 
-				// eslint-disable-next-line no-prototype-builtins
 				const defaultMatch = entry.hasOwnProperty( 'default' ) &&
 
 					String( entry.default ).toLowerCase().includes( lowerSearch );
