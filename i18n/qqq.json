@@ -87,5 +87,9 @@
 	"enhanced-standard-uis-filelist-panel-select-view-aria-label": "Aria label for button select widget to select view mode of files",
 	"enhanced-standard-uis-paginator-page-aria-label": "Aria label for page buttons in paginator.\nParameters:\n* $1 - number of page",
 	"enhanced-standard-uis-allpages-section-heading-aria-label": "Aria label for section headings on Special:Pages.\nParameters:\n* $1 - index letter",
-	"enhanced-standard-uis-filelist-panel-search-aria-label": "Label for search input field"
+	"enhanced-standard-uis-filelist-panel-search-aria-label": "Label for search input field",
+	"enhanced-standard-uis-allpages-create-new-page-title": "Title for button to create a new page",
+	"enhanced-standard-uis-allpages-create-new-page-aria-label": "Aria label for button to create a new page",
+	"enhanced-standard-uis-filelist-upload-new-file-title": "Title for button to upload a new file",
+	"enhanced-standard-uis-filelist-upload-new-file-aria-label": "Aria label for button to upload a new file"
 }
