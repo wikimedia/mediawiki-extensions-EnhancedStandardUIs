@@ -90,5 +90,9 @@
 	"enhanced-standard-uis-filelist-panel-select-view-aria-label": "보기 모드 선택",
 	"enhanced-standard-uis-paginator-page-aria-label": "페이지 $1",
 	"enhanced-standard-uis-allpages-section-heading-aria-label": "$1(으)로 시작하는 문서",
-	"enhanced-standard-uis-filelist-panel-search-aria-label": "파일 검색"
+	"enhanced-standard-uis-filelist-panel-search-aria-label": "파일 검색",
+	"enhanced-standard-uis-allpages-create-new-page-title": "새 문서 만들기",
+	"enhanced-standard-uis-allpages-create-new-page-aria-label": "새 문서 만들기",
+	"enhanced-standard-uis-filelist-upload-new-file-title": "새 파일 올리기",
+	"enhanced-standard-uis-filelist-upload-new-file-aria-label": "새 파일 올리기"
 }
