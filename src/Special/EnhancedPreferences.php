@@ -51,7 +51,6 @@ class EnhancedPreferences extends OOJSBookletSpecialPage {
 	 * @inheritDoc
 	 */
 	public function doExecute( $par ) {
-		$s = microtime( true );
 		$this->setHeaders();
 		$this->outputHeader();
 		$out = $this->getOutput();
@@ -101,7 +100,7 @@ class EnhancedPreferences extends OOJSBookletSpecialPage {
 			}
 			if ( !empty( $filteredPref['label-message'] ) ) {
 				if ( is_string( $filteredPref['label-message'] ) ) {
-						$filteredPref['label-message'] = $this->getMessage( $filteredPref['label-message'] );
+					$filteredPref['label-message'] = $this->getMessage( $filteredPref['label-message'] );
 				} elseif ( is_array( $filteredPref['label-message'] ) ) {
 					$filteredPref['label-message'] = $this->getMessageWithParams( $filteredPref['label-message'] );
 				} else {
@@ -163,10 +162,6 @@ class EnhancedPreferences extends OOJSBookletSpecialPage {
 			'data-modules' => json_encode( array_unique( $rlModules ) )
 		] );
 		$out->addHTML( $html );
-		$e = microtime( true );
-		$took = $e - $s;
-
-		error_log( $took );
 	}
 
 	/**
@@ -237,7 +232,6 @@ class EnhancedPreferences extends OOJSBookletSpecialPage {
 			if ( !$msg->exists() ) {
 				return '';
 			}
-
 			$msgText = $msg->parse();
 			return $msgText;
 		}

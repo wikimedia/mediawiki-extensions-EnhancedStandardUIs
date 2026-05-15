@@ -8,9 +8,7 @@ ext.enhancedUI.data.store.Store = function () {
 	cfg.path = 'mws/v1/title-tree-store';
 	cfg.request = null;
 	ext.enhancedUI.data.store.Store.parent.call( this, cfg );
-	this.limit = 100;
-	this.loadedCount = 0;
-	this.sortkeyFilterActive = null;
+	this.limit = 50;
 };
 
 OO.inheritClass( ext.enhancedUI.data.store.Store, OOJSPlus.ui.data.store.RemoteRestStore );
@@ -18,12 +16,12 @@ OO.inheritClass( ext.enhancedUI.data.store.Store, OOJSPlus.ui.data.store.RemoteR
 ext.enhancedUI.data.store.Store.prototype.doLoadData = function () {
 	const dfd = $.Deferred(),
 		data = {
+			start: this.offset,
 			limit: this.limit,
 			filter: this.getFiltersForRemote(),
 			query: this.getQuery(),
 			sort: this.getSortForRemote(),
-			node: this.node,
-			continue: this.continue ? JSON.stringify( this.continue ) : undefined
+			node: this.node
 		};
 
 	this.request = $.ajax( {
@@ -41,16 +39,6 @@ ext.enhancedUI.data.store.Store.prototype.doLoadData = function () {
 		this.request = null;
 
 		if ( response.hasOwnProperty( 'results' ) ) {
-			if ( !data.node ) {
-				this.loadedCount = this.loadedCount + response.results.length;
-				this.emit( 'onBucketChange', response.buckets || {} );
-				this.emit( 'metadataChange', {
-					results: this.loadedCount,
-					total: response.total,
-					totalApproximate: response.total_approximate,
-					continue: response.continue
-				} );
-			}
 			this.total = response.total;
 			dfd.resolve( this.indexData( response.results ) );
 			return;
@@ -64,7 +52,7 @@ ext.enhancedUI.data.store.Store.prototype.doLoadData = function () {
 	return dfd.promise();
 };
 
-ext.enhancedUI.data.store.Store.prototype.loadNS = function ( nsId ) {
+ext.enhancedUI.data.store.Store.prototype.loadNS = function ( nsId, start ) {
 	this.filters = [ {
 		operator: 'eq',
 		value: nsId,
@@ -72,46 +60,8 @@ ext.enhancedUI.data.store.Store.prototype.loadNS = function ( nsId ) {
 		type: 'numeric'
 	} ];
 	this.node = '';
-	this.continue = [];
-	this.limit = 100;
-	this.loadedCount = 0;
-	this.sortkeyFilterActive = null;
-	return this.reload();
-};
-
-ext.enhancedUI.data.store.Store.prototype.loadForSortkey = function ( sortkey ) {
-	for ( let i = 0; i < this.filters.length; i++ ) {
-		if ( this.filters[ i ].property === 'sortkey' ) {
-			this.filters.splice( i, 1 );
-			break;
-		}
-	}
-	this.filters.push( {
-		operator: 'eq',
-		value: sortkey,
-		property: 'sortkey',
-		type: 'string'
-	} );
-	this.node = '';
-	this.continue = [];
-	this.limit = 100;
-	this.loadedCount = 0;
-	this.sortkeyFilterActive = sortkey;
-	return this.reload();
-};
-
-ext.enhancedUI.data.store.Store.prototype.removeSortkeyFilter = function () {
-	for ( let i = 0; i < this.filters.length; i++ ) {
-		if ( this.filters[ i ].property === 'sortkey' ) {
-			this.filters.splice( i, 1 );
-			break;
-		}
-	}
-	this.node = '';
-	this.continue = [];
-	this.limit = 100;
-	this.loadedCount = 0;
-	this.sortkeyFilterActive = null;
+	this.offset = start;
+	this.limit = 50;
 	return this.reload();
 };
 
@@ -122,7 +72,7 @@ ext.enhancedUI.data.store.Store.prototype.getFiltersForRemote = function () {
 };
 
 ext.enhancedUI.data.store.Store.prototype.getSortForRemote = function () {
-	return JSON.stringify( [ { property: 'sortkey', direction: 'ASC' }, { property: 'dbkey', direction: 'ASC' } ] );
+	return JSON.stringify( [ { property: 'name', direction: 'ASC' } ] );
 };
 
 ext.enhancedUI.data.store.Store.prototype.getSubpages = function ( pageName ) {
@@ -154,7 +104,5 @@ ext.enhancedUI.data.store.Store.prototype.loadPages = function ( nsId, search ) 
 		}
 	];
 	this.node = '';
-	this.loadedCount = 0;
-	this.sortkeyFilterActive = null;
 	return this.query( search );
 };
