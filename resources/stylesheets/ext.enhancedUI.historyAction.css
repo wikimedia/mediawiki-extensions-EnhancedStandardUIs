@@ -24,7 +24,7 @@
 	position: relative;
 }
 
-#enhanced-history-cnt .static-controls .reload-button {
+#enhanced-history-cnt .static-controls:nth-child( 1 ) {
 	display: none;
 }
 

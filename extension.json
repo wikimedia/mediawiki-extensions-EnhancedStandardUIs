@@ -71,6 +71,10 @@
 		"EnhancedSpecialPages": "MediaWiki\\Extension\\EnhancedStandardUIs\\Special\\EnhancedSpecialPages"
 	},
 	"config": {
+		"EnhancedUIsVersionHistoryToolbarOffset": {
+			"value": 0,
+			"public": true
+		},
 		"EnhancedUIsAllPagesPaginatorOffset": {
 			"value": 0,
 			"public": true
@@ -141,6 +145,10 @@
 		"ext.enhancedstandarduis.history": {
 			"packageFiles": [
 				"ext.enhancedUI.historyAction.js",
+				{
+					"name": "addToolbarOffset.json",
+					"callback": "MediaWiki\\Extension\\EnhancedStandardUIs\\AddVersionHistoryToolbarOffset::makeConfigJson"
+				},
 				"panel/HistoryPanel.js",
 				{
 					"name": "panel/viewmode.json",
@@ -173,10 +181,14 @@
 		"ext.enhancedstandarduis.special.allpages": {
 			"packageFiles": [
 				"ext.enhancedUI.special.allpages.js",
+				{
+					"name": "addOffset.json",
+					"callback": "MediaWiki\\Extension\\EnhancedStandardUIs\\AddAllPagesPaginatorOffset::makeConfigJson"
+				},
 				"panel/AllPagesPanel.js",
 				"widget/NamespacesMenu.js",
 				"widget/NamespaceOptionWidget.js",
-				"widget/IndexPaginator.js",
+				"widget/Paginator.js",
 				"data/PagesTree.js",
 				"data/PagesTreeItem.js",
 				"data/store/Store.js"
@@ -209,17 +221,11 @@
 				"enhanced-standard-uis-allpages-empty-namespaces-text",
 				"enhanced-standard-uis-allpages-empty-pages-text",
 				"enhanced-standard-uis-allpages-namespace-badge-aria-label",
-				"enhanced-standard-uis-allpages-page-tree-item-expander-label",
-				"enhanced-standard-uis-allpages-panel-index-paginator-all-label",
-				"enhanced-standard-uis-allpages-panel-index-paginator-aria-label",
-				"enhanced-standard-uis-allpages-panel-counter-approximate-label",
-				"enhanced-standard-uis-allpages-panel-counter-label",
-				"enhanced-standard-uis-allpages-panel-more-button-label"
+				"enhanced-standard-uis-allpages-page-tree-item-expander-label"
 			],
 			"dependencies": [
 				"oojs-ui",
-				"ext.oOJSPlus.data",
-				"oojs-ui.styles.icons-content"
+				"ext.oOJSPlus.data"
 			]
 		},
 		"ext.enhancedstandarduis.filelist.panel": {
@@ -227,6 +233,7 @@
 			"packageFiles": [
 				"panel/FilelistPanel.js",
 				"widget/FilelistGrid.js",
+				"widget/Paginator.js",
 				"vue/Card.vue",
 				{
 					"name": "vue/icons.json",
