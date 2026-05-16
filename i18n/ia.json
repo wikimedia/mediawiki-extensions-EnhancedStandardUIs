@@ -91,5 +91,10 @@
 	"enhanced-standard-uis-allpages-create-new-page-title": "Crear un nove pagina",
 	"enhanced-standard-uis-allpages-create-new-page-aria-label": "Crear un nove pagina",
 	"enhanced-standard-uis-filelist-upload-new-file-title": "Incargar un nove file",
-	"enhanced-standard-uis-filelist-upload-new-file-aria-label": "Incargar un nove file"
+	"enhanced-standard-uis-filelist-upload-new-file-aria-label": "Incargar un nove file",
+	"enhanced-standard-uis-allpages-panel-index-paginator-all-label": "Tote le paginas in le spatio de nomines",
+	"enhanced-standard-uis-allpages-panel-index-paginator-aria-label": "Indice alphabetic de paginas",
+	"enhanced-standard-uis-allpages-panel-counter-approximate-label": "Appare $1 de ~ $2 pagina{{PLURAL:$2||s}}",
+	"enhanced-standard-uis-allpages-panel-counter-label": "Appare $1 de $2 pagina{{PLURAL:$2||s}}",
+	"enhanced-standard-uis-allpages-panel-more-button-label": "Cargar plus paginas"
 }
