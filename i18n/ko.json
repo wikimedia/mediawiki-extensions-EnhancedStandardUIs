@@ -73,8 +73,8 @@
 	"enhanced-standard-uis-filelist-ga-aria": "파일 목록",
 	"enhanced-standard-uis-filter-results-label": "$1개 {{PLURAL:$1|결과}} 찾음",
 	"enhanced-standard-uis-allpages-untitled": "제목 없음",
-	"right-enhancedstandarduis-viewuncustomizedspecialpageslist": "읽기 전용 사용자에게는 숨겨져 있는, [{{canonicalurl:Special:SpecialPages}}] 목록의 특정 특수 문서 볼 수 있음",
-	"action-enhancedstandarduis-viewuncustomizedspecialpageslist": "읽기 전용 사용자에게는 숨겨져 있는, [{{canonicalurl:Special:SpecialPages}}] 목록의 특정 특수 문서 볼 수 있는",
+	"right-enhancedstandarduis-viewuncustomizedspecialpageslist": "읽기 전용 사용자에게는 숨겨져 있는, [{{canonicalurl:Special:SpecialPages}}] 목록의 특정 특수 문서를 보기",
+	"action-enhancedstandarduis-viewuncustomizedspecialpageslist": "읽기 전용 사용자에게는 숨겨져 있는, [{{canonicalurl:Special:SpecialPages}}] 목록의 특정 특수 문서를 보기",
 	"enhanced-standard-uis-allpages-empty-pages-text": "현재 이 이름공간에는 문서가 없습니다",
 	"enhanced-standard-uis-allpages-namespace-badge-aria-label": "{{PLURAL:$1|$1개 문서}} 포함",
 	"enhanced-standard-uis-allpages-page-tree-item-expander-label": "하위 문서",
@@ -83,7 +83,7 @@
 	"enhanced-standard-uis-preferences-date-label": "표시 형식 선택",
 	"enhanced-standard-uis-prefs-reset-dlg-title": "기본 환경 설정으로 초기화",
 	"enhanced-standard-uis-prefs-reset-dlg-action-label": "초기화",
-	"enhanced-standard-uis-prefs-reset-dlg-confirm-label": "환경설정을 초기화하시겠습니까? 이는 되돌릴 수 없습니다.",
+	"enhanced-standard-uis-prefs-reset-dlg-confirm-label": "환경 설정을 초기화하시겠습니까? 이는 되돌릴 수 없습니다.",
 	"enhanced-standard-uis-prefs-reset-button-label": "기본 환경 설정으로 초기화",
 	"enhanced-standard-uis-prefs-reset-not-allowed-label": "사용자 환경 설정을 초기화 할 수 없습니다",
 	"enhanced-standard-uis-prefs-reset-notify": "환경 설정이 기본값으로 초기화되었습니다",
@@ -95,5 +95,10 @@
 	"enhanced-standard-uis-allpages-create-new-page-title": "새 문서 만들기",
 	"enhanced-standard-uis-allpages-create-new-page-aria-label": "새 문서 만들기",
 	"enhanced-standard-uis-filelist-upload-new-file-title": "새 파일 올리기",
-	"enhanced-standard-uis-filelist-upload-new-file-aria-label": "새 파일 올리기"
+	"enhanced-standard-uis-filelist-upload-new-file-aria-label": "새 파일 올리기",
+	"enhanced-standard-uis-allpages-panel-index-paginator-all-label": "이름공간의 모든 문서",
+	"enhanced-standard-uis-allpages-panel-index-paginator-aria-label": "알파벳순 문서 색인",
+	"enhanced-standard-uis-allpages-panel-counter-approximate-label": "~ $2개 중 $1개 {{PLURAL:$1|문서}}를 표시중입니다",
+	"enhanced-standard-uis-allpages-panel-counter-label": "$2개 중 $1개 {{PLURAL:$1|문서}}를 표시중입니다",
+	"enhanced-standard-uis-allpages-panel-more-button-label": "더 많은 문서 불러오기"
 }
