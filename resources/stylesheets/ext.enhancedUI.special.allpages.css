@@ -14,6 +14,16 @@
 	display: flex;
 }
 
+.enhanced-ui-allpages-panel-content .oojsplus-data-paginator {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.enhanced-ui-allpages-panel-content .oojsplus-data-paginator .shown-pages-label {
+	color: var( --color-subtle, #54595d );
+}
+
 .enhancedUI-allpages-paginator {
 	float: right;
 }
@@ -28,7 +38,7 @@
 }
 
 .enhanced-namespace-option-badge {
-	background-color: #747474;
+	background-color: var( --color-subtle, #54595d );
 	color: #fff;
 	padding: 5px 10px;
 	border-radius: 5px;
@@ -82,7 +92,7 @@
 .enhanced-ui-allpages-columns {
 	columns: 2;
 	column-gap: 20px;
-	margin-top: 40px;
+	margin-top: 50px;
 }
 
 .enhanced-ui-allpages-columns section:first-of-type h2 {
@@ -130,21 +140,9 @@
 	font-size: 1.1em;
 }
 
-.enhanced-ui-allpages-panel-counter {
-	position: absolute;
-	top: 0;
-	right: 0;
-	font-size: 0.9em;
-	color: #747474;
-}
-
-.enhanced-ui-allpages-panel-more-button {
-	margin: 20px;
-}
-
 .enhanced-ui-allpages-panel-tree h2 {
 	font-size: 21px;
-	color: #747474;
+	color: var( --color-subtle, #54595d );
 }
 
 .enhanced-ui-allpages-panel-tree h2:not( :first-child ) {
