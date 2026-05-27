@@ -76,10 +76,6 @@
 		}
 	},
 	"config": {
-		"EnhancedUIsAllPagesPaginatorOffset": {
-			"value": 0,
-			"public": true
-		},
 		"EnhancedUIsAllPagesOverride": {
 			"value": false
 		},
@@ -201,6 +197,7 @@
 				"widget/NamespacesMenu.js",
 				"widget/NamespaceOptionWidget.js",
 				"widget/IndexPaginator.js",
+				"widget/PagePaginator.js",
 				"data/PagesTree.js",
 				"data/PagesTreeItem.js",
 				"data/store/Store.js"
@@ -237,9 +234,8 @@
 				"enhanced-standard-uis-allpages-section-heading-aria-label",
 				"enhanced-standard-uis-allpages-panel-index-paginator-all-label",
 				"enhanced-standard-uis-allpages-panel-index-paginator-aria-label",
-				"enhanced-standard-uis-allpages-panel-counter-approximate-label",
-				"enhanced-standard-uis-allpages-panel-counter-label",
-				"enhanced-standard-uis-allpages-panel-more-button-label"
+				"enhanced-standard-uis-allpages-panel-index-paginator-shown-pages",
+				"enhanced-standard-uis-allpages-panel-index-paginator-shown-pages-approximate"
 			],
 			"dependencies": [
 				"oojs-ui",
