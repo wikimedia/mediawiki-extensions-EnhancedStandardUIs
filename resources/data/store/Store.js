@@ -48,7 +48,8 @@ ext.enhancedUI.data.store.Store.prototype.doLoadData = function () {
 					results: this.loadedCount,
 					total: response.total,
 					totalApproximate: response.total_approximate,
-					continue: response.continue
+					continue: response.continue,
+					pageSize: this.limit
 				} );
 			}
 			this.total = response.total;
