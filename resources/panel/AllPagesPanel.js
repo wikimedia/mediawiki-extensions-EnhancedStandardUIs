@@ -3,6 +3,7 @@ ext.enhancedUI = ext.enhancedUI || {};
 ext.enhancedUI.panel = ext.enhancedUI.panel || {};
 
 require( '../widget/IndexPaginator.js' );
+require( '../widget/PagePaginator.js' );
 require( '../widget/NamespacesMenu.js' );
 require( '../data/PagesTree.js' );
 require( '../data/store/Store.js' );
@@ -13,9 +14,7 @@ ext.enhancedUI.panel.AllPagesPanel = function ( cfg ) {
 	this.selectedNamespaceId = cfg.namespaceId;
 	this.pageSize = 50;
 	this.store = new ext.enhancedUI.data.store.Store();
-	this.store.connect( this, {
-		metadataChange: 'onMetadataUpdate'
-	} );
+	this.subpageStore = new ext.enhancedUI.data.store.Store();
 	this.rawData = [];
 	this.$element = $( '<div>' ).addClass( 'enhanced-ui-allpages-panel' );
 
@@ -35,8 +34,7 @@ ext.enhancedUI.panel.AllPagesPanel.prototype.setupWidgets = function () {
 	this.$contentCnt = $( '<div>' ).addClass( 'enhanced-ui-allpages-panel-content' );
 	this.setupIndex();
 	this.setupTree();
-	this.setupMoreButton();
-	this.setupCounter();
+	this.setupPaginator();
 	this.$resultCounter = $( '<div>' ).attr( 'aria-live', 'polite' ).addClass( 'visually-hidden' );
 	this.$contentCnt.append( this.$resultCounter );
 	this.$element.append( this.$contentCnt );
@@ -87,57 +85,18 @@ ext.enhancedUI.panel.AllPagesPanel.prototype.setupIndex = function () {
 	this.$contentCnt.append( this.$indexPaginator );
 };
 
-ext.enhancedUI.panel.AllPagesPanel.prototype.setupCounter = function () {
-	this.counter = new OO.ui.LabelWidget( {
-		classes: [ 'enhanced-ui-allpages-panel-counter' ]
+ext.enhancedUI.panel.AllPagesPanel.prototype.setupPaginator = function () {
+	this.paginator = new ext.enhancedUI.widget.PagePaginator( {
+		store: this.store
 	} );
-	this.$contentCnt.append( this.counter.$element );
+	this.paginator.connect( this, {
+		datasetChange: 'onPageChange'
+	} );
+	this.$contentCnt.append( this.paginator.$element );
 };
 
-ext.enhancedUI.panel.AllPagesPanel.prototype.setupMoreButton = function () {
-	this.moreButton = new OO.ui.ButtonWidget( {
-		label: mw.message( 'enhanced-standard-uis-allpages-panel-more-button-label' ).text(),
-		icon: 'reload',
-		classes: [ 'enhanced-ui-allpages-panel-more-button' ]
-	} );
-	this.moreButton.connect( this, {
-		click: 'onMoreClick'
-	} );
-	this.$outerTreeCnt.append( this.moreButton.$element );
-	this.moreButton.$element.hide();
-};
-
-ext.enhancedUI.panel.AllPagesPanel.prototype.onMetadataUpdate = function ( metadata ) {
-	let msg;
-	if ( metadata.totalApproximate ) {
-		msg = mw.msg(
-			'enhanced-standard-uis-allpages-panel-counter-approximate-label', metadata.results, metadata.total
-		);
-	} else {
-		msg = mw.msg(
-			'enhanced-standard-uis-allpages-panel-counter-label', metadata.results, metadata.total
-		);
-	}
-	this.counter.setLabel( msg );
-	if ( metadata.continue && metadata.continue.length > 0 ) {
-		this.moreButton.setData( metadata.continue );
-		this.moreButton.$element.show();
-		this.moreButton.setDisabled( false );
-	} else {
-		this.moreButton.$element.hide();
-		this.moreButton.setData( null );
-	}
-};
-
-ext.enhancedUI.panel.AllPagesPanel.prototype.onMoreClick = async function () {
-	const data = this.moreButton.getData();
-	if ( !data ) {
-		return;
-	}
-	this.store.continue = data;
-	this.moreButton.setDisabled( true );
-	const newPages = await this.store.reload();
-	this.rawData = this.rawData.concat( Object.values( newPages ) );
+ext.enhancedUI.panel.AllPagesPanel.prototype.onPageChange = function ( set ) {
+	this.rawData = set;
 	this.setPages();
 };
 
@@ -234,7 +193,7 @@ ext.enhancedUI.panel.AllPagesPanel.prototype.updatePages = function () {
 				IconCollapse: 'expand'
 			},
 			pages: this.pages[ i ],
-			store: this.store,
+			store: this.subpageStore,
 			includeRedirect: this.includeRedirect,
 			id: 'tree-' + this.alphabetIndex[ i ]
 		} );
