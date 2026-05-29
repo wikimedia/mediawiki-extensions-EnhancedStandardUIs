@@ -124,7 +124,7 @@
 		},
 		"addTitleWatchInfo": {
 			"class": "\\MediaWiki\\Extension\\EnhancedStandardUIs\\HookHandler\\AddTitleWatchInfo",
-			"services": [ "WatchlistManager", "TitleFactory" ]
+			"services": [ "WatchlistManager", "TitleFactory", "WatchedItemStore" ]
 		},
 		"addFilePath": {
 			"class": "\\MediaWiki\\Extension\\EnhancedStandardUIs\\HookHandler\\AddFileImagePath",
