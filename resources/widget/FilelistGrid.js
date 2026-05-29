@@ -177,6 +177,26 @@ ext.enhancedUI.widget.FilelistGrid.prototype.setItems = function ( data ) {
 		this.renderTiles();
 	}
 	ext.enhancedUI.widget.FilelistGrid.parent.prototype.setItems.call( this, data );
+	this.applyPreviewA11y();
+};
+
+ext.enhancedUI.widget.FilelistGrid.prototype.applyPreviewA11y = function () {
+	this.$wrapper
+		.find( '.oojsplus-data-gridWidget-cell[data-field="preview"] img.oojsplus-image' )
+		.each( function () {
+			const $image = $( this );
+			const fileName = $image.attr( 'alt' ) || '';
+			const ariaLabel = mw.message(
+				'enhanced-standard-uis-filelist-grid-preview-control-aria-label',
+				fileName
+			).text();
+
+			$image.attr( {
+				role: 'button',
+				'aria-haspopup': 'dialog',
+				'aria-label': ariaLabel
+			} );
+		} );
 };
 
 ext.enhancedUI.widget.FilelistGrid.prototype.prepareCategories = function ( data ) {
