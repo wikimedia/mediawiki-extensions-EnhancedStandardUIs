@@ -62,6 +62,7 @@
 	"enhanced-standard-uis-allpages-pageinfo-label": "$1 문서 정보 보기",
 	"enhanced-standard-uis-allpages-filter-results-label": "$1개 {{PLURAL:$1|결과}} 찾음",
 	"enhanced-standard-uis-filelist-grid-preview-title": "미리 보기",
+	"enhanced-standard-uis-filelist-grid-preview-control-aria-label": "$1에 대한 미리 보기 대화 상자를 열기",
 	"enhanced-standard-uis-filelist-ga-title": "파일",
 	"enhanced-standard-uis-filelist-ga-aria": "파일 목록",
 	"enhanced-standard-uis-filter-results-label": "$1개 {{PLURAL:$1|결과}} 찾음",
