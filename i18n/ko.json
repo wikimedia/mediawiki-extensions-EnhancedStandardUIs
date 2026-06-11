@@ -98,5 +98,7 @@
 	"enhanced-standard-uis-filelist-upload-new-file-title": "새 파일 올리기",
 	"enhanced-standard-uis-filelist-upload-new-file-aria-label": "새 파일 올리기",
 	"enhanced-standard-uis-allpages-panel-index-paginator-all-label": "이름공간의 모든 문서",
-	"enhanced-standard-uis-allpages-panel-index-paginator-aria-label": "알파벳순 문서 색인"
+	"enhanced-standard-uis-allpages-panel-index-paginator-aria-label": "알파벳순 문서 색인",
+	"enhanced-standard-uis-allpages-panel-index-paginator-shown-pages": "$3 중 $1 - $2",
+	"enhanced-standard-uis-allpages-panel-index-paginator-shown-pages-approximate": "~ $3 중 $1 - $2"
 }

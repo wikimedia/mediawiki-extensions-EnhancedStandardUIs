@@ -93,5 +93,7 @@
 	"enhanced-standard-uis-filelist-upload-new-file-title": "Subir un ficheiro novo",
 	"enhanced-standard-uis-filelist-upload-new-file-aria-label": "Subir un ficheiro novo",
 	"enhanced-standard-uis-allpages-panel-index-paginator-all-label": "Todas as páxinas no espazo de nomes",
-	"enhanced-standard-uis-allpages-panel-index-paginator-aria-label": "Índice alfabético de páxinas"
+	"enhanced-standard-uis-allpages-panel-index-paginator-aria-label": "Índice alfabético de páxinas",
+	"enhanced-standard-uis-allpages-panel-index-paginator-shown-pages": "$1 - $2 de $3",
+	"enhanced-standard-uis-allpages-panel-index-paginator-shown-pages-approximate": "$1 - $2 de aproximadamente $3"
 }

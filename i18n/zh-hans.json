@@ -60,6 +60,7 @@
 	"enhanced-standard-uis-allpages-pageinfo-label": "显示$1的页面信息",
 	"enhanced-standard-uis-allpages-filter-results-label": "找到$1{{PLURAL:$1|个结果}}",
 	"enhanced-standard-uis-filelist-grid-preview-title": "预览",
+	"enhanced-standard-uis-filelist-grid-preview-control-aria-label": "打开$1的文件预览对话框",
 	"enhanced-standard-uis-filelist-ga-title": "文件",
 	"enhanced-standard-uis-filelist-ga-aria": "文件列表",
 	"enhanced-standard-uis-filter-results-label": "找到$1{{PLURAL:$1|个结果}}",
@@ -95,5 +96,7 @@
 	"enhanced-standard-uis-filelist-upload-new-file-title": "上传新文件",
 	"enhanced-standard-uis-filelist-upload-new-file-aria-label": "上传新文件",
 	"enhanced-standard-uis-allpages-panel-index-paginator-all-label": "命名空间下的所有页面",
-	"enhanced-standard-uis-allpages-panel-index-paginator-aria-label": "按字母顺序的页面索引"
+	"enhanced-standard-uis-allpages-panel-index-paginator-aria-label": "按字母顺序的页面索引",
+	"enhanced-standard-uis-allpages-panel-index-paginator-shown-pages": "第$1 - $2页，共$3页",
+	"enhanced-standard-uis-allpages-panel-index-paginator-shown-pages-approximate": "第$1 - $2页，共约$3页"
 }
