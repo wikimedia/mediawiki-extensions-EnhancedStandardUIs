@@ -57,6 +57,7 @@
 	"enhanced-standard-uis-allpages-pageinfo-label": "Прикажи информации за страницата $1",
 	"enhanced-standard-uis-allpages-filter-results-label": "Пронајдов $1 {{PLURAL:$1|ставка|ставки}}",
 	"enhanced-standard-uis-filelist-grid-preview-title": "Преглед",
+	"enhanced-standard-uis-filelist-grid-preview-control-aria-label": "Отвори прегледен дијалог за $1",
 	"enhanced-standard-uis-filelist-ga-title": "Податотеки",
 	"enhanced-standard-uis-filelist-ga-aria": "Список на податотеки",
 	"enhanced-standard-uis-filter-results-label": "Пронајдов $1 {{PLURAL:$1|ставка|ставки}}",
@@ -92,5 +93,7 @@
 	"enhanced-standard-uis-filelist-upload-new-file-title": "Подигни нова податотека",
 	"enhanced-standard-uis-filelist-upload-new-file-aria-label": "Подигни нова податотека",
 	"enhanced-standard-uis-allpages-panel-index-paginator-all-label": "Сите страници во именскиот простор",
-	"enhanced-standard-uis-allpages-panel-index-paginator-aria-label": "Азбучен индекс на страници"
+	"enhanced-standard-uis-allpages-panel-index-paginator-aria-label": "Азбучен индекс на страници",
+	"enhanced-standard-uis-allpages-panel-index-paginator-shown-pages": "$1 - $2 од $3",
+	"enhanced-standard-uis-allpages-panel-index-paginator-shown-pages-approximate": "$1 - $2 од ~ $3"
 }
