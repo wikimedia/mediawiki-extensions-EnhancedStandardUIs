@@ -1,6 +1,6 @@
 <?php
 
-namespace Mediawiki\Extension\EnhancedStandardUIs\Rest;
+namespace MediaWiki\Extension\EnhancedStandardUIs\Rest;
 
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Rest\SimpleHandler;
