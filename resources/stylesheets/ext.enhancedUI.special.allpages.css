@@ -20,10 +20,6 @@
 	right: 0;
 }
 
-.enhanced-ui-allpages-panel-content .oojsplus-data-paginator .shown-pages-label {
-	color: var( --color-subtle, #54595d );
-}
-
 .enhancedUI-allpages-paginator {
 	float: right;
 }

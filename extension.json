@@ -239,7 +239,8 @@
 			"dependencies": [
 				"oojs-ui",
 				"ext.oOJSPlus.data",
-				"oojs-ui.styles.icons-content"
+				"oojs-ui.styles.icons-content",
+				"ext.enhancedstandarduis.styles.common"
 			]
 		},
 		"ext.enhancedstandarduis.filelist.panel": {
@@ -375,6 +376,11 @@
 				"ext.oOJSPlus.widgets",
 				"mediawiki.widgets.SelectWithInputWidget",
 				"mediawiki.confirmCloseWindow"
+			]
+		},
+		"ext.enhancedstandarduis.styles.common": {
+			"styles": [
+				"stylesheets/ext.enhancedUI.common.css"
 			]
 		}
 	},
