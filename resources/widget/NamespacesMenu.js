@@ -68,8 +68,12 @@ ext.enhancedUI.widget.NamespacesMenu.prototype.setupNamespaceMenu = function () 
 	this.selectWidget.$element.attr( 'aria-label',
 		mw.message( 'enhanced-standard-uis-allpages-namespace-list-label' ).text() );
 	this.selectWidget.connect( this, {
-		select: 'namespaceSelection'
+		select: 'namespaceSelection',
+		highlight: 'onNamespaceHighlight'
 	} );
+
+	this.selectWidget.$element.on( 'keydown', '.enhanced-namespace-option-watch',
+		( e ) => this.onWatchButtonKeydown( e ) );
 	this.updateNSMenu();
 
 	this.menuPanel = new OO.ui.PanelLayout( {
@@ -143,6 +147,7 @@ ext.enhancedUI.widget.NamespacesMenu.prototype.getPopupContent = function () {
 ext.enhancedUI.widget.NamespacesMenu.prototype.updateNSMenu = function () {
 	const selectedItem = this.selectWidget.findFirstSelectedItem();
 	this.selectWidget.clearItems();
+	this.selectWidget.$element.empty();
 	this.nsOptions = [];
 	let includeNonContent = this.includeNonContentNS.isSelected();
 	if ( !this.selectedNSIsContent ) {
@@ -168,7 +173,8 @@ ext.enhancedUI.widget.NamespacesMenu.prototype.updateNSMenu = function () {
 			const option = new ext.enhancedUI.widget.NamespaceOptionWidget( {
 				data: namespace.id,
 				label: namespace.name,
-				count: namespace.pageCount
+				count: namespace.pageCount,
+				watch: namespace.watch
 			} );
 			if ( namespaceTalkId === 1 ) {
 				this.nsOptions.splice( 1, 0, option );
@@ -185,12 +191,68 @@ ext.enhancedUI.widget.NamespacesMenu.prototype.updateNSMenu = function () {
 			new ext.enhancedUI.widget.NamespaceOptionWidget( {
 				data: namespace.id,
 				label: namespace.name,
-				count: namespace.pageCount
+				count: namespace.pageCount,
+				watch: namespace.watch
 			} )
 		);
 	}
 	this.selectWidget.addItems( this.nsOptions );
+	this.highlightedNSOption = null;
 	this.selectWidget.selectItemByData( selectedItem ? selectedItem.data : this.selectedNSId );
+};
+
+/**
+ * Keep the watch button's tabindex in sync with which option is keyboard-highlighted, so
+ * Tab only ever reaches the currently highlighted row's watch button (arrow keys move the
+ * highlight within the list; a further Tab steps into that row's watch button; Tab again
+ * leaves the list).
+ *
+ * @param {ext.enhancedUI.widget.NamespaceOptionWidget|null} item
+ */
+ext.enhancedUI.widget.NamespacesMenu.prototype.onNamespaceHighlight = function ( item ) {
+	if ( this.highlightedNSOption && this.highlightedNSOption !== item ) {
+		this.highlightedNSOption.setWatchButtonTabbable( false );
+	}
+	if ( item ) {
+		item.setWatchButtonTabbable( true );
+	}
+	this.highlightedNSOption = item;
+};
+
+/**
+ * @param {jQuery.Event} e
+ */
+ext.enhancedUI.widget.NamespacesMenu.prototype.onWatchButtonKeydown = function ( e ) {
+	if ( e.which === OO.ui.Keys.TAB && e.shiftKey ) {
+		const option = this.highlightedNSOption;
+		if ( option ) {
+			e.preventDefault();
+			e.stopPropagation();
+			this.selectWidget.focus();
+			this.selectWidget.highlightItem( option );
+		}
+		return;
+	}
+
+	let offset;
+	if ( e.which === OO.ui.Keys.UP || e.which === OO.ui.Keys.LEFT ) {
+		offset = -1;
+	} else if ( e.which === OO.ui.Keys.DOWN || e.which === OO.ui.Keys.RIGHT ) {
+		offset = 1;
+	} else {
+		return;
+	}
+
+	const currentOption = this.highlightedNSOption || this.selectWidget.findSelectedItem();
+	const nextOption = this.selectWidget.findRelativeSelectableItem( currentOption, offset );
+	if ( !nextOption || nextOption === currentOption ) {
+		return;
+	}
+
+	e.preventDefault();
+	e.stopPropagation();
+	this.selectWidget.highlightItem( nextOption );
+	nextOption.watchButton.focus();
 };
 
 ext.enhancedUI.widget.NamespacesMenu.prototype.getSelectedNamespaceId = function () {

@@ -18,9 +18,9 @@ ext.enhancedUI.api.Api.prototype.get = function ( path, params ) {
 	return this.ajax( path, params, 'GET' );
 };
 
-ext.enhancedUI.api.Api.prototype.post = function ( path, params ) {
-	params = params || {};
-	return this.ajax( path, JSON.stringify( { options: params } ), 'POST' );
+ext.enhancedUI.api.Api.prototype.post = function ( path, data ) {
+	data = data || {};
+	return this.ajax( path, JSON.stringify( data ), 'POST' );
 };
 
 ext.enhancedUI.api.Api.prototype.ajax = function ( path, data, method ) {
@@ -59,8 +59,12 @@ ext.enhancedUI.api.Api.prototype.getNamespaces = function () {
 	return this.get( 'namespaces' );
 };
 
+ext.enhancedUI.api.Api.prototype.watchNamespace = function ( namespaceId, watch ) {
+	return this.post( 'namespace-watch', { namespaceId: namespaceId, watch: watch } );
+};
+
 ext.enhancedUI.api.Api.prototype.savePreferences = function ( prefs ) {
-	return this.post( 'preferences', prefs );
+	return this.post( 'preferences', { options: prefs } );
 };
 
 ext.enhancedUI.api.Api.prototype.resetPreferences = function () {
