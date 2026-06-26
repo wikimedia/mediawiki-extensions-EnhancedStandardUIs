@@ -229,6 +229,11 @@
 				"enhanced-standard-uis-allpages-empty-namespaces-text",
 				"enhanced-standard-uis-allpages-empty-pages-text",
 				"enhanced-standard-uis-allpages-namespace-badge-aria-label",
+				"enhanced-standard-uis-allpages-namespace-watch-label",
+				"enhanced-standard-uis-allpages-namespace-unwatch-label",
+				"enhanced-standard-uis-allpages-namespace-watched",
+				"enhanced-standard-uis-allpages-namespace-unwatched",
+				"enhanced-standard-uis-allpages-namespace-watch-error",
 				"enhanced-standard-uis-allpages-page-tree-item-expander-label",
 				"enhanced-standard-uis-paginator-page-aria-label",
 				"enhanced-standard-uis-allpages-section-heading-aria-label",
@@ -240,7 +245,8 @@
 			"dependencies": [
 				"oojs-ui",
 				"ext.oOJSPlus.data",
-				"oojs-ui.styles.icons-content"
+				"oojs-ui.styles.icons-content",
+				"oojs-ui.styles.icons-accessibility"
 			]
 		},
 		"ext.enhancedstandarduis.filelist.panel": {
@@ -403,7 +409,18 @@
 				"PermissionManager",
 				"DBLoadBalancer",
 				"NamespaceInfo",
-				"LanguageFactory"
+				"LanguageFactory",
+				"WatchedItemStore"
+			]
+		},
+		{
+			"path": "/standarduis/namespace-watch",
+			"method": "POST",
+			"class": "MediaWiki\\Extension\\EnhancedStandardUIs\\Rest\\WatchNamespace",
+			"services": [
+				"TitleFactory",
+				"NamespaceInfo",
+				"WatchedItemStore"
 			]
 		},
 		{
