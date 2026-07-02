@@ -72,7 +72,7 @@
 	"right-enhancedstandarduis-viewuncustomizedspecialpageslist": "읽기 전용 사용자에게는 숨겨져 있는, [{{canonicalurl:Special:SpecialPages}}] 목록의 특정 특수 문서를 보기",
 	"action-enhancedstandarduis-viewuncustomizedspecialpageslist": "읽기 전용 사용자에게는 숨겨져 있는, [{{canonicalurl:Special:SpecialPages}}] 목록의 특정 특수 문서를 보기",
 	"enhanced-standard-uis-ve-filegrid-title": "고급 검색",
-	"enhanced-standard-uis-allpages-empty-namespaces-text": "사용 가능한 이름 공간이 없음",
+	"enhanced-standard-uis-allpages-empty-namespaces-text": "사용 가능한 이름공간이 없음",
 	"enhanced-standard-uis-allpages-empty-pages-text": "현재 이 이름공간에는 문서가 없습니다",
 	"enhanced-standard-uis-allpages-namespace-badge-aria-label": "{{PLURAL:$1|$1개 문서}} 포함",
 	"enhanced-standard-uis-allpages-page-tree-item-expander-label": "하위 문서",
