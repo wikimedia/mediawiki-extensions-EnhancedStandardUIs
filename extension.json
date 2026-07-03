@@ -134,6 +134,10 @@
 		"EnhancedUIsSpecialPreferencesOverride": {
 			"value": false
 		},
+		"EnhancedUIsVersionHistoryToolbarOffset": {
+			"value": 0,
+			"public": true
+		},
 		"EnhancedUIsWatchlistOverride": {
 			"value": false
 		}
@@ -172,6 +176,10 @@
 		"ext.enhancedstandarduis.history": {
 			"packageFiles": [
 				"ext.enhancedUI.historyAction.js",
+				{
+					"name": "addToolbarOffset.json",
+					"config": { "offsetHeight": "EnhancedUIsVersionHistoryToolbarOffset" }
+				},
 				"panel/HistoryPanel.js",
 				{
 					"name": "panel/viewmode.json",
