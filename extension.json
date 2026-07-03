@@ -83,6 +83,10 @@
 		"EnhancedUIsVersionHistoryDiffMode": {
 			"value": "visual",
 			"public": true
+		},
+		"EnhancedUIsVersionHistoryToolbarOffset": {
+			"value": 0,
+			"public": true
 		}
 	},
 	"Hooks": {
@@ -137,6 +141,10 @@
 		"ext.enhancedstandarduis.history": {
 			"packageFiles": [
 				"ext.enhancedUI.historyAction.js",
+				{
+					"name": "addToolbarOffset.json",
+					"config": { "offsetHeight": "EnhancedUIsVersionHistoryToolbarOffset" }
+				},
 				"panel/HistoryPanel.js",
 				{
 					"name": "panel/viewmode.json",
