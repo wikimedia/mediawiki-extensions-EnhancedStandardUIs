@@ -12,6 +12,7 @@ ext.enhancedUI.panel.HistoryPanel = function ( cfg ) {
 	this.selectedElements = [];
 	this.rights = cfg.rights || [];
 	this.historyData = cfg.data || [];
+	this.gridState = cfg.gridState || null;
 
 	this.data = [];
 	this.$element = $( '<div>' );
@@ -153,34 +154,30 @@ ext.enhancedUI.panel.HistoryPanel.prototype.setupGridConfig = function () {
 				headerText: mw.message( 'enhanced-standard-uis-history-grid-header-revision-label' ).text(),
 				type: 'url',
 				sortable: false,
-				urlProperty: 'revisionUrl',
-				hidden: !mw.user.options.get( 'history-show-revision' )
+				urlProperty: 'revisionUrl'
 			},
 			author: {
 				headerText: mw.message( 'enhanced-standard-uis-history-grid-header-author-label' ).text(),
 				type: 'user',
 				showImage: true,
-				sortable: false,
-				hidden: !mw.user.options.get( 'history-show-author' )
+				sortable: false
 			},
 			diff: {
 				headerText: mw.message( 'enhanced-standard-uis-history-grid-header-diff-label' ).text(),
 				type: 'text',
-				sortable: false,
-				hidden: !mw.user.options.get( 'history-show-diff' )
+				sortable: false
 			},
 			size: {
 				headerText: mw.message( 'enhanced-standard-uis-history-grid-header-size-label' ).text(),
 				type: 'text',
 				sortable: false,
-				hidden: !mw.user.options.get( 'history-show-size' )
+				hidden: true
 			},
 			summary: {
 				headerText: mw.message( 'enhanced-standard-uis-history-grid-header-summary-label' ).text(),
 				type: 'text',
 				sortable: false,
 				maxLabelLength: 100,
-				hidden: !mw.user.options.get( 'history-show-summary' ),
 				width: 300,
 				valueParser: ( value ) => new OO.ui.HtmlSnippet( value )
 			},
@@ -189,10 +186,11 @@ ext.enhancedUI.panel.HistoryPanel.prototype.setupGridConfig = function () {
 				type: 'url',
 				sortable: false,
 				urlProperty: 'tagUrl',
-				hidden: !mw.user.options.get( 'history-show-tags' )
+				hidden: true
 			}
 		},
-		data: this.historyData
+		data: this.historyData,
+		gridState: this.gridState
 	};
 
 	mw.hook( 'enhanced.versionhistory' ).fire( gridCfg );

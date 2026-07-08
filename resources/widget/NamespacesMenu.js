@@ -86,8 +86,9 @@ ext.enhancedUI.widget.NamespacesMenu.prototype.setupNamespaceMenu = function () 
 
 ext.enhancedUI.widget.NamespacesMenu.prototype.getPopupContent = function () {
 	this.includeTalkNS = new OOJSPlus.ui.widget.CheckboxInputWidget( {
-		selected: mw.user.options.get( 'allpages-show-talk' )
+		selected: false
 	} );
+	this.setSelectedFromPreference( this.includeTalkNS, 'talk' );
 	this.includeTalkNS.connect( this, {
 		change: function () {
 			this.updatePreference( 'talk', this.includeTalkNS.isSelected() );
@@ -102,8 +103,9 @@ ext.enhancedUI.widget.NamespacesMenu.prototype.getPopupContent = function () {
 		}
 	);
 	this.includeNonContentNS = new OOJSPlus.ui.widget.CheckboxInputWidget( {
-		selected: mw.user.options.get( 'allpages-show-non-content' )
+		selected: false
 	} );
+	this.setSelectedFromPreference( this.includeNonContentNS, 'non-content' );
 	this.includeNonContentNS.connect( this, {
 		change: function () {
 			this.updatePreference( 'non-content', this.includeNonContentNS.isSelected() );
@@ -118,8 +120,9 @@ ext.enhancedUI.widget.NamespacesMenu.prototype.getPopupContent = function () {
 		}
 	);
 	this.includeRedirect = new OOJSPlus.ui.widget.CheckboxInputWidget( {
-		selected: mw.user.options.get( 'allpages-show-redirect' )
+		selected: true
 	} );
+	this.setSelectedFromPreference( this.includeRedirect, 'redirect' );
 	this.includeRedirect.connect( this, {
 		change: 'updateRedirect'
 	} );
@@ -277,15 +280,13 @@ ext.enhancedUI.widget.NamespacesMenu.prototype.getRedirectStatus = function () {
 	return this.includeRedirect.isSelected();
 };
 
-ext.enhancedUI.widget.NamespacesMenu.prototype.updatePreference = function ( preference, value ) {
-	let val = '0';
+ext.enhancedUI.widget.NamespacesMenu.prototype.setSelectedFromPreference = async function ( checkbox, preference ) {
+	const value = await mws.datastash.getGlobal( 'enhanded-ui-all-pages-show-' + preference );
 	if ( value ) {
-		val = '1';
+		checkbox.setSelected( value.value );
 	}
-	if ( !mw.user.isAnon() ) {
-		mw.loader.using( 'mediawiki.api' ).done( () => {
-			mw.user.options.set( 'allpages-show-' + preference, val );
-			new mw.Api().saveOption( 'allpages-show-' + preference, val );
-		} );
-	}
+};
+
+ext.enhancedUI.widget.NamespacesMenu.prototype.updatePreference = async function ( preference, value ) {
+	await mws.datastash.setGlobal( 'enhanded-ui-all-pages-show-' + preference, { value: value } );
 };

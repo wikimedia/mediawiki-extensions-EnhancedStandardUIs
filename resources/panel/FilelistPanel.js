@@ -27,6 +27,8 @@ ext.enhancedUI.panel.FilelistPanel = function ( cfg ) {
 		}
 	} );
 
+	this.gridState = cfg.gridState || null;
+
 	this.setupWidgets();
 };
 
@@ -41,7 +43,8 @@ ext.enhancedUI.panel.FilelistPanel.prototype.setupWidgets = function () {
 			rights: this.rights,
 			$overlay: this.$overlay,
 			allowFileInfoDialog: this.allowFileInfoDialog,
-			mediaDialog: this.mediaDialog
+			mediaDialog: this.mediaDialog,
+			gridState: this.gridState
 		} );
 		this.grid.connect( this, {
 			action: 'onGridAction',
