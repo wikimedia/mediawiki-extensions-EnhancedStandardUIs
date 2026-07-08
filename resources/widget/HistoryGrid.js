@@ -5,6 +5,7 @@ ext.enhancedUI.widget = ext.enhancedUI.widget || {};
 ext.enhancedUI.widget.HistoryGrid = function ( cfg ) {
 	cfg.multiSelect = true;
 	this.selectionLimit = 2;
+	this.gridState = cfg.gridState || null;
 	ext.enhancedUI.widget.HistoryGrid.super.call( this, cfg );
 };
 
@@ -91,35 +92,10 @@ ext.enhancedUI.widget.HistoryGrid.prototype.selectionLimitReached = function () 
 	return false;
 };
 
-ext.enhancedUI.widget.HistoryGrid.prototype.setColumnsVisibility = function ( visible ) {
-	this.checkForColumnAddition( visible );
-	this.checkForColumnRemove( visible );
-	ext.enhancedUI.widget.HistoryGrid.parent.prototype.setColumnsVisibility.call( this, visible );
+ext.enhancedUI.widget.HistoryGrid.prototype.getStateIfApplicable = function () {
+	return this.gridState || {};
 };
 
-ext.enhancedUI.widget.HistoryGrid.prototype.checkForColumnAddition = function ( visible ) {
-	const addition = visible.filter( ( x ) => !this.visibleColumns.includes( x ) );
-	for ( const column in addition ) {
-		this.setPreference( addition[ column ], '1' );
-	}
-};
-
-ext.enhancedUI.widget.HistoryGrid.prototype.checkForColumnRemove = function ( visible ) {
-	const toRemove = this.visibleColumns.filter( ( x ) => !visible.includes( x ) );
-	for ( const column in toRemove ) {
-
-		if ( this.alwaysVisibleColumns.includes( toRemove[ column ] ) ) {
-			continue;
-		}
-		this.setPreference( toRemove[ column ], '0' );
-	}
-};
-
-ext.enhancedUI.widget.HistoryGrid.prototype.setPreference = function ( preference, value ) {
-	if ( !mw.user.isAnon() ) {
-		mw.loader.using( 'mediawiki.api' ).done( () => {
-			mw.user.options.set( 'history-show-' + preference, value );
-			new mw.Api().saveOption( 'history-show-' + preference, value );
-		} );
-	}
+ext.enhancedUI.widget.HistoryGrid.prototype.onStateChange = function ( state ) {
+	mws.datastash.setGlobal( 'enhanced-history-state', state );
 };

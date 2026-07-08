@@ -14,6 +14,7 @@ ext.enhancedUI.widget.FilelistGrid = function ( cfg ) {
 
 	this.currentData = [];
 	this.mode = 'grid';
+	this.gridState = cfg.gridState || null;
 
 	ext.enhancedUI.widget.FilelistGrid.super.call( this, cfg );
 
@@ -29,7 +30,6 @@ ext.enhancedUI.widget.FilelistGrid.prototype.getColumnDefinitions = function () 
 		preview: {
 			type: 'image',
 			filenameProperty: 'dbkey',
-			hidden: !mw.user.options.get( 'filelist-show-preview' ),
 			headerText: mw.message( 'enhanced-standard-uis-filelist-grid-preview-title' ).text()
 		},
 		title: {
@@ -37,8 +37,7 @@ ext.enhancedUI.widget.FilelistGrid.prototype.getColumnDefinitions = function () 
 			type: this.mediaDialog ? 'text' : 'url',
 			sortable: true,
 			urlProperty: 'url',
-			filterable: false,
-			hidden: !mw.user.options.get( 'filelist-show-title' )
+			filterable: false
 		},
 		author: {
 			headerText: mw.message( 'enhanced-standard-uis-filelist-grid-author-title' ).text(),
@@ -46,7 +45,6 @@ ext.enhancedUI.widget.FilelistGrid.prototype.getColumnDefinitions = function () 
 			showImage: false,
 			sortable: false,
 			filter: { type: 'user', $overlay: this.$overlay },
-			hidden: this.mediaDialog ? true : !mw.user.options.get( 'filelist-show-author' ),
 			autoClosePopup: true
 		},
 		timestamp: {
@@ -57,7 +55,6 @@ ext.enhancedUI.widget.FilelistGrid.prototype.getColumnDefinitions = function () 
 			valueParser: function ( value, row ) {
 				return row.formatted_ts;
 			},
-			hidden: !mw.user.options.get( 'filelist-show-formatted_ts' ),
 			autoClosePopup: true
 		},
 		// eslint-disable-next-line camelcase
@@ -66,7 +63,7 @@ ext.enhancedUI.widget.FilelistGrid.prototype.getColumnDefinitions = function () 
 			type: 'text',
 			sortable: true,
 			filter: { type: 'string' },
-			hidden: !mw.user.options.get( 'filelist-show-file_extension' ),
+			hidden: true,
 			autoClosePopup: true
 		},
 		// eslint-disable-next-line camelcase
@@ -75,7 +72,7 @@ ext.enhancedUI.widget.FilelistGrid.prototype.getColumnDefinitions = function () 
 			type: 'number',
 			sortable: true,
 			filter: { type: 'number' },
-			hidden: !mw.user.options.get( 'filelist-show-file_size' ),
+			hidden: true,
 			autoClosePopup: true
 		},
 		categories: {
@@ -86,13 +83,13 @@ ext.enhancedUI.widget.FilelistGrid.prototype.getColumnDefinitions = function () 
 			limitValue: 2,
 			sortable: false,
 			filter: { type: 'string' },
-			hidden: this.mediaDialog ? true : !mw.user.options.get( 'filelist-show-categories' ),
+			hidden: !!this.mediaDialog,
 			autoClosePopup: true
 		},
 		comment: {
 			headerText: mw.message( 'enhanced-standard-uis-filelist-grid-comment-title' ).text(),
 			type: 'text',
-			hidden: !mw.user.options.get( 'filelist-show-comment' ),
+			hidden: true,
 			autoClosePopup: true
 		}
 	};
@@ -233,35 +230,10 @@ ext.enhancedUI.widget.FilelistGrid.prototype.prepareCategories = function ( data
 	return data;
 };
 
-ext.enhancedUI.widget.FilelistGrid.prototype.setColumnsVisibility = function ( visible ) {
-	this.checkForColumnAddition( visible );
-	this.checkForColumnRemove( visible );
-	ext.enhancedUI.widget.FilelistGrid.parent.prototype.setColumnsVisibility.call( this, visible );
+ext.enhancedUI.widget.FilelistGrid.prototype.getStateIfApplicable = function () {
+	return this.gridState || {};
 };
 
-ext.enhancedUI.widget.FilelistGrid.prototype.checkForColumnAddition = function ( visible ) {
-	const addition = visible.filter( ( x ) => !this.visibleColumns.includes( x ) );
-	for ( const column in addition ) {
-		this.setPreference( addition[ column ], '1' );
-	}
-};
-
-ext.enhancedUI.widget.FilelistGrid.prototype.checkForColumnRemove = function ( visible ) {
-	const toRemove = this.visibleColumns.filter( ( x ) => !visible.includes( x ) );
-	for ( const column in toRemove ) {
-
-		if ( this.alwaysVisibleColumns.includes( toRemove[ column ] ) ) {
-			continue;
-		}
-		this.setPreference( toRemove[ column ], '0' );
-	}
-};
-
-ext.enhancedUI.widget.FilelistGrid.prototype.setPreference = function ( preference, value ) {
-	if ( !mw.user.isAnon() ) {
-		mw.loader.using( 'mediawiki.api' ).done( () => {
-			mw.user.options.set( 'filelist-show-' + preference, value );
-			new mw.Api().saveOption( 'filelist-show-' + preference, value );
-		} );
-	}
+ext.enhancedUI.widget.FilelistGrid.prototype.onStateChange = function ( state ) {
+	mws.datastash.setGlobal( 'enhanced-ui-filelist-state', state );
 };
