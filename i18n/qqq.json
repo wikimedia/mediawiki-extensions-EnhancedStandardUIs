@@ -95,5 +95,10 @@
 	"enhanced-standard-uis-allpages-panel-index-paginator-all-label": "Button label to remove sortkey filter",
 	"enhanced-standard-uis-allpages-panel-index-paginator-aria-label": "Aria label for a pager that filters pages by their sortkey. A-Z, 0-9 in latin languages",
 	"enhanced-standard-uis-allpages-panel-index-paginator-shown-pages": "Label for the currently shown pages.\n$1 - first shown page\n$2 - last shown page\n$3 - total number of pages",
-	"enhanced-standard-uis-allpages-panel-index-paginator-shown-pages-approximate": "Label for the currently shown pages when the total number of pages is an approximation.\n$1 - first shown page\n$2 - last shown page\n$3 - approximate total number of pages"
+	"enhanced-standard-uis-allpages-panel-index-paginator-shown-pages-approximate": "Label for the currently shown pages when the total number of pages is an approximation.\n$1 - first shown page\n$2 - last shown page\n$3 - approximate total number of pages",
+	"enhanced-standard-uis-allpages-namespace-watch-label": "Label for button to watch a whole namespace\nParameters:\n* $1 - name of namespace",
+	"enhanced-standard-uis-allpages-namespace-unwatch-label": "Label for button to unwatch a whole namespace\nParameters:\n* $1 - name of namespace",
+	"enhanced-standard-uis-allpages-namespace-watched": "Notification shown after a namespace was added to the watchlist\nParameters:\n* $1 - name of namespace",
+	"enhanced-standard-uis-allpages-namespace-unwatched": "Notification shown after a namespace was removed from the watchlist\nParameters:\n* $1 - name of namespace",
+	"enhanced-standard-uis-allpages-namespace-watch-error": "Error notification shown when watching or unwatching a namespace failed"
 }

@@ -95,5 +95,10 @@
 	"enhanced-standard-uis-allpages-panel-index-paginator-all-label": "All pages in namespace",
 	"enhanced-standard-uis-allpages-panel-index-paginator-aria-label": "Alphabetical page index",
 	"enhanced-standard-uis-allpages-panel-index-paginator-shown-pages": "$1 - $2 of $3",
-	"enhanced-standard-uis-allpages-panel-index-paginator-shown-pages-approximate": "$1 - $2 of ~ $3"
+	"enhanced-standard-uis-allpages-panel-index-paginator-shown-pages-approximate": "$1 - $2 of ~ $3",
+	"enhanced-standard-uis-allpages-namespace-watch-label": "Watch namespace $1",
+	"enhanced-standard-uis-allpages-namespace-unwatch-label": "Unwatch namespace $1",
+	"enhanced-standard-uis-allpages-namespace-watched": "Added namespace \"$1\" to your watchlist",
+	"enhanced-standard-uis-allpages-namespace-unwatched": "Removed namespace \"$1\" from your watchlist",
+	"enhanced-standard-uis-allpages-namespace-watch-error": "Could not update the watch status for this namespace."
 }
