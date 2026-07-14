@@ -14,14 +14,15 @@
 		"ext": "writable",
 		"jQuery": "readonly",
 		"mediaWiki": "readonly",
+		"mws": "readonly",
 		"OOJSPlus": "readonly",
-		"ve": "readonly",
-		"mws": "readonly"
+		"ve": "readonly"
 	},
 	"rules": {
 		"es-x/no-async-functions": "off",
 		"es-x/no-object-values": "off",
 		"max-len": "off",
+		"mediawiki/no-unlabeled-buttonwidget": "off",
 		"no-prototype-builtins": "off"
 	}
 }
