@@ -95,9 +95,6 @@
 	"enhanced-standard-uis-filelist-upload-new-file-aria-label": "Nieuw bestand uploaden",
 	"enhanced-standard-uis-allpages-panel-index-paginator-all-label": "Alle pagina's in de naamruimte",
 	"enhanced-standard-uis-allpages-panel-index-paginator-aria-label": "Alfabetische pagina-index",
-	"enhanced-standard-uis-allpages-panel-counter-approximate-label": "Resultaten $1 van ~ $2 {{PLURAL:$2|pagina|pagina's}}",
-	"enhanced-standard-uis-allpages-panel-counter-label": "Resultaten $1 van $2 {{PLURAL:$2|pagina|pagina's}}",
-	"enhanced-standard-uis-allpages-panel-more-button-label": "Meer pagina's laden",
 	"enhanced-standard-uis-allpages-panel-index-paginator-shown-pages": "$1 - $2 van $3",
 	"enhanced-standard-uis-allpages-panel-index-paginator-shown-pages-approximate": "$1 - $2 van ~ $3"
 }

@@ -41,6 +41,7 @@
 	"enhanced-standard-uis-allpages-filter-pages-label": "Filtro",
 	"enhanced-standard-uis-allpages-namespace-list-label": "Namespace",
 	"enhanced-standard-uis-paginator-aria-label": "Impaginazione",
+	"enhanced-standard-uis-allpages-namespace-watch-error": "Impossibile aggiornare lo stato di monitoraggio per questo namespace.",
 	"enhanced-standard-uis-allpages-pageinfo-label": "Mostra informazioni della pagina per $1",
 	"enhanced-standard-uis-allpages-filter-results-label": "$1 {{PLURAL:$1|risultato trovato|risultati trovati}}",
 	"enhanced-standard-uis-filelist-grid-preview-title": "Anteprima",
@@ -59,6 +60,5 @@
 	"enhanced-standard-uis-allpages-panel-index-paginator-all-label": "Tutte le pagine nel namespace",
 	"enhanced-standard-uis-allpages-panel-index-paginator-aria-label": "Indice alfabetico delle pagine",
 	"enhanced-standard-uis-allpages-panel-index-paginator-shown-pages": "$1 - $2 di $3",
-	"enhanced-standard-uis-allpages-panel-index-paginator-shown-pages-approximate": "$1 - $2 di circa $3",
-	"enhanced-standard-uis-allpages-namespace-watch-error": "Impossibile aggiornare lo stato di monitoraggio per questo namespace."
+	"enhanced-standard-uis-allpages-panel-index-paginator-shown-pages-approximate": "$1 - $2 di circa $3"
 }
