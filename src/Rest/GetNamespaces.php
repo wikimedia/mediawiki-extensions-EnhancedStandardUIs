@@ -5,6 +5,7 @@ namespace MediaWiki\Extension\EnhancedStandardUIs\Rest;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Languages\LanguageFactory;
 use MediaWiki\Permissions\PermissionManager;
+use MediaWiki\Rest\Response;
 use MediaWiki\Rest\SimpleHandler;
 use MediaWiki\Title\NamespaceInfo;
 use MediaWiki\Title\TitleFactory;
@@ -46,6 +47,9 @@ class GetNamespaces extends SimpleHandler {
 		$this->watchedItemStore = $watchedItemStore;
 	}
 
+	/**
+	 * @return Response
+	 */
 	public function run() {
 		$pageCounts = $this->getNamespacePageCount();
 		$context = RequestContext::getMain();
