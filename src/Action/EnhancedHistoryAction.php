@@ -233,7 +233,6 @@ class EnhancedHistoryAction extends HistoryAction {
 	}
 
 	/**
-	 *
 	 * @param MediaWikiServices $services
 	 * @param array $conds
 	 * @param string|null $tagFilter
