@@ -93,7 +93,6 @@ ext.enhancedUI.panel.HistoryPanel.prototype.setupGrid = function () {
 
 		if ( rowData.classes.length > 0 ) {
 			rowData.classes.forEach( ( rowClass ) => {
-				/* eslint-disable-next-line mediawiki/class-doc */
 				$row.addClass( rowClass );
 			} );
 		}

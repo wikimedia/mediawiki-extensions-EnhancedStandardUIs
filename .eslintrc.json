@@ -14,9 +14,9 @@
 		"ext": "writable",
 		"jQuery": "readonly",
 		"mediaWiki": "readonly",
+		"mws": "readonly",
 		"OOJSPlus": "readonly",
-		"ve": "readonly",
-		"mws": "readonly"
+		"ve": "readonly"
 	},
 	"rules": {
 		"es-x/no-async-functions": "off",

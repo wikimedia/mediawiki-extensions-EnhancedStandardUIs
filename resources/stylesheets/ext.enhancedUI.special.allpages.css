@@ -41,7 +41,7 @@
 	position: relative;
 }
 
-.enhanced-namespace-option-actions {
+.enhanced-namespace-option-actions { /* stylelint-disable-line plugin/no-unsupported-browser-features */
 	position: absolute;
 	right: 5px;
 	top: 50%;
@@ -64,7 +64,7 @@
 	pointer-events: none;
 }
 
-.enhanced-namespace-option-widget:hover .enhanced-namespace-option-watch,
+.enhanced-namespace-option-widget:hover .enhanced-namespace-option-watch, /* stylelint-disable-line plugin/no-unsupported-browser-features */
 .enhanced-namespace-option-widget:focus-within .enhanced-namespace-option-watch,
 .enhanced-namespace-option-widget.oo-ui-optionWidget-highlighted .enhanced-namespace-option-watch {
 	opacity: 1;
@@ -99,12 +99,12 @@
 	display: none;
 }
 
-.enhanced-namespace-option-widget:focus-within {
+.enhanced-namespace-option-widget:focus-within { /* stylelint-disable-line plugin/no-unsupported-browser-features */
 	background-color: var( --background-color-interactive, #eaecf0 );
 	color: var( --color-emphasized, #101418 );
 }
 
-.enhanced-namespace-option-widget.oo-ui-optionWidget-selected:focus-within {
+.enhanced-namespace-option-widget.oo-ui-optionWidget-selected:focus-within { /* stylelint-disable-line plugin/no-unsupported-browser-features */
 	background-color: var( --background-color-progressive-subtle, #eaf3ff );
 	color: var( --color-progressive, #36c );
 }
@@ -253,7 +253,7 @@
 	border-color: transparent;
 }
 
-.enhanced-pages-tree .oojsplus-data-tree-items .oojs-ui-data-tree-item .oojsplus-data-tree-expander a:focus-visible {
+.enhanced-pages-tree .oojsplus-data-tree-items .oojs-ui-data-tree-item .oojsplus-data-tree-expander a:focus-visible { /* stylelint-disable-line plugin/no-unsupported-browser-features */
 	outline: 1px solid #36c;
 }
 

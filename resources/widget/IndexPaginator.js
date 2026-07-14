@@ -34,7 +34,7 @@ ext.enhancedUI.widget.IndexPaginator.prototype.onBuckets = function ( buckets ) 
 	this.picker.clearItems();
 	if (
 		!buckets ||
-		Object.keys( buckets ).indexOf( 'sortkey' ) === -1 ||
+		Object.keys( buckets ).indexOf( 'sortkey' ) === -1 || // eslint-disable-line unicorn/prefer-includes
 		Object.keys( buckets.sortkey ).length < 2
 	) {
 		this.panel.$indexPaginator.addClass( 'hidden' );
