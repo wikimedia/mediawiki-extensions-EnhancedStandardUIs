@@ -1,3 +1,5 @@
+'use strict';
+
 module.exports = function ( grunt ) {
 	const conf = grunt.file.readJSON( 'extension.json' );
 
@@ -15,7 +17,7 @@ module.exports = function ( grunt ) {
 		},
 		stylelint: {
 			all: [
-				'**/*.{css,less,vue}',
+				'**/*.{css,less}',
 				'!node_modules/**',
 				'!vendor/**'
 			]
