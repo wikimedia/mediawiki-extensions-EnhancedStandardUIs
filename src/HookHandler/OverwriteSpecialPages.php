@@ -6,7 +6,6 @@ namespace MediaWiki\Extension\EnhancedStandardUIs\HookHandler;
 
 use MediaWiki\Config\Config;
 use MediaWiki\Extension\EnhancedStandardUIs\Special\EnhancedAllPages;
-use MediaWiki\Extension\EnhancedStandardUIs\Special\EnhancedEditWatchlist;
 use MediaWiki\Extension\EnhancedStandardUIs\Special\EnhancedFilelist;
 use MediaWiki\Extension\EnhancedStandardUIs\Special\EnhancedPreferences;
 use MediaWiki\Extension\EnhancedStandardUIs\Special\EnhancedSpecialPages;
@@ -38,13 +37,6 @@ class OverwriteSpecialPages implements SpecialPage_initListHook {
 
 		if ( $this->config->get( 'EnhancedUIsSpecialSpecialPagesOverride' ) ) {
 			$list['Specialpages'] = [ 'class' => EnhancedSpecialPages::class ];
-		}
-
-		if ( $this->config->get( 'EnhancedUIsWatchlistOverride' ) ) {
-			$list['EditWatchlist'] = [
-				'class' => EnhancedEditWatchlist::class,
-				'services' => [ 'EnhancedStandardUIs.WatchlistItemProviderFactory' ]
-			];
 		}
 
 		if ( $this->config->get( 'EnhancedUIsSpecialPreferencesOverride' ) ) {

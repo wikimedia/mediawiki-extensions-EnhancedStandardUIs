@@ -70,7 +70,3 @@ ext.enhancedUI.api.Api.prototype.savePreferences = function ( prefs ) {
 ext.enhancedUI.api.Api.prototype.resetPreferences = function () {
 	return this.post( 'reset-preferences' );
 };
-
-ext.enhancedUI.api.Api.prototype.getWatchlistItems = function ( provider ) {
-	return this.get( 'watchlist/items/' + encodeURIComponent( provider ) );
-};

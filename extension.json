@@ -16,42 +16,11 @@
 	"AutoloadNamespaces": {
 		"MediaWiki\\Extension\\EnhancedStandardUIs\\": "src/"
 	},
-	"ServiceWiringFiles": [
-		"ServiceWiring.php"
-	],
 	"attributes": {
 		"EnhancedStandardUIs": {
 			"HistoryPagePlugins": {},
 			"AllPagesPluginModules": [],
-			"FilelistPluginModules": [],
-			"WatchlistItemProviders": {
-				"pages": {
-					"class": "MediaWiki\\Extension\\EnhancedStandardUIs\\Watchlist\\Provider\\PageProvider",
-					"services": [
-						"WatchedItemStore",
-						"TitleFactory",
-						"NamespaceInfo"
-					]
-				},
-				"categories": {
-					"class": "MediaWiki\\Extension\\EnhancedStandardUIs\\Watchlist\\Provider\\CategoryProvider",
-					"services": [
-						"WatchedItemStore",
-						"TitleFactory",
-						"NamespaceInfo"
-					]
-				},
-				"namespaces": {
-					"class": "MediaWiki\\Extension\\EnhancedStandardUIs\\Watchlist\\Provider\\NamespaceProvider",
-					"services": [
-						"WatchedItemStore",
-						"TitleFactory",
-						"NamespaceInfo",
-						"PageStore"
-					],
-					"position": 100
-				}
-			}
+			"FilelistPluginModules": []
 		},
 		"BlueSpiceFoundation": {
 			"PermissionRegistry": {
@@ -132,9 +101,6 @@
 			}
 		},
 		"EnhancedUIsSpecialPreferencesOverride": {
-			"value": false
-		},
-		"EnhancedUIsWatchlistOverride": {
 			"value": false
 		}
 	},
@@ -406,39 +372,6 @@
 			"styles": [
 				"stylesheets/ext.enhancedUI.common.css"
 			]
-		},
-		"ext.enhancedstandarduis.special.watchlist": {
-			"packageFiles": [
-				"panel/WatchlistPanel.js",
-				{
-					"name": "config/providers.json",
-					"callback": "MediaWiki\\Extension\\EnhancedStandardUIs\\Watchlist\\WatchlistItemProviderFactory::getClientDescriptorsForModule"
-				},
-				"widget/WatchlistTab.js",
-				"widget/provider/WatchlistItemProvider.js",
-				"api/Api.js"
-			],
-			"styles": [
-				"stylesheets/ext.enhancedUI.special.watchlist.css"
-			],
-			"messages": [
-				"enhanced-standard-uis-watchlist-tab-namespaces",
-				"enhanced-standard-uis-watchlist-clear-all",
-				"enhanced-standard-uis-watchlist-clear-confirm",
-				"enhanced-standard-uis-watchlist-clear-confirm-action",
-				"enhanced-standard-uis-watchlist-remove-tooltip",
-				"enhanced-standard-uis-watchlist-empty",
-				"cancel"
-			],
-			"dependencies": [
-				"oojs-ui",
-				"oojs-ui-widgets",
-				"oojs-ui-windows",
-				"oojs-ui.styles.icons-accessibility",
-				"oojs-ui.styles.icons-content",
-				"oojs-ui.styles.icons-moderation",
-				"mediawiki.api"
-			]
 		}
 	},
 	"ResourceFileModulePaths": {
@@ -492,11 +425,6 @@
 			"method": "POST",
 			"class": "MediaWiki\\Extension\\EnhancedStandardUIs\\Rest\\ResetPreferences",
 			"services": [ "UserOptionsManager" ]
-		},
-		{
-			"path": "/standarduis/watchlist/items/{provider}",
-			"class": "MediaWiki\\Extension\\EnhancedStandardUIs\\Rest\\Watchlist\\GetItems",
-			"services": [ "EnhancedStandardUIs.WatchlistItemProviderFactory" ]
 		}
 	],
 	"manifest_version": 2,
