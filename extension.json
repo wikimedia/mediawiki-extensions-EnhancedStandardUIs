@@ -310,6 +310,11 @@
 			"dependencies": [
 				"ext.enhancedstandarduis.filelist.panel"
 			]
+		},
+		"ext.enhancedstandarduis.styles.common": {
+			"styles": [
+				"stylesheets/ext.enhancedUI.common.css"
+			]
 		}
 	},
 	"ResourceFileModulePaths": {
