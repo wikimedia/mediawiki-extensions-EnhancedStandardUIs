@@ -186,6 +186,15 @@ ext.enhancedUI.panel.HistoryPanel.prototype.setupGridConfig = function () {
 				sortable: false,
 				urlProperty: 'tagUrl',
 				hidden: true
+			},
+			minor: {
+				headerText: mw.message( 'enhanced-standard-uis-history-grid-header-major-label' ).text(),
+				valueParser: function ( v ) {
+					return !v;
+				},
+				sortable: false,
+				type: 'boolean',
+				hidden: true
 			}
 		},
 		data: this.historyData,
