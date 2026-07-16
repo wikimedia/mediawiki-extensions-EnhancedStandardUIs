@@ -220,7 +220,6 @@
 			]
 		},
 		"ext.enhancedstandarduis.filelist.panel": {
-			"es6": true,
 			"packageFiles": [
 				"panel/FilelistPanel.js",
 				"widget/FilelistGrid.js",
@@ -286,7 +285,6 @@
 			]
 		},
 		"ext.enhancedstandarduis.special.filelist": {
-			"es6": true,
 			"packageFiles": [
 				"ext.enhancedUI.special.filelist.js"
 			]
