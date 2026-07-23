@@ -101,5 +101,6 @@
 	"enhanced-standard-uis-allpages-namespace-unwatch-label": "Naamruimte $1 niet langer volgen",
 	"enhanced-standard-uis-allpages-namespace-watched": "Naamruimte \"$1\" is toegevoegd aan uw volglijst",
 	"enhanced-standard-uis-allpages-namespace-unwatched": "Naamruimte \"$1\" is verwijderd van uw volglijst",
-	"enhanced-standard-uis-allpages-namespace-watch-error": "De volgstatus voor deze naamruimte kon niet worden bijgewerkt."
+	"enhanced-standard-uis-allpages-namespace-watch-error": "De volgstatus voor deze naamruimte kon niet worden bijgewerkt.",
+	"enhanced-standard-uis-history-grid-header-major-label": "Is een grote bewerking"
 }
