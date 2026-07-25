@@ -101,5 +101,17 @@
 	"enhanced-standard-uis-allpages-namespace-unwatch-label": "Unwatch namespace $1",
 	"enhanced-standard-uis-allpages-namespace-watched": "Added namespace \"$1\" to your watchlist",
 	"enhanced-standard-uis-allpages-namespace-unwatched": "Removed namespace \"$1\" from your watchlist",
-	"enhanced-standard-uis-allpages-namespace-watch-error": "Could not update the watch status for this namespace."
+	"enhanced-standard-uis-allpages-namespace-watch-error": "Could not update the watch status for this namespace.",
+	"enhanced-standard-uis-watchlist-tab-pages": "Pages",
+	"enhanced-standard-uis-watchlist-tab-categories": "Categories",
+	"enhanced-standard-uis-watchlist-tab-books": "Books",
+	"enhanced-standard-uis-watchlist-tab-namespaces": "Namespaces",
+	"enhanced-standard-uis-watchlist-search-label": "Search watched items",
+	"enhanced-standard-uis-watchlist-view-changes": "View changes on watchlist",
+	"enhanced-standard-uis-watchlist-clear-all": "Clear all watched $1",
+	"enhanced-standard-uis-watchlist-clear-confirm": "Do you really want to remove all watched $1 from your watchlist?",
+	"enhanced-standard-uis-watchlist-clear-confirm-action": "Clear all",
+	"enhanced-standard-uis-watchlist-remove-tooltip": "Remove from watchlist",
+	"enhanced-standard-uis-watchlist-empty": "There are no watched items here.",
+	"enhanced-standard-uis-watchlist-main-namespace-label": "Main"
 }
