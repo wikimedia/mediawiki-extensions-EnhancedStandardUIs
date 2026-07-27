@@ -102,5 +102,17 @@
 	"enhanced-standard-uis-allpages-panel-index-paginator-all-label": "Alle pagina's in de naamruimte",
 	"enhanced-standard-uis-allpages-panel-index-paginator-aria-label": "Alfabetische pagina-index",
 	"enhanced-standard-uis-allpages-panel-index-paginator-shown-pages": "$1 - $2 van $3",
-	"enhanced-standard-uis-allpages-panel-index-paginator-shown-pages-approximate": "$1 - $2 van ~ $3"
+	"enhanced-standard-uis-allpages-panel-index-paginator-shown-pages-approximate": "$1 - $2 van ~ $3",
+	"enhanced-standard-uis-watchlist-tab-pages": "Pagina's",
+	"enhanced-standard-uis-watchlist-tab-categories": "Categorieën",
+	"enhanced-standard-uis-watchlist-tab-books": "Boeken",
+	"enhanced-standard-uis-watchlist-tab-namespaces": "Naamruimten",
+	"enhanced-standard-uis-watchlist-search-label": "Zoeken naar gevolgde items",
+	"enhanced-standard-uis-watchlist-view-changes": "Wijzigingen op de volglijst bekijken",
+	"enhanced-standard-uis-watchlist-clear-all": "Alle gevolgde $1 wissen",
+	"enhanced-standard-uis-watchlist-clear-confirm": "Wilt u echt alle gevolgde $1 van uw volglijst verwijderen?",
+	"enhanced-standard-uis-watchlist-clear-confirm-action": "Alles wissen",
+	"enhanced-standard-uis-watchlist-remove-tooltip": "Verwijderen uit volglijst",
+	"enhanced-standard-uis-watchlist-empty": "Er zijn hier geen gevolgde items.",
+	"enhanced-standard-uis-watchlist-main-namespace-label": "Hoofdnaamruimte"
 }
