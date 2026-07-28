@@ -104,5 +104,17 @@
 	"enhanced-standard-uis-allpages-panel-index-paginator-all-label": "命名空间下的所有页面",
 	"enhanced-standard-uis-allpages-panel-index-paginator-aria-label": "按字母顺序的页面索引",
 	"enhanced-standard-uis-allpages-panel-index-paginator-shown-pages": "第$1 - $2页，共$3页",
-	"enhanced-standard-uis-allpages-panel-index-paginator-shown-pages-approximate": "第$1 - $2页，共约$3页"
+	"enhanced-standard-uis-allpages-panel-index-paginator-shown-pages-approximate": "第$1 - $2页，共约$3页",
+	"enhanced-standard-uis-watchlist-tab-pages": "页面",
+	"enhanced-standard-uis-watchlist-tab-categories": "分类",
+	"enhanced-standard-uis-watchlist-tab-books": "书籍",
+	"enhanced-standard-uis-watchlist-tab-namespaces": "命名空间",
+	"enhanced-standard-uis-watchlist-search-label": "搜索已监视项",
+	"enhanced-standard-uis-watchlist-view-changes": "查看监视列表的更改",
+	"enhanced-standard-uis-watchlist-clear-all": "清除所有已监视的$1",
+	"enhanced-standard-uis-watchlist-clear-confirm": "您确定要从监视列表中移除所有已监视的$1吗？",
+	"enhanced-standard-uis-watchlist-clear-confirm-action": "全部清除",
+	"enhanced-standard-uis-watchlist-remove-tooltip": "从监视列表中移除",
+	"enhanced-standard-uis-watchlist-empty": "还没有任何已监视的项。",
+	"enhanced-standard-uis-watchlist-main-namespace-label": "主"
 }
