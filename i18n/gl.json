@@ -101,5 +101,17 @@
 	"enhanced-standard-uis-allpages-panel-index-paginator-all-label": "Todas as páxinas no espazo de nomes",
 	"enhanced-standard-uis-allpages-panel-index-paginator-aria-label": "Índice alfabético de páxinas",
 	"enhanced-standard-uis-allpages-panel-index-paginator-shown-pages": "$1 - $2 de $3",
-	"enhanced-standard-uis-allpages-panel-index-paginator-shown-pages-approximate": "$1 - $2 de aproximadamente $3"
+	"enhanced-standard-uis-allpages-panel-index-paginator-shown-pages-approximate": "$1 - $2 de aproximadamente $3",
+	"enhanced-standard-uis-watchlist-tab-pages": "Páxinas",
+	"enhanced-standard-uis-watchlist-tab-categories": "Categorías",
+	"enhanced-standard-uis-watchlist-tab-books": "Libros",
+	"enhanced-standard-uis-watchlist-tab-namespaces": "Espazos de nomes",
+	"enhanced-standard-uis-watchlist-search-label": "Procurar nos elementos vixiados",
+	"enhanced-standard-uis-watchlist-view-changes": "Ver os cambios na lista de vixilancia",
+	"enhanced-standard-uis-watchlist-clear-all": "Limpar todo o vixiado ($1)",
+	"enhanced-standard-uis-watchlist-clear-confirm": "Queres eliminar todos os elementos ($1) vixiados da túa lista de vixilancia?",
+	"enhanced-standard-uis-watchlist-clear-confirm-action": "Limpar todo",
+	"enhanced-standard-uis-watchlist-remove-tooltip": "Eliminar da lista de vixilancia",
+	"enhanced-standard-uis-watchlist-empty": "Non hai ningún elemento vixiado.",
+	"enhanced-standard-uis-watchlist-main-namespace-label": "Principal"
 }
