@@ -43,7 +43,6 @@ ext.enhancedUI.data.PagesTree.prototype.build = function ( data, lvl ) {
 			}
 		} );
 
-		// eslint-disable-next-line es-x/no-array-prototype-flat
 		this.flat[ widget.getName() ] = widget;
 		nodes[ widget.getName() ] = {
 			widget: widget,

@@ -214,7 +214,7 @@ ext.enhancedUI.widget.WatchlistTab.prototype.filter = function ( query ) {
 	const needle = ( query || '' ).toLowerCase();
 	const visibleSections = {};
 	this.rows.forEach( ( row ) => {
-		const match = row.label.toLowerCase().indexOf( needle ) !== -1;
+		const match = row.label.toLowerCase().includes( needle );
 		row.$row.toggleClass( 'hidden', !match );
 		if ( match ) {
 			visibleSections[ row.$section.index() ] = row.$section;
