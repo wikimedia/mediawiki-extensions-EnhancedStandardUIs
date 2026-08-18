@@ -74,6 +74,7 @@
 	"enhanced-standard-uis-ve-filegrid-title": "Напредно пребарување",
 	"enhanced-standard-uis-allpages-empty-namespaces-text": "Нема достапни именски простори",
 	"enhanced-standard-uis-allpages-empty-pages-text": "Во моментов нема страници во овој именски простор",
+	"enhanced-standard-uis-history-grid-header-major-label": "Е крупно уредување",
 	"enhanced-standard-uis-allpages-namespace-badge-aria-label": "содржи {{PLURAL:$1|една страница| $1 страници}}",
 	"enhanced-standard-uis-allpages-page-tree-item-expander-label": "Потстраници",
 	"enhancedpreferences": "Нагодувања",
@@ -100,5 +101,17 @@
 	"enhanced-standard-uis-allpages-panel-index-paginator-all-label": "Сите страници во именскиот простор",
 	"enhanced-standard-uis-allpages-panel-index-paginator-aria-label": "Азбучен индекс на страници",
 	"enhanced-standard-uis-allpages-panel-index-paginator-shown-pages": "$1 - $2 од $3",
-	"enhanced-standard-uis-allpages-panel-index-paginator-shown-pages-approximate": "$1 - $2 од ~ $3"
+	"enhanced-standard-uis-allpages-panel-index-paginator-shown-pages-approximate": "$1 - $2 од ~ $3",
+	"enhanced-standard-uis-watchlist-tab-pages": "Страници",
+	"enhanced-standard-uis-watchlist-tab-categories": "Категории",
+	"enhanced-standard-uis-watchlist-tab-books": "Книги",
+	"enhanced-standard-uis-watchlist-tab-namespaces": "Именски простори",
+	"enhanced-standard-uis-watchlist-search-label": "Пребарај набљудувани ставки",
+	"enhanced-standard-uis-watchlist-view-changes": "Погл. промени во набљудуваните",
+	"enhanced-standard-uis-watchlist-clear-all": "Исчисти сите набљудувани $1",
+	"enhanced-standard-uis-watchlist-clear-confirm": "Дали навистина сакате да ги отстраните сите набљудувани $1 од списокот?",
+	"enhanced-standard-uis-watchlist-clear-confirm-action": "Исчисти сè",
+	"enhanced-standard-uis-watchlist-remove-tooltip": "Отстрани од набљудуваните",
+	"enhanced-standard-uis-watchlist-empty": "Тука нема набљудувани ставки.",
+	"enhanced-standard-uis-watchlist-main-namespace-label": "Главна"
 }
