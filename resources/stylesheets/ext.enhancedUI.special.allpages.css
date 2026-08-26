@@ -63,7 +63,8 @@
 .enhanced-namespace-option-widget:hover .enhanced-namespace-option-watch, /* stylelint-disable-line plugin/no-unsupported-browser-features */
 .enhanced-namespace-option-widget:focus-within .enhanced-namespace-option-watch,
 .enhanced-namespace-option-widget.oo-ui-optionWidget-highlighted .enhanced-namespace-option-watch {
-	opacity: 1;
+	/* Same tone as the star of a watched page row, which inherits the 0.6 row action opacity. */
+	opacity: 0.6;
 	pointer-events: auto;
 }
 
@@ -71,19 +72,19 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	min-width: 20px;
-	min-height: 20px;
+	min-width: 18px;
+	min-height: 18px;
 	padding: 0;
 }
 
 .enhanced-namespace-option-watch .oo-ui-buttonElement-button::before {
 	content: '';
 	display: block;
-	width: 20px;
-	height: 20px;
+	width: 18px;
+	height: 18px;
 	background-color: currentcolor;
-	-webkit-mask: url( ./../images/watch-icon.svg ) center/contain no-repeat;
-	mask: url( ./../images/watch-icon.svg ) center/contain no-repeat;
+	-webkit-mask: url( ./../images/watch-icon.svg ) center/18px no-repeat;
+	mask: url( ./../images/watch-icon.svg ) center/18px no-repeat;
 }
 
 .enhanced-namespace-option-is-watched .enhanced-namespace-option-watch .oo-ui-buttonElement-button::before {
@@ -132,6 +133,29 @@
 
 .enhanced-pages-tree .oojsplus-data-tree-page-action a:focus {
 	opacity: 0.6;
+}
+
+/* Watch toggle of a page row: same star icons as the namespace options, drawn as a mask in
+   currentcolor so both states keep the row action color instead of an emphasized icon color. */
+.enhanced-pages-tree .page-tree-action-watch a {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.enhanced-pages-tree .page-tree-action-watch a::before {
+	content: '';
+	display: block;
+	width: 18px;
+	height: 18px;
+	background-color: currentcolor;
+	-webkit-mask: url( ./../images/watch-icon.svg ) center/18px no-repeat;
+	mask: url( ./../images/watch-icon.svg ) center/18px no-repeat;
+}
+
+.enhanced-pages-tree .page-tree-action-watch.page-tree-action-is-watched a::before {
+	-webkit-mask-image: url( ./../images/unwatch-icon.svg );
+	mask-image: url( ./../images/unwatch-icon.svg );
 }
 
 .oojsplus-data-tree-page-redirect {
