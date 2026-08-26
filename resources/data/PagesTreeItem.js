@@ -88,32 +88,39 @@ ext.enhancedUI.data.PagesTreeItem.prototype.addWatchIcon = function () {
 		return;
 	}
 
-	const isWatched = this.buttonCfg.watch;
-	let iconClass = 'star';
-	let action = 'watch';
-	if ( isWatched ) {
-		iconClass = 'unStar';
-		action = 'unwatch';
-	}
-
-	this.watch = new OO.ui.ToggleButtonWidget( {
+	this.watched = !!this.buttonCfg.watch;
+	this.watch = new OOJSPlus.ui.widget.ButtonWidget( {
 		framed: false,
 		role: 'button',
-		icon: iconClass,
-		value: isWatched,
-		label: mw.message( 'enhanced-standard-uis-allpages-watch-label', this.buttonCfg.title ).text(),
+		label: this.getWatchLabel(),
 		invisibleLabel: true,
-		title: this.buttonCfg.title,
 		data: {
-			title: this.buttonCfg.title,
-			action: action
+			title: this.buttonCfg.title
 		},
-		classes: [ 'oojsplus-data-tree-page-action' ]
+		classes: [ 'oojsplus-data-tree-page-action', 'page-tree-action-watch' ]
 	} );
+	this.updateWatchButtonState();
 	this.$wrapper.append( this.watch.$element );
 	this.watch.connect( this, {
 		click: 'onWatchIconClick'
 	} );
+};
+
+ext.enhancedUI.data.PagesTreeItem.prototype.getWatchLabel = function () {
+	return mw.message(
+		this.watched ?
+			'enhanced-standard-uis-allpages-unwatch-label' :
+			'enhanced-standard-uis-allpages-watch-label',
+		this.buttonCfg.title
+	).text();
+};
+
+ext.enhancedUI.data.PagesTreeItem.prototype.updateWatchButtonState = function () {
+	const label = this.getWatchLabel();
+	this.watch.setLabel( label );
+	this.watch.setTitle( label );
+	this.watch.$button.attr( 'aria-pressed', this.watched ? 'true' : 'false' );
+	this.watch.$element.toggleClass( 'page-tree-action-is-watched', this.watched );
 };
 
 ext.enhancedUI.data.PagesTreeItem.prototype.onExpanderClick = function () {
@@ -132,21 +139,19 @@ ext.enhancedUI.data.PagesTreeItem.prototype.onExpanderClick = function () {
 
 ext.enhancedUI.data.PagesTreeItem.prototype.onWatchIconClick = function () {
 	const title = this.watch.data.title;
-	const action = this.watch.data.action;
+	const watch = !this.watched;
+	this.watch.setDisabled( true );
 	mw.loader.using( 'mediawiki.api' ).done( () => {
 		const api = new mw.Api();
-		if ( action === 'watch' ) {
-			api.watch( title ).done( () => {
-				this.watch.data.action = 'unwatch';
-				this.watch.setIcon( 'unStar' );
-				mw.notify( mw.message( 'addedwatchtext-short', title ).text() );
-			} );
-		} else {
-			api.unwatch( title ).done( () => {
-				this.watch.data.action = 'watch';
-				this.watch.setIcon( 'star' );
-				mw.notify( mw.message( 'removedwatchtext-short', title ).text() );
-			} );
-		}
+		const apiCall = watch ? api.watch( title ) : api.unwatch( title );
+		apiCall.done( () => {
+			this.watched = watch;
+			this.updateWatchButtonState();
+			mw.notify( mw.message(
+				watch ? 'addedwatchtext-short' : 'removedwatchtext-short', title
+			).text() );
+		} ).always( () => {
+			this.watch.setDisabled( false );
+		} );
 	} );
 };
