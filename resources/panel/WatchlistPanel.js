@@ -26,7 +26,8 @@ ext.enhancedUI.panel.WatchlistPanel = function ( cfg ) {
 
 	this.indexLayout = new OO.ui.IndexLayout( {
 		expanded: false,
-		framed: false
+		framed: false,
+		autoFocus: false
 	} );
 	this.indexLayout.connect( this, { set: 'onTabSet' } );
 
@@ -56,6 +57,8 @@ ext.enhancedUI.panel.WatchlistPanel.prototype.setupTabs = function () {
 	if ( this.tabs.length ) {
 		this.tabs[ 0 ].ensureLoaded();
 	}
+
+	this.onFilter( this.searchWidget.getValue() );
 };
 
 /**
@@ -82,14 +85,18 @@ ext.enhancedUI.panel.WatchlistPanel.prototype.onTabSet = function ( tabPanel ) {
 	if ( tabPanel && typeof tabPanel.ensureLoaded === 'function' ) {
 		tabPanel.ensureLoaded();
 	}
-	this.onFilter( this.searchWidget.getValue() );
 };
 
+/**
+ * The search applies to every tab, not just the visible one. Tabs that are not loaded yet
+ * remember the query and apply it once their items arrive.
+ *
+ * @param {string} value
+ */
 ext.enhancedUI.panel.WatchlistPanel.prototype.onFilter = function ( value ) {
-	const current = this.indexLayout.getCurrentTabPanel();
-	if ( current && typeof current.filter === 'function' ) {
-		current.filter( value );
-	}
+	this.tabs.forEach( ( tab ) => {
+		tab.filter( value );
+	} );
 };
 
 $( () => {

@@ -6,6 +6,7 @@ use MediaWiki\Extension\EnhancedStandardUIs\Watchlist\WatchlistItemProviderFacto
 use MediaWiki\Html\Html;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Specials\SpecialEditWatchlist;
+use OOUI\ButtonWidget;
 use OOUI\FieldLayout;
 use OOUI\SearchInputWidget;
 
@@ -51,20 +52,21 @@ class EnhancedEditWatchlist extends SpecialEditWatchlist {
 	}
 
 	/**
-	 * "View changes on watchlist" link shown above the tabs.
+	 * "View changes on watchlist" button link shown above the tabs.
 	 *
 	 * @return string
 	 */
 	private function getHeaderBar(): string {
+		$button = new ButtonWidget( [
+			'href' => SpecialPage::getTitleFor( 'Watchlist' )->getLocalURL(),
+			'label' => $this->msg( 'enhanced-standard-uis-watchlist-view-changes' )->text(),
+			'framed' => false,
+			'flags' => [ 'progressive' ],
+			'classes' => [ 'enhanced-ui-watchlist-view-changes' ]
+		] );
+
 		$bar = Html::openElement( 'div', [ 'class' => 'enhanced-ui-watchlist-header' ] );
-		$bar .= Html::element(
-			'a',
-			[
-				'href' => SpecialPage::getTitleFor( 'Watchlist' )->getLocalURL(),
-				'class' => 'enhanced-ui-watchlist-view-changes'
-			],
-			$this->msg( 'enhanced-standard-uis-watchlist-view-changes' )->text()
-		);
+		$bar .= $button;
 		$bar .= Html::closeElement( 'div' );
 		return $bar;
 	}

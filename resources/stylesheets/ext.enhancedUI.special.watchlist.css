@@ -8,7 +8,7 @@
 	margin-bottom: 1em;
 }
 
-.enhanced-ui-watchlist-view-changes {
+.enhanced-ui-watchlist-view-changes.oo-ui-buttonElement > .oo-ui-buttonElement-button {
 	font-weight: bold;
 }
 
@@ -83,12 +83,35 @@
 	flex: 0 0 auto;
 }
 
-.enhanced-ui-watchlist-empty {
+/* Match the grey of the watched star on Special:AllPages, which is the OOUI icon
+   (opacity 0.87) inside an anchor that is dimmed to 0.6. Dimming the button rather than
+   the icon avoids fighting the more specific OOUI rule
+   `.oo-ui-buttonElement.oo-ui-widget-enabled > .oo-ui-buttonElement-button >
+   .oo-ui-iconElement-icon:not( .oo-ui-image-invert )`. */
+.enhanced-ui-watchlist-remove > .oo-ui-buttonElement-button {
+	opacity: 0.6;
+}
+
+.enhanced-ui-watchlist-remove > .oo-ui-buttonElement-button:hover,
+.enhanced-ui-watchlist-remove > .oo-ui-buttonElement-button:focus {
+	opacity: 1;
+}
+
+.enhanced-ui-watchlist-empty,
+.enhanced-ui-watchlist-no-results {
 	padding: 2em 0;
 	color: var( --color-subtle, #54595d );
 }
 
+.enhanced-ui-watchlist-error {
+	display: flex;
+	align-items: center;
+	padding: 2em 0;
+	color: var( --color-error, #bf3c2c );
+}
+
 .enhanced-ui-watchlist-item.hidden,
-.enhanced-ui-watchlist-section.hidden {
+.enhanced-ui-watchlist-section.hidden,
+.enhanced-ui-watchlist-no-results.hidden {
 	display: none;
 }

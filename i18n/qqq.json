@@ -113,5 +113,8 @@
 	"enhanced-standard-uis-watchlist-clear-confirm-action": "Label of the confirm button in the clear-all dialog",
 	"enhanced-standard-uis-watchlist-remove-tooltip": "Tooltip of the eye icon button that removes a single item from the watchlist",
 	"enhanced-standard-uis-watchlist-empty": "Placeholder shown when a tab contains no watched items",
+	"enhanced-standard-uis-watchlist-no-results": "Hint shown when the search term entered on Special:EditWatchlist matches none of the items of the current tab",
+	"enhanced-standard-uis-watchlist-load-error": "Error message shown on Special:EditWatchlist when the request for the items of a tab failed",
+	"enhanced-standard-uis-watchlist-retry": "Label of the button that retries a failed request for the items of a tab on Special:EditWatchlist",
 	"enhanced-standard-uis-watchlist-main-namespace-label": "Section heading used for pages in the main namespace"
 }
