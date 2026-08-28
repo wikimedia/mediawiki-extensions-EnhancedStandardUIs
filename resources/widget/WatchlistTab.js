@@ -18,12 +18,18 @@ ext.enhancedUI.widget.WatchlistTab = function ( cfg ) {
 	} );
 
 	this.loaded = false;
+	this.loading = false;
 	this.rows = [];
+	this.removeTargets = [];
+	this.query = '';
 
 	this.$body = $( '<div>' ).addClass( 'enhanced-ui-watchlist-tab-body' );
 	this.$toolbar = $( '<div>' ).addClass( 'enhanced-ui-watchlist-tab-toolbar' );
 	this.$list = $( '<div>' ).addClass( 'enhanced-ui-watchlist-tab-list' );
-	this.$body.append( this.$toolbar, this.$list );
+	this.$noResults = $( '<div>' )
+		.addClass( 'enhanced-ui-watchlist-no-results hidden' )
+		.text( mw.message( 'enhanced-standard-uis-watchlist-no-results' ).text() );
+	this.$body.append( this.$toolbar, this.$list, this.$noResults );
 	this.$element.append( this.$body );
 };
 
@@ -46,18 +52,25 @@ ext.enhancedUI.widget.WatchlistTab.buildTabLabel = function ( icon, title ) {
 };
 
 ext.enhancedUI.widget.WatchlistTab.prototype.ensureLoaded = function () {
-	if ( this.loaded ) {
+	if ( this.loaded || this.loading ) {
 		return;
 	}
-	this.loaded = true;
+	this.loading = true;
+	this.rows = [];
+	this.removeTargets = [];
+	this.$toolbar.empty();
+	this.$noResults.addClass( 'hidden' );
 	this.$list.empty().addClass( 'oo-ui-pendingElement-pending' );
 	this.provider.getItems().done( ( response ) => {
+		this.loading = false;
+		this.loaded = true;
 		this.$list.removeClass( 'oo-ui-pendingElement-pending' );
 		this.render( ( response && response.sections ) || [] );
 	} ).fail( () => {
-		this.$list.removeClass( 'oo-ui-pendingElement-pending' );
+		this.loading = false;
 		this.loaded = false;
-		this.renderEmpty();
+		this.$list.removeClass( 'oo-ui-pendingElement-pending' );
+		this.renderError();
 	} );
 };
 
@@ -87,6 +100,8 @@ ext.enhancedUI.widget.WatchlistTab.prototype.render = function ( sections ) {
 	sections.forEach( ( section ) => {
 		this.$list.append( this.renderSection( section ) );
 	} );
+
+	this.applyFilter();
 };
 
 ext.enhancedUI.widget.WatchlistTab.prototype.renderSection = function ( section ) {
@@ -198,6 +213,7 @@ ext.enhancedUI.widget.WatchlistTab.prototype.onClearAll = function () {
 
 ext.enhancedUI.widget.WatchlistTab.prototype.renderEmpty = function () {
 	this.$toolbar.empty();
+	this.$noResults.addClass( 'hidden' );
 	this.$list.empty().append(
 		$( '<div>' )
 			.addClass( 'enhanced-ui-watchlist-empty' )
@@ -206,22 +222,59 @@ ext.enhancedUI.widget.WatchlistTab.prototype.renderEmpty = function () {
 };
 
 /**
- * Filter visible rows by a search query (case-insensitive substring on the label).
+ * Shown when the items could not be loaded. This must be distinguishable from an empty
+ * tab: rendering the "no watched items" placeholder on a failed request makes a failure
+ * look like an emptied watchlist, and leaves no way to retry other than reloading.
+ */
+ext.enhancedUI.widget.WatchlistTab.prototype.renderError = function () {
+	this.$toolbar.empty();
+	this.$noResults.addClass( 'hidden' );
+
+	const retryButton = new OO.ui.ButtonWidget( {
+		label: mw.message( 'enhanced-standard-uis-watchlist-retry' ).text(),
+		framed: false,
+		flags: [ 'progressive' ]
+	} );
+	retryButton.connect( this, { click: 'ensureLoaded' } );
+
+	this.$list.empty().append(
+		$( '<div>' )
+			.addClass( 'enhanced-ui-watchlist-error' )
+			.text( mw.message( 'enhanced-standard-uis-watchlist-load-error' ).text() )
+			.append( retryButton.$element )
+	);
+};
+
+/**
+ * Set the search query for this tab. The query is remembered, so that it is re-applied
+ * whenever the rows are (re-)rendered - most notably when a tab is loaded lazily after
+ * the user has already typed something.
  *
  * @param {string} query
  */
 ext.enhancedUI.widget.WatchlistTab.prototype.filter = function ( query ) {
-	const needle = ( query || '' ).toLowerCase();
-	const visibleSections = {};
+	this.query = query || '';
+	this.applyFilter();
+};
+
+/**
+ * Apply the remembered query to the currently rendered rows (case-insensitive substring
+ * on the label) and toggle the "no matching results" hint.
+ */
+ext.enhancedUI.widget.WatchlistTab.prototype.applyFilter = function () {
+	const needle = this.query.toLowerCase();
+	let matches = 0;
 	this.rows.forEach( ( row ) => {
 		const match = row.label.toLowerCase().indexOf( needle ) !== -1;
 		row.$row.toggleClass( 'hidden', !match );
 		if ( match ) {
-			visibleSections[ row.$section.index() ] = row.$section;
+			matches++;
 		}
 	} );
 	this.$list.find( '.enhanced-ui-watchlist-section' ).each( function () {
 		const hasVisible = $( this ).find( '.enhanced-ui-watchlist-item:not(.hidden)' ).length > 0;
 		$( this ).toggleClass( 'hidden', !hasVisible );
 	} );
+
+	this.$noResults.toggleClass( 'hidden', !( needle !== '' && this.rows.length > 0 && matches === 0 ) );
 };

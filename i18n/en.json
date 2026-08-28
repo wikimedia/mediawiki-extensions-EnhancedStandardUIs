@@ -113,5 +113,8 @@
 	"enhanced-standard-uis-watchlist-clear-confirm-action": "Clear all",
 	"enhanced-standard-uis-watchlist-remove-tooltip": "Remove from watchlist",
 	"enhanced-standard-uis-watchlist-empty": "There are no watched items here.",
+	"enhanced-standard-uis-watchlist-no-results": "No items match your search.",
+	"enhanced-standard-uis-watchlist-load-error": "The watched items could not be loaded.",
+	"enhanced-standard-uis-watchlist-retry": "Try again",
 	"enhanced-standard-uis-watchlist-main-namespace-label": "Main"
 }
