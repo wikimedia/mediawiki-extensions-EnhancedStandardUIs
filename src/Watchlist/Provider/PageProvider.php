@@ -25,7 +25,7 @@ class PageProvider extends GenericWatchlistItemProvider {
 	 * @inheritDoc
 	 */
 	public function getTabIcon(): string {
-		return 'article';
+		return 'file-earmark';
 	}
 
 	/**
@@ -38,6 +38,13 @@ class PageProvider extends GenericWatchlistItemProvider {
 		if ( defined( 'NS_BOOK' ) && $namespace === NS_BOOK ) {
 			return false;
 		}
+		return true;
+	}
+
+	/**
+	 * @inheritDoc
+	 */
+	protected function sectionsCollapsible(): bool {
 		return true;
 	}
 }

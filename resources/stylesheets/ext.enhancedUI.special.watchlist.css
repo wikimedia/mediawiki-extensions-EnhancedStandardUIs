@@ -27,10 +27,37 @@
 	gap: 0.4em;
 }
 
-.enhanced-ui-watchlist-tab-label .oo-ui-iconWidget {
-	min-width: 1.2em;
-	min-height: 1.2em;
-	filter: invert( 1 ) drop-shadow( 1px 0 0 var( --color-base, #202122 ) ) drop-shadow( -1px 0 0 var( --color-base, #202122 ) ) drop-shadow( 0 1px 0 var( --color-base, #202122 ) ) drop-shadow( 0 -1px 0 var( --color-base, #202122 ) );
+.enhanced-ui-watchlist-tab-icon {
+	display: inline-block;
+	width: 1.1em;
+	height: 1.1em;
+	background-color: currentcolor;
+	-webkit-mask-repeat: no-repeat;
+	mask-repeat: no-repeat;
+	-webkit-mask-position: center;
+	mask-position: center;
+	-webkit-mask-size: contain;
+	mask-size: contain;
+}
+
+.enhanced-ui-watchlist-tab-icon--file-earmark {
+	-webkit-mask-image: url( ./../images/watchlist/file-earmark.svg );
+	mask-image: url( ./../images/watchlist/file-earmark.svg );
+}
+
+.enhanced-ui-watchlist-tab-icon--tag {
+	-webkit-mask-image: url( ./../images/watchlist/tag.svg );
+	mask-image: url( ./../images/watchlist/tag.svg );
+}
+
+.enhanced-ui-watchlist-tab-icon--book {
+	-webkit-mask-image: url( ./../images/watchlist/book.svg );
+	mask-image: url( ./../images/watchlist/book.svg );
+}
+
+.enhanced-ui-watchlist-tab-icon--namespaces {
+	-webkit-mask-image: url( ./../images/watchlist/namespaces-icon.svg );
+	mask-image: url( ./../images/watchlist/namespaces-icon.svg );
 }
 
 .enhanced-ui-watchlist-tab-toolbar {
@@ -48,14 +75,99 @@
 	margin-bottom: 1.5em;
 }
 
-.enhanced-ui-watchlist-section > h2 {
+.enhanced-ui-watchlist-section-collapsible {
+	margin-bottom: 0;
+}
+
+/* Give an open namespace group some breathing room; keep collapsed ones tightly stacked. */
+.enhanced-ui-watchlist-section-collapsible:not( .collapsed ) {
+	margin-bottom: 0.75em;
+}
+
+.enhanced-ui-watchlist-section-heading {
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
 	border: 0;
 	margin: 0.5em 0;
 	padding: 0;
-	font-weight: bold;
+	font-size: 1em;
+	font-weight: 600;
+}
+
+/* Collapsible namespace heading: a full-width clickable row, kept close in weight to
+   the item rows below it. */
+.enhanced-ui-watchlist-section-heading--toggle {
+	margin: 0.1em -0.4em;
+	padding: 0.25em 0.4em;
+	border-radius: 4px;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+	transition: background-color 100ms ease;
+}
+
+.enhanced-ui-watchlist-section-heading--toggle:hover {
+	background-color: var( --background-color-interactive-subtle, #f8f9fa );
+}
+
+.enhanced-ui-watchlist-section-heading--toggle:active {
+	background-color: var( --background-color-interactive, #eaecf0 );
+}
+
+.enhanced-ui-watchlist-section-title {
+	flex: 1 1 auto;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.enhanced-ui-watchlist-expander.oo-ui-buttonElement {
+	flex: 0 0 auto;
+	margin: 0 0.25em 0 -0.25em;
+}
+
+.enhanced-ui-watchlist-expander .oo-ui-iconElement-icon {
+	background-size: 0.85em;
+	transition: transform 200ms ease;
+}
+
+.enhanced-ui-watchlist-section-collapsible.collapsed .enhanced-ui-watchlist-expander .oo-ui-iconElement-icon {
+	transform: rotate( -90deg );
+}
+
+html[ dir='rtl' ] .enhanced-ui-watchlist-section-collapsible.collapsed .enhanced-ui-watchlist-expander .oo-ui-iconElement-icon {
+	transform: rotate( 90deg );
+}
+
+.enhanced-ui-watchlist-section-collapsible.collapsed .enhanced-ui-watchlist-list {
+	display: none;
+}
+
+.enhanced-ui-watchlist-section-collapsible:not( .collapsed ) > .enhanced-ui-watchlist-list {
+	padding-left: 1.3em;
+	animation: enhanced-ui-watchlist-reveal 140ms ease-out;
+}
+
+@keyframes enhanced-ui-watchlist-reveal {
+	from {
+		opacity: 0;
+		transform: translateY( -2px );
+	}
+
+	to {
+		opacity: 1;
+		transform: none;
+	}
+}
+
+@media ( prefers-reduced-motion: reduce ) { /* stylelint-disable-line plugin/no-unsupported-browser-features */
+	.enhanced-ui-watchlist-expander .oo-ui-iconElement-icon,
+	.enhanced-ui-watchlist-section-heading--toggle,
+	.enhanced-ui-watchlist-section-collapsible:not( .collapsed ) > .enhanced-ui-watchlist-list {
+		transition: none;
+		animation: none;
+	}
 }
 
 .enhanced-ui-watchlist-list {
@@ -70,6 +182,10 @@
 	justify-content: space-between;
 	padding: 0.35em 0;
 	border-bottom: 1px solid var( --border-color-muted, #eaecf0 );
+}
+
+.enhanced-ui-watchlist-item:last-child {
+	border-bottom: 0;
 }
 
 .enhanced-ui-watchlist-item > a {

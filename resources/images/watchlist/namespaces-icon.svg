@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Tab icon for the "Namespaces" watchlist tab: a bespoke "stacked inboxes" glyph -
+     a tray/bin outline with two shelf dividers. Drawn with FILLED shapes only
+     (fill="currentColor", an evenodd ring for the outer frame), the same technique as
+     the Bootstrap-derived file-earmark / tag / book icons, so it renders reliably
+     through the CSS mask. No stroke- or arc-based paths. -->
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+	<path fill-rule="evenodd" d="M2.4 1.8 13.6 1.8 15.7 6 15.7 13.9 0.3 13.9 0.3 6ZM3.5 3 12.5 3 14.3 6.35 14.3 12.8 1.7 12.8 1.7 6.35Z"/>
+	<path d="M1.7 5.9 6.5 5.9 8 7.1 9.5 5.9 14.3 5.9 14.3 6.95 9.5 6.95 8 8.15 6.5 6.95 1.7 6.95Z"/>
+	<path d="M1.7 9.5 6.5 9.5 8 10.7 9.5 9.5 14.3 9.5 14.3 10.55 9.5 10.55 8 11.75 6.5 10.55 1.7 10.55Z"/>
+</svg>

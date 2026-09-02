@@ -22,6 +22,7 @@ ext.enhancedUI.widget.WatchlistTab = function ( cfg ) {
 	this.rows = [];
 	this.removeTargets = [];
 	this.query = '';
+	this.sections = [];
 
 	this.$body = $( '<div>' ).addClass( 'enhanced-ui-watchlist-tab-body' );
 	this.$toolbar = $( '<div>' ).addClass( 'enhanced-ui-watchlist-tab-toolbar' );
@@ -38,17 +39,54 @@ OO.inheritClass( ext.enhancedUI.widget.WatchlistTab, OO.ui.TabPanelLayout );
 /**
  * Build a tab label that combines an icon and text.
  *
- * @param {string} icon OOUI icon name
+ * The icon is drawn from a bundled SVG via a CSS mask (see
+ * `ext.enhancedUI.special.watchlist.css`), so no icon webfont has to be present in the
+ * wiki. `icon` is the bare glyph name the provider returns; it selects the modifier
+ * class `enhanced-ui-watchlist-tab-icon--<name>`.
+ *
+ * @param {string} icon Glyph name, e.g. "file-earmark"
  * @param {string} title
  * @return {jQuery}
  */
 ext.enhancedUI.widget.WatchlistTab.buildTabLabel = function ( icon, title ) {
 	const $label = $( '<span>' ).addClass( 'enhanced-ui-watchlist-tab-label' );
 	if ( icon ) {
-		$label.append( new OO.ui.IconWidget( { icon: icon } ).$element );
+		// The following classes are used here:
+		// * enhanced-ui-watchlist-tab-icon--file-earmark
+		// * enhanced-ui-watchlist-tab-icon--tag
+		// * enhanced-ui-watchlist-tab-icon--book
+		// * enhanced-ui-watchlist-tab-icon--namespaces
+		$label.append(
+			$( '<span>' )
+				.addClass(
+					'enhanced-ui-watchlist-tab-icon enhanced-ui-watchlist-tab-icon--' + icon
+				)
+				.attr( 'aria-hidden', 'true' )
+		);
 	}
 	$label.append( $( '<span>' ).text( title ) );
 	return $label;
+};
+
+/**
+ * Resolve a per-tab message. Each watched-item type carries its own fully written
+ * message (`<base>-<key>`, e.g. `<base>-clear-all-pages`) so translations do not have
+ * to splice a lower-cased tab name into a sentence, which only reads correctly in
+ * English. Falls back to the generic `<base>` message (with the untouched tab title as
+ * `$1`) for provider types contributed by other extensions that ship no dedicated one.
+ *
+ * @param {string} base Message key without the type suffix
+ * @return {mw.Message}
+ */
+ext.enhancedUI.widget.WatchlistTab.prototype.getTypeMessage = function ( base ) {
+	const specific = base + '-' + this.provider.getKey();
+	// eslint-disable-next-line mediawiki/msg-doc
+	if ( mw.message( specific ).exists() ) {
+		// eslint-disable-next-line mediawiki/msg-doc
+		return mw.message( specific );
+	}
+	// eslint-disable-next-line mediawiki/msg-doc
+	return mw.message( base, this.provider.getTabTitle() );
 };
 
 ext.enhancedUI.widget.WatchlistTab.prototype.ensureLoaded = function () {
@@ -76,6 +114,7 @@ ext.enhancedUI.widget.WatchlistTab.prototype.ensureLoaded = function () {
 
 ext.enhancedUI.widget.WatchlistTab.prototype.render = function ( sections ) {
 	this.rows = [];
+	this.sections = [];
 	this.removeTargets = [];
 	this.$toolbar.empty();
 	this.$list.empty();
@@ -86,10 +125,7 @@ ext.enhancedUI.widget.WatchlistTab.prototype.render = function ( sections ) {
 	}
 
 	this.clearButton = new OO.ui.ButtonWidget( {
-		label: mw.message(
-			'enhanced-standard-uis-watchlist-clear-all',
-			this.provider.getTabTitle()
-		).text(),
+		label: this.getTypeMessage( 'enhanced-standard-uis-watchlist-clear-all' ).text(),
 		framed: false,
 		flags: [ 'destructive' ],
 		classes: [ 'enhanced-ui-watchlist-clear-all' ]
@@ -106,20 +142,92 @@ ext.enhancedUI.widget.WatchlistTab.prototype.render = function ( sections ) {
 
 ext.enhancedUI.widget.WatchlistTab.prototype.renderSection = function ( section ) {
 	const $section = $( '<section>' ).addClass( 'enhanced-ui-watchlist-section' );
+	const $list = $( '<ul>' )
+		.addClass( 'enhanced-ui-watchlist-list' )
+		.attr( 'id', OO.ui.generateElementId() );
+	const record = { $section: $section, $list: $list, expander: null, collapsible: false, expanded: true };
+	const items = section.items || [];
+
 	if ( section.section ) {
-		const $heading = $( '<h2>' ).text( section.section );
+		const $heading = $( '<h2>' ).addClass( 'enhanced-ui-watchlist-section-heading' );
+		if ( section.collapsible ) {
+			record.collapsible = true;
+			record.expanded = false;
+			$section.addClass( 'enhanced-ui-watchlist-section-collapsible collapsed' );
+			record.expander = this.makeExpander( record );
+			$heading
+				.addClass( 'enhanced-ui-watchlist-section-heading--toggle' )
+				.append( record.expander.$element );
+			$heading.on( 'click', ( e ) => {
+				// The expander button and the remove button handle their own clicks.
+				if ( $( e.target ).closest(
+					'.enhanced-ui-watchlist-expander, .enhanced-ui-watchlist-remove'
+				).length ) {
+					return;
+				}
+				this.toggleSection( record );
+			} );
+		}
+		$heading.append(
+			$( '<span>' ).addClass( 'enhanced-ui-watchlist-section-title' ).text( section.section )
+		);
 		if ( section.target ) {
 			this.removeTargets.push( section.target );
 			$heading.append( this.makeRemoveButton( section.target, $section, true ) );
 		}
 		$section.append( $heading );
 	}
-	const $list = $( '<ul>' ).addClass( 'enhanced-ui-watchlist-list' );
-	( section.items || [] ).forEach( ( item ) => {
+
+	items.forEach( ( item ) => {
 		$list.append( this.renderRow( item, $section ) );
 	} );
 	$section.append( $list );
+
+	this.sections.push( record );
 	return $section;
+};
+
+ext.enhancedUI.widget.WatchlistTab.prototype.makeExpander = function ( record ) {
+	const expandLabel = mw.message( 'enhanced-standard-uis-watchlist-section-expand-label' ).text();
+	const expander = new OO.ui.ButtonWidget( {
+		icon: 'expand',
+		framed: false,
+		label: expandLabel,
+		invisibleLabel: true,
+		title: expandLabel,
+		classes: [ 'enhanced-ui-watchlist-expander' ]
+	} );
+	expander.$button
+		.attr( 'aria-expanded', 'false' )
+		.attr( 'aria-controls', record.$list.attr( 'id' ) );
+	expander.connect( this, { click: [ 'toggleSection', record ] } );
+	return expander;
+};
+
+/**
+ * Expand or collapse a namespace section. Pass `force` to set an explicit state.
+ *
+ * @param {Object} record entry of this.sections
+ * @param {boolean} [force] true to expand, false to collapse
+ */
+ext.enhancedUI.widget.WatchlistTab.prototype.toggleSection = function ( record, force ) {
+	if ( !record.collapsible ) {
+		return;
+	}
+	const expanded = force === undefined ? !record.expanded : force;
+	if ( expanded === record.expanded ) {
+		return;
+	}
+	record.expanded = expanded;
+	record.$section.toggleClass( 'collapsed', !expanded );
+	if ( record.expander ) {
+		const label = expanded ?
+			mw.message( 'enhanced-standard-uis-watchlist-section-collapse-label' ).text() :
+			mw.message( 'enhanced-standard-uis-watchlist-section-expand-label' ).text();
+		record.expander.setLabel( label );
+		record.expander.setTitle( label );
+		record.expander.$button.attr( 'aria-expanded', expanded ? 'true' : 'false' );
+	}
 };
 
 ext.enhancedUI.widget.WatchlistTab.prototype.renderRow = function ( item, $section ) {
@@ -179,10 +287,7 @@ ext.enhancedUI.widget.WatchlistTab.prototype.onRemove = function ( target, $elem
 
 ext.enhancedUI.widget.WatchlistTab.prototype.onClearAll = function () {
 	OO.ui.confirm(
-		mw.message(
-			'enhanced-standard-uis-watchlist-clear-confirm',
-			this.provider.getTabTitle()
-		).text(),
+		this.getTypeMessage( 'enhanced-standard-uis-watchlist-clear-confirm' ).text(),
 		{
 			actions: [
 				{
@@ -212,6 +317,8 @@ ext.enhancedUI.widget.WatchlistTab.prototype.onClearAll = function () {
 };
 
 ext.enhancedUI.widget.WatchlistTab.prototype.renderEmpty = function () {
+	this.rows = [];
+	this.sections = [];
 	this.$toolbar.empty();
 	this.$noResults.addClass( 'hidden' );
 	this.$list.empty().append(
@@ -259,7 +366,9 @@ ext.enhancedUI.widget.WatchlistTab.prototype.filter = function ( query ) {
 
 /**
  * Apply the remembered query to the currently rendered rows (case-insensitive substring
- * on the label) and toggle the "no matching results" hint.
+ * on the label) and toggle the "no matching results" hint. Collapsible sections are
+ * expanded while a query is active, so matches are not hidden inside a collapsed
+ * section, and collapse again once the query is cleared.
  */
 ext.enhancedUI.widget.WatchlistTab.prototype.applyFilter = function () {
 	const needle = this.query.toLowerCase();
@@ -271,9 +380,12 @@ ext.enhancedUI.widget.WatchlistTab.prototype.applyFilter = function () {
 			matches++;
 		}
 	} );
-	this.$list.find( '.enhanced-ui-watchlist-section' ).each( function () {
-		const hasVisible = $( this ).find( '.enhanced-ui-watchlist-item:not(.hidden)' ).length > 0;
-		$( this ).toggleClass( 'hidden', !hasVisible );
+	this.sections.forEach( ( record ) => {
+		const hasVisible = record.$list.find( '.enhanced-ui-watchlist-item:not(.hidden)' ).length > 0;
+		record.$section.toggleClass( 'hidden', !hasVisible );
+		if ( record.collapsible ) {
+			this.toggleSection( record, needle !== '' && hasVisible );
+		}
 	} );
 
 	this.$noResults.toggleClass( 'hidden', !( needle !== '' && this.rows.length > 0 && matches === 0 ) );

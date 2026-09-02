@@ -46,8 +46,7 @@
 					"services": [
 						"WatchedItemStore",
 						"TitleFactory",
-						"NamespaceInfo",
-						"PageStore"
+						"NamespaceInfo"
 					],
 					"position": 100
 				}
@@ -432,13 +431,23 @@
 			"messages": [
 				"enhanced-standard-uis-watchlist-tab-namespaces",
 				"enhanced-standard-uis-watchlist-clear-all",
+				"enhanced-standard-uis-watchlist-clear-all-pages",
+				"enhanced-standard-uis-watchlist-clear-all-categories",
+				"enhanced-standard-uis-watchlist-clear-all-namespaces",
+				"enhanced-standard-uis-watchlist-clear-all-books",
 				"enhanced-standard-uis-watchlist-clear-confirm",
+				"enhanced-standard-uis-watchlist-clear-confirm-pages",
+				"enhanced-standard-uis-watchlist-clear-confirm-categories",
+				"enhanced-standard-uis-watchlist-clear-confirm-namespaces",
+				"enhanced-standard-uis-watchlist-clear-confirm-books",
 				"enhanced-standard-uis-watchlist-clear-confirm-action",
 				"enhanced-standard-uis-watchlist-remove-tooltip",
 				"enhanced-standard-uis-watchlist-empty",
 				"enhanced-standard-uis-watchlist-no-results",
 				"enhanced-standard-uis-watchlist-load-error",
 				"enhanced-standard-uis-watchlist-retry",
+				"enhanced-standard-uis-watchlist-section-expand-label",
+				"enhanced-standard-uis-watchlist-section-collapse-label",
 				"cancel"
 			],
 			"dependencies": [
@@ -446,8 +455,8 @@
 				"oojs-ui-widgets",
 				"oojs-ui-windows",
 				"oojs-ui.styles.icons-accessibility",
-				"oojs-ui.styles.icons-content",
 				"oojs-ui.styles.icons-moderation",
+				"oojs-ui.styles.icons-movement",
 				"mediawiki.api"
 			]
 		}
