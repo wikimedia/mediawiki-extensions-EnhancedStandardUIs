@@ -72,12 +72,7 @@ abstract class GenericWatchlistItemProvider implements IWatchlistItemProvider {
 			if ( !isset( $grouped[$ns] ) ) {
 				$grouped[$ns] = [];
 			}
-			$grouped[$ns][] = [
-				'prefixedText' => $title->getPrefixedText(),
-				'label' => $title->getText(),
-				'url' => $title->getLocalURL(),
-				'exists' => $title->isKnown()
-			];
+			$grouped[$ns][] = $this->titleToItem( $title );
 		}
 
 		ksort( $grouped );
@@ -89,11 +84,54 @@ abstract class GenericWatchlistItemProvider implements IWatchlistItemProvider {
 			} );
 			$sections[] = [
 				'section' => $this->getSectionLabel( $ns ),
+				'collapsible' => $this->sectionsCollapsible(),
 				'items' => $items
 			];
 		}
 
 		return $sections;
+	}
+
+	/**
+	 * Whether the client should render an expander before each namespace heading so the
+	 * section can be collapsed. Off by default; providers that produce many namespace
+	 * sections (see {@see \MediaWiki\Extension\EnhancedStandardUIs\Watchlist\Provider\PageProvider})
+	 * enable it.
+	 *
+	 * @return bool
+	 */
+	protected function sectionsCollapsible(): bool {
+		return false;
+	}
+
+	/**
+	 * The client-side item row for a single watched title.
+	 *
+	 * @param Title $title
+	 * @return array
+	 */
+	protected function titleToItem( Title $title ): array {
+		return [
+			'prefixedText' => $title->getPrefixedText(),
+			'label' => $title->getText(),
+			'url' => $title->getLocalURL(),
+			'exists' => $title->isKnown()
+		];
+	}
+
+	/**
+	 * Wrap a flat list of item rows as a single head-less section, sorted by label.
+	 * Returns an empty result (no section) when there is nothing to show.
+	 *
+	 * @param array[] $items
+	 * @return array
+	 */
+	protected function singleFlatSection( array $items ): array {
+		usort( $items, static function ( $a, $b ) {
+			return strcasecmp( $a['label'], $b['label'] );
+		} );
+
+		return $items ? [ [ 'items' => $items ] ] : [];
 	}
 
 	/**

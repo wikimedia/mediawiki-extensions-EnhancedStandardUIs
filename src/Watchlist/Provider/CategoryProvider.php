@@ -2,7 +2,6 @@
 
 namespace MediaWiki\Extension\EnhancedStandardUIs\Watchlist\Provider;
 
-use MediaWiki\Category\Category;
 use MediaWiki\Extension\EnhancedStandardUIs\Watchlist\GenericWatchlistItemProvider;
 use MediaWiki\User\User;
 use MessageLocalizer;
@@ -38,34 +37,17 @@ class CategoryProvider extends GenericWatchlistItemProvider {
 	}
 
 	/**
+	 * A single, un-grouped list of the watched category pages. Each link points at the
+	 * category page itself.
+	 *
 	 * @inheritDoc
 	 */
 	public function getItems( User $user ): array {
-		$categories = $this->getScopedTitles( $user );
-		usort( $categories, static function ( $a, $b ) {
-			return strcasecmp( $a->getText(), $b->getText() );
-		} );
-
-		$sections = [];
-		foreach ( $categories as $categoryTitle ) {
-			$category = Category::newFromTitle( $categoryTitle );
-
-			$items = [];
-			foreach ( $category->getMembers() as $member ) {
-				$items[] = [
-					'label' => $member->getPrefixedText(),
-					'url' => $member->getLocalURL(),
-					'exists' => $member->isKnown()
-				];
-			}
-
-			$sections[] = [
-				'section' => $categoryTitle->getText(),
-				'target' => $categoryTitle->getPrefixedText(),
-				'items' => $items
-			];
+		$items = [];
+		foreach ( $this->getScopedTitles( $user ) as $categoryTitle ) {
+			$items[] = $this->titleToItem( $categoryTitle );
 		}
 
-		return $sections;
+		return $this->singleFlatSection( $items );
 	}
 }

@@ -27,6 +27,16 @@ class EnhancedEditWatchlist extends SpecialEditWatchlist {
 	}
 
 	/**
+	 * The enhanced view has its own header bar, so suppress the core "For <username>"
+	 * subtitle that {@see SpecialEditWatchlist::outputSubtitle()} would otherwise add.
+	 *
+	 * @inheritDoc
+	 */
+	protected function outputSubtitle() {
+		// Intentionally left blank.
+	}
+
+	/**
 	 * @inheritDoc
 	 */
 	protected function executeViewEditWatchlist() {

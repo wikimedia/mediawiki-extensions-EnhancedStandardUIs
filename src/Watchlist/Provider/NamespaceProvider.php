@@ -3,33 +3,11 @@
 namespace MediaWiki\Extension\EnhancedStandardUIs\Watchlist\Provider;
 
 use MediaWiki\Extension\EnhancedStandardUIs\Watchlist\GenericWatchlistItemProvider;
-use MediaWiki\Page\PageStore;
-use MediaWiki\Title\NamespaceInfo;
-use MediaWiki\Title\TitleFactory;
+use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\User\User;
-use MediaWiki\Watchlist\WatchedItemStoreInterface;
 use MessageLocalizer;
 
 class NamespaceProvider extends GenericWatchlistItemProvider {
-
-	/** @var PageStore */
-	private $pageStore;
-
-	/**
-	 * @param WatchedItemStoreInterface $watchedItemStore
-	 * @param TitleFactory $titleFactory
-	 * @param NamespaceInfo $namespaceInfo
-	 * @param PageStore $pageStore
-	 */
-	public function __construct(
-		WatchedItemStoreInterface $watchedItemStore,
-		TitleFactory $titleFactory,
-		NamespaceInfo $namespaceInfo,
-		PageStore $pageStore
-	) {
-		parent::__construct( $watchedItemStore, $titleFactory, $namespaceInfo );
-		$this->pageStore = $pageStore;
-	}
 
 	/**
 	 * @inheritDoc
@@ -49,7 +27,7 @@ class NamespaceProvider extends GenericWatchlistItemProvider {
 	 * @inheritDoc
 	 */
 	public function getTabIcon(): string {
-		return 'references';
+		return 'namespaces';
 	}
 
 	/**
@@ -62,6 +40,9 @@ class NamespaceProvider extends GenericWatchlistItemProvider {
 	}
 
 	/**
+	 * A single, un-grouped list of the watched namespaces. Each link points at
+	 * Special:AllPages pre-filtered to that namespace.
+	 *
 	 * @inheritDoc
 	 */
 	public function getItems( User $user ): array {
@@ -80,56 +61,22 @@ class NamespaceProvider extends GenericWatchlistItemProvider {
 			$namespaces[$ns] = true;
 		}
 
-		$sections = [];
+		$allPages = SpecialPage::getTitleFor( 'Allpages' );
+
+		$items = [];
 		foreach ( array_keys( $namespaces ) as $ns ) {
 			$markerTitle = $this->titleFactory->makeTitleSafe( $ns, self::NAMESPACE_WATCH_MARKER );
 			if ( !$markerTitle ) {
 				continue;
 			}
-
-			$items = [];
-			foreach ( $this->getNamespacePages( $ns ) as $page ) {
-				$items[] = [
-					'label' => $page->getText(),
-					'url' => $page->getLocalURL(),
-					'exists' => true
-				];
-			}
-
-			$sections[] = [
-				'section' => $this->getSectionLabel( $ns ),
-				'target' => $markerTitle->getPrefixedText(),
-				'items' => $items
+			$items[] = [
+				'prefixedText' => $markerTitle->getPrefixedText(),
+				'label' => $this->getSectionLabel( $ns ),
+				'url' => $allPages->getLocalURL( [ 'namespace' => $ns ] ),
+				'exists' => true
 			];
 		}
 
-		usort( $sections, static function ( $a, $b ) {
-			return strcasecmp( $a['section'], $b['section'] );
-		} );
-
-		return $sections;
-	}
-
-	/**
-	 * The pages that currently exist in a watched namespace, for display under its heading.
-	 *
-	 * @param int $namespace
-	 * @return \MediaWiki\Title\Title[]
-	 */
-	private function getNamespacePages( int $namespace ): array {
-		$records = $this->pageStore->newSelectQueryBuilder()
-			->whereNamespace( $namespace )
-			->orderByTitle()
-			->caller( __METHOD__ )
-			->fetchPageRecords();
-
-		$titles = [];
-		foreach ( $records as $record ) {
-			$title = $this->titleFactory->newFromPageIdentity( $record );
-			if ( $title ) {
-				$titles[] = $title;
-			}
-		}
-		return $titles;
+		return $this->singleFlatSection( $items );
 	}
 }
