@@ -20,6 +20,7 @@
 				mobile: isMobile
 			} );
 			$( $preferencesCnt ).append( preferencesPanel.$element );
+			mw.hook( 'enhancedUI.preferences.loaded' ).fire();
 		} );
 	} );
 
