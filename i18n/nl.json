@@ -55,6 +55,7 @@
 	"enhanced-standard-uis-allpages-namespace-list-label": "Naamruimte",
 	"enhanced-standard-uis-paginator-aria-label": "Paginering",
 	"enhanced-standard-uis-allpages-watch-label": "Pagina “$1” volgen",
+	"enhanced-standard-uis-allpages-unwatch-label": "Pagina “$1” ontvolgen",
 	"enhanced-standard-uis-allpages-namespace-watch-label": "Naamruimte $1 volgen",
 	"enhanced-standard-uis-allpages-namespace-unwatch-label": "Naamruimte $1 niet langer volgen",
 	"enhanced-standard-uis-allpages-namespace-watched": "Naamruimte \"$1\" is toegevoegd aan uw volglijst",
@@ -114,5 +115,8 @@
 	"enhanced-standard-uis-watchlist-clear-confirm-action": "Alles wissen",
 	"enhanced-standard-uis-watchlist-remove-tooltip": "Verwijderen uit volglijst",
 	"enhanced-standard-uis-watchlist-empty": "Er zijn hier geen gevolgde items.",
+	"enhanced-standard-uis-watchlist-no-results": "Er zijn geen resultaten gevonden die overeenkomen met uw zoekopdracht.",
+	"enhanced-standard-uis-watchlist-load-error": "De gevolgde items konden niet worden geladen.",
+	"enhanced-standard-uis-watchlist-retry": "Opnieuw proberen",
 	"enhanced-standard-uis-watchlist-main-namespace-label": "Hoofdnaamruimte"
 }

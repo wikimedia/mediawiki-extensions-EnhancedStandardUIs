@@ -54,6 +54,7 @@
 	"enhanced-standard-uis-allpages-namespace-list-label": "Meel magaca",
 	"enhanced-standard-uis-paginator-aria-label": "Pagination",
 	"enhanced-standard-uis-allpages-watch-label": "La soco bogga $1",
+	"enhanced-standard-uis-allpages-unwatch-label": "Ka saar liiska la socodka bogga $1",
 	"enhanced-standard-uis-allpages-namespace-watch-label": "La soco meel magaca $1",
 	"enhanced-standard-uis-allpages-namespace-unwatch-label": "Ka jooji la socodka meel magaca $1",
 	"enhanced-standard-uis-allpages-namespace-watched": "Meel magaca \"$1\" ayaa lagu daray liiskaaga la socodka",
@@ -113,5 +114,8 @@
 	"enhanced-standard-uis-watchlist-clear-confirm-action": "Nadiifi dhammaan",
 	"enhanced-standard-uis-watchlist-remove-tooltip": "Ka saar liiska la socodka",
 	"enhanced-standard-uis-watchlist-empty": "Halkan ma jiraan waxyaabo la socda.",
+	"enhanced-standard-uis-watchlist-no-results": "Ma jiro shay u dhigma raadintaada.",
+	"enhanced-standard-uis-watchlist-load-error": "Shayada la socda lama soo rari karin.",
+	"enhanced-standard-uis-watchlist-retry": "Isku day mar kale",
 	"enhanced-standard-uis-watchlist-main-namespace-label": "Bogga Hore"
 }

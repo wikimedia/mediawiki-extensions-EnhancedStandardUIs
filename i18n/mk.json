@@ -54,6 +54,7 @@
 	"enhanced-standard-uis-allpages-namespace-list-label": "Именски простор",
 	"enhanced-standard-uis-paginator-aria-label": "Пагинација",
 	"enhanced-standard-uis-allpages-watch-label": "Набљудувај ја страницата $1",
+	"enhanced-standard-uis-allpages-unwatch-label": "Тргни ја страницата $1 од набљудувани",
 	"enhanced-standard-uis-allpages-namespace-watch-label": "Набљудувај го именскиот простор $1",
 	"enhanced-standard-uis-allpages-namespace-unwatch-label": "Тргни го именскиот простор $1 од набљудуваните",
 	"enhanced-standard-uis-allpages-namespace-watched": "Додаден именскиот простор „$1“ во набљудуваните",
@@ -113,5 +114,8 @@
 	"enhanced-standard-uis-watchlist-clear-confirm-action": "Исчисти сè",
 	"enhanced-standard-uis-watchlist-remove-tooltip": "Отстрани од набљудуваните",
 	"enhanced-standard-uis-watchlist-empty": "Тука нема набљудувани ставки.",
+	"enhanced-standard-uis-watchlist-no-results": "Нема ставки што одговараат на пребараното.",
+	"enhanced-standard-uis-watchlist-load-error": "Набљудуваните ставки не можат да се вчитаат.",
+	"enhanced-standard-uis-watchlist-retry": "Обиди се повторно",
 	"enhanced-standard-uis-watchlist-main-namespace-label": "Главна"
 }
