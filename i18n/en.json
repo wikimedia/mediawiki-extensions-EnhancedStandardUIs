@@ -127,5 +127,6 @@
 	"enhanced-standard-uis-watchlist-retry": "Try again",
 	"enhanced-standard-uis-watchlist-main-namespace-label": "Main",
 	"enhanced-standard-uis-watchlist-section-expand-label": "Expand this section",
-	"enhanced-standard-uis-watchlist-section-collapse-label": "Collapse this section"
+	"enhanced-standard-uis-watchlist-section-collapse-label": "Collapse this section",
+	"enhanced-standard-uis-allpages-exclude-namespaces-label": "Exclude namespaces from \"All pages\""
 }
