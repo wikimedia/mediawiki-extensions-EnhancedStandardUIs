@@ -113,5 +113,6 @@
 	"enhanced-standard-uis-watchlist-clear-confirm-action": "Label of the confirm button in the clear-all dialog",
 	"enhanced-standard-uis-watchlist-remove-tooltip": "Tooltip of the eye icon button that removes a single item from the watchlist",
 	"enhanced-standard-uis-watchlist-empty": "Placeholder shown when a tab contains no watched items",
-	"enhanced-standard-uis-watchlist-main-namespace-label": "Section heading used for pages in the main namespace"
+	"enhanced-standard-uis-watchlist-main-namespace-label": "Section heading used for pages in the main namespace",
+	"enhanced-standard-uis-allpages-exclude-namespaces-label": "Label for $wgEnhancedUIsAllPagesNonContentNamespaceOverride in ConfigManager"
 }
