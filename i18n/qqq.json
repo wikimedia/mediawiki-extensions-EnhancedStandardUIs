@@ -127,5 +127,6 @@
 	"enhanced-standard-uis-watchlist-retry": "Label of the button that retries a failed request for the items of a tab on Special:EditWatchlist",
 	"enhanced-standard-uis-watchlist-main-namespace-label": "Section heading used for pages in the main namespace",
 	"enhanced-standard-uis-watchlist-section-expand-label": "Invisible label / tooltip of the expander button before a collapsible namespace heading, shown while the section is collapsed",
-	"enhanced-standard-uis-watchlist-section-collapse-label": "Invisible label / tooltip of the expander button before a collapsible namespace heading, shown while the section is expanded"
+	"enhanced-standard-uis-watchlist-section-collapse-label": "Invisible label / tooltip of the expander button before a collapsible namespace heading, shown while the section is expanded",
+	"enhanced-standard-uis-allpages-exclude-namespaces-label": "Label for $wgEnhancedUIsAllPagesNonContentNamespaceOverride in ConfigManager"
 }

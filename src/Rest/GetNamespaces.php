@@ -2,6 +2,7 @@
 
 namespace MediaWiki\Extension\EnhancedStandardUIs\Rest;
 
+use MediaWiki\Config\Config;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Languages\LanguageFactory;
 use MediaWiki\Permissions\PermissionManager;
@@ -26,6 +27,8 @@ class GetNamespaces extends SimpleHandler {
 	private NamespaceInfo $namespaceInfo;
 	private LanguageFactory $languageFactory;
 	private WatchedItemStoreInterface $watchedItemStore;
+	/** @var Config */
+	private Config $mainConfig;
 
 	/**
 	 * @param TitleFactory $titleFactory
@@ -34,10 +37,11 @@ class GetNamespaces extends SimpleHandler {
 	 * @param NamespaceInfo $namespaceInfo
 	 * @param LanguageFactory $languageFactory
 	 * @param WatchedItemStoreInterface $watchedItemStore
+	 * @param Config $mainConfig
 	 */
 	public function __construct( TitleFactory $titleFactory, PermissionManager $permissionManager,
 		LoadBalancer $loadBalancer, NamespaceInfo $namespaceInfo, LanguageFactory $languageFactory,
-		WatchedItemStoreInterface $watchedItemStore
+		WatchedItemStoreInterface $watchedItemStore, Config $mainConfig
 	) {
 		$this->titleFactory = $titleFactory;
 		$this->permissionManager = $permissionManager;
@@ -45,6 +49,7 @@ class GetNamespaces extends SimpleHandler {
 		$this->namespaceInfo = $namespaceInfo;
 		$this->languageFactory = $languageFactory;
 		$this->watchedItemStore = $watchedItemStore;
+		$this->mainConfig = $mainConfig;
 	}
 
 	/**
@@ -58,9 +63,13 @@ class GetNamespaces extends SimpleHandler {
 		$namespaces = [];
 		$langCode = $context->getLanguage();
 		$lang = $this->languageFactory->getLanguage( $langCode );
+		$excludedNamespaces = $this->mainConfig->get( 'EnhancedUIsAllPagesExcludedNamespaces' ) ?? [];
 
 		$readableNamespaces = [];
 		foreach ( $lang->getFormattedNamespaces() as $ns => $title ) {
+			if ( in_array( $ns, $excludedNamespaces ) ) {
+				continue;
+			}
 			if ( $ns < 0 ) {
 				continue;
 			}
