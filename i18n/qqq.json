@@ -119,5 +119,6 @@
 	"enhanced-standard-uis-watchlist-main-namespace-label": "Section heading used for pages in the main namespace",
 	"enhanced-standard-uis-history-grid-header-edit-type-label": "Column header label in history grid",
 	"enhanced-standard-uis-history-grid-edittype-minor-label": "Accessible label for the minor edit icon in the history grid",
-	"enhanced-standard-uis-history-grid-edittype-major-label": "Accessible label for the major edit icon in the history grid"
+	"enhanced-standard-uis-history-grid-edittype-major-label": "Accessible label for the major edit icon in the history grid",
+	"enhanced-standard-uis-allpages-exclude-namespaces-label": "Label for $wgEnhancedUIsAllPagesNonContentNamespaceOverride in ConfigManager"
 }

@@ -39,6 +39,9 @@
 						"maintenanceadmin"
 					]
 				}
+			},
+			"ConfigDefinitionRegistry": {
+				"EnhancedUIsAllPagesExcludedNamespaces": "MediaWiki\\Extension\\EnhancedStandardUIs\\ConfigDefinition\\EnhancedUIsAllPagesExcludedNamespaces::getInstance"
 			}
 		},
 		"BlueSpiceVisualEditorConnector": {
@@ -87,6 +90,10 @@
 		"EnhancedUIsVersionHistoryToolbarOffset": {
 			"value": 0,
 			"public": true
+		},
+		"EnhancedUIsAllPagesExcludedNamespaces": {
+			"value": [],
+			"description": "List of namespaces that will be excluded from Special:Pages"
 		}
 	},
 	"Hooks": {
@@ -347,7 +354,8 @@
 				"PermissionManager",
 				"DBLoadBalancer",
 				"NamespaceInfo",
-				"LanguageFactory"
+				"LanguageFactory",
+				"MainConfig"
 			]
 		}
 	],
