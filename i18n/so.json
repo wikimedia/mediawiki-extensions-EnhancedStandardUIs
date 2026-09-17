@@ -110,12 +110,22 @@
 	"enhanced-standard-uis-watchlist-search-label": "Raadi waxyaabaha la socda",
 	"enhanced-standard-uis-watchlist-view-changes": "Eeg isbeddellada ku jira liiska la-socodka",
 	"enhanced-standard-uis-watchlist-clear-all": "Ka saar dhammaan $1 ee la socdo",
+	"enhanced-standard-uis-watchlist-clear-all-pages": "Nadiifi dhammaan bogagga la daawado",
+	"enhanced-standard-uis-watchlist-clear-all-categories": "Nadiifi dhammaan qaybaha la daawado",
+	"enhanced-standard-uis-watchlist-clear-all-namespaces": "Nadiifi dhammaan meelaha magacyada la daawado",
+	"enhanced-standard-uis-watchlist-clear-all-books": "Nadiifi dhammaan buugaagta la daawado",
 	"enhanced-standard-uis-watchlist-clear-confirm": "Ma hubtaa inaad rabto inaad liiskaaga la socodka ka saarto dhammaan $1 ee aad la socoto?",
+	"enhanced-standard-uis-watchlist-clear-confirm-pages": "Ma dhab ahaan doonaysaa inaad dhammaan bogagga la daawado ka saarto liiskaaga la socodka?",
+	"enhanced-standard-uis-watchlist-clear-confirm-categories": "Ma dhab ahaan doonaysaa inaad dhammaan qaybaha la daawado ka saarto liiskaaga la socodka?",
+	"enhanced-standard-uis-watchlist-clear-confirm-namespaces": "Ma dhab ahaan doonaysaa inaad dhammaan meel magacyada la daawado ka saarto liiskaaga la socodka?",
+	"enhanced-standard-uis-watchlist-clear-confirm-books": "Ma dhab ahaan doonaysaa inaad dhammaan buugaagta la daawado ka saarto liiskaaga la socodka?",
 	"enhanced-standard-uis-watchlist-clear-confirm-action": "Nadiifi dhammaan",
 	"enhanced-standard-uis-watchlist-remove-tooltip": "Ka saar liiska la socodka",
 	"enhanced-standard-uis-watchlist-empty": "Halkan ma jiraan waxyaabo la socda.",
 	"enhanced-standard-uis-watchlist-no-results": "Ma jiro shay u dhigma raadintaada.",
 	"enhanced-standard-uis-watchlist-load-error": "Shayada la socda lama soo rari karin.",
 	"enhanced-standard-uis-watchlist-retry": "Isku day mar kale",
-	"enhanced-standard-uis-watchlist-main-namespace-label": "Bogga Hore"
+	"enhanced-standard-uis-watchlist-main-namespace-label": "Bogga Hore",
+	"enhanced-standard-uis-watchlist-section-expand-label": "Ballaadhi qaybtan",
+	"enhanced-standard-uis-watchlist-section-collapse-label": "Yaree qaybtan"
 }
