@@ -199,18 +199,30 @@ html[ dir='rtl' ] .enhanced-ui-watchlist-section-collapsible.collapsed .enhanced
 	flex: 0 0 auto;
 }
 
-/* Match the grey of the watched star on Special:AllPages, which is the OOUI icon
-   (opacity 0.87) inside an anchor that is dimmed to 0.6. Dimming the button rather than
-   the icon avoids fighting the more specific OOUI rule
-   `.oo-ui-buttonElement.oo-ui-widget-enabled > .oo-ui-buttonElement-button >
-   .oo-ui-iconElement-icon:not( .oo-ui-image-invert )`. */
 .enhanced-ui-watchlist-remove > .oo-ui-buttonElement-button {
-	opacity: 0.6;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 28px;
+	min-height: 28px;
+	padding: 0;
 }
 
-.enhanced-ui-watchlist-remove > .oo-ui-buttonElement-button:hover,
-.enhanced-ui-watchlist-remove > .oo-ui-buttonElement-button:focus {
-	opacity: 1;
+.enhanced-ui-watchlist-remove > .oo-ui-buttonElement-button::before {
+	content: '';
+	display: block;
+	width: 1.4285714em;
+	min-width: 20px;
+	height: 1.4285714em;
+	min-height: 20px;
+	background-color: #7c7d7d;
+	-webkit-mask: url( ./../images/unwatch-icon.svg ) center/contain no-repeat;
+	mask: url( ./../images/unwatch-icon.svg ) center/contain no-repeat;
+}
+
+.enhanced-ui-watchlist-remove > .oo-ui-buttonElement-button:hover::before,
+.enhanced-ui-watchlist-remove > .oo-ui-buttonElement-button:focus::before {
+	background-color: #666;
 }
 
 .enhanced-ui-watchlist-empty,
