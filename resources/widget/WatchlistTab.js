@@ -251,10 +251,12 @@ ext.enhancedUI.widget.WatchlistTab.prototype.renderRow = function ( item, $secti
 };
 
 ext.enhancedUI.widget.WatchlistTab.prototype.makeRemoveButton = function ( target, $element, isSection ) {
+	const label = mw.message( 'enhanced-standard-uis-watchlist-remove-tooltip' ).text();
 	const button = new OO.ui.ButtonWidget( {
-		icon: 'eye',
 		framed: false,
-		title: mw.message( 'enhanced-standard-uis-watchlist-remove-tooltip' ).text(),
+		label: label,
+		invisibleLabel: true,
+		title: label,
 		classes: [ 'enhanced-ui-watchlist-remove' ]
 	} );
 	button.connect( this, { click: [ 'onRemove', target, $element, isSection ] } );
