@@ -110,12 +110,22 @@
 	"enhanced-standard-uis-watchlist-search-label": "Procurar nos elementos vixiados",
 	"enhanced-standard-uis-watchlist-view-changes": "Ver os cambios na lista de vixilancia",
 	"enhanced-standard-uis-watchlist-clear-all": "Limpar todo o vixiado ($1)",
+	"enhanced-standard-uis-watchlist-clear-all-pages": "Limpar todas as páxinas vixiadas",
+	"enhanced-standard-uis-watchlist-clear-all-categories": "Limpar todas as categorías vixiadas",
+	"enhanced-standard-uis-watchlist-clear-all-namespaces": "Limpar todos os espazos de nomes vixiados",
+	"enhanced-standard-uis-watchlist-clear-all-books": "Limpar todos os libros vixiados",
 	"enhanced-standard-uis-watchlist-clear-confirm": "Queres eliminar todos os elementos ($1) vixiados da túa lista de vixilancia?",
+	"enhanced-standard-uis-watchlist-clear-confirm-pages": "Queres eliminar todas as páxinas vixiadas da túa lista de vixilancia?",
+	"enhanced-standard-uis-watchlist-clear-confirm-categories": "Queres eliminar todas as categorías vixiadas da túa lista de vixilancia?",
+	"enhanced-standard-uis-watchlist-clear-confirm-namespaces": "Queres eliminar todos os espazos de nomes vixiados da túa lista de vixilancia?",
+	"enhanced-standard-uis-watchlist-clear-confirm-books": "Queres eliminar todos os libros vixiados da túa lista de vixilancia?",
 	"enhanced-standard-uis-watchlist-clear-confirm-action": "Limpar todo",
 	"enhanced-standard-uis-watchlist-remove-tooltip": "Eliminar da lista de vixilancia",
 	"enhanced-standard-uis-watchlist-empty": "Non hai ningún elemento vixiado.",
 	"enhanced-standard-uis-watchlist-no-results": "Non hai ningún elemento que coincida coa túa busca.",
 	"enhanced-standard-uis-watchlist-load-error": "Non se puideron cargar os elementos vixiados.",
 	"enhanced-standard-uis-watchlist-retry": "Intentar de novo",
-	"enhanced-standard-uis-watchlist-main-namespace-label": "Principal"
+	"enhanced-standard-uis-watchlist-main-namespace-label": "Principal",
+	"enhanced-standard-uis-watchlist-section-expand-label": "Despregar esta sección",
+	"enhanced-standard-uis-watchlist-section-collapse-label": "Encartar esta sección"
 }
