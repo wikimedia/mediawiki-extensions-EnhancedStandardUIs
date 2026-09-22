@@ -43,6 +43,7 @@
 	"enhanced-standard-uis-allpages-filter-pages-label": "Filteren",
 	"enhanced-standard-uis-allpages-namespace-list-label": "Nummraum",
 	"enhanced-standard-uis-allpages-watch-label": "D'Säit $1 iwwerwaachen",
+	"enhanced-standard-uis-allpages-unwatch-label": "D'Säit $1 net méi iwwerwaachen",
 	"enhanced-standard-uis-allpages-pageinfo-label": "Säiteninformatioune fir $1 weisen",
 	"enhanced-standard-uis-allpages-filter-results-label": "$1 {{PLURAL:$1|Resultat|Resultater}} fonnt",
 	"enhanced-standard-uis-filelist-ga-title": "Fichieren",
@@ -76,5 +77,6 @@
 	"enhanced-standard-uis-watchlist-tab-namespaces": "Nummraim",
 	"enhanced-standard-uis-watchlist-view-changes": "Ännerungen op der Iwwerwaachungslëscht weisen",
 	"enhanced-standard-uis-watchlist-remove-tooltip": "Vun der Iwwerwaachungslëscht erofhuelen",
+	"enhanced-standard-uis-watchlist-retry": "Nach eng Kéier probéieren",
 	"enhanced-standard-uis-watchlist-main-namespace-label": "Haapt"
 }
