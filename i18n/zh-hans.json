@@ -130,5 +130,6 @@
 	"enhanced-standard-uis-watchlist-retry": "重试",
 	"enhanced-standard-uis-watchlist-main-namespace-label": "主",
 	"enhanced-standard-uis-watchlist-section-expand-label": "展开此章节",
-	"enhanced-standard-uis-watchlist-section-collapse-label": "折叠此章节"
+	"enhanced-standard-uis-watchlist-section-collapse-label": "折叠此章节",
+	"enhanced-standard-uis-allpages-exclude-namespaces-label": "从“所有页面”中排除命名空间"
 }
