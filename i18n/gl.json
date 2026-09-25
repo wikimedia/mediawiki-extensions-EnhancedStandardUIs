@@ -127,5 +127,6 @@
 	"enhanced-standard-uis-watchlist-retry": "Intentar de novo",
 	"enhanced-standard-uis-watchlist-main-namespace-label": "Principal",
 	"enhanced-standard-uis-watchlist-section-expand-label": "Despregar esta sección",
-	"enhanced-standard-uis-watchlist-section-collapse-label": "Encartar esta sección"
+	"enhanced-standard-uis-watchlist-section-collapse-label": "Encartar esta sección",
+	"enhanced-standard-uis-allpages-exclude-namespaces-label": "Excluír os espazos de nomes de «Todas as páxinas»"
 }
