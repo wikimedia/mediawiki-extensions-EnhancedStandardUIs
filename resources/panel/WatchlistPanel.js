@@ -45,7 +45,8 @@ ext.enhancedUI.panel.WatchlistPanel.prototype.setupTabs = function () {
 		const provider = new ProviderClass( {
 			key: descriptor.key,
 			title: descriptor.title,
-			icon: descriptor.icon
+			icon: descriptor.icon,
+			addItemsUrl: descriptor.addItemsUrl
 		} );
 		const tab = new ext.enhancedUI.widget.WatchlistTab( { provider: provider } );
 		this.tabs.push( tab );

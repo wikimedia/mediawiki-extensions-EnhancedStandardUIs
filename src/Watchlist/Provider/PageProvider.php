@@ -3,6 +3,7 @@
 namespace MediaWiki\Extension\EnhancedStandardUIs\Watchlist\Provider;
 
 use MediaWiki\Extension\EnhancedStandardUIs\Watchlist\GenericWatchlistItemProvider;
+use MediaWiki\SpecialPage\SpecialPage;
 use MessageLocalizer;
 
 class PageProvider extends GenericWatchlistItemProvider {
@@ -26,6 +27,13 @@ class PageProvider extends GenericWatchlistItemProvider {
 	 */
 	public function getTabIcon(): string {
 		return 'file-earmark';
+	}
+
+	/**
+	 * @inheritDoc
+	 */
+	public function getAddItemsUrl(): ?string {
+		return SpecialPage::getTitleFor( 'Allpages' )->getLocalURL();
 	}
 
 	/**

@@ -31,6 +31,13 @@ class NamespaceProvider extends GenericWatchlistItemProvider {
 	}
 
 	/**
+	 * @inheritDoc
+	 */
+	public function getAddItemsUrl(): ?string {
+		return SpecialPage::getTitleFor( 'Allpages' )->getLocalURL();
+	}
+
+	/**
 	 * This provider reads the marker rows directly (see {@see self::getItems()});
 	 *
 	 * @inheritDoc

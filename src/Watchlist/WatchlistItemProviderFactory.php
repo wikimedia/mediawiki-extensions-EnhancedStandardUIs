@@ -73,8 +73,8 @@ class WatchlistItemProviderFactory {
 	}
 
 	/**
-	 * Client-side descriptors (key, title, icon, optional JS module/class) used to build
-	 * the tabs in the browser. Exposed to JS via JsConfigVars.
+	 * Client-side descriptors (key, title, icon, add-items URL, optional JS module/class)
+	 * used to build the tabs in the browser. Exposed to JS via JsConfigVars.
 	 *
 	 * Tabs appear in registration order, except that a registration may declare an integer
 	 * `position` to override it (lower comes first, default 0). This lets a provider such as
@@ -98,6 +98,7 @@ class WatchlistItemProviderFactory {
 				'key' => $provider->getKey(),
 				'title' => $provider->getTabTitle( $localizer ),
 				'icon' => $provider->getTabIcon(),
+				'addItemsUrl' => $provider->getAddItemsUrl(),
 				'module' => $spec['module'] ?? null,
 				'providerClass' => $spec['providerClass'] ?? null,
 				'position' => (int)( $spec['position'] ?? 0 )

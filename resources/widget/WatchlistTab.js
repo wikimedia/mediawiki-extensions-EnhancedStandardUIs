@@ -76,17 +76,18 @@ ext.enhancedUI.widget.WatchlistTab.buildTabLabel = function ( icon, title ) {
  * `$1`) for provider types contributed by other extensions that ship no dedicated one.
  *
  * @param {string} base Message key without the type suffix
+ * @param {...string} params
  * @return {mw.Message}
  */
-ext.enhancedUI.widget.WatchlistTab.prototype.getTypeMessage = function ( base ) {
+ext.enhancedUI.widget.WatchlistTab.prototype.getTypeMessage = function ( base, ...params ) {
 	const specific = base + '-' + this.provider.getKey();
 	// eslint-disable-next-line mediawiki/msg-doc
 	if ( mw.message( specific ).exists() ) {
 		// eslint-disable-next-line mediawiki/msg-doc
-		return mw.message( specific );
+		return mw.message( specific, ...params );
 	}
 	// eslint-disable-next-line mediawiki/msg-doc
-	return mw.message( base, this.provider.getTabTitle() );
+	return mw.message( base, this.provider.getTabTitle(), ...params );
 };
 
 ext.enhancedUI.widget.WatchlistTab.prototype.ensureLoaded = function () {
@@ -96,7 +97,7 @@ ext.enhancedUI.widget.WatchlistTab.prototype.ensureLoaded = function () {
 	this.loading = true;
 	this.rows = [];
 	this.removeTargets = [];
-	this.$toolbar.empty();
+	this.$toolbar.empty().removeClass( 'hidden' );
 	this.$noResults.addClass( 'hidden' );
 	this.$list.empty().addClass( 'oo-ui-pendingElement-pending' );
 	this.provider.getItems().done( ( response ) => {
@@ -131,7 +132,7 @@ ext.enhancedUI.widget.WatchlistTab.prototype.render = function ( sections ) {
 		classes: [ 'enhanced-ui-watchlist-clear-all' ]
 	} );
 	this.clearButton.connect( this, { click: 'onClearAll' } );
-	this.$toolbar.append( this.clearButton.$element );
+	this.$toolbar.removeClass( 'hidden' ).append( this.clearButton.$element );
 
 	sections.forEach( ( section ) => {
 		this.$list.append( this.renderSection( section ) );
@@ -319,13 +320,19 @@ ext.enhancedUI.widget.WatchlistTab.prototype.onClearAll = function () {
 ext.enhancedUI.widget.WatchlistTab.prototype.renderEmpty = function () {
 	this.rows = [];
 	this.sections = [];
-	this.$toolbar.empty();
+	this.$toolbar.empty().addClass( 'hidden' );
 	this.$noResults.addClass( 'hidden' );
-	this.$list.empty().append(
-		$( '<div>' )
-			.addClass( 'enhanced-ui-watchlist-empty' )
-			.text( mw.message( 'enhanced-standard-uis-watchlist-empty' ).text() )
+
+	const $empty = $( '<div>' ).addClass( 'enhanced-ui-watchlist-empty' ).append(
+		$( '<p>' ).text( this.getTypeMessage( 'enhanced-standard-uis-watchlist-empty' ).text() )
 	);
+	const addItemsUrl = this.provider.getAddItemsUrl();
+	if ( addItemsUrl ) {
+		$empty.append( $( '<p>' ).append(
+			this.getTypeMessage( 'enhanced-standard-uis-watchlist-empty-hint', addItemsUrl ).parseDom()
+		) );
+	}
+	this.$list.empty().append( $empty );
 };
 
 /**
@@ -334,7 +341,7 @@ ext.enhancedUI.widget.WatchlistTab.prototype.renderEmpty = function () {
  * look like an emptied watchlist, and leaves no way to retry other than reloading.
  */
 ext.enhancedUI.widget.WatchlistTab.prototype.renderError = function () {
-	this.$toolbar.empty();
+	this.$toolbar.empty().addClass( 'hidden' );
 	this.$noResults.addClass( 'hidden' );
 
 	const retryButton = new OO.ui.ButtonWidget( {
