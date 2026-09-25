@@ -75,7 +75,6 @@
 	"enhanced-standard-uis-ve-filegrid-title": "Advanced search",
 	"enhanced-standard-uis-allpages-empty-namespaces-text": "No namespaces available",
 	"enhanced-standard-uis-allpages-empty-pages-text": "There are currently no pages in this namespace",
-	"enhanced-standard-uis-history-grid-header-major-label": "Is major edit",
 	"enhanced-standard-uis-allpages-namespace-badge-aria-label": "contains {{PLURAL:$1|one page|$1 pages}}",
 	"enhanced-standard-uis-allpages-page-tree-item-expander-label": "Subpages",
 	"enhancedpreferences": "Preferences",
@@ -128,5 +127,8 @@
 	"enhanced-standard-uis-watchlist-main-namespace-label": "Main",
 	"enhanced-standard-uis-watchlist-section-expand-label": "Expand this section",
 	"enhanced-standard-uis-watchlist-section-collapse-label": "Collapse this section",
-	"enhanced-standard-uis-allpages-exclude-namespaces-label": "Exclude namespaces from \"All pages\""
+	"enhanced-standard-uis-allpages-exclude-namespaces-label": "Exclude namespaces from \"All pages\"",
+	"enhanced-standard-uis-history-grid-header-edit-type-label": "Edit type",
+	"enhanced-standard-uis-history-grid-edittype-minor-label": "Minor edit",
+	"enhanced-standard-uis-history-grid-edittype-major-label": "Major edit"
 }

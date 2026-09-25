@@ -98,5 +98,8 @@
 	"enhanced-standard-uis-allpages-create-new-page-title": "Eine neue Seite erstellen",
 	"enhanced-standard-uis-allpages-create-new-page-aria-label": "Eine neue Seite erstellen",
 	"enhanced-standard-uis-filelist-upload-new-file-title": "Eine neue Datei hochladen",
-	"enhanced-standard-uis-filelist-upload-new-file-aria-label": "Eine neue Datei hochladen"
+	"enhanced-standard-uis-filelist-upload-new-file-aria-label": "Eine neue Datei hochladen",
+	"enhanced-standard-uis-history-grid-header-edit-type-label": "Bearbeitungstyp",
+	"enhanced-standard-uis-history-grid-edittype-minor-label": "Kleine Änderung",
+	"enhanced-standard-uis-history-grid-edittype-major-label": "Umfassende Änderung"
 }
