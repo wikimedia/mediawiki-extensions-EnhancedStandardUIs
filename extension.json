@@ -475,6 +475,15 @@
 				"enhanced-standard-uis-watchlist-clear-confirm-action",
 				"enhanced-standard-uis-watchlist-remove-tooltip",
 				"enhanced-standard-uis-watchlist-empty",
+				"enhanced-standard-uis-watchlist-empty-pages",
+				"enhanced-standard-uis-watchlist-empty-categories",
+				"enhanced-standard-uis-watchlist-empty-books",
+				"enhanced-standard-uis-watchlist-empty-namespaces",
+				"enhanced-standard-uis-watchlist-empty-hint",
+				"enhanced-standard-uis-watchlist-empty-hint-pages",
+				"enhanced-standard-uis-watchlist-empty-hint-categories",
+				"enhanced-standard-uis-watchlist-empty-hint-books",
+				"enhanced-standard-uis-watchlist-empty-hint-namespaces",
 				"enhanced-standard-uis-watchlist-no-results",
 				"enhanced-standard-uis-watchlist-load-error",
 				"enhanced-standard-uis-watchlist-retry",
@@ -489,7 +498,8 @@
 				"oojs-ui.styles.icons-accessibility",
 				"oojs-ui.styles.icons-moderation",
 				"oojs-ui.styles.icons-movement",
-				"mediawiki.api"
+				"mediawiki.api",
+				"mediawiki.jqueryMsg"
 			]
 		}
 	},

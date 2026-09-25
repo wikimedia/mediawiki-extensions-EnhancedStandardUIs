@@ -26,6 +26,14 @@ interface IWatchlistItemProvider {
 	public function getTabIcon(): string;
 
 	/**
+	 * Where the user can start watching items of this type, linked from the hint shown
+	 * when the tab is empty
+	 *
+	 * @return string|null Local URL, or null to show no hint
+	 */
+	public function getAddItemsUrl(): ?string;
+
+	/**
 	 * @param User $user
 	 * @return array
 	 */

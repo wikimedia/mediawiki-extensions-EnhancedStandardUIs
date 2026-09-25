@@ -93,6 +93,13 @@ abstract class GenericWatchlistItemProvider implements IWatchlistItemProvider {
 	}
 
 	/**
+	 * @inheritDoc
+	 */
+	public function getAddItemsUrl(): ?string {
+		return null;
+	}
+
+	/**
 	 * Whether the client should render an expander before each namespace heading so the
 	 * section can be collapsed. Off by default; providers that produce many namespace
 	 * sections (see {@see \MediaWiki\Extension\EnhancedStandardUIs\Watchlist\Provider\PageProvider})

@@ -13,13 +13,14 @@ require( '../../api/Api.js' );
  * `module`/`providerClass` keys of the WatchlistItemProviders attribute and override
  * `removeCallback`.
  *
- * @param {Object} cfg key, title, icon
+ * @param {Object} cfg key, title, icon, addItemsUrl
  */
 ext.enhancedUI.watchlist.provider.WatchlistItemProvider = function ( cfg ) {
 	cfg = cfg || {};
 	this.key = cfg.key;
 	this.title = cfg.title;
 	this.icon = cfg.icon;
+	this.addItemsUrl = cfg.addItemsUrl || null;
 	this.api = new ext.enhancedUI.api.Api();
 };
 
@@ -35,6 +36,13 @@ ext.enhancedUI.watchlist.provider.WatchlistItemProvider.prototype.getTabTitle = 
 
 ext.enhancedUI.watchlist.provider.WatchlistItemProvider.prototype.getTabIcon = function () {
 	return this.icon;
+};
+
+/**
+ * @return {string|null} Where the user can start watching items of this type
+ */
+ext.enhancedUI.watchlist.provider.WatchlistItemProvider.prototype.getAddItemsUrl = function () {
+	return this.addItemsUrl;
 };
 
 /**

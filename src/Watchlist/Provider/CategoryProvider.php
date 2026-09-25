@@ -3,6 +3,7 @@
 namespace MediaWiki\Extension\EnhancedStandardUIs\Watchlist\Provider;
 
 use MediaWiki\Extension\EnhancedStandardUIs\Watchlist\GenericWatchlistItemProvider;
+use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\User\User;
 use MessageLocalizer;
 
@@ -27,6 +28,13 @@ class CategoryProvider extends GenericWatchlistItemProvider {
 	 */
 	public function getTabIcon(): string {
 		return 'tag';
+	}
+
+	/**
+	 * @inheritDoc
+	 */
+	public function getAddItemsUrl(): ?string {
+		return SpecialPage::getTitleFor( 'Allpages' )->getLocalURL( [ 'namespace' => NS_CATEGORY ] );
 	}
 
 	/**

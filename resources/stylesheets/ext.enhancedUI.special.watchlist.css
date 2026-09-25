@@ -219,6 +219,10 @@ html[ dir='rtl' ] .enhanced-ui-watchlist-section-collapsible.collapsed .enhanced
 	color: var( --color-subtle, #54595d );
 }
 
+.enhanced-ui-watchlist-empty > p {
+	margin: 0 0 0.5em;
+}
+
 .enhanced-ui-watchlist-error {
 	display: flex;
 	align-items: center;
@@ -226,6 +230,7 @@ html[ dir='rtl' ] .enhanced-ui-watchlist-section-collapsible.collapsed .enhanced
 	color: var( --color-error, #bf3c2c );
 }
 
+.enhanced-ui-watchlist-tab-toolbar.hidden,
 .enhanced-ui-watchlist-item.hidden,
 .enhanced-ui-watchlist-section.hidden,
 .enhanced-ui-watchlist-no-results.hidden {
