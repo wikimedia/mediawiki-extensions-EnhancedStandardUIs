@@ -197,7 +197,9 @@
 				"enhanced-standard-uis-history-grid-header-hide-revision-title",
 				"enhanced-standard-uis-history-compare-tool-title",
 				"enhanced-standard-uis-history-grid-header-diff-label",
-				"enhanced-standard-uis-history-grid-header-major-label"
+				"enhanced-standard-uis-history-grid-header-edit-type-label",
+				"enhanced-standard-uis-history-grid-edittype-minor-label",
+				"enhanced-standard-uis-history-grid-edittype-major-label"
 			],
 			"dependencies": [
 				"oojs-ui",
