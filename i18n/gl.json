@@ -75,7 +75,6 @@
 	"enhanced-standard-uis-ve-filegrid-title": "Procura avanzada",
 	"enhanced-standard-uis-allpages-empty-namespaces-text": "Non hai espazos de nomes dispoñibles",
 	"enhanced-standard-uis-allpages-empty-pages-text": "Nestes intres non hai páxinas neste espazo de nomes",
-	"enhanced-standard-uis-history-grid-header-major-label": "É unha edición grande",
 	"enhanced-standard-uis-allpages-namespace-badge-aria-label": "contén {{PLURAL:$1|unha páxina|$1 páxinas}}",
 	"enhanced-standard-uis-allpages-page-tree-item-expander-label": "Subpáxinas",
 	"enhancedpreferences": "Preferencias",
@@ -127,5 +126,6 @@
 	"enhanced-standard-uis-watchlist-retry": "Intentar de novo",
 	"enhanced-standard-uis-watchlist-main-namespace-label": "Principal",
 	"enhanced-standard-uis-watchlist-section-expand-label": "Despregar esta sección",
-	"enhanced-standard-uis-watchlist-section-collapse-label": "Encartar esta sección"
+	"enhanced-standard-uis-watchlist-section-collapse-label": "Encartar esta sección",
+	"enhanced-standard-uis-allpages-exclude-namespaces-label": "Excluír os espazos de nomes de «Todas as páxinas»"
 }

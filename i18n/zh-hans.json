@@ -78,7 +78,6 @@
 	"enhanced-standard-uis-ve-filegrid-title": "高级搜索",
 	"enhanced-standard-uis-allpages-empty-namespaces-text": "没有可用的命名空间",
 	"enhanced-standard-uis-allpages-empty-pages-text": "此命名空间中目前没有页面。",
-	"enhanced-standard-uis-history-grid-header-major-label": "是否为重大编辑",
 	"enhanced-standard-uis-allpages-namespace-badge-aria-label": "包含{{PLURAL:$1|1|$1}}个页面",
 	"enhanced-standard-uis-allpages-page-tree-item-expander-label": "子页面",
 	"enhancedpreferences": "参数设置",
@@ -130,5 +129,6 @@
 	"enhanced-standard-uis-watchlist-retry": "重试",
 	"enhanced-standard-uis-watchlist-main-namespace-label": "主",
 	"enhanced-standard-uis-watchlist-section-expand-label": "展开此章节",
-	"enhanced-standard-uis-watchlist-section-collapse-label": "折叠此章节"
+	"enhanced-standard-uis-watchlist-section-collapse-label": "折叠此章节",
+	"enhanced-standard-uis-allpages-exclude-namespaces-label": "从“所有页面”中排除命名空间"
 }

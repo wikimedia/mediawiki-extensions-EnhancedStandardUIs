@@ -75,7 +75,6 @@
 	"enhanced-standard-uis-ve-filegrid-title": "Erweiterte Suche",
 	"enhanced-standard-uis-allpages-empty-namespaces-text": "Keine Namensräume vorhanden",
 	"enhanced-standard-uis-allpages-empty-pages-text": "Es gibt noch keine Seiten in diesem Namensraum",
-	"enhanced-standard-uis-history-grid-header-major-label": "Ist eine größere Änderung",
 	"enhanced-standard-uis-allpages-namespace-badge-aria-label": "enthält {{PLURAL:$1|1 Seite| $1 Seiten}}",
 	"enhanced-standard-uis-allpages-page-tree-item-expander-label": "Unterseiten",
 	"enhancedpreferences": "Einstellungen",

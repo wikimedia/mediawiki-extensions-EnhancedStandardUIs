@@ -75,7 +75,6 @@
 	"enhanced-standard-uis-ve-filegrid-title": "Напредно пребарување",
 	"enhanced-standard-uis-allpages-empty-namespaces-text": "Нема достапни именски простори",
 	"enhanced-standard-uis-allpages-empty-pages-text": "Во моментов нема страници во овој именски простор",
-	"enhanced-standard-uis-history-grid-header-major-label": "Е крупно уредување",
 	"enhanced-standard-uis-allpages-namespace-badge-aria-label": "содржи {{PLURAL:$1|една страница| $1 страници}}",
 	"enhanced-standard-uis-allpages-page-tree-item-expander-label": "Потстраници",
 	"enhancedpreferences": "Нагодувања",
