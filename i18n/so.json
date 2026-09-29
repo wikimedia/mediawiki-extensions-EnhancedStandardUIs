@@ -75,7 +75,6 @@
 	"enhanced-standard-uis-ve-filegrid-title": "Raadinta sare",
 	"enhanced-standard-uis-allpages-empty-namespaces-text": "Meel magac ah lama heli karo",
 	"enhanced-standard-uis-allpages-empty-pages-text": "Hadda ma jiraan wax bogag ah oo ku jira meeshan magaca",
-	"enhanced-standard-uis-history-grid-header-major-label": "Waa wax ka beddel weyn",
 	"enhanced-standard-uis-allpages-namespace-badge-aria-label": "Waxay ka kooban tahay {{PLURAL:$1|hal bog|$1 bog}}.",
 	"enhanced-standard-uis-allpages-page-tree-item-expander-label": "Bogag hoosaad",
 	"enhancedpreferences": "Dooqyada",
@@ -128,5 +127,8 @@
 	"enhanced-standard-uis-watchlist-main-namespace-label": "Bogga Hore",
 	"enhanced-standard-uis-watchlist-section-expand-label": "Ballaadhi qaybtan",
 	"enhanced-standard-uis-watchlist-section-collapse-label": "Yaree qaybtan",
-	"enhanced-standard-uis-allpages-exclude-namespaces-label": "Ka saar meelaha magaca ah \"Dhammaan bogagga\""
+	"enhanced-standard-uis-allpages-exclude-namespaces-label": "Ka saar meelaha magaca ah \"Dhammaan bogagga\"",
+	"enhanced-standard-uis-history-grid-header-edit-type-label": "Nooca wax ka bedelida",
+	"enhanced-standard-uis-history-grid-edittype-minor-label": "Wax ka bedelida yaryar",
+	"enhanced-standard-uis-history-grid-edittype-major-label": "Wax ka beddel weyn"
 }
