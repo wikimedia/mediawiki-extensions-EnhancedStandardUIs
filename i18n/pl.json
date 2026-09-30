@@ -11,5 +11,7 @@
 	"enhanced-standard-uis-watchlist-clear-confirm-categories": "Czy na pewno chcesz usunąć wszystkie obserwowane kategorie z listy obserwowanych?",
 	"enhanced-standard-uis-watchlist-clear-confirm-books": "Czy na pewno chcesz usunąć wszystkie obserwowane książki z listy obserwowanych?",
 	"enhanced-standard-uis-watchlist-section-expand-label": "Rozwiń tę sekcję",
-	"enhanced-standard-uis-watchlist-section-collapse-label": "Zwiń tę sekcję"
+	"enhanced-standard-uis-watchlist-section-collapse-label": "Zwiń tę sekcję",
+	"enhanced-standard-uis-history-grid-header-edit-type-label": "Rodzaj edycji",
+	"enhanced-standard-uis-history-grid-edittype-minor-label": "Drobna zmiana"
 }
