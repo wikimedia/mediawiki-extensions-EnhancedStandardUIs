@@ -28,11 +28,11 @@ class EnhancedEditWatchlist extends SpecialEditWatchlist {
 
 	/**
 	 * The enhanced view has its own header bar, so suppress the core "For <username>"
-	 * subtitle that {@see SpecialEditWatchlist::outputSubtitle()} would otherwise add.
+	 * subtitle that {@see \MediaWiki\Watchlist\WatchlistSpecialPage::outputSubtitle()} would otherwise add.
 	 *
 	 * @inheritDoc
 	 */
-	protected function outputSubtitle() {
+	protected function outputSubtitle(): void {
 		// Intentionally left blank.
 	}
 
