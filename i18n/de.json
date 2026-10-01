@@ -100,5 +100,8 @@
 	"enhanced-standard-uis-filelist-upload-new-file-aria-label": "Eine neue Datei hochladen",
 	"enhanced-standard-uis-history-grid-header-edit-type-label": "Bearbeitungstyp",
 	"enhanced-standard-uis-history-grid-edittype-minor-label": "Kleine Änderung",
-	"enhanced-standard-uis-history-grid-edittype-major-label": "Umfassende Änderung"
+	"enhanced-standard-uis-history-grid-edittype-major-label": "Umfassende Änderung",
+	"enhanced-standard-uis-error-revision-too-old": "Diese Version ist aus Compliance-Gründen nicht mehr verfügbar. Für weitere Informationen {{#FORMAL:kontaktiere|kontakieren Sie}} die Wiki-Administration.",
+	"right-viewoldrevisions": "Versionen anzeigen, deren Datum das festgelegte maximale Datum überschreitet",
+	"action-viewoldrevisions": "Versionen anzeigen, deren Datum das festgelegte maximale Versionsdatum überschreitet"
 }

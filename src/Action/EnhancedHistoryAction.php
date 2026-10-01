@@ -3,9 +3,7 @@
 namespace MediaWiki\Extension\EnhancedStandardUIs\Action;
 
 use HistoryAction;
-use InvalidArgumentException;
 use LogEventsList;
-use MediaWiki\Extension\EnhancedStandardUIs\IHistoryPlugin;
 use MediaWiki\Html\Html;
 use MediaWiki\Json\FormatJson;
 use MediaWiki\Language\RawMessage;
@@ -13,11 +11,14 @@ use MediaWiki\MainConfigNames;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Message\Message;
 use MediaWiki\Parser\Sanitizer;
-use MediaWiki\Registration\ExtensionRegistry;
 use MediaWiki\Revision\RevisionRecord;
 use Wikimedia\Rdbms\IResultWrapper;
+use Wikimedia\Rdbms\SelectQueryBuilder;
 
 class EnhancedHistoryAction extends HistoryAction {
+
+	/** @var string|null */
+	private $cutoffTimestamp = null;
 
 	/**
 	 * @return string
@@ -87,6 +88,9 @@ class EnhancedHistoryAction extends HistoryAction {
 			$this->getContext()
 		);
 
+		$this->cutoffTimestamp = $services->getService( 'EnhancedStandardUIs.RevisionVisibility' )
+			->getCutoffTimestamp( $this->getWikiPage(), $this->getAuthority() );
+
 		$res = $this->doDBQuery( $services, $conds, $tagFilter );
 
 		$data = [];
@@ -95,25 +99,13 @@ class EnhancedHistoryAction extends HistoryAction {
 		$language = $this->context->getLanguage();
 		$titleFactory = $services->getTitleFactory();
 
-		$registry = ExtensionRegistry::getInstance()->getAttribute(
-			'EnhancedStandardUIsHistoryPagePlugins'
-		);
-
-		$objectFactory = $services->getObjectFactory();
-		$historyPagePlugin = [];
-		foreach ( $registry as $key => $spec ) {
-			$object = $objectFactory->createObject( $spec );
-			if ( !( $object instanceof IHistoryPlugin ) ) {
-				throw new InvalidArgumentException(
-					"Invalid history plugin \"$key\""
-				);
-			}
-			$historyPagePlugin[$key] = $object;
-		}
+		$historyPagePlugins = $services->getService( 'EnhancedStandardUIs.HistoryPluginFactory' )
+			->getPlugins();
 
 		$hasPermission = $permissionManager->userHasRight( $user, 'deletedtext' );
-		$oldSize = 0;
-		$firstRevision = true;
+		$oldSize = $this->getSizeBeforeCutoff( $services );
+		$firstRevision = $oldSize === null;
+		$oldSize ??= 0;
 		foreach ( $res as $row ) {
 			$entry = [ 'minor' => false ];
 			$classes = [];
@@ -183,7 +175,7 @@ class EnhancedHistoryAction extends HistoryAction {
 			$entry['tagUrl'] = $titleFactory->newFromText( 'Special:Tags' )->getLocalURL();
 
 			$attribs = [];
-			foreach ( $historyPagePlugin as $plugin ) {
+			foreach ( $historyPagePlugins as $plugin ) {
 				$plugin->ammendRow( $this, $entry, $attribs, $classes );
 			}
 			$entry['classes'] = $classes;
@@ -196,7 +188,7 @@ class EnhancedHistoryAction extends HistoryAction {
 		$orderedData = array_reverse( $data );
 
 		$modules = [ 'ext.enhancedstandarduis.history' ];
-		foreach ( $historyPagePlugin as $plugin ) {
+		foreach ( $historyPagePlugins as $plugin ) {
 			$pluginModules = $plugin->getRLModules( $this );
 			foreach ( $pluginModules as $module ) {
 				$modules[] = $module;
@@ -242,6 +234,32 @@ class EnhancedHistoryAction extends HistoryAction {
 	}
 
 	/**
+	 * Size of the newest revision that is hidden by the age cut-off, so that the size
+	 * difference of the oldest displayed revision stays meaningful.
+	 *
+	 * @param MediaWikiServices $services
+	 * @return int|null Null if no revision precedes the cut-off
+	 */
+	private function getSizeBeforeCutoff( $services ): ?int {
+		if ( $this->cutoffTimestamp === null ) {
+			return null;
+		}
+		$dbr = $services->getConnectionProvider()->getReplicaDatabase();
+		$len = $dbr->newSelectQueryBuilder()
+			->select( 'rev_len' )
+			->from( 'revision' )
+			->where( [ 'rev_page' => $this->getWikiPage()->getId() ] )
+			->andWhere( $dbr->expr(
+				'rev_timestamp', '<', $dbr->timestamp( $this->cutoffTimestamp )
+			) )
+			->orderBy( 'rev_id', SelectQueryBuilder::SORT_DESC )
+			->caller( __METHOD__ )
+			->fetchField();
+
+		return $len === false ? null : (int)$len;
+	}
+
+	/**
 	 * @param MediaWikiServices $services
 	 * @param array $conds
 	 * @param string|null $tagFilter
@@ -283,6 +301,14 @@ class EnhancedHistoryAction extends HistoryAction {
 			)
 			->useIndex( [ 'revision' => 'rev_page_timestamp' ] )
 			->caller( __METHOD__ );
+
+		if ( $this->cutoffTimestamp !== null ) {
+			// The current revision stays visible regardless of its age
+			$queryBuilder->where( $dbr->orExpr( [
+				$dbr->expr( 'rev_timestamp', '>=', $dbr->timestamp( $this->cutoffTimestamp ) ),
+				$dbr->expr( 'rev_id', '=', $this->getWikiPage()->getLatest() ),
+			] ) );
+		}
 
 		$services->getChangeTagsStore()->modifyDisplayQueryBuilder(
 			$queryBuilder,
