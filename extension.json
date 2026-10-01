@@ -68,6 +68,13 @@
 						"bot",
 						"maintenanceadmin"
 					]
+				},
+				"viewoldrevisions": {
+					"type": "global",
+					"roles": [
+						"admin",
+						"maintenanceadmin"
+					]
 				}
 			},
 			"ConfigDefinitionRegistry": {
@@ -81,11 +88,15 @@
 		}
 	},
 	"AvailableRights": [
-		"enhancedstandarduis-viewuncustomizedspecialpageslist"
+		"enhancedstandarduis-viewuncustomizedspecialpageslist",
+		"viewoldrevisions"
 	],
 	"GroupPermissions": {
 		"*": {
 			"enhancedstandarduis-viewuncustomizedspecialpageslist": true
+		},
+		"sysop": {
+			"viewoldrevisions": true
 		}
 	},
 	"ExtensionMessagesFiles": {
@@ -146,16 +157,24 @@
 		"EnhancedUIsAllPagesExcludedNamespaces": {
 			"value": [],
 			"description": "List of namespaces that will be excluded from Special:Pages"
+		},
+		"EnhancedUIsHistoryMaxAgeMonths": {
+			"value": 12,
+			"description": "Revisions older than this amount of months are hidden from the version history and cannot be viewed. Set to 0 to disable the restriction."
 		}
 	},
 	"Hooks": {
+		"ApiQueryBaseBeforeQuery": "restrictOldRevisions",
 		"MWStakeCommonWebAPIsQueryStoreResult": [
 			"addTitleWatchInfo",
 			"addFilePath"
 		],
 		"SpecialPage_initList": "special-pages",
 		"MWStakeCommonUIRegisterSkinSlotComponents": "registerGlobalActions",
-		"MessageCacheFetchOverrides": "overrideMessages"
+		"MessageCacheFetchOverrides": "overrideMessages",
+		"ArticleRevisionViewCustom": "restrictOldRevisions",
+		"DifferenceEngineViewHeader": "restrictOldRevisions",
+		"RawPageViewBeforeOutput": "restrictOldRevisions"
 	},
 	"HookHandlers": {
 		"addTitleWatchInfo": {
@@ -176,6 +195,10 @@
 		},
 		"overrideMessages": {
 			"class": "MediaWiki\\Extension\\EnhancedStandardUIs\\HookHandler\\MessageCacheFetchGetOverrides"
+		},
+		"restrictOldRevisions": {
+			"class": "MediaWiki\\Extension\\EnhancedStandardUIs\\HookHandler\\RestrictOldRevisions",
+			"services": [ "EnhancedStandardUIs.RevisionVisibility", "DBLoadBalancer" ]
 		}
 	},
 	"ResourceModules": {
