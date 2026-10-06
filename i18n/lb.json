@@ -42,6 +42,7 @@
 	"enhanced-standard-uis-filelist-dialog-history-grid-version": "Versioun",
 	"enhanced-standard-uis-allpages-filter-pages-label": "Filteren",
 	"enhanced-standard-uis-allpages-namespace-list-label": "Nummraum",
+	"enhanced-standard-uis-paginator-aria-label": "Paginatioun",
 	"enhanced-standard-uis-allpages-watch-label": "D'Säit $1 iwwerwaachen",
 	"enhanced-standard-uis-allpages-unwatch-label": "D'Säit $1 net méi iwwerwaachen",
 	"enhanced-standard-uis-allpages-pageinfo-label": "Säiteninformatioune fir $1 weisen",
@@ -78,5 +79,7 @@
 	"enhanced-standard-uis-watchlist-view-changes": "Ännerungen op der Iwwerwaachungslëscht weisen",
 	"enhanced-standard-uis-watchlist-remove-tooltip": "Vun der Iwwerwaachungslëscht erofhuelen",
 	"enhanced-standard-uis-watchlist-retry": "Nach eng Kéier probéieren",
-	"enhanced-standard-uis-watchlist-main-namespace-label": "Haapt"
+	"enhanced-standard-uis-watchlist-main-namespace-label": "Haapt",
+	"enhanced-standard-uis-history-grid-header-edit-type-label": "Ännerungstyp",
+	"enhanced-standard-uis-history-grid-edittype-minor-label": "Kleng Ännerung"
 }

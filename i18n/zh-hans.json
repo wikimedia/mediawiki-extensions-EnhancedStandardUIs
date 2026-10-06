@@ -130,5 +130,8 @@
 	"enhanced-standard-uis-watchlist-main-namespace-label": "主",
 	"enhanced-standard-uis-watchlist-section-expand-label": "展开此章节",
 	"enhanced-standard-uis-watchlist-section-collapse-label": "折叠此章节",
-	"enhanced-standard-uis-allpages-exclude-namespaces-label": "从“所有页面”中排除命名空间"
+	"enhanced-standard-uis-allpages-exclude-namespaces-label": "从“所有页面”中排除命名空间",
+	"enhanced-standard-uis-history-grid-header-edit-type-label": "编辑类型",
+	"enhanced-standard-uis-history-grid-edittype-minor-label": "小编辑",
+	"enhanced-standard-uis-history-grid-edittype-major-label": "大编辑"
 }

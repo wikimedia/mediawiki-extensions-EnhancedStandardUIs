@@ -127,5 +127,8 @@
 	"enhanced-standard-uis-watchlist-main-namespace-label": "Principal",
 	"enhanced-standard-uis-watchlist-section-expand-label": "Despregar esta sección",
 	"enhanced-standard-uis-watchlist-section-collapse-label": "Encartar esta sección",
-	"enhanced-standard-uis-allpages-exclude-namespaces-label": "Excluír os espazos de nomes de «Todas as páxinas»"
+	"enhanced-standard-uis-allpages-exclude-namespaces-label": "Excluír os espazos de nomes de «Todas as páxinas»",
+	"enhanced-standard-uis-history-grid-header-edit-type-label": "Tipo de edición",
+	"enhanced-standard-uis-history-grid-edittype-minor-label": "Edición pequena",
+	"enhanced-standard-uis-history-grid-edittype-major-label": "Edición grande"
 }

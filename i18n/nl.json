@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"McDutchie",
-			"Siebrand"
+			"Siebrand",
+			"Mainframe98"
 		]
 	},
 	"enhanced-standard-uis-desc": "Biedt gebruikersinterfaces voor de standaardgebruikersinterfaces van MediaWiki",
@@ -117,5 +118,7 @@
 	"enhanced-standard-uis-watchlist-no-results": "Er zijn geen resultaten gevonden die overeenkomen met uw zoekopdracht.",
 	"enhanced-standard-uis-watchlist-load-error": "De gevolgde items konden niet worden geladen.",
 	"enhanced-standard-uis-watchlist-retry": "Opnieuw proberen",
-	"enhanced-standard-uis-watchlist-main-namespace-label": "Hoofdnaamruimte"
+	"enhanced-standard-uis-watchlist-main-namespace-label": "Hoofdnaamruimte",
+	"enhanced-standard-uis-history-grid-edittype-minor-label": "Kleine bewerking",
+	"enhanced-standard-uis-history-grid-edittype-major-label": "Grote bewerking"
 }

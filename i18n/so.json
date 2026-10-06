@@ -127,5 +127,8 @@
 	"enhanced-standard-uis-watchlist-main-namespace-label": "Bogga Hore",
 	"enhanced-standard-uis-watchlist-section-expand-label": "Ballaadhi qaybtan",
 	"enhanced-standard-uis-watchlist-section-collapse-label": "Yaree qaybtan",
-	"enhanced-standard-uis-allpages-exclude-namespaces-label": "Ka saar meelaha magaca ah \"Dhammaan bogagga\""
+	"enhanced-standard-uis-allpages-exclude-namespaces-label": "Ka saar meelaha magaca ah \"Dhammaan bogagga\"",
+	"enhanced-standard-uis-history-grid-header-edit-type-label": "Nooca wax ka bedelida",
+	"enhanced-standard-uis-history-grid-edittype-minor-label": "Wax ka bedelida yaryar",
+	"enhanced-standard-uis-history-grid-edittype-major-label": "Wax ka beddel weyn"
 }
