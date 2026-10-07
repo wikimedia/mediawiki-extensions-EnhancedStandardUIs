@@ -319,7 +319,7 @@ class EnhancedPreferences extends OOJSBookletSpecialPage {
 				Message::newFromKey( 'mwoauth-prefs-managegrantslink' )->numParams( 0 )->text()
 			);
 		}
-		if ( isset( $preferences['password'] ) ) {
+		if ( isset( $preferences['password'] ) && !isset( $preferences['password']['override'] ) ) {
 			$preferences['password']['default'] = Html::element(
 				'a',
 				[
