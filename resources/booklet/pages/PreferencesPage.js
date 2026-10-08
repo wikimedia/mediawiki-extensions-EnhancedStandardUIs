@@ -279,6 +279,47 @@ ext.enhancedUI.booklet.PreferencesPage.prototype.getPrefWidget = function ( pref
 			} );
 			break;
 		}
+		/* for language setting MW core uses language type and a dedicated codex widget
+		 * Reference https://gerrit.wikimedia.org/r/c/mediawiki/core/+/1258646
+		 * to stay consistent in OOJS FilterableComboBox is used instead
+		 */
+		case 'language':
+		case 'languages': {
+			const options = [];
+			if ( pref.languages ) {
+				for ( const language in pref.languages ) {
+					options.push( {
+						data: language,
+						// Labels are combination of key and language name
+						label: language + ' - ' + pref.languages[ language ]
+					} );
+				}
+			}
+			prefInput = new OOJSPlus.ui.widget.FilterableComboBoxWidget( {
+				options: options,
+				$overlay: true,
+				allowArbitrary: false,
+				menu: {
+					filterMode: 'substring',
+					filterFromInput: true
+				}
+			} );
+			prefInput.setValueByData( pref.default );
+			prefInput.getMenu().connect( this, {
+				select: ( value ) => {
+					if ( !value ) {
+						return;
+					}
+					const data = value.getData();
+					if ( pref.default === data ) {
+						return;
+					}
+					pref.default = data;
+					this.onPrefValueChanged( pref.pref, data );
+				}
+			} );
+			break;
+		}
 		case 'multiselect': {
 			const options = [];
 			if ( pref.options ) {
