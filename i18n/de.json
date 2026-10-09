@@ -72,6 +72,9 @@
 	"enhancedspecialpages": "Spezialseiten",
 	"right-enhancedstandarduis-viewuncustomizedspecialpageslist": "Spezialseiten in der Liste [{{canonicalurl:Special:SpecialPages}} Spezial:Spezialseiten] anzeigen, die für Benutzer mit reiner Leserrolle ausgeblendet sind",
 	"action-enhancedstandarduis-viewuncustomizedspecialpageslist": "Spezialseiten in der Liste [{{canonicalurl:Special:SpecialPages}} Spezial:Spezialseiten] anzuzeigen, die für Benutzer mit reiner Leserrolle ausgeblendet sind",
+	"right-viewoldrevisions": "Versionen anzeigen, deren Datum das festgelegte maximale Datum überschreitet",
+	"action-viewoldrevisions": "Versionen anzeigen, deren Datum das festgelegte maximale Versionsdatum überschreitet",
+	"enhanced-standard-uis-error-revision-too-old": "Diese Version ist aus Compliance-Gründen nicht mehr verfügbar. Für weitere Informationen {{#FORMAL:kontaktiere|kontakieren Sie}} die Wiki-Administration.",
 	"enhanced-standard-uis-ve-filegrid-title": "Erweiterte Suche",
 	"enhanced-standard-uis-allpages-empty-namespaces-text": "Keine Namensräume vorhanden",
 	"enhanced-standard-uis-allpages-empty-pages-text": "Es gibt noch keine Seiten in diesem Namensraum",
@@ -100,8 +103,5 @@
 	"enhanced-standard-uis-filelist-upload-new-file-aria-label": "Eine neue Datei hochladen",
 	"enhanced-standard-uis-history-grid-header-edit-type-label": "Bearbeitungstyp",
 	"enhanced-standard-uis-history-grid-edittype-minor-label": "Kleine Änderung",
-	"enhanced-standard-uis-history-grid-edittype-major-label": "Umfassende Änderung",
-	"enhanced-standard-uis-error-revision-too-old": "Diese Version ist aus Compliance-Gründen nicht mehr verfügbar. Für weitere Informationen {{#FORMAL:kontaktiere|kontakieren Sie}} die Wiki-Administration.",
-	"right-viewoldrevisions": "Versionen anzeigen, deren Datum das festgelegte maximale Datum überschreitet",
-	"action-viewoldrevisions": "Versionen anzeigen, deren Datum das festgelegte maximale Versionsdatum überschreitet"
+	"enhanced-standard-uis-history-grid-edittype-major-label": "Umfassende Änderung"
 }
