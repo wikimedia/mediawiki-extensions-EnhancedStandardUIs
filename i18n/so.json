@@ -133,5 +133,14 @@
 	"enhanced-standard-uis-allpages-exclude-namespaces-label": "Ka saar meelaha magaca ah \"Dhammaan bogagga\"",
 	"enhanced-standard-uis-history-grid-header-edit-type-label": "Nooca wax ka bedelida",
 	"enhanced-standard-uis-history-grid-edittype-minor-label": "Wax ka bedelida yaryar",
-	"enhanced-standard-uis-history-grid-edittype-major-label": "Wax ka beddel weyn"
+	"enhanced-standard-uis-history-grid-edittype-major-label": "Wax ka beddel weyn",
+	"enhanced-standard-uis-watchlist-empty-pages": "Weli wax bogag ah kuma jiraan liiskaaga la socodka.",
+	"enhanced-standard-uis-watchlist-empty-categories": "Weli wax qaybo ah kuma jiraan liiskaaga la socodka.",
+	"enhanced-standard-uis-watchlist-empty-books": "Weli wax buugaag ah kuma jiraan liiskaaga la socodka.",
+	"enhanced-standard-uis-watchlist-empty-namespaces": "Weli wax meel magacyo ah kuma jiraan liiskaaga la socodka.",
+	"enhanced-standard-uis-watchlist-empty-hint": "[$2 Raadi walxaha aad ku dari karto liiskaaga la socodka]",
+	"enhanced-standard-uis-watchlist-empty-hint-pages": "Ku dar bogag ka socda [$1 Dhammaan bogagga].",
+	"enhanced-standard-uis-watchlist-empty-hint-categories": "Ku dar qaybo ka socda [$1 Dhammaan bogagga].",
+	"enhanced-standard-uis-watchlist-empty-hint-books": "Ku dar buugaag ka socda [$1 Buugaagta].",
+	"enhanced-standard-uis-watchlist-empty-hint-namespaces": "Ku dar meelaha magacyada ee laga helayo [$1 Dhammaan bogagga]."
 }

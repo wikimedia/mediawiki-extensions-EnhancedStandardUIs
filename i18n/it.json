@@ -71,5 +71,6 @@
 	"enhanced-standard-uis-watchlist-clear-confirm-action": "Pulisci tutto",
 	"enhanced-standard-uis-watchlist-remove-tooltip": "Rimuovi dagli osservati speciali",
 	"enhanced-standard-uis-watchlist-no-results": "Nessun elemento corrisponde alla tua ricerca.",
-	"enhanced-standard-uis-watchlist-retry": "Riprova"
+	"enhanced-standard-uis-watchlist-retry": "Riprova",
+	"enhanced-standard-uis-watchlist-empty-hint-books": "Aggiungi libri da [$1 Libri]."
 }

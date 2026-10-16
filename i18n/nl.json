@@ -1,9 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
+			"Mainframe98",
 			"McDutchie",
-			"Siebrand",
-			"Mainframe98"
+			"Siebrand"
 		]
 	},
 	"enhanced-standard-uis-desc": "Biedt gebruikersinterfaces voor de standaardgebruikersinterfaces van MediaWiki",

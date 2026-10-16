@@ -133,5 +133,14 @@
 	"enhanced-standard-uis-allpages-exclude-namespaces-label": "Excluír os espazos de nomes de «Todas as páxinas»",
 	"enhanced-standard-uis-history-grid-header-edit-type-label": "Tipo de edición",
 	"enhanced-standard-uis-history-grid-edittype-minor-label": "Edición pequena",
-	"enhanced-standard-uis-history-grid-edittype-major-label": "Edición grande"
+	"enhanced-standard-uis-history-grid-edittype-major-label": "Edición grande",
+	"enhanced-standard-uis-watchlist-empty-pages": "Aínda non tes ningunha páxina na túa lista de vixilancia.",
+	"enhanced-standard-uis-watchlist-empty-categories": "Aínda non tes ningunha categoría na túa lista de vixilancia.",
+	"enhanced-standard-uis-watchlist-empty-books": "Aínda non tes ningún libro na túa lista de vixilancia.",
+	"enhanced-standard-uis-watchlist-empty-namespaces": "Aínda non tes ningún espazo de nomes na túa lista de vixilancia.",
+	"enhanced-standard-uis-watchlist-empty-hint": "[$2 Atopa elementos para engadilos á túa lista de vixilancia]",
+	"enhanced-standard-uis-watchlist-empty-hint-pages": "Engade páxinas desde «[$1 Todas as páxinas]».",
+	"enhanced-standard-uis-watchlist-empty-hint-categories": "Engade categorías desde «[$1 Todas as páxinas]».",
+	"enhanced-standard-uis-watchlist-empty-hint-books": "Engade libros desde «[$1 Libros]».",
+	"enhanced-standard-uis-watchlist-empty-hint-namespaces": "Engade espazos de nomes desde «[$1 Todas as páxinas]»."
 }
