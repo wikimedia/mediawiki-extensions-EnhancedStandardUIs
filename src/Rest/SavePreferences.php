@@ -76,6 +76,7 @@ class SavePreferences extends SimpleHandler {
 		$pageContext->setOutput( $specialPage->getOutput() );
 		$preferences = $this->preferencesFactory->getFormDescriptor( $user, $pageContext );
 		$form = $this->preferencesFactory->getForm( $user, $pageContext, PreferencesFormOOUI::class );
+		$multiselectOptionMap = $this->buildMultiselectOptionMap( $preferences );
 
 		$hiddenPrefs = $serviceOptions->get( MainConfigNames::HiddenPrefs );
 		$saveOptions = $options;
@@ -118,7 +119,14 @@ class SavePreferences extends SimpleHandler {
 
 				// hidden prefs are added to options as well
 				if ( isset( $saveOptions[$key] ) ) {
-					$prefConfig = $preferences[ $key ];
+					$prefConfig = $preferences[$key] ?? null;
+					if ( $prefConfig === null && isset( $multiselectOptionMap[$key] ) ) {
+						$prefConfig = [ 'type' => 'check' ];
+					}
+					if ( $prefConfig === null ) {
+						$wrongValidated[$key] = false;
+						continue;
+					}
 					if ( !isset( $prefConfig['parent'] ) ) {
 						$prefConfig['parent'] = $form;
 					}
@@ -176,6 +184,41 @@ class SavePreferences extends SimpleHandler {
 			'realname',
 			'emailaddress',
 		];
+	}
+
+	/**
+	 * Build a map of generated multiselect preference keys.
+	 *
+	 * Multiselect changes are submitted as generated keys in the format
+	 * "{prefName}{optionValue}".
+	 *
+	 * @param array $preferences
+	 * @return array<string, bool>
+	 */
+	private function buildMultiselectOptionMap( array $preferences ): array {
+		$map = [];
+		foreach ( $preferences as $prefName => $prefConfig ) {
+			if ( ( $prefConfig['type'] ?? null ) !== 'multiselect' ) {
+				continue;
+			}
+			$optionSets = [];
+			if ( isset( $prefConfig['options'] ) && is_array( $prefConfig['options'] ) ) {
+				$optionSets[] = $prefConfig['options'];
+			}
+			if ( isset( $prefConfig['options-messages'] ) && is_array( $prefConfig['options-messages'] ) ) {
+				$optionSets[] = $prefConfig['options-messages'];
+			}
+			foreach ( $optionSets as $optionSet ) {
+				foreach ( $optionSet as $optionValue ) {
+					if ( !is_scalar( $optionValue ) ) {
+						continue;
+					}
+					$map[$prefName . (string)$optionValue] = true;
+				}
+			}
+		}
+
+		return $map;
 	}
 
 	/** @inheritDoc */
