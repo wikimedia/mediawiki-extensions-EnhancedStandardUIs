@@ -72,6 +72,9 @@
 	"enhancedspecialpages": "Spezialseiten",
 	"right-enhancedstandarduis-viewuncustomizedspecialpageslist": "Spezialseiten in der Liste [{{canonicalurl:Special:SpecialPages}} Spezial:Spezialseiten] anzeigen, die für Benutzer mit reiner Leserrolle ausgeblendet sind",
 	"action-enhancedstandarduis-viewuncustomizedspecialpageslist": "Spezialseiten in der Liste [{{canonicalurl:Special:SpecialPages}} Spezial:Spezialseiten] anzuzeigen, die für Benutzer mit reiner Leserrolle ausgeblendet sind",
+	"right-viewoldrevisions": "Versionen anzeigen, deren Datum das festgelegte maximale Datum überschreitet",
+	"action-viewoldrevisions": "Versionen anzeigen, deren Datum das festgelegte maximale Versionsdatum überschreitet",
+	"enhanced-standard-uis-error-revision-too-old": "Diese Version ist aus Compliance-Gründen nicht mehr verfügbar. Für weitere Informationen {{#FORMAL:kontaktiere|kontakieren Sie}} die Wiki-Administration.",
 	"enhanced-standard-uis-ve-filegrid-title": "Erweiterte Suche",
 	"enhanced-standard-uis-allpages-empty-namespaces-text": "Keine Namensräume vorhanden",
 	"enhanced-standard-uis-allpages-empty-pages-text": "Es gibt noch keine Seiten in diesem Namensraum",
@@ -98,12 +101,6 @@
 	"enhanced-standard-uis-allpages-create-new-page-aria-label": "Eine neue Seite erstellen",
 	"enhanced-standard-uis-filelist-upload-new-file-title": "Eine neue Datei hochladen",
 	"enhanced-standard-uis-filelist-upload-new-file-aria-label": "Eine neue Datei hochladen",
-	"enhanced-standard-uis-history-grid-header-edit-type-label": "Bearbeitungstyp",
-	"enhanced-standard-uis-history-grid-edittype-minor-label": "Kleine Änderung",
-	"enhanced-standard-uis-history-grid-edittype-major-label": "Umfassende Änderung",
-	"enhanced-standard-uis-error-revision-too-old": "Diese Version ist aus Compliance-Gründen nicht mehr verfügbar. Für weitere Informationen {{#FORMAL:kontaktiere|kontakieren Sie}} die Wiki-Administration.",
-	"right-viewoldrevisions": "Versionen anzeigen, deren Datum das festgelegte maximale Datum überschreitet",
-	"action-viewoldrevisions": "Versionen anzeigen, deren Datum das festgelegte maximale Versionsdatum überschreitet",
 	"enhanced-standard-uis-watchlist-empty-pages": "{{#FORMAL:Du hast|Sie haben}} noch keine Seiten auf {{#FORMAL:deiner|Ihrer}} Beobachtungsliste.",
 	"enhanced-standard-uis-watchlist-empty-categories": "{{#FORMAL:Du hast|Sie haben}} noch keine Kategorien auf {{#FORMAL:deiner|Ihrer}} Beobachtungsliste.",
 	"enhanced-standard-uis-watchlist-empty-books": "{{#FORMAL:Du hast|Sie haben}} noch keine Bücher auf {{#FORMAL:deiner|Ihrer}} Beobachtungsliste.",
@@ -112,5 +109,8 @@
 	"enhanced-standard-uis-watchlist-empty-hint-pages": "{{#FORMAL:Füge|Fügen Sie}} Seiten über [$1 Alle Seiten] zu {{#FORMAL:deiner|Ihrer}} Beobachtungsliste hinzu.",
 	"enhanced-standard-uis-watchlist-empty-hint-categories": "{{#FORMAL:Füge|Fügen Sie}} Kategorien über [$1 Alle Seiten] zu {{#FORMAL:deiner|Ihrer}} Beobachtungsliste hinzu.",
 	"enhanced-standard-uis-watchlist-empty-hint-books": "{{#FORMAL:Füge|Fügen Sie}} Bücher über [$1 Bücher] zu {{#FORMAL:deiner|Ihrer}} Beobachtungsliste hinzu.",
-	"enhanced-standard-uis-watchlist-empty-hint-namespaces": "{{#FORMAL:Füge|Fügen Sie}} Namensräume über [$1 Alle Seiten] zu {{#FORMAL:deiner|Ihrer}} Beobachtungsliste hinzu."
+	"enhanced-standard-uis-watchlist-empty-hint-namespaces": "{{#FORMAL:Füge|Fügen Sie}} Namensräume über [$1 Alle Seiten] zu {{#FORMAL:deiner|Ihrer}} Beobachtungsliste hinzu.",
+	"enhanced-standard-uis-history-grid-header-edit-type-label": "Bearbeitungstyp",
+	"enhanced-standard-uis-history-grid-edittype-minor-label": "Kleine Änderung",
+	"enhanced-standard-uis-history-grid-edittype-major-label": "Umfassende Änderung"
 }
