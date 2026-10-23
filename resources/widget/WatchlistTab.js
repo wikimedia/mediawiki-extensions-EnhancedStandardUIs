@@ -159,23 +159,16 @@ ext.enhancedUI.widget.WatchlistTab.prototype.renderSection = function ( section 
 			record.collapsible = true;
 			record.expanded = false;
 			$section.addClass( 'enhanced-ui-watchlist-section-collapsible collapsed' );
-			record.expander = this.makeExpander( record );
+			record.expander = this.makeExpander( record, section.section );
 			$heading
 				.addClass( 'enhanced-ui-watchlist-section-heading--toggle' )
 				.append( record.expander.$element );
-			$heading.on( 'click', ( e ) => {
-				// The expander button and the remove button handle their own clicks.
-				if ( $( e.target ).closest(
-					'.enhanced-ui-watchlist-expander, .enhanced-ui-watchlist-remove'
-				).length ) {
-					return;
-				}
-				this.toggleSection( record );
-			} );
+		} else {
+			$heading.append(
+				$( '<span>' ).addClass( 'enhanced-ui-watchlist-section-title' ).text( section.section )
+			);
 		}
-		$heading.append(
-			$( '<span>' ).addClass( 'enhanced-ui-watchlist-section-title' ).text( section.section )
-		);
+
 		if ( section.target ) {
 			this.removeTargets.push( section.target );
 			$heading.append( this.makeRemoveButton( section.target, $section, true ) );
@@ -192,14 +185,11 @@ ext.enhancedUI.widget.WatchlistTab.prototype.renderSection = function ( section 
 	return $section;
 };
 
-ext.enhancedUI.widget.WatchlistTab.prototype.makeExpander = function ( record ) {
-	const expandLabel = mw.message( 'enhanced-standard-uis-watchlist-section-expand-label' ).text();
+ext.enhancedUI.widget.WatchlistTab.prototype.makeExpander = function ( record, sectionTitle ) {
 	const expander = new OO.ui.ButtonWidget( {
 		icon: 'expand',
 		framed: false,
-		label: expandLabel,
-		invisibleLabel: true,
-		title: expandLabel,
+		label: sectionTitle,
 		classes: [ 'enhanced-ui-watchlist-expander' ]
 	} );
 	expander.$button
@@ -226,11 +216,6 @@ ext.enhancedUI.widget.WatchlistTab.prototype.toggleSection = function ( record, 
 	record.expanded = expanded;
 	record.$section.toggleClass( 'collapsed', !expanded );
 	if ( record.expander ) {
-		const label = expanded ?
-			mw.message( 'enhanced-standard-uis-watchlist-section-collapse-label' ).text() :
-			mw.message( 'enhanced-standard-uis-watchlist-section-expand-label' ).text();
-		record.expander.setLabel( label );
-		record.expander.setTitle( label );
 		record.expander.$button.attr( 'aria-expanded', expanded ? 'true' : 'false' );
 	}
 };
@@ -256,12 +241,11 @@ ext.enhancedUI.widget.WatchlistTab.prototype.renderRow = function ( item, $secti
 };
 
 ext.enhancedUI.widget.WatchlistTab.prototype.makeRemoveButton = function ( target, $element, isSection ) {
-	const label = mw.message( 'enhanced-standard-uis-watchlist-remove-tooltip' ).text();
+	const label = mw.message( 'enhanced-standard-uis-watchlist-unwatch-tooltip', target ).text();
 	const button = new OO.ui.ButtonWidget( {
 		framed: false,
 		label: label,
 		invisibleLabel: true,
-		title: label,
 		classes: [ 'enhanced-ui-watchlist-remove' ]
 	} );
 	button.connect( this, { click: [ 'onRemove', target, $element, isSection ] } );
@@ -285,9 +269,12 @@ ext.enhancedUI.widget.WatchlistTab.prototype.onRemove = function ( target, $elem
 		if ( !this.$list.find( '.enhanced-ui-watchlist-section' ).length ) {
 			this.render( [] );
 		}
+		mw.notify(
+			mw.message( 'removedwatchtext-short', target ).text()
+		);
 	} ).fail( () => {
 		mw.notify(
-			mw.message( 'enhanced-standard-uis-watchlist-remove-tooltip' ).text(),
+			mw.message( 'enhanced-standard-uis-watchlist-notify-unwatch-fail', target ).text(),
 			{ type: 'error' }
 		);
 	} );
@@ -339,16 +326,18 @@ ext.enhancedUI.widget.WatchlistTab.prototype.renderEmpty = function () {
 	this.$toolbar.empty().addClass( 'hidden' );
 	this.$noResults.addClass( 'hidden' );
 
-	const $empty = $( '<div>' ).addClass( 'enhanced-ui-watchlist-empty' ).append(
-		$( '<p>' ).text( this.getTypeMessage( 'enhanced-standard-uis-watchlist-empty' ).text() )
-	);
+	const $emptyWidget = new OOJSPlus.ui.widget.NoContentPlaceholderWidget( {
+		icon: 'watchlist-no-' + this.provider.getKey(),
+		classes: [ 'enhanced-ui-watchlist-empty' ],
+		label: this.getTypeMessage( 'enhanced-standard-uis-watchlist-empty' ).text()
+	} ).$element;
 	const addItemsUrl = this.provider.getAddItemsUrl();
 	if ( addItemsUrl ) {
-		$empty.append( $( '<p>' ).append(
-			this.getTypeMessage( 'enhanced-standard-uis-watchlist-empty-hint', addItemsUrl ).parseDom()
+		$emptyWidget.append( $( '<p>' ).addClass( 'oo-ui-labelElement-label' ).append(
+			this.getTypeMessage( 'enhanced-standard-uis-watchlist-empty-tab-hint', addItemsUrl ).parseDom()
 		) );
 	}
-	this.$list.empty().append( $empty );
+	this.$list.empty().append( $emptyWidget );
 };
 
 /**

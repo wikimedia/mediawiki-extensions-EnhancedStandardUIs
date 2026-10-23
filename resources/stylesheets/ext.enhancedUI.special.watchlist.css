@@ -21,6 +21,10 @@
 	width: 100%;
 }
 
+.enhanced-ui-watchlist-panel .oo-ui-indexLayout-stackLayout > .oo-ui-panelLayout {
+	padding: 20px 0;
+}
+
 .enhanced-ui-watchlist-tab-label {
 	display: inline-flex;
 	align-items: center;
@@ -60,11 +64,41 @@
 	mask-image: url( ./../images/watchlist/namespaces-icon.svg );
 }
 
+.oojsplus-widget-no-content-placeholder.enhanced-ui-watchlist-empty .oo-ui-iconElement-icon {
+	background-size: 50%;
+	background-color: #eaecf0;
+	background-repeat: no-repeat;
+	border-radius: 100%;
+	margin: 30px auto 15px;
+	height: 120px;
+	width: 120px;
+}
+
+.mw-body-content .enhanced-ui-watchlist-empty .oo-ui-labelElement-label a {
+	color: var( --color-progressive, #36c );
+}
+
+.enhanced-ui-watchlist-empty .oo-ui-icon-watchlist-no-pages {
+	background-image: url( ./../images/watchlist/file-earmark-white.svg );
+}
+
+.enhanced-ui-watchlist-empty .oo-ui-icon-watchlist-no-categories {
+	background-image: url( ./../images/watchlist/tag-white.svg );
+}
+
+.enhanced-ui-watchlist-empty .oo-ui-icon-watchlist-no-books {
+	background-image: url( ./../images/watchlist/book-white.svg );
+}
+
+.enhanced-ui-watchlist-empty .oo-ui-icon-watchlist-no-namespaces {
+	background-image: url( ./../images/watchlist/namespaces-icon-white.svg );
+}
+
 .enhanced-ui-watchlist-tab-toolbar {
 	display: flex;
 	justify-content: flex-end;
 	min-height: 2em;
-	margin: 0.5em 0 1em;
+	margin: 0 0 1em;
 }
 
 .enhanced-ui-watchlist-clear-all {
@@ -84,13 +118,13 @@
 	margin-bottom: 0.75em;
 }
 
-.enhanced-ui-watchlist-section-heading {
+h2.enhanced-ui-watchlist-section-heading {
 	display: flex;
 	align-items: center;
 	border: 0;
 	margin: 0.5em 0;
 	padding: 0;
-	font-size: 1em;
+	font-size: 1rem;
 	font-weight: 600;
 }
 
@@ -120,11 +154,6 @@
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
-}
-
-.enhanced-ui-watchlist-expander.oo-ui-buttonElement {
-	flex: 0 0 auto;
-	margin: 0 0.25em 0 -0.25em;
 }
 
 .enhanced-ui-watchlist-expander .oo-ui-iconElement-icon {
