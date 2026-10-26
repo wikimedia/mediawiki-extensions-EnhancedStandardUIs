@@ -2,10 +2,10 @@
 
 namespace MediaWiki\Extension\EnhancedStandardUIs\HookHandler;
 
+use MediaWiki\FileRepo\RepoGroup;
 use MediaWiki\Title\TitleFactory;
 use MWStake\MediaWiki\Component\CommonWebAPIs\Hook\MWStakeCommonWebAPIsQueryStoreResultHook;
 use MWStake\MediaWiki\Component\CommonWebAPIs\Rest\FileQueryStore;
-use RepoGroup;
 
 class AddFileImagePath implements MWStakeCommonWebAPIsQueryStoreResultHook {
 
