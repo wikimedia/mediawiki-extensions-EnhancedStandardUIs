@@ -3,9 +3,9 @@
 namespace MediaWiki\Extension\EnhancedStandardUIs\Rest;
 
 use MediaWiki\Context\RequestContext;
+use MediaWiki\FileRepo\RepoGroup;
 use MediaWiki\Rest\SimpleHandler;
 use MediaWiki\Title\TitleFactory;
-use RepoGroup;
 use Wikimedia\ParamValidator\ParamValidator;
 
 class GetMetadata extends SimpleHandler {
