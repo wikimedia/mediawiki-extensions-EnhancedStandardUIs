@@ -473,6 +473,7 @@
 				"enhanced-standard-uis-watchlist-clear-confirm-namespaces",
 				"enhanced-standard-uis-watchlist-clear-confirm-books",
 				"enhanced-standard-uis-watchlist-clear-confirm-action",
+				"enhanced-standard-uis-watchlist-clear-error",
 				"enhanced-standard-uis-watchlist-remove-tooltip",
 				"enhanced-standard-uis-watchlist-empty",
 				"enhanced-standard-uis-watchlist-empty-pages",
@@ -502,6 +503,22 @@
 				"mediawiki.jqueryMsg"
 			]
 		}
+	},
+	"QUnitTestModule": {
+		"localBasePath": "",
+		"remoteExtPath": "EnhancedStandardUIs",
+		"packageFiles": [
+			"tests/qunit/Watchlist.test.js",
+			"resources/widget/provider/WatchlistItemProvider.js",
+			"resources/api/Api.js",
+			"resources/widget/WatchlistTab.js"
+		],
+		"dependencies": [
+			"mediawiki.api",
+			"oojs-ui",
+			"oojs-ui-widgets",
+			"oojs-ui-windows"
+		]
 	},
 	"ResourceFileModulePaths": {
 		"localBasePath": "resources",

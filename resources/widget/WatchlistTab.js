@@ -313,8 +313,17 @@ ext.enhancedUI.widget.WatchlistTab.prototype.onClearAll = function () {
 		if ( !targets.length ) {
 			return;
 		}
+		this.clearButton.setDisabled( true );
 		this.provider.removeCallback( targets ).done( () => {
 			this.render( [] );
+		} ).fail( () => {
+			mw.notify(
+				mw.message( 'enhanced-standard-uis-watchlist-clear-error' ).text(),
+				{ type: 'error' }
+			);
+			// Earlier batches may have succeeded; reload the remaining watched items.
+			this.loaded = false;
+			this.ensureLoaded();
 		} );
 	} );
 };

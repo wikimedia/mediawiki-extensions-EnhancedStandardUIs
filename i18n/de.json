@@ -101,6 +101,7 @@
 	"enhanced-standard-uis-allpages-create-new-page-aria-label": "Eine neue Seite erstellen",
 	"enhanced-standard-uis-filelist-upload-new-file-title": "Eine neue Datei hochladen",
 	"enhanced-standard-uis-filelist-upload-new-file-aria-label": "Eine neue Datei hochladen",
+	"enhanced-standard-uis-watchlist-clear-error": "Nicht alle beobachteten Elemente konnten entfernt werden. Bitte erneut versuchen.",
 	"enhanced-standard-uis-watchlist-empty-pages": "{{#FORMAL:Du hast|Sie haben}} noch keine Seiten auf {{#FORMAL:deiner|Ihrer}} Beobachtungsliste.",
 	"enhanced-standard-uis-watchlist-empty-categories": "{{#FORMAL:Du hast|Sie haben}} noch keine Kategorien auf {{#FORMAL:deiner|Ihrer}} Beobachtungsliste.",
 	"enhanced-standard-uis-watchlist-empty-books": "{{#FORMAL:Du hast|Sie haben}} noch keine Bücher auf {{#FORMAL:deiner|Ihrer}} Beobachtungsliste.",

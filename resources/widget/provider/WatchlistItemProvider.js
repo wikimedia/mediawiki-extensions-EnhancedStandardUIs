@@ -55,11 +55,24 @@ ext.enhancedUI.watchlist.provider.WatchlistItemProvider.prototype.getItems = fun
 /**
  * Remove one or more items from the watchlist. Uses the standard MediaWiki unwatch API,
  * which writes to the `watchlist` table (and handles the CSRF token). Override for
- * provider-specific behaviour
+ * provider-specific behaviour. Arrays are removed sequentially in batches of at most
+ * 50 titles to respect the API limit for users without the apihighlimits right.
  *
  * @param {string|string[]} target Prefixed title, or array of titles
  * @return {jQuery.Promise}
  */
 ext.enhancedUI.watchlist.provider.WatchlistItemProvider.prototype.removeCallback = function ( target ) {
-	return new mw.Api().unwatch( target );
+	const api = new mw.Api();
+	if ( !Array.isArray( target ) || target.length <= 50 ) {
+		return api.unwatch( target );
+	}
+
+	let promise = $.Deferred().resolve( [] ).promise();
+	for ( let i = 0; i < target.length; i += 50 ) {
+		const batch = target.slice( i, i + 50 );
+		promise = promise.then( ( results ) => api.unwatch( batch ).then(
+			( removed ) => results.concat( removed )
+		) );
+	}
+	return promise;
 };
