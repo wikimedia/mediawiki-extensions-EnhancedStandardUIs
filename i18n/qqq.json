@@ -122,6 +122,7 @@
 	"enhanced-standard-uis-watchlist-clear-confirm-namespaces": "Confirmation message before removing all watched namespaces",
 	"enhanced-standard-uis-watchlist-clear-confirm-books": "Confirmation message before removing all watched books",
 	"enhanced-standard-uis-watchlist-clear-confirm-action": "Label of the confirm button in the clear-all dialog",
+	"enhanced-standard-uis-watchlist-clear-error": "Error notification when clearing a watchlist tab fails. Some items may already have been removed before the failure.",
 	"enhanced-standard-uis-watchlist-remove-tooltip": "Tooltip of the eye icon button that removes a single item from the watchlist",
 	"enhanced-standard-uis-watchlist-empty": "Placeholder shown when a tab contains no watched items",
 	"enhanced-standard-uis-watchlist-empty-pages": "Placeholder shown when the \"Pages\" tab on Special:EditWatchlist contains no watched pages",
