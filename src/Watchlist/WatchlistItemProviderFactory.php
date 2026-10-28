@@ -3,9 +3,9 @@
 namespace MediaWiki\Extension\EnhancedStandardUIs\Watchlist;
 
 use MediaWiki\Config\Config;
+use MediaWiki\Language\MessageLocalizer;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\ResourceLoader\Context as ResourceLoaderContext;
-use MessageLocalizer;
 use MWStake\MediaWiki\Component\ManifestRegistry\ManifestAttributeBasedRegistry;
 use Wikimedia\ObjectFactory\ObjectFactory;
 
