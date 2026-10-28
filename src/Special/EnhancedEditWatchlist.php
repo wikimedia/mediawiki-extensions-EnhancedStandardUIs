@@ -4,11 +4,8 @@ namespace MediaWiki\Extension\EnhancedStandardUIs\Special;
 
 use MediaWiki\Extension\EnhancedStandardUIs\Watchlist\WatchlistItemProviderFactory;
 use MediaWiki\Html\Html;
-use MediaWiki\SpecialPage\SpecialPage;
+use MediaWiki\Html\TemplateParser;
 use MediaWiki\Specials\SpecialEditWatchlist;
-use OOUI\ButtonWidget;
-use OOUI\FieldLayout;
-use OOUI\SearchInputWidget;
 
 /**
  * Enhanced replacement for the normal mode of Special:EditWatchlist.
@@ -42,7 +39,6 @@ class EnhancedEditWatchlist extends SpecialEditWatchlist {
 	protected function executeViewEditWatchlist() {
 		$out = $this->getOutput();
 		$out->setPageTitleMsg( $this->msg( 'watchlistedit-normal-title' ) );
-		$out->enableOOUI();
 
 		$descriptors = $this->providerFactory->getClientDescriptors( $this );
 
@@ -53,49 +49,18 @@ class EnhancedEditWatchlist extends SpecialEditWatchlist {
 			}
 		}
 
-		$html = Html::openElement( 'div', [ 'id' => 'enhanced-ui-watchlist-cnt' ] );
-		$html .= $this->getHeaderBar();
-		$html .= $this->getSearchWidget();
-		$html .= Html::element( 'div', [ 'id' => 'enhanced-ui-watchlist-panel' ] );
-		$html .= Html::closeElement( 'div' );
+		$out->addModuleStyles( [ 'ext.oojsplus.special.skeleton.styles' ] );
+		$templateParser = new TemplateParser( dirname( __DIR__, 2 ) . '/resources/templates' );
+		$skeleton = $templateParser->processTemplate( 'watchlist', [
+			'searchLabel' => $this->msg( 'enhanced-standard-uis-watchlist-search-label' )->text()
+		] );
+
+		$html = Html::rawElement( 'div', [ 'id' => 'enhanced-ui-watchlist-cnt' ],
+			Html::rawElement( 'div', [
+				'id' => 'enhanced-ui-watchlist-panel',
+				'aria-busy' => 'true'
+			], $skeleton )
+		);
 		$out->addHTML( $html );
-	}
-
-	/**
-	 * "View changes on watchlist" button link shown above the tabs.
-	 *
-	 * @return string
-	 */
-	private function getHeaderBar(): string {
-		$button = new ButtonWidget( [
-			'href' => SpecialPage::getTitleFor( 'Watchlist' )->getLocalURL(),
-			'label' => $this->msg( 'enhanced-standard-uis-watchlist-view-changes' )->text(),
-			'framed' => false,
-			'flags' => [ 'progressive' ],
-			'classes' => [ 'enhanced-ui-watchlist-view-changes' ]
-		] );
-
-		$bar = Html::openElement( 'div', [ 'class' => 'enhanced-ui-watchlist-header' ] );
-		$bar .= $button;
-		$bar .= Html::closeElement( 'div' );
-		return $bar;
-	}
-
-	/**
-	 * @return string
-	 */
-	private function getSearchWidget(): string {
-		$searchInput = new SearchInputWidget( [
-			'infusable' => true,
-			'id' => 'enhanced-ui-watchlist-filter',
-			'icon' => 'search'
-		] );
-		$search = Html::openElement( 'div', [ 'class' => 'enhanced-ui-watchlist-filter-cnt' ] );
-		$search .= new FieldLayout( $searchInput, [
-			'label' => $this->msg( 'enhanced-standard-uis-watchlist-search-label' )->text(),
-			'align' => 'top'
-		] );
-		$search .= Html::closeElement( 'div' );
-		return $search;
 	}
 }

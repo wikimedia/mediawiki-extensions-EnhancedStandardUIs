@@ -99,16 +99,20 @@ ext.enhancedUI.widget.WatchlistTab.prototype.ensureLoaded = function () {
 	this.removeTargets = [];
 	this.$toolbar.empty().removeClass( 'hidden' );
 	this.$noResults.addClass( 'hidden' );
-	this.$list.empty().addClass( 'oo-ui-pendingElement-pending' );
+	const skeleton = new OOJSPlus.ui.widget.SkeletonWidget( {
+		variant: 'list',
+		rows: 6
+	} );
+	this.$list.empty().attr( 'aria-busy', 'true' ).append( skeleton.$element );
 	this.provider.getItems().done( ( response ) => {
 		this.loading = false;
 		this.loaded = true;
-		this.$list.removeClass( 'oo-ui-pendingElement-pending' );
+		this.$list.removeAttr( 'aria-busy' );
 		this.render( ( response && response.sections ) || [] );
 	} ).fail( () => {
 		this.loading = false;
 		this.loaded = false;
-		this.$list.removeClass( 'oo-ui-pendingElement-pending' );
+		this.$list.removeAttr( 'aria-busy' );
 		this.renderError();
 	} );
 };
@@ -233,13 +237,14 @@ ext.enhancedUI.widget.WatchlistTab.prototype.toggleSection = function ( record, 
 
 ext.enhancedUI.widget.WatchlistTab.prototype.renderRow = function ( item, $section ) {
 	const $row = $( '<li>' ).addClass( 'enhanced-ui-watchlist-item' );
-	const $link = $( '<a>' )
-		.attr( 'href', item.url )
-		.text( item.label );
+	const link = new OOJSPlus.ui.widget.LinkWidget( {
+		href: item.url,
+		label: item.label
+	} );
 	if ( !item.exists ) {
-		$link.addClass( 'new' );
+		link.$link.addClass( 'new' );
 	}
-	$row.append( $link );
+	$row.append( link.$element );
 
 	if ( item.prefixedText ) {
 		this.removeTargets.push( item.prefixedText );

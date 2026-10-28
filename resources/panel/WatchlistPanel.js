@@ -20,8 +20,9 @@ ext.enhancedUI.panel.WatchlistPanel = function ( cfg ) {
 	this.providerDescriptors = cfg.providers || [];
 	this.tabs = [];
 
-	// eslint-disable-next-line no-jquery/no-global-selector
-	this.searchWidget = OO.ui.infuse( $( '#enhanced-ui-watchlist-filter' ) );
+	this.searchWidget = new OO.ui.SearchInputWidget( {
+		icon: 'search'
+	} );
 	this.searchWidget.connect( this, { change: 'onFilter' } );
 
 	this.indexLayout = new OO.ui.IndexLayout( {
@@ -32,10 +33,45 @@ ext.enhancedUI.panel.WatchlistPanel = function ( cfg ) {
 	this.indexLayout.connect( this, { set: 'onTabSet' } );
 
 	this.setupTabs();
-	this.$element.append( this.indexLayout.$element );
+	this.$element.append(
+		this.makeHeader(),
+		this.makeSearch(),
+		this.indexLayout.$element
+	);
 };
 
 OO.inheritClass( ext.enhancedUI.panel.WatchlistPanel, OO.ui.PanelLayout );
+
+/**
+ * "View changes on watchlist" link, always aligned to the right above the tabs.
+ *
+ * @return {jQuery}
+ */
+ext.enhancedUI.panel.WatchlistPanel.prototype.makeHeader = function () {
+	const button = new OO.ui.ButtonWidget( {
+		href: mw.util.getUrl( 'Special:Watchlist' ),
+		label: mw.message( 'enhanced-standard-uis-watchlist-view-changes' ).text(),
+		framed: false,
+		flags: [ 'progressive' ],
+		classes: [ 'enhanced-ui-watchlist-view-changes' ]
+	} );
+	return $( '<div>' )
+		.addClass( 'enhanced-ui-watchlist-header' )
+		.append( button.$element );
+};
+
+/**
+ * @return {jQuery}
+ */
+ext.enhancedUI.panel.WatchlistPanel.prototype.makeSearch = function () {
+	const field = new OO.ui.FieldLayout( this.searchWidget, {
+		label: mw.message( 'enhanced-standard-uis-watchlist-search-label' ).text(),
+		align: 'top'
+	} );
+	return $( '<div>' )
+		.addClass( 'enhanced-ui-watchlist-filter-cnt' )
+		.append( field.$element );
+};
 
 ext.enhancedUI.panel.WatchlistPanel.prototype.setupTabs = function () {
 	const tabPanels = [];
@@ -106,5 +142,5 @@ $( () => {
 	const panel = new ext.enhancedUI.panel.WatchlistPanel( {
 		providers: providerDescriptors || []
 	} );
-	$panelCnt.append( panel.$element );
+	$panelCnt.empty().removeAttr( 'aria-busy' ).append( panel.$element );
 } );
