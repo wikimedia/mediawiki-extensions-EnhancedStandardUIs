@@ -29,8 +29,8 @@
 
 .enhanced-ui-watchlist-tab-icon {
 	display: inline-block;
-	width: 1.1em;
-	height: 1.1em;
+	width: 16px;
+	height: 16px;
 	background-color: currentcolor;
 	-webkit-mask-repeat: no-repeat;
 	mask-repeat: no-repeat;
@@ -188,8 +188,14 @@ html[ dir='rtl' ] .enhanced-ui-watchlist-section-collapsible.collapsed .enhanced
 	border-bottom: 0;
 }
 
-.enhanced-ui-watchlist-item > a {
+.enhanced-ui-watchlist-item > .oojsplus-ui-widget-linkwidget {
+	display: flex;
 	flex: 1 1 auto;
+	min-width: 0;
+}
+
+/* Truncate on the link itself, so the wrapper does not clip its focus ring */
+.enhanced-ui-watchlist-item > .oojsplus-ui-widget-linkwidget > a {
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;

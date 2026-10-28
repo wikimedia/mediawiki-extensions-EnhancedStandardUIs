@@ -461,6 +461,8 @@
 				"stylesheets/ext.enhancedUI.special.watchlist.css"
 			],
 			"messages": [
+				"enhanced-standard-uis-watchlist-view-changes",
+				"enhanced-standard-uis-watchlist-search-label",
 				"enhanced-standard-uis-watchlist-tab-namespaces",
 				"enhanced-standard-uis-watchlist-clear-all",
 				"enhanced-standard-uis-watchlist-clear-all-pages",
@@ -499,7 +501,9 @@
 				"oojs-ui.styles.icons-accessibility",
 				"oojs-ui.styles.icons-moderation",
 				"oojs-ui.styles.icons-movement",
+				"ext.oOJSPlus.widgets",
 				"mediawiki.api",
+				"mediawiki.util",
 				"mediawiki.jqueryMsg"
 			]
 		}
