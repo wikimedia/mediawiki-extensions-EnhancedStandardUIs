@@ -3,8 +3,8 @@
 namespace MediaWiki\Extension\EnhancedStandardUIs\Watchlist\Provider;
 
 use MediaWiki\Extension\EnhancedStandardUIs\Watchlist\GenericWatchlistItemProvider;
+use MediaWiki\Language\MessageLocalizer;
 use MediaWiki\SpecialPage\SpecialPage;
-use MessageLocalizer;
 
 class PageProvider extends GenericWatchlistItemProvider {
 

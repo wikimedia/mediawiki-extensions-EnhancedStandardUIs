@@ -2,8 +2,8 @@
 
 namespace MediaWiki\Extension\EnhancedStandardUIs\Watchlist;
 
+use MediaWiki\Language\MessageLocalizer;
 use MediaWiki\User\User;
-use MessageLocalizer;
 
 interface IWatchlistItemProvider {
 
