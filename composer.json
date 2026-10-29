@@ -14,7 +14,7 @@
 	},
 	"require": {
 		"composer/installers": "~1.0|~2",
-		"mwstake/mediawiki-component-datastash": "~1",
+		"mwstake/mediawiki-component-datastash": "~2",
 		"mwstake/mediawiki-component-manifestregistry": "~3"
 	},
 	"require-dev": {
