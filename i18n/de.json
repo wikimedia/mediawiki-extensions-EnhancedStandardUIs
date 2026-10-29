@@ -112,5 +112,6 @@
 	"enhanced-standard-uis-watchlist-empty-hint-pages": "{{#FORMAL:Füge|Fügen Sie}} Seiten über [$1 Alle Seiten] zu {{#FORMAL:deiner|Ihrer}} Beobachtungsliste hinzu.",
 	"enhanced-standard-uis-watchlist-empty-hint-categories": "{{#FORMAL:Füge|Fügen Sie}} Kategorien über [$1 Alle Seiten] zu {{#FORMAL:deiner|Ihrer}} Beobachtungsliste hinzu.",
 	"enhanced-standard-uis-watchlist-empty-hint-books": "{{#FORMAL:Füge|Fügen Sie}} Bücher über [$1 Bücher] zu {{#FORMAL:deiner|Ihrer}} Beobachtungsliste hinzu.",
-	"enhanced-standard-uis-watchlist-empty-hint-namespaces": "{{#FORMAL:Füge|Fügen Sie}} Namensräume über [$1 Alle Seiten] zu {{#FORMAL:deiner|Ihrer}} Beobachtungsliste hinzu."
+	"enhanced-standard-uis-watchlist-empty-hint-namespaces": "{{#FORMAL:Füge|Fügen Sie}} Namensräume über [$1 Alle Seiten] zu {{#FORMAL:deiner|Ihrer}} Beobachtungsliste hinzu.",
+	"enhanced-standard-uis-allpages-exclude-namespaces-label": "Namensräume von „Alle Seiten“ ausschließen"
 }
