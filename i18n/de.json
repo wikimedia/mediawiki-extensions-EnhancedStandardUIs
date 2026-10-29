@@ -112,5 +112,6 @@
 	"enhanced-standard-uis-watchlist-empty-hint-namespaces": "{{#FORMAL:Füge|Fügen Sie}} Namensräume über [$1 Alle Seiten] zu {{#FORMAL:deiner|Ihrer}} Beobachtungsliste hinzu.",
 	"enhanced-standard-uis-history-grid-header-edit-type-label": "Bearbeitungstyp",
 	"enhanced-standard-uis-history-grid-edittype-minor-label": "Kleine Änderung",
-	"enhanced-standard-uis-history-grid-edittype-major-label": "Umfassende Änderung"
+	"enhanced-standard-uis-history-grid-edittype-major-label": "Umfassende Änderung",
+	"enhanced-standard-uis-allpages-exclude-namespaces-label": "Namensräume von „Alle Seiten“ ausschließen"
 }
