@@ -6,11 +6,11 @@ use MediaWiki\Actions\Hook\RawPageViewBeforeOutputHook;
 use MediaWiki\Api\ApiQueryRevisions;
 use MediaWiki\Api\Hook\ApiQueryBaseBeforeQueryHook;
 use MediaWiki\Diff\Hook\DifferenceEngineViewHeaderHook;
+use MediaWiki\Exception\PermissionsError;
 use MediaWiki\Extension\EnhancedStandardUIs\RevisionVisibility;
 use MediaWiki\Page\Hook\ArticleRevisionViewCustomHook;
 use MediaWiki\Permissions\Authority;
 use MediaWiki\Revision\RevisionRecord;
-use PermissionsError;
 use Wikimedia\Rdbms\ILoadBalancer;
 use Wikimedia\Rdbms\RawSQLValue;
 
