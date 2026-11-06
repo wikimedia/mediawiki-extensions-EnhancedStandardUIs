@@ -43,9 +43,9 @@ class EnhancedUIsAllPagesExcludedNamespaces extends ArraySetting implements IOve
 	 */
 	public function getPaths() {
 		return [
-			static::MAIN_PATH_FEATURE . '/' . static::FEATURE_CONTENT_STRUCTURING . "/EnhancedStandardUIs",
-			static::MAIN_PATH_EXTENSION . "/EnhancedStandardUIs/" . static::FEATURE_CONTENT_STRUCTURING,
-			static::FEATURE_CONTENT_STRUCTURING . '/' . static::PACKAGE_PRO . "/EnhancedStandardUIs",
+			static::MAIN_PATH_FEATURE . '/' . static::FEATURE_SKINNING . '/EnhancedStandardUIs',
+			static::MAIN_PATH_EXTENSION . '/EnhancedStandardUIs/' . static::FEATURE_SKINNING,
+			static::MAIN_PATH_PACKAGE . '/' . static::PACKAGE_FREE . '/EnhancedStandardUIs',
 		];
 	}
 
