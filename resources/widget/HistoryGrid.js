@@ -30,6 +30,7 @@ ext.enhancedUI.widget.HistoryGrid.prototype.clickOnRow = function ( e ) {
 			this.toggleRowSelectionButton( true );
 		}
 	}
+	e.data.$row.toggleClass( 'row-selected', this.selectedRows.includes( e.data.item ) );
 	this.emit( 'rowSelected', e.data );
 };
 
