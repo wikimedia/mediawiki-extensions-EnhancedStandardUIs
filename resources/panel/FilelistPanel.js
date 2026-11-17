@@ -17,9 +17,9 @@ ext.enhancedUI.panel.FilelistPanel = function ( cfg ) {
 	this.enablePreview = typeof cfg.enablePreview === 'undefined' ? true : cfg.enablePreview;
 	this.allowFileInfoDialog = typeof cfg.allowFileInfoDialog === 'undefined' ? true : cfg.allowFileInfoDialog;
 	this.mediaDialog = cfg.mediaDialog || false;
+	this.pageSize = cfg.pageSize || 25;
 
-	this.pageSize = 25;
-	this.store = new OOJSPlus.ui.data.store.RemoteRestStore( {
+	this.store = cfg.store || new OOJSPlus.ui.data.store.RemoteRestStore( {
 		path: 'mws/v1/file-query-store',
 		pageSize: this.pageSize,
 		sorter: {
@@ -44,11 +44,15 @@ ext.enhancedUI.panel.FilelistPanel.prototype.setupWidgets = function () {
 			$overlay: this.$overlay,
 			allowFileInfoDialog: this.allowFileInfoDialog,
 			mediaDialog: this.mediaDialog,
-			gridState: this.gridState
+			gridState: this.gridState,
+			pageSize: this.pageSize
 		} );
 		this.grid.connect( this, {
 			action: 'onGridAction',
-			preview: 'onGridPreview'
+			preview: 'onGridPreview',
+			datasetChange: () => {
+				this.emit( 'datasetChange' );
+			}
 		} );
 		this.$element.append( this.grid.$element );
 		this.emit( 'gridLoaded' );

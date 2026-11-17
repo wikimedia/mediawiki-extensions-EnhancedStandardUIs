@@ -11,24 +11,23 @@ ext.enhancedUI.ve.MediaDialogFileGrid = function ( component ) { // eslint-disab
 OO.inheritClass( ext.enhancedUI.ve.MediaDialogFileGrid, bs.vec.ui.plugin.MWMediaDialog );
 
 ext.enhancedUI.ve.MediaDialogFileGrid.prototype.initialize = function () {
-	this.advancedSearchTab = new OO.ui.TabPanelLayout( 'enhanced-stadard-uis-ve-filegrid-panel', {
-		label: ve.msg( 'enhanced-standard-uis-ve-filegrid-title' ),
-		padded: false
-	} );
+	this.advancedSearchTab = this.makeTabPanel();
 	this.advancedSearchTab.$element.append( new OO.ui.ProgressBarWidget( { progress: false } ).$element );
 	this.fileRepoGrid = null;
 
 	this.component.searchTabs.addTabPanels( [ this.advancedSearchTab ] );
 
-	/**
-	 * Unfortunately rendering an ExtJS component within the constructor of an `OO.ui.Widget`
-	 * is not always possible, as `OO.ui.Widget::$element` may not be appended to the DOM yet.
-	 * Therefore we render the ExtJS component when the user actually opens the tab.
-	 */
 	this.component.searchTabs.on( 'set', this.onSearchTabsSet, [], this );
 	this.component.connect( this, {
 		beforePanelSwitch: 'onBeforePanelSwitch',
 		panelSwitch: 'onPanelSwitch'
+	} );
+};
+
+ext.enhancedUI.ve.MediaDialogFileGrid.prototype.makeTabPanel = function () {
+	return new OO.ui.TabPanelLayout( 'enhanced-stadard-uis-ve-filegrid-panel', {
+		label: ve.msg( 'enhanced-standard-uis-ve-filegrid-title' ),
+		padded: false
 	} );
 };
 
@@ -65,23 +64,38 @@ ext.enhancedUI.ve.MediaDialogFileGrid.prototype.onPanelSwitch = function ( panel
 };
 
 ext.enhancedUI.ve.MediaDialogFileGrid.prototype.initFileRepoGrid = function () {
-	this.fileRepoGrid = new ext.enhancedUI.panel.FilelistPanel( {
+	this.fileRepoGrid = this.getFileGridRepo();
+	this.fileRepoGrid.connect( this, {
+		gridLoaded: () => {
+			this.fileRepoGrid.grid.connect( this, {
+				rowSelected: 'onFileRepoGridSelect'
+			} );
+		},
+		datasetChange: () => {
+			setTimeout( () => {
+				const height = this.fileRepoGrid.$element.outerHeight();
+				if ( height > 0 ) {
+					this.component.setBodyHeight( height + 100 );
+					this.component.updateSize();
+				}
+			}, 10 );
+
+		}
+	} );
+	this.advancedSearchTab.$element.html( this.fileRepoGrid.$element );
+};
+
+ext.enhancedUI.ve.MediaDialogFileGrid.prototype.getFileGridRepo = function () {
+	return new ext.enhancedUI.panel.FilelistPanel( {
 		rights: [],
 		canSwitchModes: false,
 		enablePreview: false,
 		// Prevent opening a dialog in a dialog, also VE has its own "file info"
 		allowFileInfoDialog: false,
 		$overlay: this.component.$overlay,
-		mediaDialog: true
+		mediaDialog: true,
+		pageSize: 20
 	} );
-	this.fileRepoGrid.connect( this, {
-		gridLoaded: () => {
-			this.fileRepoGrid.grid.connect( this, {
-				rowSelected: 'onFileRepoGridSelect'
-			} );
-		}
-	} );
-	this.advancedSearchTab.$element.html( this.fileRepoGrid.$element );
 };
 
 ext.enhancedUI.ve.MediaDialogFileGrid.prototype.onFileRepoGridSelect = function ( data ) {
