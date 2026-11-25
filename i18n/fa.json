@@ -61,5 +61,6 @@
 	"enhanced-pref-username": "{{GENDER:$1|نام کاربری}}",
 	"enhanced-prefs-memberingroups": "{{GENDER:$2|عضو}} {{PLURAL:$1|گروه|گروه‌های}}",
 	"enhanced-standard-uis-preferences-date-label": "قالب نمایش را انتخاب کنید",
-	"enhanced-standard-uis-prefs-panel-search-label": "جستجو"
+	"enhanced-standard-uis-prefs-panel-search-label": "جستجو",
+	"enhanced-standard-uis-prefs-reset-dlg-action-label": "بازنشانی"
 }
