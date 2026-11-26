@@ -145,5 +145,6 @@
 	"enhanced-standard-uis-watchlist-load-error": "Error message shown on Special:EditWatchlist when the request for the items of a tab failed",
 	"enhanced-standard-uis-watchlist-retry": "Label of the button that retries a failed request for the items of a tab on Special:EditWatchlist",
 	"enhanced-standard-uis-watchlist-section-expand-label": "Invisible label / tooltip of the expander button before a collapsible namespace heading, shown while the section is collapsed",
-	"enhanced-standard-uis-watchlist-section-collapse-label": "Invisible label / tooltip of the expander button before a collapsible namespace heading, shown while the section is expanded"
+	"enhanced-standard-uis-watchlist-section-collapse-label": "Invisible label / tooltip of the expander button before a collapsible namespace heading, shown while the section is expanded",
+	"enhanced-standard-uis-watchlist-clear-error": "Error notification when clearing a watchlist tab fails. Some items may already have been removed before the failure."
 }
