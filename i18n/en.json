@@ -142,5 +142,6 @@
 	"enhanced-standard-uis-allpages-exclude-namespaces-label": "Exclude namespaces from \"All pages\"",
 	"enhanced-standard-uis-history-grid-header-edit-type-label": "Edit type",
 	"enhanced-standard-uis-history-grid-edittype-minor-label": "Minor edit",
-	"enhanced-standard-uis-history-grid-edittype-major-label": "Major edit"
+	"enhanced-standard-uis-history-grid-edittype-major-label": "Major edit",
+	"enhanced-standard-uis-watchlist-clear-error": "Not all watched items could be removed. Please try again."
 }
