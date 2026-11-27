@@ -142,5 +142,6 @@
 	"enhanced-standard-uis-watchlist-empty-hint-pages": "Ku dar bogag ka socda [$1 Dhammaan bogagga].",
 	"enhanced-standard-uis-watchlist-empty-hint-categories": "Ku dar qaybo ka socda [$1 Dhammaan bogagga].",
 	"enhanced-standard-uis-watchlist-empty-hint-books": "Ku dar buugaag ka socda [$1 Buugaagta].",
-	"enhanced-standard-uis-watchlist-empty-hint-namespaces": "Ku dar meelaha magacyada ee laga helayo [$1 Dhammaan bogagga]."
+	"enhanced-standard-uis-watchlist-empty-hint-namespaces": "Ku dar meelaha magacyada ee laga helayo [$1 Dhammaan bogagga].",
+	"enhanced-standard-uis-watchlist-clear-error": "Dhammaan waxyaabaha la ilaalinayay lama saari karin. Fadlan mar kale isku day."
 }

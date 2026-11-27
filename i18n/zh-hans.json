@@ -146,5 +146,6 @@
 	"enhanced-standard-uis-watchlist-empty-hint-pages": "从[$1 所有页面]中添加页面。",
 	"enhanced-standard-uis-watchlist-empty-hint-categories": "从[$1 所有页面]中添加分类。",
 	"enhanced-standard-uis-watchlist-empty-hint-books": "从[$1 书籍页面]中添加书籍。",
-	"enhanced-standard-uis-watchlist-empty-hint-namespaces": "从[$1 所有页面]中添加命名空间。"
+	"enhanced-standard-uis-watchlist-empty-hint-namespaces": "从[$1 所有页面]中添加命名空间。",
+	"enhanced-standard-uis-watchlist-clear-error": "未能移除所有已监视的项。请稍后重试。"
 }
