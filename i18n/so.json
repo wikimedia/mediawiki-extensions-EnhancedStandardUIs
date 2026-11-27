@@ -145,5 +145,6 @@
 	"enhanced-standard-uis-allpages-exclude-namespaces-label": "Ka saar meelaha magaca ah \"Dhammaan bogagga\"",
 	"enhanced-standard-uis-history-grid-header-edit-type-label": "Nooca wax ka bedelida",
 	"enhanced-standard-uis-history-grid-edittype-minor-label": "Wax ka bedelida yaryar",
-	"enhanced-standard-uis-history-grid-edittype-major-label": "Wax ka beddel weyn"
+	"enhanced-standard-uis-history-grid-edittype-major-label": "Wax ka beddel weyn",
+	"enhanced-standard-uis-watchlist-clear-error": "Dhammaan waxyaabaha la ilaalinayay lama saari karin. Fadlan mar kale isku day."
 }
