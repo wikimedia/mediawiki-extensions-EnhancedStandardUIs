@@ -103,7 +103,7 @@ ext.enhancedUI.panel.AllPagesPanel.prototype.setupTree = function () {
 	this.$outerTreeCnt = $( '<div>' ).addClass(
 		'enhanced-ui-allpages-panel-tree-cnt' );
 	this.$treeCnt = $( '<div>' ).addClass(
-		'enhanced-ui-allpages-panel-tree enhanced-ui-allpages-columns' );
+		'enhanced-ui-allpages-panel-tree' );
 
 	// eslint-disable-next-line no-jquery/no-global-selector
 	this.$treePlaceholder = $( '#skeleton-tree' ).clone();
@@ -166,17 +166,6 @@ ext.enhancedUI.panel.AllPagesPanel.prototype.hidePlaceholder = function () {
 
 ext.enhancedUI.panel.AllPagesPanel.prototype.updatePages = function () {
 	this.$treeCnt.children().remove();
-	if ( this.pages.length > 1 ) {
-		// eslint-disable-next-line no-jquery/no-class-state
-		if ( !$( this.$treeCnt ).hasClass( 'enhanced-ui-allpages-columns' ) ) {
-			$( this.$treeCnt ).addClass( 'enhanced-ui-allpages-columns' );
-		}
-	} else {
-		// eslint-disable-next-line no-jquery/no-class-state
-		if ( $( this.$treeCnt ).hasClass( 'enhanced-ui-allpages-columns' ) ) {
-			$( this.$treeCnt ).removeClass( 'enhanced-ui-allpages-columns' );
-		}
-	}
 	this.hidePlaceholder();
 	if ( this.pages.length === 0 ) {
 		this.$treeCnt.append(

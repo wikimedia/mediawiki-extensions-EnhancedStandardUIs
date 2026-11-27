@@ -29,7 +29,3 @@
 .enhanced-ui-allpages-panel-menu.collapsed > div {
 	display: none;
 }
-
-.enhanced-ui-allpages-columns {
-	columns: 1;
-}

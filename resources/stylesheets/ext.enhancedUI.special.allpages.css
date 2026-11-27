@@ -1,3 +1,8 @@
+:root {
+	--col-width: 20rem;
+	--col-gap: 2rem;
+}
+
 .enhanced-ui-allpages-panel {
 	display: flex;
 	position: relative;
@@ -125,7 +130,7 @@
 }
 
 .enhanced-pages-tree {
-	padding-left: 1.6em;
+	padding-left: 1.5rem;
 }
 
 .enhanced-pages-tree .oojsplus-data-tree-page-action a {
@@ -182,13 +187,24 @@
 	opacity: 0.6;
 }
 
-.enhanced-ui-allpages-columns {
-	columns: 2;
-	column-gap: 20px;
-	margin-top: 50px;
+.enhanced-pages-tree .tree-node-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	max-width: var( --col-width );
 }
 
-.enhanced-ui-allpages-columns section:first-of-type h2 {
+.enhanced-pages-tree .tree-node-list:has( > li:nth-child( 6 ) ) {
+	columns: 2 var( --col-width );
+	column-gap: var( --col-gap );
+	max-width: calc( 2 * var( --col-width ) + var( --col-gap ) );
+}
+
+.enhanced-pages-tree .tree-node-list > li {
+	break-inside: avoid;
+}
+
+.enhanced-ui-allpages-panel-tree section:first-of-type h2 {
 	padding-top: 0;
 }
 
@@ -201,6 +217,7 @@
 
 .enhanced-ui-allpages-panel-tree {
 	flex-grow: 1;
+	margin-top: 2rem;
 }
 
 .enhanced-ui-index-paginator {
@@ -230,20 +247,14 @@
 .enhanced-ui-index-paginator .oo-ui-buttonSelectWidget .oo-ui-buttonOptionWidget a {
 	width: 100%;
 	text-align: center;
-	font-size: 1.1em;
+	font-size: var( --font-size-medium, 1rem );
 }
 
 .enhanced-ui-allpages-panel-tree h2 {
-	font-size: 21px;
+	font-size: var( --font-size-x-large, 1.25rem );
 	color: var( --color-subtle, #54595d );
-}
-
-.enhanced-ui-allpages-panel-tree h2:not( :first-child ) {
-	margin: 1.5em 0 1em 1.6em;
-}
-
-.enhanced-ui-allpages-panel-tree h2:first-child {
-	margin: 0 0 1em 1.6em;
+	margin: 1.5rem 0 1rem 2rem;
+	border-bottom: 1px solid var( --border-color-base, #a2a9b1 );
 }
 
 .enhanced-pages-tree .oo-ui-iconElement-icon {
