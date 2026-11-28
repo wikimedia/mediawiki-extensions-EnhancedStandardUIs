@@ -143,5 +143,12 @@
 	"enhanced-standard-uis-watchlist-retry": "Label of the button that retries a failed request for the items of a tab on Special:EditWatchlist",
 	"enhanced-standard-uis-watchlist-section-expand-label": "Invisible label / tooltip of the expander button before a collapsible namespace heading, shown while the section is collapsed",
 	"enhanced-standard-uis-watchlist-section-collapse-label": "Invisible label / tooltip of the expander button before a collapsible namespace heading, shown while the section is expanded",
-	"enhanced-standard-uis-watchlist-clear-error": "Error notification when clearing a watchlist tab fails. Some items may already have been removed before the failure."
+	"enhanced-standard-uis-watchlist-clear-error": "Error notification when clearing a watchlist tab fails. Some items may already have been removed before the failure.",
+	"enhanced-standard-uis-watchlist-unwatch-tooltip": "Label for unwatch page button\nParameters:\n* - $1: name of page",
+	"enhanced-standard-uis-watchlist-empty-tab-hint": "Generic fallback hint below the empty-tab placeholder, used only for provider types without a dedicated message (e.g. {{msg-mw|enhanced-standard-uis-watchlist-empty-tab-hint-pages}}). Parameters:\n* $1 - the tab name (unused)\n* $2 - URL of the page where items of this type can be watched",
+	"enhanced-standard-uis-watchlist-empty-tab-hint-pages": "Hint below {{msg-mw|enhanced-standard-uis-watchlist-empty-tab-pages}}. Parameters:\n* $1 - URL of Special:AllPages\n\n\"All pages\" is the name of {{msg-mw|allpages}}",
+	"enhanced-standard-uis-watchlist-empty-tab-hint-categories": "Hint below {{msg-mw|enhanced-standard-uis-watchlist-empty-tab-categories}}. Parameters:\n* $1 - URL of Special:AllPages, filtered to the Category namespace\n\n\"All pages\" is the name of {{msg-mw|allpages}}",
+	"enhanced-standard-uis-watchlist-empty-tab-hint-books": "Hint below {{msg-mw|enhanced-standard-uis-watchlist-empty-tab-books}}. Parameters:\n* $1 - URL of Special:Books",
+	"enhanced-standard-uis-watchlist-empty-tab-hint-namespaces": "Hint below {{msg-mw|enhanced-standard-uis-watchlist-empty-tab-namespaces}}. Parameters:\n* $1 - URL of Special:AllPages\n\n\"All pages\" is the name of {{msg-mw|allpages}}",
+	"enhanced-standard-uis-watchlist-notify-unwatch-fail": "Toast notification label if unwatch action failed\nParameters:\n* - $1: page name"
 }
