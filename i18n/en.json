@@ -136,12 +136,19 @@
 	"enhanced-standard-uis-watchlist-no-results": "No items match your search.",
 	"enhanced-standard-uis-watchlist-load-error": "The watched items could not be loaded.",
 	"enhanced-standard-uis-watchlist-retry": "Try again",
-	"enhanced-standard-uis-watchlist-main-namespace-label": "Main",
+	"enhanced-standard-uis-watchlist-main-namespace-label": "(Main)",
 	"enhanced-standard-uis-watchlist-section-expand-label": "Expand this section",
 	"enhanced-standard-uis-watchlist-section-collapse-label": "Collapse this section",
 	"enhanced-standard-uis-allpages-exclude-namespaces-label": "Exclude namespaces from \"All pages\"",
 	"enhanced-standard-uis-history-grid-header-edit-type-label": "Edit type",
 	"enhanced-standard-uis-history-grid-edittype-minor-label": "Minor edit",
 	"enhanced-standard-uis-history-grid-edittype-major-label": "Major edit",
-	"enhanced-standard-uis-watchlist-clear-error": "Not all watched items could be removed. Please try again."
+	"enhanced-standard-uis-watchlist-clear-error": "Not all watched items could be removed. Please try again.",
+	"enhanced-standard-uis-watchlist-unwatch-tooltip": "Unwatch \"$1\"",
+	"enhanced-standard-uis-watchlist-empty-tab-hint": "[$2 Find items to add to your watchlist]",
+	"enhanced-standard-uis-watchlist-empty-tab-hint-pages": "You can watch pages directly from the [$1 list of all pages].",
+	"enhanced-standard-uis-watchlist-empty-tab-hint-categories": "You can watch categories directly from the [$1 list of all categories].",
+	"enhanced-standard-uis-watchlist-empty-tab-hint-books": "You can watch books directly from the [$1 list of all books].",
+	"enhanced-standard-uis-watchlist-empty-tab-hint-namespaces": "You can watch namespaces from the namespace list on [$1 All pages].",
+	"enhanced-standard-uis-watchlist-notify-unwatch-fail": "$1 could not be removed from your watchlist"
 }
